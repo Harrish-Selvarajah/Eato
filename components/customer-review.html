@@ -1,55 +1,46 @@
 <html>
-    <head>
-        <title>Review</title>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <title>Reviews</title>
 
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-        <link rel="stylesheet" href="../css/card-css.css" />
-        <link rel="stylesheet" href="../css/customer-review.css" />
-        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    </head>
-    <body>
-        <div data-role="page">
-            <!-- <div data-role="header" data-position="fullscreen"> -->
-                <div class="card">
-                    <div class="ui-grid-b">
-                        <div class="ui-block-a"><div class="ui-bar ui-bar" style="height: 30px;"></div></div>
-                        <div class="ui-block-b"><div class="ui-bar ui-bar" style="height: 30px; text-align: center;">Review</div></div>
-                        <div class="ui-block-c"><div class="ui-bar ui-bar" style="height: 30px;"></div></div>
-                    </div>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="../css/card-css.css" />
+    <link rel="stylesheet" href="../css/customer-review.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body>
+    <div data-role="page" id="review">
+        <!-- <div data-role="header" data-position="fullscreen"> -->
+        <div class="card">
+            <div class="ui-grid-b"> 
+                <div class="ui-block-a"> 
+                    <div class="ui-bar ui-bar" style="height: 30px;"></div>
                 </div>
-            <!-- </div> -->
-            <div role="main" class="ui-content">
-                <div class="card">
-                    <div>
-                        <div class="ui-grid-b">
-                            <div style="text-align: right;">Arrow</div>
-                        </div>
-                        <div class="ui-grid-b">
-                            <div class="ui-block-a">
-                                <div class="ui-bar ui-bar" style="height: 30px;">
-                                </div>
-                            </div>
-                            <div>
-                                James Watson
-                            </div>
-                            <div>
-                                Stars
-                            </div>
-                        </div>
-                        <div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                                Lorem ipsum dolor sit amet.</p>
-                        </div>
-                    </div>
+                <div class="ui-block-b">
+                    <div class="ui-bar ui-bar" style="height: 30px; text-align: center;">Reviews</div>
                 </div>
-
-                <div class="card">
+                <div class="ui-block-c">
+                    <div class="ui-bar ui-bar" style="height: 30px;"></div>
+                </div>
+            </div>
+        </div>
+        <!-- </div> -->
+        <div role="main" class="ui-content">
+            <div class="card">
+                <div id="customer-feedback">
                     <div class="ui-grid-b">
-                        <div style="text-align: right;">Arrow</div>
+                        <div style="float: right;">
+                            <!-- <a id='btnShowSignUp' data-role="button" href='#' onclick="ShowSignUp();">Show</a> -->
+                            <a href="#" class="ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all">No text</a>
+                            <!-- <div id="custom-border-radius">
+                                    <a href="#" class="ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all">No
+                                    text</a>
+                            </div> -->
+                        </div>
                     </div>
                     <div class="ui-grid-b">
                         <div class="ui-block-a">
@@ -64,60 +55,90 @@
                         </div>
                     </div>
                     <div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-                            eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                            eiusmod tempor incididunt ut labore et dolore magna aliqua.
                             Lorem ipsum dolor sit amet.</p>
                     </div>
                 </div>
-
-                <div class="card">
-                    <div class="ui-grid-b">
-                        <div style="text-align: right;">Arrow</div>
+                <div id="vendor-feedback">
+                    <div class="feedback">
+                        <h6>asd</h6>
                     </div>
-                    <div class="ui-grid-b">
-                        <div class="ui-block-a">
-                            <div class="ui-bar ui-bar" style="height: 30px;">
-                            </div>
-                        </div>
-                        <div>
-                            James Watson
-                        </div>
-                        <div>
-                            Stars
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="ui-grid-b">
+                    <div style="text-align: right;">Arrow</div>
+                </div>
+                <div class="ui-grid-b">
+                    <div class="ui-block-a">
+                        <div class="ui-bar ui-bar" style="height: 30px;">
                         </div>
                     </div>
                     <div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-                            eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                            Lorem ipsum dolor sit amet.</p>
+                        James Watson
+                    </div>
+                    <div>
+                        Stars
                     </div>
                 </div>
+                <div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
 
-                <div class="card">
-                    <div class="ui-grid-b">
-                        <div style="text-align: right;">Arrow</div>
-                    </div>
-                    <div class="ui-grid-b">
-                        <div class="ui-block-a">
-                            <div class="ui-bar ui-bar" style="height: 30px;">
-                            </div>
-                        </div>
-                        <div>
-                            James Watson
-                        </div>
-                        <div>
-                            Stars
+            <div class="card">
+                <div class="ui-grid-b">
+                    <div style="text-align: right;">Arrow</div>
+                </div>
+                <div class="ui-grid-b">
+                    <div class="ui-block-a">
+                        <div class="ui-bar ui-bar" style="height: 30px;">
                         </div>
                     </div>
                     <div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-                            eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                            Lorem ipsum dolor sit amet.</p>
+                        James Watson
+                    </div>
+                    <div>
+                        Stars
                     </div>
                 </div>
+                <div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="ui-grid-b">
+                    <div style="text-align: right;">Arrow</div>
+                </div>
+                <div class="ui-grid-b">
+                    <div class="ui-block-a">
+                        <div class="ui-bar ui-bar" style="height: 30px;">
+                        </div>
+                    </div>
+                    <div>
+                        James Watson
+                    </div>
+                    <div>
+                        Stars
+                    </div>
+                </div>
+                <div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
             <!-- <div data-role="footer" data-position="fullscreen">
                 <h4>Page Footer</h4>
             </div> -->
         </div>
-    </body>
+</body>
+
 </html>
