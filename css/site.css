@@ -2,6 +2,8 @@ body {
     margin: 0;
 }
 
+/* Typograghy Start */
+
 h1 {
     margin: 0;
     font-size: 28px;
@@ -42,27 +44,26 @@ h4 {
     font-size: 10px;
 }
 
-/* .content-body {
-    background-color: !important;
+/* Typograghy End */
+
+.ui-content {
+    padding: 0 !important;
+    min-height: 100vh !important;
 }
 
-.header-bar {
-    background-color:  !important;
-    height:  !important;
-} */
+.d-flex {
+    display: flex !important;
+}
+
+/* Footer Style Start */
 
 .footer {
-    background-color: #000000 !important;
+    background-color: #000000;
     box-sizing: border-box;
     width: 100%;
     padding: 20px;
-    margin-top: 60px;
     position: relative;
-    color: #ffffff !important;
-    font-weight: normal !important;
-    text-shadow: none !important;
-    display: block;
-    line-height: 1.5em;
+    color: #ffffff;
 }
 
 .footer-top {
@@ -76,13 +77,12 @@ h4 {
 
 .footer-left>p {
     margin: 0;
-    color: rgba(255, 255, 255, 0.75) !important;
+    color: rgba(255, 255, 255, 0.75);
 }
 
 .footer-left>p>a {
-    color: inherit !important;
-    font-weight: normal !important;
-    text-decoration: none !important;
+    color: inherit;
+    text-decoration: none;
 }
 
 .footer-right {
@@ -107,3 +107,5 @@ h4 {
 .footer-bottom>p {
     margin: 0;
 }
+
+/* Footer Style End */

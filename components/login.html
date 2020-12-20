@@ -2,18 +2,40 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="../css/site.css" />
-    <link rel="stylesheet" href="../lib/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="../lib/jquery-1.12.4.min.js"></script>
     <script src="../lib/jquery.mobile-1.4.5.min.js"></script>
 
+    <link rel="stylesheet" href="../css/site.css" />
+    <link rel="stylesheet" href="../css/login.css" />
     <script src="../js/login.js"></script>
 </head>
 
 <body>
     <div data-role="page">
-        <div data-role="content" class="content-body"></div>
+        <div role="main" class="ui-content">
+            <div class="login-body-container d-flex">
+                <div>
+                    <div>
+                        <h1>Login</h1>
+                        <div class="input-field-container">
+                            <i class=" material-icons input-field-icon">person</i>
+                            <input class="input-field" type="text" placeholder="Username" name="usrnm">
+                        </div>
+                        <div class="input-field-container">
+                            <i class=" material-icons input-field-icon">lock</i>
+                            <input class="input-field" type="text" placeholder="Username" name="usrnm">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img src="../assets/logo/eoto_logo_dark.png">
+                    <img src="../assets/vectors/User_login_iPad.svg">
+                    <h1>Welcome Back!</h1>
+                </div>
+            </div>
+        </div>
         <div data-role="footer" class="footer">
             <div class="footer-top">
                 <div class="footer-left">
