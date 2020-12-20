@@ -11,12 +11,7 @@
     background-color: #F9F9F9;
 }
 
-.login-body-container>div:not(:first-child)>img:first-child {
-    width: 160px;
-    height: 90px;
-}
-
-.login-body-container>div:not(:first-child)>img:not(:first-child) {
+.login-body-container>div:not(:first-child)>img {
     height: 270px;
     margin: 25px;
 }
