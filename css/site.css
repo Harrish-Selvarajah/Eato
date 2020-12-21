@@ -2,6 +2,8 @@ body {
     margin: 0;
 }
 
+/* Typograghy Start */
+
 h1 {
     margin: 0;
     font-size: 28px;
@@ -54,23 +56,26 @@ h5 {
 
 /* .content-body {
     background-color: !important;
+/* Typograghy End */
+
+.ui-content {
+    padding: 0 !important;
+    min-height: 100vh !important;
 }
 
-.header-bar {
-    background-color:  !important;
-    height:  !important;
-} */
+.d-flex {
+    display: flex !important;
+}
+
+/* Footer Style Start */
 
 .footer {
     background-color: #000000;
     box-sizing: border-box;
     width: 100%;
     padding: 20px;
-    margin-top: 60px;
     position: relative;
     color: #ffffff;
-    display: block;
-    line-height: 1.5em;
 }
 
 .footer-top {
@@ -114,3 +119,5 @@ h5 {
 .footer-bottom>p {
     margin: 0;
 }
+
+/* Footer Style End */
