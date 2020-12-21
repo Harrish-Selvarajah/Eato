@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="../lib/jquery-1.12.4.min.js"></script>
     <script src="../lib/jquery.mobile-1.4.5.min.js"></script>
+    <script src="../js/customer-review.js"></script>
 </head>
 
 <body>
@@ -43,6 +44,87 @@
             <div class="card">
                 <div id="customer-feedback">
                     <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <div style="height: 15px;"></div>
+                        </div>
+                        <div class="ui-block-b">
+                            <div style="float: right; padding-right: 10px;
+                            padding-top: 5px;
+                            padding-left: 10px;">
+                                <!-- <a id='btnShowSignUp' data-role="button" href='#' onclick="ShowSignUp();">Show</a> -->
+                                <!-- <a href="#" class="ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all">No text</a> -->
+                                <!-- <img src="../assets/downArrow.png" style="height: 10px;"> -->
+                                <!-- <a id='btnShowSignUp' data-role="button" href='#' onclick="ShowSignUp();">Sign Up</a> -->
+                                <a id='btnShowSignUp' href="#" data-shadow="false" data-theme="none"
+                                    onclick="ShowSignUp();">
+                                    <img src="../assets/downArrow.png" style="height: 15px;">
+                                </a>
+                                <!-- <div id="custom-border-radius">
+                                        <a href="#" class="ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all">No
+                                        text</a>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-grid-b">
+                        <div class="ui-block-a">
+                            <div class="ui-bar ui-bar">
+                                <div class="outer-circle">
+                                    <div class="circular_image">
+                                        <img src="../assets/harrish.jpg">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h5>
+                            S. Harrish
+                        </h5>
+                        <div class="ui-grid-a">
+                            <div class="ui-block-a">
+                                <div>
+                                    <div class="ui-grid-d">
+                                        <div class="ui-block-a">
+                                            <img src="../assets/star.png" style="height: 10px;">
+                                        </div>
+                                        <div class="ui-block-b">
+                                            <img src="../assets/star.png" style="height: 10px;">
+                                        </div>
+                                        <div class="ui-block-c">
+                                            <img src="../assets/star.png" style="height: 10px;">
+                                        </div>
+                                        <div class="ui-block-d">
+                                            <img src="../assets/star.png" style="height: 10px;">
+                                        </div>
+                                        <div class="ui-block-e">
+                                            <img src="../assets/star.png" style="height: 10px;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ui-block-b">
+                                <div class="date">
+                                    21.12.2020
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="infoText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div page-role="page" id="vendor-feedback" style="display: none;">
+                    <div class="feedback">
+                        <h6>asd</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div id="customer-feedback">
+                    <div>
                         <div style="float: right;">
                             <!-- <a id='btnShowSignUp' data-role="button" href='#' onclick="ShowSignUp();">Show</a> -->
                             <!-- <a href="#" class="ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all">No text</a> -->
@@ -61,6 +143,7 @@
                                         <img src="../assets/harrish.jpg">
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                         <h5>
@@ -68,30 +151,30 @@
                         </h5>
                         <div class="ui-grid-a">
                             <div class="ui-block-a">
-                               <div>
-                                   <div class="ui-grid-d">
-                                       <div class="ui-block-a">
-                                        <img src="../assets/star.png" style="height: 10px;">
-                                       </div>
-                                       <div class="ui-block-b">
-                                        <img src="../assets/star.png" style="height: 10px;">
-                                       </div>
-                                       <div class="ui-block-c">
-                                        <img src="../assets/star.png" style="height: 10px;">
-                                       </div>
-                                       <div class="ui-block-d">
-                                        <img src="../assets/star.png" style="height: 10px;">
-                                       </div>
-                                       <div class="ui-block-e">
-                                        <img src="../assets/star.png" style="height: 10px;">
-                                       </div>
-                                   </div>
-                               </div>
+                                <div>
+                                    <div class="ui-grid-d">
+                                        <div class="ui-block-a">
+                                            <img src="../assets/star.png" style="height: 10px;">
+                                        </div>
+                                        <div class="ui-block-b">
+                                            <img src="../assets/star.png" style="height: 10px;">
+                                        </div>
+                                        <div class="ui-block-c">
+                                            <img src="../assets/star.png" style="height: 10px;">
+                                        </div>
+                                        <div class="ui-block-d">
+                                            <img src="../assets/star.png" style="height: 10px;">
+                                        </div>
+                                        <div class="ui-block-e">
+                                            <img src="../assets/star.png" style="height: 10px;">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="ui-block-b">
-                               <div class="date">
+                                <div class="date">
                                     21.12.2020
-                               </div>
+                                </div>
                             </div>
                         </div>
                         <div>
@@ -138,100 +221,30 @@
                         </h5>
                         <div class="ui-grid-a">
                             <div class="ui-block-a">
-                               <div>
-                                   <div class="ui-grid-d">
-                                       <div class="ui-block-a">
-                                        <img src="../assets/star.png" style="height: 10px;">
-                                       </div>
-                                       <div class="ui-block-b">
-                                        <img src="../assets/star.png" style="height: 10px;">
-                                       </div>
-                                       <div class="ui-block-c">
-                                        <img src="../assets/star.png" style="height: 10px;">
-                                       </div>
-                                       <div class="ui-block-d">
-                                        <img src="../assets/star.png" style="height: 10px;">
-                                       </div>
-                                       <div class="ui-block-e">
-                                        <img src="../assets/star.png" style="height: 10px;">
-                                       </div>
-                                   </div>
-                               </div>
-                            </div>
-                            <div class="ui-block-b">
-                               <div class="date">
-                                    21.12.2020
-                               </div>
-                            </div>
-                        </div>
-                        <div>
-                            <p class="infoText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Lorem ipsum dolor sit amet.</p>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- <div id="vendor-feedback">
-                    <div class="feedback">
-                        <h6>asd</h6>
-                    </div>
-                </div> -->
-            </div>
-
-            <div class="card">
-                <div id="customer-feedback">
-                    <div>
-                        <div style="float: right;">
-                            <!-- <a id='btnShowSignUp' data-role="button" href='#' onclick="ShowSignUp();">Show</a> -->
-                            <!-- <a href="#" class="ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all">No text</a> -->
-                            <img src="../assets/downArrow.png" style="height: 10px;">
-                            <!-- <div id="custom-border-radius">
-                                    <a href="#" class="ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all">No
-                                    text</a>
-                            </div> -->
-                        </div>
-                    </div>
-                    <div class="ui-grid-b">
-                        <div class="ui-block-a">
-                            <div class="ui-bar ui-bar">
-                                <div class="outer-circle">
-                                    <div class="circular_image">
-                                        <img src="../assets/harrish.jpg">
+                                <div>
+                                    <div class="ui-grid-d">
+                                        <div class="ui-block-a">
+                                            <img src="../assets/star.png" style="height: 10px;">
+                                        </div>
+                                        <div class="ui-block-b">
+                                            <img src="../assets/star.png" style="height: 10px;">
+                                        </div>
+                                        <div class="ui-block-c">
+                                            <img src="../assets/star.png" style="height: 10px;">
+                                        </div>
+                                        <div class="ui-block-d">
+                                            <img src="../assets/star.png" style="height: 10px;">
+                                        </div>
+                                        <div class="ui-block-e">
+                                            <img src="../assets/star.png" style="height: 10px;">
+                                        </div>
                                     </div>
                                 </div>
-
-                            </div>
-                        </div>
-                        <h5>
-                            S. Harrish
-                        </h5>
-                        <div class="ui-grid-a">
-                            <div class="ui-block-a">
-                               <div>
-                                   <div class="ui-grid-d">
-                                       <div class="ui-block-a">
-                                        <img src="../assets/star.png" style="height: 10px;">
-                                       </div>
-                                       <div class="ui-block-b">
-                                        <img src="../assets/star.png" style="height: 10px;">
-                                       </div>
-                                       <div class="ui-block-c">
-                                        <img src="../assets/star.png" style="height: 10px;">
-                                       </div>
-                                       <div class="ui-block-d">
-                                        <img src="../assets/star.png" style="height: 10px;">
-                                       </div>
-                                       <div class="ui-block-e">
-                                        <img src="../assets/star.png" style="height: 10px;">
-                                       </div>
-                                   </div>
-                               </div>
                             </div>
                             <div class="ui-block-b">
-                               <div class="date">
+                                <div class="date">
                                     21.12.2020
-                               </div>
+                                </div>
                             </div>
                         </div>
                         <div>
@@ -278,30 +291,100 @@
                         </h5>
                         <div class="ui-grid-a">
                             <div class="ui-block-a">
-                               <div>
-                                   <div class="ui-grid-d">
-                                       <div class="ui-block-a">
-                                        <img src="../assets/star.png" style="height: 10px;">
-                                       </div>
-                                       <div class="ui-block-b">
-                                        <img src="../assets/star.png" style="height: 10px;">
-                                       </div>
-                                       <div class="ui-block-c">
-                                        <img src="../assets/star.png" style="height: 10px;">
-                                       </div>
-                                       <div class="ui-block-d">
-                                        <img src="../assets/star.png" style="height: 10px;">
-                                       </div>
-                                       <div class="ui-block-e">
-                                        <img src="../assets/star.png" style="height: 10px;">
-                                       </div>
-                                   </div>
-                               </div>
+                                <div>
+                                    <div class="ui-grid-d">
+                                        <div class="ui-block-a">
+                                            <img src="../assets/star.png" style="height: 10px;">
+                                        </div>
+                                        <div class="ui-block-b">
+                                            <img src="../assets/star.png" style="height: 10px;">
+                                        </div>
+                                        <div class="ui-block-c">
+                                            <img src="../assets/star.png" style="height: 10px;">
+                                        </div>
+                                        <div class="ui-block-d">
+                                            <img src="../assets/star.png" style="height: 10px;">
+                                        </div>
+                                        <div class="ui-block-e">
+                                            <img src="../assets/star.png" style="height: 10px;">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="ui-block-b">
-                               <div class="date">
+                                <div class="date">
                                     21.12.2020
-                               </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="infoText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- <div id="vendor-feedback"  style="display: none">
+                    <div class="feedback">
+                        <h6>asd</h6>
+                    </div>
+                </div> -->
+            </div>
+
+            <div class="card">
+                <div id="customer-feedback">
+                    <div class="ui-grid-b">
+                        <div style="float: right;">
+                            <!-- <a id='btnShowSignUp' data-role="button" href='#' onclick="ShowSignUp();">Show</a> -->
+                            <!-- <a href="#" class="ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all">No text</a> -->
+                            <img src="../assets/downArrow.png" style="height: 10px;">
+                            <!-- <div id="custom-border-radius">
+                                    <a href="#" class="ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all">No
+                                    text</a>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="ui-grid-b">
+                        <div class="ui-block-a">
+                            <div class="ui-bar ui-bar">
+                                <div class="outer-circle">
+                                    <div class="circular_image">
+                                        <img src="../assets/harrish.jpg">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <h5>
+                            S. Harrish
+                        </h5>
+                        <div class="ui-grid-a">
+                            <div class="ui-block-a">
+                                <div>
+                                    <div class="ui-grid-d">
+                                        <div class="ui-block-a">
+                                            <img src="../assets/star.png" style="height: 10px;">
+                                        </div>
+                                        <div class="ui-block-b">
+                                            <img src="../assets/star.png" style="height: 10px;">
+                                        </div>
+                                        <div class="ui-block-c">
+                                            <img src="../assets/star.png" style="height: 10px;">
+                                        </div>
+                                        <div class="ui-block-d">
+                                            <img src="../assets/star.png" style="height: 10px;">
+                                        </div>
+                                        <div class="ui-block-e">
+                                            <img src="../assets/star.png" style="height: 10px;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ui-block-b">
+                                <div class="date">
+                                    21.12.2020
+                                </div>
                             </div>
                         </div>
                         <div>
@@ -348,100 +431,30 @@
                         </h5>
                         <div class="ui-grid-a">
                             <div class="ui-block-a">
-                               <div>
-                                   <div class="ui-grid-d">
-                                       <div class="ui-block-a">
-                                        <img src="../assets/star.png" style="height: 10px;">
-                                       </div>
-                                       <div class="ui-block-b">
-                                        <img src="../assets/star.png" style="height: 10px;">
-                                       </div>
-                                       <div class="ui-block-c">
-                                        <img src="../assets/star.png" style="height: 10px;">
-                                       </div>
-                                       <div class="ui-block-d">
-                                        <img src="../assets/star.png" style="height: 10px;">
-                                       </div>
-                                       <div class="ui-block-e">
-                                        <img src="../assets/star.png" style="height: 10px;">
-                                       </div>
-                                   </div>
-                               </div>
-                            </div>
-                            <div class="ui-block-b">
-                               <div class="date">
-                                    21.12.2020
-                               </div>
-                            </div>
-                        </div>
-                        <div>
-                            <p class="infoText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Lorem ipsum dolor sit amet.</p>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- <div id="vendor-feedback">
-                    <div class="feedback">
-                        <h6>asd</h6>
-                    </div>
-                </div> -->
-            </div>
-
-            <div class="card">
-                <div id="customer-feedback">
-                    <div class="ui-grid-b">
-                        <div style="float: right;">
-                            <!-- <a id='btnShowSignUp' data-role="button" href='#' onclick="ShowSignUp();">Show</a> -->
-                            <!-- <a href="#" class="ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all">No text</a> -->
-                            <img src="../assets/downArrow.png" style="height: 10px;">
-                            <!-- <div id="custom-border-radius">
-                                    <a href="#" class="ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all">No
-                                    text</a>
-                            </div> -->
-                        </div>
-                    </div>
-                    <div class="ui-grid-b">
-                        <div class="ui-block-a">
-                            <div class="ui-bar ui-bar">
-                                <div class="outer-circle">
-                                    <div class="circular_image">
-                                        <img src="../assets/harrish.jpg">
+                                <div>
+                                    <div class="ui-grid-d">
+                                        <div class="ui-block-a">
+                                            <img src="../assets/star.png" style="height: 10px;">
+                                        </div>
+                                        <div class="ui-block-b">
+                                            <img src="../assets/star.png" style="height: 10px;">
+                                        </div>
+                                        <div class="ui-block-c">
+                                            <img src="../assets/star.png" style="height: 10px;">
+                                        </div>
+                                        <div class="ui-block-d">
+                                            <img src="../assets/star.png" style="height: 10px;">
+                                        </div>
+                                        <div class="ui-block-e">
+                                            <img src="../assets/star.png" style="height: 10px;">
+                                        </div>
                                     </div>
                                 </div>
-
-                            </div>
-                        </div>
-                        <h5>
-                            S. Harrish
-                        </h5>
-                        <div class="ui-grid-a">
-                            <div class="ui-block-a">
-                               <div>
-                                   <div class="ui-grid-d">
-                                       <div class="ui-block-a">
-                                        <img src="../assets/star.png" style="height: 10px;">
-                                       </div>
-                                       <div class="ui-block-b">
-                                        <img src="../assets/star.png" style="height: 10px;">
-                                       </div>
-                                       <div class="ui-block-c">
-                                        <img src="../assets/star.png" style="height: 10px;">
-                                       </div>
-                                       <div class="ui-block-d">
-                                        <img src="../assets/star.png" style="height: 10px;">
-                                       </div>
-                                       <div class="ui-block-e">
-                                        <img src="../assets/star.png" style="height: 10px;">
-                                       </div>
-                                   </div>
-                               </div>
                             </div>
                             <div class="ui-block-b">
-                               <div class="date">
+                                <div class="date">
                                     21.12.2020
-                               </div>
+                                </div>
                             </div>
                         </div>
                         <div>
@@ -462,6 +475,7 @@
                 <h4>Page Footer</h4>
             </div> -->
         </div>
+    </div>
 </body>
 
 </html>
