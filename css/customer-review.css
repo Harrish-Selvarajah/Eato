@@ -1,5 +1,6 @@
 .card-title {
     text-align: center;
+  
 }
 
 .circular_image {
@@ -31,4 +32,7 @@
     display: inline-block;
     vertical-align: middle;
     border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
