@@ -1,0 +1,14 @@
+.review-desc {
+    text-align: center;
+    padding: 25;
+}
+
+.stars {
+    text-align: center;
+    padding: 25;
+}
+
+.comment-box {
+    border-radius: 5px;
+    height: 300px;
+}
