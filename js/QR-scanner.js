@@ -7,7 +7,7 @@ $(document).on('pageinit', '#qr-scanner',  function(){
   
   const qrResult = document.getElementById("qr-result");
   var outputData = document.getElementById("outputData");
-  var btnScanQR = document.getElementById("btn-scan-qr");
+//   var btnScanQR = document.getElementById("btn-scan-qr");
   
   let scanning = false;
 
@@ -22,7 +22,7 @@ $(document).on('pageinit', '#qr-scanner',  function(){
   
       qrResult.hidden = false;
       canvasElement.hidden = true;
-      btnScanQR.hidden = false;
+    //   btnScanQR.hidden = false;
     }
   };
   
@@ -32,7 +32,7 @@ $(document).on('pageinit', '#qr-scanner',  function(){
           .then(function(stream) {
             scanning = true;
             qrResult.hidden = true;
-            btnScanQR.hidden = true;
+            // btnScanQR.hidden = true;
             canvasElement.hidden = false;
             video.setAttribute("playsinline", true); // required to tell iOS safari we don't want fullscreen
             video.srcObject = stream;

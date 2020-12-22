@@ -15,7 +15,7 @@
     <script src="../lib/jquery.mobile-1.4.5.min.js"></script>
     <script src="../js/QR-scanner.js"></script>
     <!-- <script src="https://raw.githubusercontent.com/mebjas/html5-qrcode/master/minified/html5-qrcode.min.js"></script> -->
-    <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js">    </script>
+    <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 </head>
@@ -44,17 +44,22 @@
         </div>
         <!-- </div> -->
         <div role="main" class="ui-content">
-            <a id='btn-scan-qr' href="#" data-shadow="false" data-theme="none"
-            onclick="qrScanner();">here first</a>
+            <!-- <a id='btn-scan-qr' href="#" data-shadow="false" data-theme="none"
+            onclick="qrScanner();">here first</a> -->
             <!-- <a id='btn-scan-qr' href="#" data-shadow="false" data-theme="none"
             onclick="scanClick();">True</a> -->
             <div>
                 <canvas hidden="" id="qr-canvas"></canvas>
             </div>
-         
-
             <div id="qr-result" hidden="">
-                <b>Data:</b> <span id="outputData"></span>
+                <!-- <b>Data:</b> <span id="outputData"></span> -->
+                <div class="card">
+                    <div class="pop-up">
+                        <div class="pop-up-content">
+                            <h6><span id="outputData"></span></h6>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
