@@ -40,3 +40,9 @@
     border-radius: 40px;
     background-color: red;
 }
+
+.button-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
