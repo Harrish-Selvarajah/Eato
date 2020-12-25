@@ -29,6 +29,10 @@ h5 {
     font-size: 14px;
 }
 
+p {
+    margin: 0;
+}
+
 .subtitle {
     margin: 0;
     font-size: 16px;
@@ -60,7 +64,19 @@ h5 {
 
 .ui-content {
     padding: 0 !important;
-    min-height: 100vh !important;
+    min-height: 100vh;
+    background-color: white;
+}
+
+.ui-focus {
+    -webkit-box-shadow: none!important;
+    -moz-box-shadow: none!important;
+    box-shadow: none!important;
+}
+
+.ui-checkbox input {
+    left: inherit!important;
+    width: 15px!important;
 }
 
 .d-flex {
@@ -70,12 +86,13 @@ h5 {
 /* Footer Style Start */
 
 .footer {
-    background-color: #000000;
+    background-color: #000000!important;
     box-sizing: border-box;
     width: 100%;
     padding: 20px;
     position: relative;
-    color: #ffffff;
+    color: #ffffff!important;
+    text-shadow: none!important;
 }
 
 .footer-top {
@@ -88,7 +105,6 @@ h5 {
 }
 
 .footer-left>p {
-    margin: 0;
     color: rgba(255, 255, 255, 0.75);
 }
 
@@ -121,3 +137,52 @@ h5 {
 }
 
 /* Footer Style End */
+
+/* Input Field Styles Begin*/
+
+.input-field-container {
+    display: flex;
+    position: relative;
+    align-items: center!important;
+    margin-top: 20px;
+}
+
+.input-field-container>div {
+    margin: 0;
+    border-top: solid 1px #787878!important;
+    border-right: solid 1px #787878!important;
+    border-bottom: solid 1px #787878!important;
+    border-left: solid 1px #787878!important;
+    border-radius: 20px;
+}
+
+.input-field-container>div>input {
+    width: 290px;
+    color: #787878;
+    padding: 10px;
+    background: inherit!important;
+}
+
+.input-field-icon-input {
+    padding-left: 40px!important;
+}
+
+.input-field-icon {
+    font-size: 20px;
+    position: absolute;
+    left: 12px;
+    color: #787878;
+}
+
+/* Input Field Styles End*/
+
+.action-btn>button {
+    background-color: #FD6921!important;
+    border-color: #FD6921!important;
+    border-radius: 20px!important;
+    text-shadow: none!important;
+}
+
+.action-btn>button>p {
+    color: white;
+}
