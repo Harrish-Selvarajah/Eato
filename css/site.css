@@ -61,6 +61,7 @@ h5 {
 .ui-content {
     padding: 0 !important;
     min-height: 100vh !important;
+    background-color: white;
 }
 
 .d-flex {
@@ -70,12 +71,13 @@ h5 {
 /* Footer Style Start */
 
 .footer {
-    background-color: #000000;
+    background-color: #000000!important;
     box-sizing: border-box;
     width: 100%;
     padding: 20px;
     position: relative;
-    color: #ffffff;
+    color: #ffffff!important;
+    text-shadow: none!important;
 }
 
 .footer-top {
