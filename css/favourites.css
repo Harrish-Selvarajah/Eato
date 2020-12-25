@@ -1,0 +1,95 @@
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: lightblue;
+    /* margin-right: 20px !important;
+    margin-left: 20px !important; */
+    align-items : center;
+    /* align-self: center !important; */
+    padding: 15px;
+  
+}
+
+.flex-container > div {
+    background-color: red;
+    margin-right: 30px;
+    width: 300px;
+    min-width: 300px !important;
+    height: 225px;
+    min-height: 225px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    border-radius: 20px;
+}
+
+/* .flex-container  div:first-child {
+    margin-left: 0px !important;
+}
+
+.flex-container div:last-child {
+    margin-right: 0px !important;
+} */
+
+
+/*Targets the Ipad - Landscape*/
+@media only screen and (min-width : 850px) and (max-width : 1024px){
+    .flex-container > div:nth-child(3n) {
+       margin-right: 0px;
+       background-color: green;
+    }
+
+    .flex-container {
+        padding: 15px;
+    }
+}
+
+/*Targets the Iphone - LandScape*/
+@media only screen and (min-width : 769px) and (max-width : 849px){
+    .flex-container > div:nth-child(2n) {
+       margin-right: 0px;
+       background-color: green;
+    }
+
+    .flex-container > div {
+        width: 350px;;
+    }
+
+    .flex-container {
+        padding: 25px;
+    }
+}
+
+/* Targets Ipad - Portrait  */
+@media only screen and (min-width : 450px) and (max-width : 768px){
+    .flex-container > div:nth-child(2n) {
+       margin-right: 0px;
+       background-color: yellow;
+    }
+
+    .flex-container {
+        padding: 15px;
+    }
+
+    .flex-container > div {
+        width: 335px;;
+    }
+}
+
+/* Targets the mobile screen - potrait view */
+@media only screen and (max-width : 450px){
+
+    .flex-container{
+        display: flex;
+        flex-direction: column;
+        background-color: lightblue;
+    }
+
+    .flex-container {
+        padding: 5px;
+    }
+
+    .flex-container > div {
+        width: 335px;;
+    }
+} 
