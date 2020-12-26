@@ -20,22 +20,48 @@
     min-height: 225px;
     margin-top: 12px;
     margin-bottom: 12px;
-    border-radius: 20px;
+    border-radius: 26px;
     padding: 0px;
-    background-image: url(../assets/img/burger.jpeg);
+    /* background-image: url(../assets/img/burger.jpeg); */
 }
 
 .image-container{
     background-color: greenyellow !important;
     width: 100%;
-    height: 160px;
-    border-radius: 15px;
-    /* background-image: url(../assets/img/burger.jpeg); */
-    
+    height: 180px;
+    border-radius: 25px;
+    background-image: url(../assets/img/burger.jpeg);
+    background-position: center;
+}
+
+.poi-container {
+    display:flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin:0px;
+    background-color: indigo;
+    padding: 10px;
 }
 
 .info-container{
+    height: 70px;
+    background-color: hotpink;
+    width: 100%;
+    border-radius: 0px 0px 25px 25px;
+}
 
+.title-container {
+    width: fit-content;
+    background-color: lightcoral !important;
+}
+
+.checkbox-container {
+    width: fit-content;
+    background-color: lightslategray !important;
+}
+
+.title-container h2 {
+    margin-left: 10px;
 }
 
 /*Targets the Ipad - Landscape*/
