@@ -1,0 +1,226 @@
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+    /* margin-right: 20px !important;
+    margin-left: 20px !important; */
+    align-items : center;
+    /* align-self: center !important; */
+    padding: 15px;
+  
+}
+
+.flex-container > div {
+    margin-right: 30px;
+    width: 300px;
+    min-width: 300px !important;
+    height: 225px;
+    min-height: 225px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    border-radius: 26px;
+    padding: 0px;
+    box-shadow: 4px 4px 18px -2px rgba(0,0,0,0.36);
+    /* background-image: url(../assets/img/burger.jpeg); */
+}
+
+.image-container{
+    width: 100%;
+    height: 160px;
+    border-radius: 25px;
+    background-image: url(../assets/img/burger.jpeg);
+    background-position: center;
+}
+
+.poi-container {
+    display:flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin:0px;
+    padding: 10px;
+}
+
+.info-container{
+    height: 70px;
+    width: 100%;
+    border-radius: 0px 0px 25px 25px;
+    display: block;
+    margin-right: 10px;
+}
+
+.info-container > .info-line-1 {
+    display: inline-flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 20px 0px 0px 0px;
+    line-height: 0px;
+}
+
+.info-container > .info-line-2 {
+    display: inline-flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0px;
+    padding-left: 15px;
+}
+
+
+.info-line-1 > h2 {
+    flex: 4;
+    margin: 5px 0px 0px 15px !important;
+
+}
+
+.info-line-1 > .ui-checkbox {
+    flex: 1;
+    margin: 0px;
+}
+
+.info-line-2 > h4 {
+    margin: 0px 0px 0px 1px;
+}
+
+.icon-star{
+    color: #FD6921;
+    font-size: 20px;
+    text-shadow: none;
+}
+
+.icon-fav{
+    color: #FD6921;
+    font-size: 25px;
+    text-shadow: none;
+    position: relative;
+    top: 4px;
+    left: 2px;
+}
+
+.heart-container{
+    background-color: #ffffff;
+    width: 30px;
+    height: 30px;
+    margin: 10px 10px 0px auto;
+    border-radius: 100%;
+    box-shadow: 4px 4px 18px -2px rgba(0,0,0,0.36);
+}
+
+/*Targets the Ipad - Landscape*/
+@media only screen and (min-width : 850px) and (max-width : 1024px){
+    .flex-container > div:nth-child(3n) {
+       margin-right: 0px;
+      
+    }
+
+    .flex-container {
+        padding: 15px;
+    }
+}
+
+/*Targets the Iphone - LandScape*/
+@media only screen and (min-width : 769px) and (max-width : 849px){
+    .flex-container > div:nth-child(2n) {
+       margin-right: 0px;
+    }
+
+    .flex-container > div {
+        width: 350px;;
+    }
+
+    .flex-container {
+        padding: 25px;
+    }
+}
+
+/* Targets Ipad - Portrait  */
+@media only screen and (min-width : 450px) and (max-width : 768px){
+    .flex-container > div:nth-child(2n) {
+       margin-right: 0px;
+    }
+
+    .flex-container {
+        padding: 15px;
+    }
+
+    .flex-container > div {
+        width: 335px;;
+    }
+}
+
+/* Targets the mobile screen - potrait view */
+@media only screen and (max-width : 450px){
+
+    .flex-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .flex-container {
+        padding: 5px;
+    }
+
+    .flex-container > div {
+        width: 335px;;
+    }
+} 
+
+
+/* Container for search and filter */
+
+.search-flex-container{
+    height: 100px;
+    display: flex;
+    gap :20px;
+    justify-content: center;
+    width: fit-content !important;
+    margin: 0px auto 30px auto;
+}
+
+.input-icon-reverse{
+    position: relative;
+    left: 430px;
+}
+
+.input-size-ovrd {
+   width: 450px !important;
+   box-shadow: 4px 4px 18px -2px rgba(0,0,0,0.36);
+}
+
+.search-filter-container{
+    border-radius: 100%;
+    background-color: #ffffff;
+    box-shadow: 4px 4px 18px -2px rgba(0,0,0,0.36);
+    height: 40px;
+    width: 40px;
+    margin-top: 40px;
+}
+
+#icon-sort{
+    color: #707070;
+    font-size: 30px;
+    text-shadow: none;
+    position: relative;
+    top: 6px;
+    left: 6px;
+}
+
+#icon-share{
+    color: white;
+    font-size: 30px;
+    text-shadow: none;
+    position: relative;
+    top: 14px;
+    left:12px;
+}
+
+/* footer related */
+
+.share-button-container{
+    background-color: #707070 !important;
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    top: 82%;
+    left:90%;
+}
