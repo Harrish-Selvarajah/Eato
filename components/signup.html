@@ -8,43 +8,49 @@
     <script src="../lib/jquery.mobile-1.4.5.min.js"></script>
 
     <link rel="stylesheet" href="../css/site.css" />
-    <link rel="stylesheet" href="../css/login.css" />
-    <script src="../js/login.js"></script>
+    <link rel="stylesheet" href="../css/signup.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
     <div data-role="page">
         <div role="main" class="ui-content">
-            <div class="login-body-container d-flex">
+            <div class="signup-body-container d-flex">
                 <div>
                     <div>
-                        <h1>Login</h1>
+                        <h1>Sign up</h1>
+                        <div class="input-field-container">
+                            <i class=" material-icons input-field-icon">call</i>
+                            <input class="input-field-icon-input" type="text" placeholder="Mobile number" name="mobnum">
+                        </div>
+                        <div class="input-field-container">
+                            <i class=" material-icons input-field-icon">mail</i>
+                            <input class="input-field-icon-input" type="text" placeholder="Email" name="email">
+                        </div>
                         <div class="input-field-container">
                             <i class=" material-icons input-field-icon">person</i>
-                            <input class="input-field-icon-input" type="text" placeholder="Username" name="usrnm">
+                            <input class="input-field-icon-input" type="text" placeholder="Full name" name="fnam">
+                        </div>
+                        <div class="input-field-container">
+                            <i class=" material-icons input-field-icon">vpn_key</i>
+                            <input class="input-field-icon-input" type="text" placeholder="Password" name="pswrd">
                         </div>
                         <div class="input-field-container">
                             <i class=" material-icons input-field-icon">lock</i>
-                            <input class="input-field-icon-input" type="text" placeholder="Password" name="pswrd">
+                            <input class="input-field-icon-input" type="text" placeholder="Confirm password"
+                                name="cpswrd">
                         </div>
-                        <div class="remember-me-container">
-                            <input type="checkbox">
-                            <p class="primaryText">Remember Me</p>
-                            <p class="primaryText">Forgot Password?</p>
-                        </div>
-                        <div class="action-btn login-btn">
+                        <div class="action-btn signup-btn">
                             <button type="button">
-                                <p class="primaryText">Login</p>
+                                <p class="primaryText">Signup</p>
                             </button>
-                            <p class="primaryText to-signup-text">Don't have an account? <a>Signup</a></p>
+                            <p class="primaryText to-login-text">Alread have an account? <a>Login</a></p>
                         </div>
                     </div>
                 </div>
                 <div>
-                    <img src="../assets/logo/eoto_logo_dark.png">
                     <img src="../assets/vectors/User_login_iPad.svg">
-                    <h1>Welcome Back!</h1>
+                    <h1>Lets Get Started!</h1>
                 </div>
             </div>
         </div>

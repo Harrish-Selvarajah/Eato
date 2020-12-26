@@ -1,0 +1,35 @@
+.signup-body-container>div {
+    flex: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-body-container>div:not(:first-child) {
+    background-color: #F9F9F9;
+}
+
+.signup-body-container>div:not(:first-child)>img {
+    height: 270px;
+    margin: 25px;
+}
+
+.signup-body-container>div:not(:first-child)>h1 {
+    color: #37474F
+}
+
+.signup-body-container>div:first-child>div>h1 {
+    color: #37474F;
+    margin-bottom: 25px;
+}
+
+.signup-btn {
+    margin-top: 35px;
+    text-align: center;
+}
+
+.to-login-text>a {
+    color: #FD6921;
+}
