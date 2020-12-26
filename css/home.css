@@ -176,6 +176,8 @@ a{
     }
 
     .section-card{
+        width: 340px;
+        height: 210px;
         margin-left:unset !important; 
     }
   }
