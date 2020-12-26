@@ -1,7 +1,7 @@
 // var status = document.getElementById("vendor-feedback");
 // status.style.display = "none";
 
-function ShowSignUp(){
+function ShowVendorReply(){
   console.log('here');
     // $.mobile.changePage( "#vendor-feedback" );
     var status = document.getElementById("vendor-feedback");
