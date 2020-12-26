@@ -5,28 +5,28 @@ body {
 /* Typograghy Start */
 
 h1 {
-    margin: 0;
-    font-size: 28px;
+    margin: 0!important;
+    font-size: 28px!important;
 }
 
 h2 {
-    margin: 0;
-    font-size: 24px;
+    margin: 0!important;
+    font-size: 24px!important;
 }
 
 h3 {
-    margin: 0;
-    font-size: 21px;
+    margin: 0!important;
+    font-size: 21px!important;
 }
 
 h4 {
-    margin: 0;
-    font-size: 18px;
+    margin: 0!important;
+    font-size: 18px!important;
 }
 
 h5 {
-    margin: 0;
-    font-size: 14px;
+    margin: 0!important;
+    font-size: 14px!important;
 }
 
 p {
@@ -34,23 +34,23 @@ p {
 }
 
 .subtitle {
-    margin: 0;
-    font-size: 16px;
+    margin: 0!important;
+    font-size: 16px!important;
 }
 
 .primaryText {
-    margin: 0;
-    font-size: 14px;
+    margin: 0!important;
+    font-size: 14px!important;
 }
 
 .secondaryText {
-    margin: 0;
-    font-size: 12px;
+    margin: 0!important;
+    font-size: 12px!important;
 }
 
 .infoText {
-    margin: 0;
-    font-size: 10px;
+    margin: 0!important;
+    font-size: 10px!important;
 }
 
 .date {
@@ -68,6 +68,11 @@ p {
     background-color: white;
 }
 
+.ui-content-header {
+    margin-top: 55px;
+    min-height: 94vh!important;
+}
+
 .ui-focus {
     -webkit-box-shadow: none!important;
     -moz-box-shadow: none!important;
@@ -81,6 +86,57 @@ p {
 
 .d-flex {
     display: flex !important;
+}
+
+.header-bar {
+    min-height: 55px!important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white!important;
+    border-bottom: 1px solid rgba(112, 112, 112, 0.2)!important;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.header-bar>img {
+    position: absolute;
+    left: 30px;
+    width: 100px;
+}
+
+.header-bar>i {
+    position: absolute;
+    left: 34px;
+}
+
+.arrow {
+    border: solid #FD6A22;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 4px;
+}
+
+.arrow-right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.arrow-left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.arrow-up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+.arrow-down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
 }
 
 /* Footer Style Start */
