@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="../lib/jquery-1.12.4.min.js"></script>
     <script src="../lib/jquery.mobile-1.4.5.min.js"></script>
@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/site.css" />
     <link rel="stylesheet" href="../css/login.css" />
     <script src="../js/login.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -21,11 +22,22 @@
                         <h1>Login</h1>
                         <div class="input-field-container">
                             <i class=" material-icons input-field-icon">person</i>
-                            <input class="input-field" type="text" placeholder="Username" name="usrnm">
+                            <input class="input-field-icon-input" type="text" placeholder="Username" name="usrnm">
                         </div>
                         <div class="input-field-container">
                             <i class=" material-icons input-field-icon">lock</i>
-                            <input class="input-field" type="text" placeholder="Password" name="pswrd">
+                            <input class="input-field-icon-input" type="text" placeholder="Password" name="pswrd">
+                        </div>
+                        <div class="remember-me-container">
+                            <input type="checkbox">
+                            <p class="primaryText">Remember Me</p>
+                            <p class="primaryText">Forgot Password?</p>
+                        </div>
+                        <div class="action-btn login-btn">
+                            <button type="button">
+                                <p class="primaryText">Login</p>
+                            </button>
+                            <p class="primaryText to-signup-text">Don't have an account? <a>Signup</a></p>
                         </div>
                     </div>
                 </div>
