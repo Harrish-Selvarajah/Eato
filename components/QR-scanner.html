@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <title>Reviews</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" /> -->
+    <link rel="stylesheet" href="../css/card-css.css" />
+    <link rel="stylesheet" href="../css/QR-scanner.css" />
+    <link rel="stylesheet" href="../css/site.css" />
+    <link rel="stylesheet" href="../lib/jquery.mobile-1.4.5.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="../lib/jquery-1.12.4.min.js"></script>
+    <script src="../lib/jquery.mobile-1.4.5.min.js"></script>
+    <script src="../js/QR-scanner.js"></script>
+    <!-- <script src="https://raw.githubusercontent.com/mebjas/html5-qrcode/master/minified/html5-qrcode.min.js"></script> -->
+    <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div data-role="page" id="qr-scanner">
+        <!-- <div data-role="header" data-position="fullscreen"> -->
+        <div class="card">
+            <div class="ui-grid-b">
+                <div class="ui-block-a">
+                    <div class="ui-bar ui-bar" style="height: 30px;">
+                        <div class="ui-bar ui-bar">
+                            <img src="../assets/leftarrow.png" style="height: 15px;">
+                        </div>
+                    </div>
+                </div>
+                <div class="ui-block-b">
+                    <div class="ui-bar ui-bar" style="height: 30px; text-align: center;   display: flex;
+                    justify-content: center;
+                    align-items: center;">QR Scanner</div>
+                </div>
+                <div class="ui-block-c">
+                    <div class="ui-bar ui-bar" style="height: 30px;"></div>
+                </div>
+            </div>
+        </div>
+        <!-- </div> -->
+        <div role="main" class="ui-content">
+            <!-- <a id='btn-scan-qr' href="#" data-shadow="false" data-theme="none"
+            onclick="qrScanner();">here first</a> -->
+            <!-- <a id='btn-scan-qr' href="#" data-shadow="false" data-theme="none"
+            onclick="scanClick();">True</a> -->
+            <div>
+                <canvas hidden="" id="qr-canvas"></canvas>
+            </div>
+            <div id="qr-result" hidden="">
+                <!-- <b>Data:</b> <span id="outputData"></span> -->
+                <div class="card">
+                    <div class="pop-up">
+                        <div class="pop-up-content">
+                            <h6><span id="outputData"></span></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
