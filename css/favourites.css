@@ -21,16 +21,22 @@
     margin-top: 12px;
     margin-bottom: 12px;
     border-radius: 20px;
+    padding: 0px;
+    background-image: url(../assets/img/burger.jpeg);
 }
 
-/* .flex-container  div:first-child {
-    margin-left: 0px !important;
+.image-container{
+    background-color: greenyellow !important;
+    width: 100%;
+    height: 160px;
+    border-radius: 15px;
+    /* background-image: url(../assets/img/burger.jpeg); */
+    
 }
 
-.flex-container div:last-child {
-    margin-right: 0px !important;
-} */
+.info-container{
 
+}
 
 /*Targets the Ipad - Landscape*/
 @media only screen and (min-width : 850px) and (max-width : 1024px){
