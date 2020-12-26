@@ -2,10 +2,14 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" /> -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="../lib/jquery-1.12.4.min.js"></script>
-    <script src="../lib/jquery.mobile-1.4.5.min.js"></script>
+    <!-- <script src="../lib/jquery-1.12.4.min.js"></script>
+    <script src="../lib/jquery.mobile-1.4.5.min.js"></script> -->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
 
     <link rel="stylesheet" href="../css/vendor-review.css" />
     <link rel="stylesheet" href="../css/site.css">
@@ -67,9 +71,15 @@
                                 commodo tempus. Mauris blandit,
                                 quam in mollis faucibus, libero tellus rutrum eros, quis placerat justo ligula nec
                                 sapien.</div>
-                                <div class="replied-container">
-                                    Replied
+                            <div class="reply-div">
+                                <a href="#popupLogin" data-rel="popup" data-position-to="window"
+                                    data-transition="pop">Reply</a>
+                                <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
+                                       <div class="pop-up-header">
+                                        
+                                    </div>
                                 </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -77,5 +87,8 @@
         </div>
     </div>
 </body>
+
+
+
 
 </html>
