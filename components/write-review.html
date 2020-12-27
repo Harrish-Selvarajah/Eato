@@ -18,33 +18,19 @@
 <body>
     <div data-role="page" id="review">
         <!-- <div data-role="header" data-position="fullscreen"> -->
-        <div class="card">
-            <div class="ui-grid-b">
-                <div class="ui-block-a">
-                    <div class="ui-bar ui-bar" style="height: 30px;">
-                        <div class="ui-bar ui-bar">
-                            <img src="../assets/leftarrow.png" style="height: 15px;">
-                        </div>
-                    </div>
-                </div>
-                <div class="ui-block-b">
-                    <div class="ui-bar ui-bar" style="height: 30px; text-align: center;   display: flex;
-                    justify-content: center;
-                    align-items: center;">Write a Review</div>
-                </div>
-                <div class="ui-block-c">
-                    <div class="ui-bar ui-bar" style="height: 30px;"></div>
-                </div>
-            </div>
+        <div data-role="header" data-postion="fixed" data-fullscreen="true" class="header-bar">
+            <!-- <img src="../assets/logo new.svg"> -->
+            <i class="arrow arrow-left"></i>
+            <h4>Write a Review</h4>
         </div>
         <!-- </div> -->
-        <div role="main" class="ui-content">
+        <div role="main" class="ui-content ui-content-header">
             <div class="review-desc">
                 <h5>Rate and Drop comments, to make your</h5>
                 <h5>favorite home cookers serve better</h5>
             </div>
             <div class="stars">
-                <div class="ui-grid-d">
+                <div class="ui-grid-d" style="width: 230px;">
                     <div class="ui-block-a">
                         <img src="../assets/star.png" style="height: 27px;">
                     </div>
@@ -63,43 +49,20 @@
                 </div>
             </div>
             <div class="stars">
-                <form>
-                    <!-- <label for="text-1">Text input:</label> -->
-                    <div class="comment-box">
-                        <input type="text" name="text-1" id="text-1" value="" placeholder="Write a comment"
-                            style="height: 250px;">
-                    </div>
-
-                </form>
-            </div>
-
-
-            <!-- <div class="ui-grid-b">
-                        <div class="ui-block-a">
-                            <div class="ui-bar ui-bar" style="height: 30px;">
-                                <div class="ui-bar ui-bar">
-                                    <img src="../assets/leftarrow.png" style="height: 15px;">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ui-block-b">
-                            <div class="ui-bar ui-bar" style="height: 30px; text-align: center;   display: flex;
-                            justify-content: center;
-                            align-items: center;">Write a Review</div>
-                        </div>
-                        <div class="ui-block-c">
-                            <div class="ui-bar ui-bar" style="height: 30px;"></div>
-                        </div>
-                    </div> -->
-            <div>
-                <div class="items">
-                    <div class="item">
-                        <div class="button-text">
-                            <h6>Submit</h6>
-                        </div>
-                    </div>
+                <div class="input-field-container">
+                    <!-- <i class=" material-icons input-field-icon">person</i> -->
+                    <input class="input-field-icon-input" type="text" placeholder="Write a Review" name="usrnm" style="    width: 336px;
+                    height: 214px;">
                 </div>
             </div>
+            <div class="submit-button">
+                <div class="action-btn submit-btn">
+                    <button type="button">
+                        <p class="primaryText">Login</p>
+                    </button>
+                </div>
+            </div>
+           
         </div>
     </div>
 </body>

@@ -1,6 +1,6 @@
 .review-desc {
     text-align: center;
-    padding: 25;
+    /* padding: 25; */
 }
 
 .stars {
@@ -48,4 +48,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.submit-btn {
+    width: 289px;
+    height: 41px;
+}
+
+.submit-button
+{
+    display: flex;
+    justify-content: center;
 }
