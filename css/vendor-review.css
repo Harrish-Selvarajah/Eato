@@ -134,11 +134,23 @@ a.morelink {
 	margin: 10px;
 }
 
+.pop-over-container {
+  height: 330px;
+  width: 368px; 
+  border-radius: 20px;
+}
+
 /* iphone potrait */
 @media (min-width: 320px) and (max-width: 480px) {
   
   .review-card > div {
     padding: 5px !important
+  }
+
+  .popover {
+    height: 50px;
+    width: 250px; 
+    border-radius: 20px;
   }
 
 
