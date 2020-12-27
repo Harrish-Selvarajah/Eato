@@ -2,41 +2,49 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="../lib/jquery-1.12.4.min.js"></script>
     <script src="../lib/jquery.mobile-1.4.5.min.js"></script>
 
     <link rel="stylesheet" href="../css/site.css" />
     <link rel="stylesheet" href="../css/signup.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
     <div data-role="page">
         <div role="main" class="ui-content">
-            <div class="login-body-container d-flex">
+            <div class="signup-body-container d-flex">
                 <div>
                     <div>
                         <h1>Sign up</h1>
                         <div class="input-field-container">
                             <i class=" material-icons input-field-icon">call</i>
-                            <input class="input-field" type="text" placeholder="Mobile number" name="mobnum">
+                            <input class="input-field-icon-input" type="text" placeholder="Mobile number" name="mobnum">
                         </div>
                         <div class="input-field-container">
                             <i class=" material-icons input-field-icon">mail</i>
-                            <input class="input-field" type="text" placeholder="Email" name="email">
+                            <input class="input-field-icon-input" type="text" placeholder="Email" name="email">
                         </div>
                         <div class="input-field-container">
                             <i class=" material-icons input-field-icon">person</i>
-                            <input class="input-field" type="text" placeholder="Full name" name="fnam">
+                            <input class="input-field-icon-input" type="text" placeholder="Full name" name="fnam">
                         </div>
                         <div class="input-field-container">
                             <i class=" material-icons input-field-icon">vpn_key</i>
-                            <input class="input-field" type="text" placeholder="Password" name="pswrd">
+                            <input class="input-field-icon-input" type="text" placeholder="Password" name="pswrd">
                         </div>
                         <div class="input-field-container">
                             <i class=" material-icons input-field-icon">lock</i>
-                            <input class="input-field" type="text" placeholder="Confirm password" name="cpswrd">
+                            <input class="input-field-icon-input" type="text" placeholder="Confirm password"
+                                name="cpswrd">
+                        </div>
+                        <div class="action-btn signup-btn">
+                            <button type="button">
+                                <p class="primaryText">Signup</p>
+                            </button>
+                            <p class="primaryText to-login-text">Alread have an account? <a>Login</a></p>
                         </div>
                     </div>
                 </div>
