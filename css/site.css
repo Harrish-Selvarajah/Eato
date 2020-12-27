@@ -51,11 +51,21 @@ p {
 .infoText {
     margin: 0!important;
     font-size: 10px!important;
+    /* text-overflow:ellipsis; 
+    white-space:nowrap */
+    /* white-space: nowrap; */
+/* width: 50px; */
+/* overflow: hidden;
+text-overflow: clip; */
 }
+
+/* div.infoText:hover {
+    overflow: visible;
+  } */
 
 .date {
     margin: 0;
-    font-size: 7px;
+    font-size: 10px;
 }
 
 /* .content-body {
@@ -63,7 +73,7 @@ p {
 /* Typograghy End */
 
 .ui-content {
-    padding: 0 !important;
+    /* padding: 0 !important; */
     min-height: 100vh;
     background-color: white;
 }
@@ -138,6 +148,34 @@ p {
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
 }
+
+/* cross sign */
+
+.close {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    width: 20px;
+    height: 20px;
+    /* opacity: 0.3; */
+  }
+  .close:hover {
+    opacity: 1;
+  }
+  .close:before, .close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 20px;
+    width: 2px;
+    background-color: #FD6921!important;
+  }
+  .close:before {
+    transform: rotate(45deg);
+  }
+  .close:after {
+    transform: rotate(-45deg);
+  }  
 
 /* Footer Style Start */
 

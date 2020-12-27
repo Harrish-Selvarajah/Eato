@@ -20,80 +20,200 @@
 
 <body>
     <div data-role="page">
-        <div class="ui-content">
-            <div class="container">
-                <div class="card review-card">
-                    <div class="left-container">
-                        <div class="outer-circle">
-                            <div class="circular_image">
-                                <img src="../assets/harrish.jpg">
+        <div data-role="header" data-postion="fixed" data-fullscreen="true" class="header-bar">
+            <img src="../assets/logo/eoto_logo_dark.png">
+            <!-- <i class="arrow arrow-left"></i> -->
+            <!-- <h4>Vendor Review</h4> -->
+        </div>
+        <div role="main" class="ui-content ui-content-header">
+            <div class="ui-content">
+                <div class="container">
+                    <div class="card review-card">
+                        <div class="left-container">
+                            <div class="outer-circle">
+                                <div class="circular_image">
+                                    <img src="../assets/harrish.jpg">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="right-container">
-                        <div>
-                            <h5>
-                                S. Harrish
-                            </h5>
-                            <div class="ui-grid-a">
-                                <div class="ui-block-a">
-                                    <div>
-                                        <div class="ui-grid-d">
-                                            <div class="ui-block-a">
-                                                <img src="../assets/star.png" style="height: 10px;">
+                        <div class="right-container">
+                            <div style="width: 100%;">
+                                <div>
+                                    <h5>
+                                        S. Harrish
+                                    </h5>
+                                    <div class="ui-grid-a">
+                                        <div class="ui-block-a" style="width: 80px;">
+                                            <div style="width:74px">
+                                                <div class="ui-grid-d">
+                                                    <div class="ui-block-a">
+                                                        <img src="../assets/star.png" style="height: 10px;">
+                                                    </div>
+                                                    <div class="ui-block-b">
+                                                        <img src="../assets/star.png" style="height: 10px;">
+                                                    </div>
+                                                    <div class="ui-block-c">
+                                                        <img src="../assets/star.png" style="height: 10px;">
+                                                    </div>
+                                                    <div class="ui-block-d">
+                                                        <img src="../assets/star.png" style="height: 10px;">
+                                                    </div>
+                                                    <div class="ui-block-e">
+                                                        <img src="../assets/star.png" style="height: 10px;">
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="ui-block-b">
-                                                <img src="../assets/star.png" style="height: 10px;">
-                                            </div>
-                                            <div class="ui-block-c">
-                                                <img src="../assets/star.png" style="height: 10px;">
-                                            </div>
-                                            <div class="ui-block-d">
-                                                <img src="../assets/star.png" style="height: 10px;">
-                                            </div>
-                                            <div class="ui-block-e">
-                                                <img src="../assets/star.png" style="height: 10px;">
+                                        </div>
+                                        <div class="ui-block-b date-container">
+                                            <div class="date">
+                                                21.12.2020
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="ui-block-b">
-                                    <div class="date">
-                                        21.12.2020
+                                    <div class="infoText">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Vestibulum laoreet, nunc eget laoreet sagittis,
+                                        quam ligula sodales orci, congue imperdiet eros tortor ac lectus.
+                                        Duis eget nisl orci. Aliquam mattis purus non mauris
+                                        blandit id luctus felis convallis.
+                                        Integer varius egestas vestibulum.
+                                        Nullam a dolor arcu, ac tempor elit. Donec.
                                     </div>
                                 </div>
-                            </div>
-                            <div class="infoText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-                                suscipit ipsum in nulla malesuada, ornare tempor erat
-                                tempor. Nullam malesuada id lorem vitae interdum. Nulla quis eleifend lorem, sed aliquet
-                                augue. Duis enim est, pulvinar
-                                molestie volutpat ut, sagittis a felis. Pellentesque a nisi magna. Cras fringilla ex sed
-                                commodo tempus. Mauris blandit,
-                                quam in mollis faucibus, libero tellus rutrum eros, quis placerat justo ligula nec
-                                sapien.</div>
-                            <div class="reply-div">
-                                <a href="#popupLogin" data-rel="popup" data-position-to="window"
-                                    data-transition="pop">Reply</a>
-                                <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all" style="height: 350px;
-                                width: 400px;">
-                                       <div class="pop-up-header">
-                                        <div data-role="header" data-postion="fixed" data-fullscreen="true"
-                                            class="header-bar">
-                                            <!-- <img src="../assets/logo/eoto_logo_dark.png"> -->
-                                            <!-- <i class="arrow arrow-left"></i> -->
-                                            <h4>Type Response</h4>
-
+                               
+                                <div class="reply-div">
+                                    <a href="#popupLogin" data-rel="popup" data-position-to="window"
+                                        data-transition="pop">Reply</a>
+                                    <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all" style="height: 330px;
+                                    width: 368px; border-radius: 20px;">
+                                           <div class="pop-up-header">
+                                            <i class="close"></i>
+                                            <h5>Type Response</h5>
                                         </div>
-                                    </div>
-                                    <div class="input-field-container">
-                                        <!-- <i class=" material-icons input-field-icon">person</i> -->
-                                        <input  type="text" placeholder="Username" name="usrnm">
+                                        <div class="ui-content-header popup-header">
+                                            <div class="pop-up-content-contianer">
+                                                <div class="input-field-container">
+                                                    <input type="text" placeholder="Type message here" name="usrnm" style="height: 150px;">
+                                                </div>
+                                                <div class="action-btn popup-btn">
+                                                    <button type="button">
+                                                        <p class="primaryText">Login</p>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                          
+                                        </div>
+                                       
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="container">
+                    <div class="card review-card">
+                        <div class="left-container">
+                            <div class="outer-circle">
+                                <div class="circular_image">
+                                    <img src="../assets/harrish.jpg">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right-container">
+                            <div style="width: 100%;">
+                                <div>
+                                    <h5>
+                                        S. Harrish
+                                    </h5>
+                                    <div class="ui-grid-a">
+                                        <div class="ui-block-a" style="width: 80px;">
+                                            <div style="width:74px">
+                                                <div class="ui-grid-d">
+                                                    <div class="ui-block-a">
+                                                        <img src="../assets/star.png" style="height: 10px;">
+                                                    </div>
+                                                    <div class="ui-block-b">
+                                                        <img src="../assets/star.png" style="height: 10px;">
+                                                    </div>
+                                                    <div class="ui-block-c">
+                                                        <img src="../assets/star.png" style="height: 10px;">
+                                                    </div>
+                                                    <div class="ui-block-d">
+                                                        <img src="../assets/star.png" style="height: 10px;">
+                                                    </div>
+                                                    <div class="ui-block-e">
+                                                        <img src="../assets/star.png" style="height: 10px;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ui-block-b date-container">
+                                            <div class="date">
+                                                21.12.2020
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="infoText">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Vestibulum laoreet, nunc eget laoreet sagittis,
+                                        quam ligula sodales orci, congue imperdiet eros tortor ac lectus.
+                                        Duis eget nisl orci. Aliquam mattis purus non mauris
+                                        blandit id luctus felis convallis.
+                                        Integer varius egestas vestibulum.
+                                        Nullam a dolor arcu, ac tempor elit. Donec.
+                                    </div>
+                                </div>
+                               
+                                <div class="reply-div">
+                                    <a href="#popupLogin" data-rel="popup" data-position-to="window"
+                                        data-transition="pop">Reply</a>
+                                    <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all" style="height: 330px;
+                                    width: 368px; border-radius: 20px;">
+                                           <div class="pop-up-header">
+                                            <i class="close"></i>
+                                            <h5>Type Response</h5>
+                                        </div>
+                                        <div class="ui-content-header popup-header">
+                                            <div class="pop-up-content-contianer">
+                                                <div class="input-field-container">
+                                                    <input type="text" placeholder="Type message here" name="usrnm" style="height: 150px;">
+                                                </div>
+                                                <div class="action-btn popup-btn">
+                                                    <button type="button">
+                                                        <p class="primaryText">Login</p>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                          
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-role="footer" class="footer">
+            <div class="footer-top">
+                <div class="footer-left">
+                    <h4>Contact</h4>
+                    <p class="secondaryText"><a href="mailto:info@eato.eat">info@eato.eat</a></p>
+                    <br>
+                    <h4>Address</h4>
+                    <p class="secondaryText">50, Chez Road, Panisse</p>
+                </div>
+                <div class="footer-right">
+                    <img src="../assets/logo/eoto_logo_light.png">
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <i class="material-icons">account_circle</i>
+                <i class="material-icons">account_circle</i>
+                <i class="material-icons">account_circle</i>
+                <p class="footer-copyrights infoText">© 2021 Eato. All Rights Reserved.</p>
             </div>
         </div>
     </div>
