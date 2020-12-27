@@ -1,0 +1,42 @@
+.profile-body-container>div:first-child {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-body-container>div:last-child {
+    flex: 1;
+}
+
+.loyalty-balance>div:first-child, .loyalty-balance>div:last-child {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loyalty-balance>div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 3px;
+}
+
+.loyalty-balance>div:first-child>h4:not(:first-child) {
+    color: #FD6921;
+}
+
+.loyalty-balance>div:first-child>h5 {
+    color: #5C5C5C;
+}
+
+.loyalty-balance>div:first-child>img {
+    width: 68px;
+}
+
+.vertical-line {
+    border-left: 2.5px solid #ADADAD;
+    height: 100px;
+}
