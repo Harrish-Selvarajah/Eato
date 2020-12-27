@@ -6,6 +6,9 @@
 .stars {
     text-align: center;
     padding: 25;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .comment-box {
