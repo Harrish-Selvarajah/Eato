@@ -53,6 +53,8 @@
 .submit-btn {
     width: 289px;
     height: 41px;
+    position: absolute;
+    bottom: 0;
     margin-bottom: 20px;
 }
 
