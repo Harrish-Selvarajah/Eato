@@ -1,68 +1,69 @@
 <html>
 
 <head>
-    <title>Write-Review</title>
+    <title>Profile</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" /> -->
-    <link rel="stylesheet" href="../css/card-css.css" />
-    <link rel="stylesheet" href="../css/write-review.css" />
-    <link rel="stylesheet" href="../css/site.css" />
-    <link rel="stylesheet" href="../lib/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="../lib/jquery-1.12.4.min.js"></script>
-    <script src="../lib/jquery.mobile-1.4.5.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+
+    <link rel="stylesheet" href="../css/site.css" />
+    <link rel="stylesheet" href="../css/write-review.css" />
+    <link rel="stylesheet" href="../css/card-css.css" />
+
+    <script src="../js/profile.js"></script>
 </head>
 
 <body>
-    <div data-role="page" id="review">
-        <!-- <div data-role="header" data-position="fullscreen"> -->
+    <div data-role="page">
         <div data-role="header" data-postion="fixed" data-fullscreen="true" class="header-bar">
             <!-- <img src="../assets/logo new.svg"> -->
             <i class="arrow arrow-left"></i>
-            <h4>Write a Review</h4>
+            <h4>Profile</h4>
         </div>
-        <!-- </div> -->
         <div role="main" class="ui-content ui-content-header">
-            <div class="review-desc">
-                <h5>Rate and Drop comments, to make your</h5>
-                <h5>favorite home cookers serve better</h5>
-            </div>
-            <div class="stars">
-                <div class="ui-grid-d" style="width: 230px;">
-                    <div class="ui-block-a">
-                        <img src="../assets/star.png" style="height: 27px;">
+            <div class="write-review-container ui-content-container">
+                <div class="review-desc">
+                    <h5>Rate and Drop comments, to make your</h5>
+                    <h5>favorite home cookers serve better</h5>
+                </div>
+                <div class="stars">
+                    <div class="ui-grid-d" style="width: 230px;">
+                        <div class="ui-block-a">
+                            <img src="../assets/star.png" style="height: 27px;">
+                        </div>
+                        <div class="ui-block-b">
+                            <img src="../assets/star.png" style="height: 27px;">
+                        </div>
+                        <div class="ui-block-c">
+                            <img src="../assets/star.png" style="height: 27px;">
+                        </div>
+                        <div class="ui-block-d">
+                            <img src="../assets/star.png" style="height: 27px;">
+                        </div>
+                        <div class="ui-block-e">
+                            <img src="../assets/star.png" style="height: 27px;">
+                        </div>
                     </div>
-                    <div class="ui-block-b">
-                        <img src="../assets/star.png" style="height: 27px;">
+                </div>
+                <div class="stars">
+                    <div class="input-field-container">
+                        <!-- <i class=" material-icons input-field-icon">person</i> -->
+                        <input class="input-field-icon-input" type="text" placeholder="Write a Review" name="usrnm" style="    width: 336px;
+                            height: 214px;">
                     </div>
-                    <div class="ui-block-c">
-                        <img src="../assets/star.png" style="height: 27px;">
-                    </div>
-                    <div class="ui-block-d">
-                        <img src="../assets/star.png" style="height: 27px;">
-                    </div>
-                    <div class="ui-block-e">
-                        <img src="../assets/star.png" style="height: 27px;">
+                </div>
+                <div class="submit-button">
+                    <div class="action-btn submit-btn">
+                        <button type="button">
+                            <p class="primaryText">Login</p>
+                        </button>
                     </div>
                 </div>
             </div>
-            <div class="stars">
-                <div class="input-field-container">
-                    <!-- <i class=" material-icons input-field-icon">person</i> -->
-                    <input class="input-field-icon-input" type="text" placeholder="Write a Review" name="usrnm" style="    width: 336px;
-                    height: 214px;">
-                </div>
-            </div>
-            <div class="submit-button">
-                <div class="action-btn submit-btn">
-                    <button type="button">
-                        <p class="primaryText">Login</p>
-                    </button>
-                </div>
-            </div>
-           
         </div>
     </div>
 </body>
