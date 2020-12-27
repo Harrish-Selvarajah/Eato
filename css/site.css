@@ -214,6 +214,7 @@ p {
 
 .input-field-container>div>input {
     width: 290px;
+    height: 42px;
     color: #787878;
     padding: 10px;
     background: inherit!important;
@@ -233,6 +234,11 @@ p {
 /* Input Field Styles End*/
 
 .action-btn>button {
+    width: 290px;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #FD6921!important;
     border-color: #FD6921!important;
     border-radius: 20px!important;
