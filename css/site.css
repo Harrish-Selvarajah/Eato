@@ -79,6 +79,12 @@ p {
     box-shadow: none!important;
 }
 
+.ui-btn:focus {
+    -webkit-box-shadow: none!important;
+    -moz-box-shadow: none!important;
+    box-shadow: none!important;
+}
+
 .ui-checkbox input {
     left: inherit!important;
     width: 15px!important;
@@ -94,7 +100,7 @@ p {
     justify-content: center;
     align-items: center;
     background-color: white!important;
-    border-bottom: 1px solid rgba(112, 112, 112, 0.2)!important;
+    border-bottom: 2px solid rgba(112, 112, 112, 0.2)!important;
     position: fixed;
     top: 0;
     width: 100%;
