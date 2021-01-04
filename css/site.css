@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    height: 100%;
 }
 
 /* Typograghy Start */
@@ -69,7 +70,7 @@ p {
 }
 
 .ui-content-header {
-    margin-top: 55px;
+    margin-top: 45px;
     min-height: 94vh!important;
 }
 
@@ -95,7 +96,7 @@ p {
 }
 
 .header-bar {
-    min-height: 55px!important;
+    min-height: 45px!important;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -145,7 +146,31 @@ p {
     -webkit-transform: rotate(45deg);
 }
 
-/* Footer Style Start */
+.main-container {
+    margin-top: 35px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.icon-container {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    background-color: #ffffff;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    box-shadow: 4px 4px 18px -2px rgba(0, 0, 0, 0.36);
+}
+
+.icon-fav {
+    color: #FD6921;
+    font-size: 25px;
+    text-shadow: none;
+    position: relative;
+    top: 4px;
+    left: 3px;
+}
 
 .footer {
     background-color: #000000!important;
