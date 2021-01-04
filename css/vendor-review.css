@@ -1,0 +1,168 @@
+.review-card {
+    display: flex;
+    height: 124px;
+    width: 760px;
+}
+
+/* .review-card > div {
+  padding: 10px;
+} */
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circular_image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: blue;
+    /* commented for demo
+    float: left;
+    margin-left: 125px;
+    margin-top: 20px;
+    */
+    
+    /*for demo*/
+    display:inline-block;
+    vertical-align:middle;
+  }
+  .circular_image img{
+    width:100%;
+  }
+
+  .outer-circle {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    overflow: hidden;
+    /* background-color: blue; */
+    display: inline-block;
+    vertical-align: middle;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .left-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    width: 124px;
+}
+
+.right-container {
+    flex: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 15px;
+    width: calc(100% - 124px);
+}
+
+.reply-div {
+  text-align: right;
+}
+
+.pop-up-header {
+    min-height: 55px!important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: white!important; */
+    border-bottom: 1px solid rgba(112, 112, 112, 0.2)!important;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.header-bar>img {
+  position: absolute;
+  left: 30px;
+  width: 100px;
+}
+
+.header-bar>i {
+  position: absolute;
+  left: 34px;
+}
+
+.pop-up-content-contianer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.popup-btn {
+  width: 289px;
+  margin-top: 20px;
+}
+
+.popup-header {
+  margin-top: 42px !important;
+}
+
+.date-container {
+  display: flex; 
+  align-items: center;
+  height: 20px;
+}
+
+a {
+	color: #0254EB
+}
+a:visited {
+	color: #0254EB
+}
+a.morelink {
+	text-decoration:none;
+	outline: none;
+}
+.morecontent span {
+	display: none;
+}
+.comment {
+	width: 400px;
+	background-color: #f0f0f0;
+	margin: 10px;
+}
+
+.pop-over-container {
+  height: 330px;
+  width: 368px; 
+  border-radius: 20px;
+}
+
+/* iphone potrait */
+@media (min-width: 320px) and (max-width: 480px) {
+  
+  .review-card > div {
+    padding: 5px !important
+  }
+
+  .popover {
+    height: 50px;
+    width: 250px; 
+    border-radius: 20px;
+  }
+
+
+  
+  
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  
+  .review-card > div {
+    padding: 5px !important
+  }
+}
+
+#more {display: none;}
