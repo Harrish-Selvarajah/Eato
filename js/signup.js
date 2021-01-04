@@ -22,5 +22,15 @@ function signup() {
     var password = $('#pswrd').val();
     var spsrwd = $('cpswrd').val();
 
-    
+    firebase.database().ref('users/').push({
+        name: firstName,
+        mobileNumber: mobileNumber,
+        email: email,
+        password: password
+      }).then(pushed_user => {
+          debugger;
+          console.log(pushed_user.path.pieces_[1]);
+      });
+
+
 }

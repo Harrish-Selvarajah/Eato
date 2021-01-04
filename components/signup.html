@@ -9,6 +9,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
     <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
 
     <link rel="stylesheet" href="../css/site.css" />
     <link rel="stylesheet" href="../css/signup.css" />
@@ -45,7 +46,7 @@
                                 id="cpswrd">
                         </div>
                         <div class="action-btn signup-btn">
-                            <button type="button">
+                            <button type="button" onclick="signup()" data-role="button">
                                 <p class="primaryText">Signup</p>
                             </button>
                             <p class="primaryText to-login-text">Alread have an account? <a>Login</a></p>
