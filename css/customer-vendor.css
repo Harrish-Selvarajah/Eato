@@ -54,6 +54,12 @@
 
 .vendor-details {
     margin: 55px 0px 0px 35px;
+    color: black;
+}
+
+.vendor-details>p {
+    margin-top: 20px;
+    color: #707070;
 }
 
 .vendor-details>div {
@@ -76,7 +82,22 @@
     padding-right: 4px;
 }
 
+.vendor-highlight-rating>a {
+    color: #FD6921;
+    font-weight: 400;
+    text-decoration: underline;
+}
+
 .vendor-highlight-rating>p:nth-child(4) {
     color: #FD6921;
     font-size: 20px;
+}
+
+.vendor-menu {
+    margin-top: 30px;
+}
+
+.vendor-menu>h1 {
+    font-weight: 500;
+    color: black;
 }
