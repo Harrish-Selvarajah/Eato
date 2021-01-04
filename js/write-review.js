@@ -67,7 +67,7 @@ $(document).ready(function(){
     var database = firebase.database();
     console.log(ratingValue, "rating value")
     var bla = $('#reviewComment').val();
-    firebase.database().ref('Vendors/' + 01).set({
+    firebase.database().ref('Vendors/').push({
       name: 'Melt House',
       reviews: [
         {
