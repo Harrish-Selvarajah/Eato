@@ -20,7 +20,7 @@
 
             <div class="search-flex-container">
 
-                <div class="input-field-container">
+                <div class="input-field-container input-field-container-ovrd">
                     <i class=" material-icons input-field-icon input-icon-reverse">search</i>
                     <input class="input-field-icon-input input-size-ovrd" type="text" placeholder="Search..." name="search">
                 </div>
@@ -29,9 +29,14 @@
                     <i class=" material-icons" id= "icon-sort">sort</i>
                 </div>
             </div>
+
+            
             <!-- Flexc for POI Part -->
             <div class="flex-container">
-                    
+                <div id= "select-all-container">
+                        <input class= "checkbox" id="select-all" type="checkbox"/>
+                        <label> Select All</label>
+                </div>           
                 <!-- Start of POI -->
                 <div class="poi-container">
                     <div class="image-container">
@@ -244,7 +249,28 @@
                     </div>    
                 </div>
                 <!-- End of POI -->
-                </div>
+
+ <!-- Start of POI -->
+ <div class="poi-container">
+    <div class="image-container">
+        <div class="heart-container"> 
+            <i class=" material-icons icon-fav">favorite</i>
+        </div>
+    </div>
+
+    <div class="info-container">
+        <div class= "info-line-1">
+            <h2>Melt House</h2>
+            <input type="checkbox" />
+        </div>
+        <div class= "info-line-2">
+            <i class=" material-icons icon-star">grade</i>
+            <h4> 4.9</h4>
+        </div>
+    </div>    
+</div>
+<!-- End of POI -->
+ </div>
 
 
                 <div data-position="fixed" class="share-button-container">

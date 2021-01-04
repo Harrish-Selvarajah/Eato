@@ -3,18 +3,31 @@
     flex-direction: row;
     flex-wrap: wrap;
     background-color: #ffffff;
-    /* margin-right: 20px !important;
-    margin-left: 20px !important; */
-    align-items : center;
-    /* align-self: center !important; */
-    padding: 15px;
-  
+    /* //align-items : center; */
+    padding: 28px !important;
+    justify-content: space-between !important;
+    /* gap : 30px; */
+    margin: auto;
+    align-content: flex-start !important;
+    position: relative;
+    z-index: 0;
+}
+
+.flex-container:after {
+    content: "what";
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 225px;
+    width: 300px;
+    margin: auto;
 }
 
 .flex-container > div {
-    margin-right: 30px;
     width: 300px;
-    min-width: 300px !important;
+    min-width: 230px;
+    /* min-width: 300px !important; */
     height: 225px;
     min-height: 225px;
     margin-top: 12px;
@@ -22,7 +35,33 @@
     border-radius: 26px;
     padding: 0px;
     box-shadow: 4px 4px 18px -2px rgba(0,0,0,0.36);
-    /* background-image: url(../assets/img/burger.jpeg); */
+}
+
+#select-all-container{
+    all: initial !important;
+    width: 100% !important;
+    height: 30px !important;
+}
+
+#select-all-container .ui-checkbox {
+    all: unset;
+}
+
+#select-all-container input {
+    
+    position: relative;
+    float: right;
+    top: 5px;
+    right: 20px;
+    margin-left: 25px !important;
+}
+
+#select-all-container label {
+    position: relative;
+    float: right;
+    top: 7px;
+    background-color: white;
+    border : 0px none white;
 }
 
 .image-container{
@@ -37,9 +76,19 @@
     display:flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    margin:0px;
+    margin: auto;
     padding: 10px;
 }
+
+.poi-container-ovrd{
+    height: 1px !important;
+    width: auto !important;
+    min-width: 53px;
+    margin: 0px auto 0px 0px !important;
+    min-height: 1px !important;
+    padding: 0px;
+    justify-content: flex-end;
+ }
 
 .info-container{
     height: 70px;
@@ -91,9 +140,9 @@
     color: #FD6921;
     font-size: 25px;
     text-shadow: none;
-    position: relative;
+    position: absolute;
     top: 4px;
-    left: 2px;
+    left: 2.5px;
 }
 
 .heart-container{
@@ -103,64 +152,45 @@
     margin: 10px 10px 0px auto;
     border-radius: 100%;
     box-shadow: 4px 4px 18px -2px rgba(0,0,0,0.36);
+    position: relative;
 }
 
 /*Targets the Ipad - Landscape*/
-@media only screen and (min-width : 850px) and (max-width : 1024px){
-    .flex-container > div:nth-child(3n) {
-       margin-right: 0px;
-      
-    }
 
-    .flex-container {
-        padding: 15px;
-    }
+@media(min-width : 850px) and (max-width : 1024px){
+    
 }
 
 /*Targets the Iphone - LandScape*/
-@media only screen and (min-width : 769px) and (max-width : 849px){
-    .flex-container > div:nth-child(2n) {
-       margin-right: 0px;
+@media(min-width : 769px) and (max-width : 849px){
+    #select-all-container input {
+        right: 30px;
+        margin-left: 35px !important;
     }
-
-    .flex-container > div {
-        width: 350px;;
-    }
-
-    .flex-container {
-        padding: 25px;
-    }
+  
 }
 
-/* Targets Ipad - Portrait  */
-@media only screen and (min-width : 450px) and (max-width : 768px){
-    .flex-container > div:nth-child(2n) {
-       margin-right: 0px;
+@media (min-width: 481px) and (max-width: 768px){
+    
+    .input-icon-reverse{
+        left: 87% !important;
     }
 
-    .flex-container {
-        padding: 15px;
-    }
-
-    .flex-container > div {
-        width: 335px;;
+    #select-all-container input {
+        right: 30px;
+        margin-left: 35px !important;
     }
 }
 
 /* Targets the mobile screen - potrait view */
-@media only screen and (max-width : 450px){
+@media (min-width: 320px) and (max-width: 480px){
 
-    .flex-container{
-        display: flex;
-        flex-direction: column;
+    .input-icon-reverse{
+        left: 87% !important;
     }
 
-    .flex-container {
-        padding: 5px;
-    }
-
-    .flex-container > div {
-        width: 335px;;
+    .search-flex-container{
+        gap: 5px !important;
     }
 } 
 
@@ -172,26 +202,35 @@
     display: flex;
     gap :20px;
     justify-content: center;
-    width: fit-content !important;
-    margin: 0px auto 30px auto;
+    width: 50% !important;
+    margin: 0px auto 0px auto;
 }
 
 .input-icon-reverse{
     position: relative;
-    left: 430px;
+    left: 90%;
 }
 
 .input-size-ovrd {
-   width: 450px !important;
+   width: 100% !important;
    box-shadow: 4px 4px 18px -2px rgba(0,0,0,0.36);
 }
 
+.input-field-container-ovrd{
+    width: 100% !important;
+    min-width: 250px;;
+}
+
+.input-field-container-ovrd > .ui-input-text {
+    width: 100% !important;
+}
 .search-filter-container{
     border-radius: 100%;
     background-color: #ffffff;
     box-shadow: 4px 4px 18px -2px rgba(0,0,0,0.36);
     height: 40px;
     width: 40px;
+    min-width: 40px;
     margin-top: 40px;
 }
 
@@ -221,6 +260,16 @@
     width: 60px;
     height: 60px;
     position: fixed;
-    top: 82%;
-    left:90%;
+    bottom: 70px;
+    right: 15px;
+    z-index: 1;
 }
+
+.ui-checkbox input{
+    margin-left: 15px !important;
+    width: 20px !important;
+    margin-top: 0px !important;
+}
+
+
+
