@@ -1,0 +1,164 @@
+.vendor-bg {
+    background-image: url(../assets/food/indian.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 40vh;
+    border-radius: 17px;
+    position: relative;
+}
+
+.bookmark {
+    color: white;
+    background-color: #FD6921;
+    position: absolute;
+    left: 20px;
+    width: 70px;
+    height: 120px;
+    border-top: solid 2px #FD6921;
+    border-left: solid 2px #FD6921;
+    border-right: solid 2px #FD6921;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bookmark:before {
+    content: '';
+    background: #FD6921;
+    position: absolute;
+    top: 95px;
+    left: 8px;
+    width: 50px;
+    height: 50px;
+    border-top: solid 2px #FD6921;
+    border-left: solid 2px #FD6921;
+    transform: rotate(45deg);
+}
+
+.vendor-logo {
+    position: absolute;
+    background-image: url(../assets/vendor_logo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 50px;
+    border: 4px solid white;
+    margin-bottom: 12px;
+    width: 90px;
+    height: 90px;
+    left: 35px;
+    bottom: -55px;
+}
+
+.vendor-details {
+    margin: 55px 35px 0px 35px;
+    color: black;
+}
+
+.vendor-details>p {
+    margin-top: 20px;
+    color: #707070;
+}
+
+.vendor-details>div {
+    color: #404040;
+    display: flex;
+}
+
+.vendor-highlights>* {
+    padding-right: 8px;
+}
+
+.vendor-highlight-rating {
+    display: flex;
+}
+
+.vendor-highlight-rating>i {
+    color: #FD6921;
+    font-size: 20px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.vendor-highlight-rating>a {
+    color: #FD6921;
+    font-weight: 400;
+    text-decoration: underline;
+}
+
+.vendor-highlight-rating>p:nth-child(4) {
+    color: #FD6921;
+    font-size: 20px;
+}
+
+.vendor-menu {
+    margin-top: 30px;
+}
+
+.vendor-menu>h1 {
+    font-weight: 500;
+    color: black;
+    margin-bottom: 18px!important;
+}
+
+.food-item {
+    padding: 10px;
+}
+
+.food-item-img {
+    background-image: url(../assets/food_item.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 26px;
+    width: 130px;
+    height: 120px;
+}
+
+.food-item-details {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0px 0px 10px;
+}
+
+.food-item-details>div {
+    margin-top: 10px;
+}
+
+.food-item-details>div>span:first-child {
+    color: #FD6921;
+}
+
+.food-item-details>div>span:last-child {
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.food-card {
+    min-width: 310px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+    /* padding: 28px !important; */
+    /* justify-content: space-between !important; */
+    gap: 25px;
+    margin: auto;
+    align-content: flex-start !important;
+}
+
+.flex-container:after {
+    content: "what";
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 225px;
+    width: 300px;
+    margin: auto;
+}
