@@ -317,3 +317,10 @@ text-overflow: clip; */
     overflow: hidden;
     border-radius: 30px;
 }
+
+@media (max-width: 767px) {
+    .footer-right>img {
+        width: 135px;
+        height: 65px;
+    }
+}
