@@ -21,4 +21,6 @@ function signup() {
     var firstName = $('#fnam').val();
     var password = $('#pswrd').val();
     var spsrwd = $('cpswrd').val();
+
+    
 }
