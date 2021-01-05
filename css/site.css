@@ -174,6 +174,18 @@ text-overflow: clip; */
     left: 3px;
 }
 
+.icon-close {
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-close>i {
+    color: #FD6921;
+    font-size: 22px;
+}
+
 /* cross sign */
 
 .close {
