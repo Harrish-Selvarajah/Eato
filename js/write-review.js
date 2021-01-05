@@ -72,6 +72,7 @@ $(document).ready(function(){
     firebase.database().ref('Vendors/'+ 1).child('reviews').push({
       // name: 'Melt House',
           review: bla,
+          reviewResponse: '',
           rating: ratingValue,
           date: "26/10/2020",
           userobj : {

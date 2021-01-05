@@ -1,4 +1,5 @@
 reviews = [];
+var currentID;
 var firebaseConfig = {
 	apiKey: "AIzaSyBDwiPGqXFeormDpnISyavzwju3BnCUPTo",
 	authDomain: "eato-69.firebaseapp.com",
@@ -49,9 +50,22 @@ $(document).ready(function() {
 	});
 	firebase.database().ref('Vendors/'+1).child('reviews').once('value', function(snapshot) {
 		snapshot.forEach(function(childSnapshot) {
+			// console.log(childSnapshot);
 		  var childData = childSnapshot.val();
-		  // console.log(childData);
-		  reviews.push(childData);
+		  
+		//   console.log(childData);
+		//   reviews.push(childData);
+		var item = {
+			key: childSnapshot.key,
+			date: childData.date,
+			rating: childData.rating,
+			review: childData.review,
+			userObj : {
+				name: childData.userobj.name,
+				profilepicLink: childData.userobj.profilepicLink
+			}
+		}
+		reviews.push(item);
 		})
 		console.log(reviews);
 		repeat();
@@ -75,7 +89,7 @@ function repeat() {
 					<div style="width: 100%;">
 						<div>
 							<h5>
-								${item.name}
+								${item.userObj.name}
 							</h5>
 							<div class="ui-grid-a">
 								<div class="ui-block-a" style="width: 80px;">
@@ -87,20 +101,18 @@ function repeat() {
 								</div>
 								<div class="ui-block-b date-container">
 									<div class="date">
-										21.12.2020
+										${item.date}
 									</div>
 								</div>
 							</div>
 							<div class="infoText">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-								Vestibulum laoreet, nunc eget laoreet sagittis,
-								quam ligula sodales orci, congue imperdiet eros tortor ac lectus.
+								${item.review}
 								
 							</div>
 						</div>
 					   
 						<div class="reply-div">
-							<a href="#popupLogin" data-rel="popup" data-position-to="window"
+							<a onclick = "reply('${item.key}')" href="#popupLogin" data-rel="popup" data-position-to="window"
 								data-transition="pop">Reply</a>
 							
 						</div>
@@ -111,4 +123,25 @@ function repeat() {
 		})
 		$('#repeat').append(renderHtml);
 	}
+}
+
+function reply(id) {
+	console.log(id, "reply funciton");
+	currentID = id;
+}
+
+function submitResponse() {
+	var response = $('#reviewReply').val();
+	console.log(currentID, "currentID")
+	firebase.database().ref('Vendors/'+ 1).child('reviews/' + currentID).update({
+		// name: 'Melt House',
+			reviewResposne : response ,
+			}
+	  , (error) => {
+		if (error) {
+		  console.log("Push to firebase failed!")
+		} else {
+		  console.log("pushed to firebase succesfully!");
+		}
+	  });
 }
