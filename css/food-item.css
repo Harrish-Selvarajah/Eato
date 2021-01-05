@@ -1,3 +1,16 @@
+.food-item-page {
+    color: black;
+    margin-bottom: 0px;
+    height: 91vh;
+}
+
+.food-item-page>div:last-child {
+    position: absolute;
+    left: 50%;
+    bottom: 0px;
+    transform: translate(-50%, -50%);
+}
+
 .item-bg {
     background-image: url(../assets/food_item.jpg);
     background-size: cover;
@@ -6,4 +19,33 @@
     height: 200px;
     border-radius: 17px;
     position: relative;
+}
+
+.item-details {
+    margin-top: 35px;
+    justify-content: space-between;
+}
+
+.item-details>div>span:first-child {
+    color: #FD6921;
+}
+
+.item-details>div>span:last-child {
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.food-item-page-quantity {
+    margin-top: 15px;
+    justify-content: flex-end!important;
+}
+
+.item-description {
+    padding-bottom: 75px;
+}
+
+.item-description>p {
+    margin-top: 30px;
+    color: #707070;
+    text-align: justify;
 }
