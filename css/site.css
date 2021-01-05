@@ -68,14 +68,18 @@ text-overflow: clip; */
 }
 
 .ui-content {
-    /* padding: 0 !important; */
+    padding: 0 !important;
     min-height: 100vh;
     background-color: white;
 }
 
 .ui-content-header {
-    margin-top: 45px;
+    margin-top: 53px;
     min-height: 94vh!important;
+}
+
+.main-container {
+    margin: 20px 20px 60px 20px;
 }
 
 .ui-focus {
@@ -148,11 +152,6 @@ text-overflow: clip; */
 .arrow-down {
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
-}
-
-.main-container {
-    margin-top: 20px;
-    margin-bottom: 60px;
 }
 
 .icon-container {
