@@ -13,24 +13,33 @@ $(document).ready(function(){
       var rootRef = new Firebase("https://eato-69-default-rtdb.firebaseio.com/").ref();
 
 
-})
+});
 
-function signup() {
+function signUp() {
     var mobileNumber = $('#mobnum').val();
     var email = $('#email').val();
     var firstName = $('#fnam').val();
     var password = $('#pswrd').val();
     var spsrwd = $('cpswrd').val();
-
+    var userId;
+    var userObj = {};
+    
     firebase.database().ref('users/').push({
         name: firstName,
         mobileNumber: mobileNumber,
         email: email,
         password: password
       }).then(pushed_user => {
-          debugger;
+          userId = pushed_user.path.pieces_[1];
           console.log(pushed_user.path.pieces_[1]);
+          userObj = {
+            id: userId,
+            name: firstName,
+            mobileNumber: mobileNumber,
+            email: email,
+            profilePic: ''
+        } 
+          sessionStorage.setItem('userobj', JSON.stringify(userObj));
+          console.log(sessionStorage.getItem('userobj'));
       });
-
-
 }
