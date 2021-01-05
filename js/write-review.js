@@ -66,21 +66,24 @@ $(document).ready(function(){
   
   function writeUserData() {
     var database = firebase.database();
-    console.log(ratingValue, "rating value")
+    var userObj = sessionStorage.getItem('userobj');
+    // console.log(ratingValue, "rating value")
     var bla = $('#reviewComment').val();
-    firebase.database().ref('Vendors/').push({
-      name: 'Melt House',
-      reviews: [
-        {
+    firebase.database().ref('Vendors/'+ 1).child('reviews').push({
+      // name: 'Melt House',
           review: bla,
           rating: ratingValue,
-          date: "20/01/2021",
+          date: "26/10/2020",
           userobj : {
-            name: 'Harrish',
+            name: JSON.parse(userObj).name,
             profilepicLink: ''
           }
-        }
-      ]
+    }, (error) => {
+      if (error) {
+        console.log("Push to firebase failed!")
+      } else {
+        console.log("pushed to firebase succesfully!");
+      }
     });
   }
   

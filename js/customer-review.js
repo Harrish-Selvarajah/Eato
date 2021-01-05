@@ -1,5 +1,8 @@
 // var status = document.getElementById("vendor-feedback");
 // status.style.display = "none";
+$(document).ready(function(){
+  
+});
 
 function ShowVendorReply() {
   console.log('here');
