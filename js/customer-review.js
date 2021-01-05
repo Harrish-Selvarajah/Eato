@@ -24,18 +24,31 @@ $(document).ready(function(){
   firebase.database().ref('Vendors/'+1).child('reviews').once('value', function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
       var childData = childSnapshot.val();
-      // console.log(childData);
-      reviews.push(childData);
+    //   var childData = childSnapshot.val();
+		  
+      //   console.log(childData);
+      //   reviews.push(childData);
+      var item = {
+          key: childSnapshot.key,
+          date: childData.date,
+          rating: childData.rating,
+          review: childData.review,
+          userObj : {
+              name: childData.userobj.name,
+              profilepicLink: childData.userobj.profilepicLink
+          }
+      }
+      reviews.push(item);
     })
     console.log(reviews);
     repeat();
   })
 });
 
-function ShowVendorReply() {
+function ShowVendorReply(id) {
   console.log('here');
   // $.mobile.changePage( "#vendor-feedback" );
-  var status = document.getElementById("vendor-feedback");
+  var status = document.getElementById(`vendor-feedback-${id}`);
   var status1 = document.getElementById("upArrow");
   var status2 = document.getElementById("downArrow");
   console.log(status, "status");
@@ -44,8 +57,8 @@ function ShowVendorReply() {
   status2.style.display = "none";
 }
 
-function hideVendorReply() {
-  var status = document.getElementById("vendor-feedback");
+function hideVendorReply(id) {
+  var status = document.getElementById(`vendor-feedback-${id}`);
   var status1 = document.getElementById("upArrow");
   var status2 = document.getElementById("downArrow");
   console.log(status, "status");
@@ -78,11 +91,11 @@ function repeat() {
                                     <!-- <img src="../assets/downArrow.png" style="height: 10px;"> -->
                                     <!-- <a id='btnShowSignUp' data-role="button" href='#' onclick="ShowSignUp();">Sign Up</a> -->
                                     <a id='downArrow' href="#" data-shadow="false" data-theme="none"
-                                        onclick="ShowVendorReply();">
+                                        onclick="ShowVendorReply('${item.key}');">
                                         <img src="../assets/downArrow.png" style="height: 15px;">
                                     </a>
                                     <a id='upArrow' href="#" data-shadow="false" data-theme="none"
-                                        onclick="hideVendorReply();" style="display: none;">
+                                        onclick="hideVendorReply('${item.key}');" style="display: none;">
                                         <img src="../assets/upArrow.png" style="height: 15px;">
                                     </a>
                                     <!-- <div id="custom-border-radius">
@@ -103,7 +116,7 @@ function repeat() {
                                 </div>
                             </div>
                             <h5>
-                               ${item.userobj.name}
+                               ${item.userObj.name}
                             </h5>
                             <div class="ui-grid-a">
                                 <div class="ui-block-a">
@@ -123,13 +136,11 @@ function repeat() {
                         </div>
 
                     </div>
-                    <div page-role="page" id="vendor-feedback" style="display: none;">
+                    <div page-role="page" id="vendor-feedback-${item.key}" style="display: none;">
                         <div class="feedback">
                             <div class="feedback-cont">
-                                <p class="infoText" style="background-color: orange;">Lorem ipsum dolor sit amet,
-                                    consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    Lorem ipsum dolor sit amet.</p>
+                                <p class="infoText" style="background-color: orange;">
+                                    ${item.reviewResponse}</p>
                             </div>
                         </div>
                     </div>
