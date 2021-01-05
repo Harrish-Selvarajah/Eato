@@ -118,8 +118,8 @@ text-overflow: clip; */
 
 .header-bar>img {
     position: absolute;
-    left: 30px;
-    width: 100px;
+    left: 20px;
+    width: 75px;
 }
 
 .header-bar>i {

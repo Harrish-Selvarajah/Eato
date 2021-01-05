@@ -1,18 +1,50 @@
-<!DOCTYPE html>
 <html>
 
 <head>
-    <link rel="stylesheet" href="../css/site.css" />
+    <title>Vendor</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+
+    <link rel="stylesheet" href="../css/site.css" />
+
 </head>
 
 <body>
     <div data-role="page">
-        <div data-role="header" data-postion="fixed" class="header-bar"></div>
-        <div data-role="content" data-theme="a" class="content-body"></div>
-        <div data-role="footer" data-position="fixed" role="banner"></div>
+        <div data-role="header" data-postion="fixed" data-fullscreen="true" class="header-bar">
+            <img src="../assets/logo new.svg">
+            <!-- <i class="arrow arrow-left"></i> -->
+            <h4>Title</h4>
+        </div>
+        <div role="main" class="ui-content ui-content-header">
+            <div class="main-container">
+            </div>
+        </div>
+        <div data-role="footer" class="footer">
+            <div class="footer-top">
+                <div class="footer-left">
+                    <h4>Contact</h4>
+                    <p class="secondaryText"><a href="mailto:info@eato.eat">info@eato.eat</a></p>
+                    <br>
+                    <h4>Address</h4>
+                    <p class="secondaryText">50, Chez Road, Panisse</p>
+                </div>
+                <div class="footer-right">
+                    <img src="../assets/logo/eoto_logo_light.png">
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <i class="material-icons">account_circle</i>
+                <i class="material-icons">account_circle</i>
+                <i class="material-icons">account_circle</i>
+                <p class="footer-copyrights infoText">© 2021 Eato. All Rights Reserved.</p>
+            </div>
+        </div>
     </div>
 </body>
 
