@@ -75,26 +75,68 @@ function repeat() {
 					<div style="width: 100%;">
 						<div>
 							<h5>
-							${item.userobj.name}
+								S. Harrish
 							</h5>
 							<div class="ui-grid-a">
-							<span class="stars-container stars-${item.rating}">★★★★★</span>
+								<div class="ui-block-a" style="width: 80px;">
+									<div style="width:74px">
+										<div class="ui-grid-d">
+											<div class="ui-block-a">
+												<img src="../assets/star.png" style="height: 10px;">
+											</div>
+											<div class="ui-block-b">
+												<img src="../assets/star.png" style="height: 10px;">
+											</div>
+											<div class="ui-block-c">
+												<img src="../assets/star.png" style="height: 10px;">
+											</div>
+											<div class="ui-block-d">
+												<img src="../assets/star.png" style="height: 10px;">
+											</div>
+											<div class="ui-block-e">
+												<img src="../assets/star.png" style="height: 10px;">
+											</div>
+										</div>
+									</div>
 								</div>
 								<div class="ui-block-b date-container">
 									<div class="date">
-									${item.date}
+										21.12.2020
 									</div>
 								</div>
 							</div>
 							<div class="infoText">
-							${item.review}
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+								Vestibulum laoreet, nunc eget laoreet sagittis,
+								quam ligula sodales orci, congue imperdiet eros tortor ac lectus.
+								
 							</div>
 						</div>
 					   
 						<div class="reply-div">
 							<a href="#popupLogin" data-rel="popup" data-position-to="window"
 								data-transition="pop">Reply</a>
-							
+							<div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all" style="height: 330px;
+							width: 335px; border-radius: 20px;">
+								   <div class="pop-up-header">
+									<i class="close"></i>
+									<h5>Type Response</h5>
+								</div>
+								<div class="ui-content-header popup-header">
+									<div class="pop-up-content-contianer">
+										<div class="input-field-container">
+											<input type="text" placeholder="Type message here" name="usrnm" style="height: 136px; width: 278px;">
+										</div>
+										<div class="action-btn popup-btn">
+											<button type="button">
+												<p class="primaryText">Login</p>
+											</button>
+										</div>
+									</div>
+								  
+								</div>
+							   
+							</div>
 						</div>
 					</div>
 				</div>
