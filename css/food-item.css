@@ -1,0 +1,9 @@
+.item-bg {
+    background-image: url(../assets/food_item.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 200px;
+    border-radius: 17px;
+    position: relative;
+}
