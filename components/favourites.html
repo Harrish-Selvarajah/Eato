@@ -5,12 +5,21 @@
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="../lib/jquery-1.12.4.min.js"></script>
-    <script src="../lib/jquery.mobile-1.4.5.min.js"></script>
-<link rel="stylesheet" href="../css/site.css" />
+
+    <link rel="stylesheet" href="../css/site.css" />
+    <link rel="stylesheet" href="../css/vendor-review.css"/>
     <link rel="stylesheet" href="../css/favourites.css" />
     
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+    <script src="../lib/jquery-1.12.4.min.js"></script>
+    <script src="../lib/jquery.mobile-1.4.5.min.js"></script>
+
     <script src="../js/login.js"></script>
+    <script src="../js/favourites.js"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -271,11 +280,36 @@
 </div>
 <!-- End of POI -->
  </div>
+ 
 
 
                 <div data-position="fixed" class="share-button-container">
-                    <i class="material-icons" id="icon-share" >share</i>
+                    <i class="material-icons" id="icon-share" > <a href="#popupLogin" data-rel="popup" data-position-to="window"
+                        data-transition="pop">share</a></i>
                 </div>
+
+                <div class="reply-div" data-position="fixed">
+                   
+                    <div data-role="popup" data-position="fixed" id="popupLogin" data-theme="a" class="ui-corner-all" style="height: 230px;
+                    width: 335px; border-radius: 20px;">
+                           <div class="pop-up-header">
+                            <i class="close"></i>
+                            <h5>Type Response</h5>
+                        </div>
+                        <div class="ui-content-header popup-header">
+                            <div class="pop-up-content-contianer">
+                                <div class="input-field-container">
+                                    <input type="email" placeholder="Reciever Email" name="email" style="height: 50px; width: 285px;">
+                                </div>
+                                <div class="action-btn popup-btn">
+                                    <button type="button">
+                                        <p class="primaryText">Share</p>
+                                    </button>
+                                </div>
+                            </div>
+                          
+                        </div>
+                    </div>
 
             <div data-role="footer" data-position="fixed" style="height: 50px;" data-tap-toggle="false" > 
                 
