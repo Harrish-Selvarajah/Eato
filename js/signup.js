@@ -32,7 +32,29 @@ function signUp() {
         name: firstName,
         mobileNumber: mobileNumber,
         email: email,
-        password: password
+        password: password,
+        // favourites :[
+        //   {​​​​
+        //   vendorName : "Melt House",
+        //   vendorID : "1",
+        //   Ratring : "4"
+        //   }​​​​,
+        //   {​​​​
+        //   vendorName : "Paripu Vadha",
+        //   vendorID : "2",
+        //   Ratring : "3"
+        //   }​​​​,
+        //   {​​​​
+        //   vendorName : "Well Back",
+        //   vendorID : "3",
+        //   Ratring : "3"
+        //   }​​​​, 
+        //   {​​​​
+        //   vendorName : "Cooked Now",
+        //   vendorID : "4",
+        //   Ratring : "4"
+        //   }​​​​
+        //   ]
       }).then(pushed_user => {
           userId = pushed_user.path.pieces_[1];
           console.log(pushed_user.path.pieces_[1]);
