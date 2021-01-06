@@ -49,6 +49,8 @@ $(document).ready(function() {
 		return false;
 	});
 	getReviews();
+	// var fooditemID = getUrlParameter('fooditemID');
+	// console.log(fooditemID, 'fooditemID');
 });
 
 function getReviews() {
@@ -79,6 +81,9 @@ function getReviews() {
 }
 
 function repeat() {
+	// $flexContainer = $('.flex-container')
+
+    $(".container").remove();
 	var renderHtml = "";
 	if (reviews.length > 0) {
 		reviews.forEach(function (item) {
@@ -117,7 +122,7 @@ function repeat() {
 							</div>
 						</div>
 					   
-						<div class="reply-div">
+						<div class="reply-div-${item.key}" id="reply-div-${item.key}" style="display: none;">
 							<a onclick = "reply('${item.key}')" href="#popupLogin" data-rel="popup" data-position-to="window"
 								data-transition="pop">Reply</a>
 							
@@ -138,14 +143,17 @@ function repeat() {
 		$('#repeat').append(renderHtml);
 	}
 
-	// reviews.forEach(function(item) {
-	// 	var status = document.getElementById(`vendor-feedback-${item.key}`);
-	// 	if (item.reviewResponse == "") {
-	// 		status.style.display = "none";
-	// 	} else {
-	// 		status.style.display = "flex";
-	// 	}
-	// })
+	reviews.forEach(function(item) {
+		var status = document.getElementById(`vendor-feedback-${item.key}`);
+		var status2 = document.getElementById(`reply-div-${item.key}`);
+		if (item.reviewResponse == "") {
+			status.style.display = "none";
+			status2.style.display = "flex";
+		} else {
+			status.style.display = "flex";
+			status2.style.display = "none";
+		}
+	})
 }
 
 function reply(id) {
@@ -177,3 +185,18 @@ function showResponse(id) {
 	var status = document.getElementById(`vendor-feedback-${id}`);
 	status.style.display = "flex";
 }
+
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+    }
+};
