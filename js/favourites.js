@@ -2,7 +2,7 @@
 var allFavVendorList = []
 var favVendorList = []
 var selectedFavList = []
-var demoUserId = "-MQN7UYipYUXF5l7caW6"
+var userID = "-MQN7UYipYUXF5l7caW6" // This should change to local storage
 const emailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
 
 var firebaseConfig = {
@@ -25,10 +25,10 @@ var firebaseConfig = {
     var data = snapshot.val()
    // console.log(data)
 
-    if (Object.keys(data).includes(demoUserId)){
-            if(data[demoUserId]['favourites'] != undefined || data[demoUserId]['favourites'].length != 0){
+    if (Object.keys(data).includes(userID)){
+            if(data[userID]['favourites'] != undefined || data[userID]['favourites'].length != 0){
                 console.log("STARTING TO LOAD FAVOURITES LIST")
-                favVendorList = data[demoUserId]['favourites'];
+                favVendorList = data[userID]['favourites'];
                 allFavVendorList = favVendorList;
                 loadFavVendorList();
             }else{
@@ -56,7 +56,7 @@ function loadFavVendorList() {
         <div class="poi-container" id="poi-container">
             <div class="image-container">
                 <div class="heart-container"> 
-                    <i class=" material-icons icon-fav">favorite</i>
+                    <i class=" material-icons icon-fav" id="un-favourite" onClick="removeFavourite(${favVendor.vendorID})" >favorite</i>
                 </div>
             </div>
 
@@ -80,18 +80,23 @@ function loadFavVendorList() {
 
 $(document).ready(function(){
 
+   
     // Close PopUp doesnt work 
-    $('#close-click').click(function(){
-        console.log("Close")
-         $("#popupLogin-popup").hide()
-    })
+    // $('#close-click').click(function(){
+    //     console.log("Close")
+    //      $("#popupLogin-popup").hide()
+    // })
 
-    // Open -But doesnt work 
-    $(".share-button-container").click(function () { 
-        console.log("Open")
-        $("#popupLogin-popup").show();
+    // // Open -But doesnt work 
+    // $(".share-button-container").click(function () { 
+    //     console.log("Open")
+    //     $("#popupLogin-popup").show();
         
-    });
+    // });
+
+     // Share Disabled at start
+     disableSharebutton();
+
      
    $("#select-all").click(function () { 
        
@@ -223,12 +228,17 @@ function addCheckBoxClick(id,idx){
 }
 
 function activeShareButton(){
-console.log("act")
+    console.log("disabling")
   $('#share-button-container').attr('style', 'background-color: #FD6921 !important');
+  $('#share-link').attr('disabled', false);
+  $('#share-link').bind('click');
 }
 
 function disableSharebutton(){
+    console.log("disabling")
    $('#share-button-container').attr('style', 'background-color: #707070 !important');
+   $('#share-link').attr('disabled', true);
+   $('#share-link').unbind('click');
 }
 
 function validateEmail(email){
@@ -240,4 +250,37 @@ function validateEmail(email){
        //console.log("invalid email")
         return false;
    }
+}
+
+function removeFavourite(vendorID){
+     console.log(vendorID)
+
+     ref.child(userID).child('favourites').once('value', function(snapshot){
+        
+        var favourite = snapshot.val();
+
+        favourite = favourite.filter(function (fav) { 
+            return vendorID != fav.vendorID;
+         })
+
+         ref.child(userID).update({
+            favourites : favourite
+         }).then(function(){
+             favVendorList = filterArrayById(favVendorList, vendorID)
+             allFavVendorList = filterArrayById(allFavVendorList, vendorID)
+             selectedFavList = filterArrayById(selectedFavList, vendorID)
+             console.log("Successfully deleted")
+             loadFavVendorList();
+             
+         }).catch(function(){
+             console.error("Not Deleted Error")
+         })
+     });
+
+}
+
+function filterArrayById(array, id){
+    return array.filter(function(element){
+        return element.vendorID != id;
+    })
 }
