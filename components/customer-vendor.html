@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="../css/site.css" />
     <link rel="stylesheet" href="../css/customer-vendor.css" />
     <link rel="stylesheet" href="../css/card-css.css" />
+    <script src="../js/customer-vendor.js"></script>
+
 
 </head>
 
@@ -45,7 +47,7 @@
                             <p class="subtitle">4.1</p>
                             <i class="material-icons">grade</i>
                             <p class="subtitle">(</p>
-                            <a class="subtitle">10+ ratings</a>
+                            <a class="subtitle" onclick="goToRatings();">10+ ratings</a>
                             <p class="subtitle">) </p>
                         </div>
                         <p class="subtitle">•</p>
@@ -61,7 +63,7 @@
                     <h1>Menu</h1>
                     <section class="menu-items">
                         <ul>
-                            <li onclick="handleFoodItemPopup('open');" class="food-item">
+                            <li onclick="handleFoodItemPopup('open', 'm1');" class="food-item">
                                 <div>
                                     <img src="../assets/food_item.jpg">
                                 </div>
@@ -76,12 +78,12 @@
                         </ul>
                     </section>
                 </div>
-                <!-- XXXXX -->
+
                 <div data-role="popup" id="food-item-popup" data-theme="a" class="ui-corner-all"
                     style="border-radius: 20px;">
                     <div class="food-item-page-web">
                         <div class="fipw-item-bg">
-                            <div onclick="handleFoodItemPopup('close');" class="icon-container icon-close">
+                            <div onclick="handleFoodItemPopup('close', 'null');" class="icon-container icon-close">
                                 <i class=" material-icons">close</i>
                             </div>
                         </div>
@@ -117,7 +119,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- XXXXX -->
+
             </div>
         </div>
         <div data-role="footer" class="footer">
