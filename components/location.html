@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6ntfzBqz7Et-JBirqWHo0dv7Ky3C3wvM&callback=initMap"
+async defer></script>
+
+    <link rel="stylesheet" href="../css/site.css" />
+    <link rel="stylesheet" href="../css/location.css" />
+    <script src="../js/location.js"></script>
+</head>
+
+<body>
+    <div data-role="page">
+        <div role="main" class="ui-content">
+            <div id="map"></div>
+            <script>
+                function initMap() {
+                    const mapDiv = document.getElementById('map')
+                    const options = {
+                        zoom: 12,
+                        center: { lat: 29.7604, lng: -95.3698 }
+                    }
+                    const map = new google.maps.Map(mapDiv, options)
+                }
+            </script>
+         
+        </div>
+    </div>
+</body>
+
+</html>
