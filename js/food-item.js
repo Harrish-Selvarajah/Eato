@@ -1,3 +1,5 @@
+var popupAction = null;
+var foodId = null;
 var fooditem = [
     {
         id: 'm1',
@@ -24,10 +26,15 @@ var fooditem = [
 
 var cart = [];
 
-$(document).ready(function() { 
-    var fooditemID = getUrlParameter('fooditemID');
-    console.log(fooditemID, 'fooditemID');
-    debugger;
+$(document).ready(function () {
+    $(window).on('resize', function () {
+        var win = $(this);
+        if (win.width() < 768) {
+            $("#food-item-popup").popup("close");
+            $('body').css('overflow', 'auto');
+        }
+    });
+    foodId = getUrlParameter('fooditemID');
 });
 
 var getUrlParameter = function getUrlParameter(sParam) {
@@ -46,11 +53,30 @@ var getUrlParameter = function getUrlParameter(sParam) {
 };
 
 function addToCart(id) {
-   cart = JSON.parse(sessionStorage.getItem('cart'));
-   fooditem.forEach(function (item) {
-       if (item.id == id) {
-           cart.push(item);
-       }
-   })
-   sessionStorage.setItem('cart', JSON.stringify(cart)); 
+    cart = JSON.parse(sessionStorage.getItem('cart'));
+    fooditem.forEach(function (item) {
+        if (item.id == id) {
+            cart.push(item);
+        }
+    })
+    sessionStorage.setItem('cart', JSON.stringify(cart));
+}
+
+function handleFoodItemPopup(action, id) {
+    if ($(window).width() < 768) {
+        $("#food-item-popup").popup("close");
+        $('body').css('overflow', 'auto');
+        window.location.href = '../components/food-item.html?fooditemID=' + id;
+    }
+    else {
+        popupAction = action
+        if (popupAction === "open") {
+            $('body').css('overflow', 'hidden');
+            $("#food-item-popup").popup("open");
+        }
+        else {
+            $('body').css('overflow', 'auto');
+            $("#food-item-popup").popup("close");
+        }
+    }
 }
