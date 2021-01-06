@@ -14,10 +14,11 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
     <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
-    <script src="../lib/jquery-1.12.4.min.js"></script>
-    <script src="../lib/jquery.mobile-1.4.5.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 
-    <script src="../js/login.js"></script>
+    <!-- <script src="../js/login.js"></script> -->
     <script src="../js/favourites.js"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -67,10 +68,10 @@
                         <div class="ui-content-header popup-header">
                             <div class="pop-up-content-contianer">
                                 <div class="input-field-container">
-                                    <input type="email" placeholder="Reciever Email" name="email" style="height: 50px; width: 285px;">
+                                    <input type="email" placeholder="Reciever Email" name="email" id="email-input" style="height: 50px; width: 285px;">
                                 </div>
                                 <div class="action-btn popup-btn">
-                                    <button type="button">
+                                    <button type="button" id="share-btn">
                                         <p class="primaryText">Share</p>
                                     </button>
                                 </div>
@@ -86,6 +87,7 @@
         </div>
     </div>
 </div>
+
 </body>
 
 </html>

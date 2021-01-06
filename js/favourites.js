@@ -2,7 +2,7 @@
 var allFavVendorList = []
 var favVendorList = []
 var selectedFavList = []
-var demoUserId = "786"
+var demoUserId = "-MQN7UYipYUXF5l7caW6"
 
 var firebaseConfig = {
     apiKey: "AIzaSyBDwiPGqXFeormDpnISyavzwju3BnCUPTo",
@@ -16,7 +16,7 @@ var firebaseConfig = {
 
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  var rootRef = new Firebase("https://eato-69-default-rtdb.firebaseio.com/").ref();
+ // var rootRef = new Firebase("https://eato-69-default-rtdb.firebaseio.com/").ref();
 
   var ref = firebase.database().ref('users')
   
@@ -102,7 +102,7 @@ $(document).ready(function(){
          });
 
     // Add all favourites in the screen to selected favourites
-    selectedFavList.concat(favVendorList);
+    selectedFavList = favVendorList;
 
     }else{
 
@@ -134,4 +134,36 @@ $(document).ready(function(){
       loadFavVendorList();
        
    });
+
+    $('#share-btn').click(function (){  
+    
+        content = "<html> <body> <ul>"
+        selectedFavList.forEach(function(fav){
+            
+            content = content.concat(`<li> Vendor Name : ${fav.vendorName} Rating : ${fav.Rating} </li>`)
+        })
+        content = content.concat(`</ul> </body> </html>`)
+
+        var email = $('#email-input').val()
+
+        SendEmail(email, content)
+    });
+
   });
+
+
+  function SendEmail(email , message){
+    console.log(message)
+    console.log(email)
+    Email.send({
+    Host : "smtp.gmail.com",
+    Username : "eato.corp@gmail.com",
+    Password : "Qwerty@12345$",
+    To : email,
+    From : "eato.corp@gmail.com",
+    Subject : "List of Favourites",
+    Body : content
+}).then(
+    message => alert(message)
+);
+}
