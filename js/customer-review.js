@@ -33,7 +33,7 @@ $(document).ready(function(){
           date: childData.date,
           rating: childData.rating,
           review: childData.review,
-          reviewResponse: childData.reviewResponse,
+          reviewResponse: childData.reviewResponse.response,
           userObj : {
               name: childData.userobj.name,
               profilepicLink: childData.userobj.profilepicLink

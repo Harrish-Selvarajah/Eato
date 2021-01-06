@@ -1,4 +1,4 @@
-reviews = [];
+var reviews = [];
 var currentID;
 var firebaseConfig = {
 	apiKey: "AIzaSyBDwiPGqXFeormDpnISyavzwju3BnCUPTo",
@@ -48,6 +48,11 @@ $(document).ready(function() {
 		$(this).prev().toggle();
 		return false;
 	});
+	getReviews();
+});
+
+function getReviews() {
+	reviews = [];
 	firebase.database().ref('Vendors/'+1).child('reviews').once('value', function(snapshot) {
 		snapshot.forEach(function(childSnapshot) {
 			// console.log(childSnapshot);
@@ -60,6 +65,7 @@ $(document).ready(function() {
 			date: childData.date,
 			rating: childData.rating,
 			review: childData.review,
+			reviewResponse: childData.reviewResponse.response,
 			userObj : {
 				name: childData.userobj.name,
 				profilepicLink: childData.userobj.profilepicLink
@@ -70,7 +76,7 @@ $(document).ready(function() {
 		console.log(reviews);
 		repeat();
 	  })
-});
+}
 
 function repeat() {
 	var renderHtml = "";
@@ -118,11 +124,28 @@ function repeat() {
 						</div>
 					</div>
 				</div>
+				<div page-role="page" id="vendor-feedback-${item.key}" style="display: none;">
+                        <div class="feedback">
+                            <div class="feedback-cont">
+                                <p class="infoText" style="background-color: orange;">
+                                    ${item.reviewResponse}</p>
+                            </div>
+                        </div>
+                    </div>
 			</div>
 		</div>`
 		})
 		$('#repeat').append(renderHtml);
 	}
+
+	// reviews.forEach(function(item) {
+	// 	var status = document.getElementById(`vendor-feedback-${item.key}`);
+	// 	if (item.reviewResponse == "") {
+	// 		status.style.display = "none";
+	// 	} else {
+	// 		status.style.display = "flex";
+	// 	}
+	// })
 }
 
 function reply(id) {
@@ -133,15 +156,24 @@ function reply(id) {
 function submitResponse() {
 	var response = $('#reviewReply').val();
 	console.log(currentID, "currentID")
-	firebase.database().ref('Vendors/'+ 1).child('reviews/' + currentID).update({
+	firebase.database().ref('Vendors/'+ 1).child('reviews/' + currentID).child('reviewResponse').update({
 		// name: 'Melt House',
-			reviewResposne : response ,
+			response
 			}
 	  , (error) => {
 		if (error) {
-		  console.log("Push to firebase failed!")
+		  console.log("Push to firebase failed!");
+		
 		} else {
 		  console.log("pushed to firebase succesfully!");
+		  getReviews();
+		  showResponse(currentID);
+		// $("#mydiv").load(location.href + " #mydiv");
 		}
 	  });
+}
+
+function showResponse(id) {
+	var status = document.getElementById(`vendor-feedback-${id}`);
+	status.style.display = "flex";
 }
