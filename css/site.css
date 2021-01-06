@@ -322,13 +322,6 @@ text-overflow: clip; */
     color: white;
 }
 
-.cards {
-    background: #FFF;
-    box-shadow: 0px 2px 3px 0px #AAA;
-    overflow: hidden;
-    border-radius: 30px;
-}
-
 .adjust-quantity {
     display: flex;
     justify-content: center;
