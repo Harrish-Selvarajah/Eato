@@ -68,14 +68,18 @@ text-overflow: clip; */
 }
 
 .ui-content {
-    /* padding: 0 !important; */
+    padding: 0 !important;
     min-height: 100vh;
     background-color: white;
 }
 
 .ui-content-header {
-    margin-top: 45px;
+    margin-top: 53px;
     min-height: 94vh!important;
+}
+
+.main-container {
+    margin: 20px 20px 60px 20px;
 }
 
 .ui-focus {
@@ -114,8 +118,8 @@ text-overflow: clip; */
 
 .header-bar>img {
     position: absolute;
-    left: 30px;
-    width: 100px;
+    left: 20px;
+    width: 75px;
 }
 
 .header-bar>i {
@@ -150,11 +154,6 @@ text-overflow: clip; */
     -webkit-transform: rotate(45deg);
 }
 
-.main-container {
-    margin-top: 20px;
-    margin-bottom: 60px;
-}
-
 .icon-container {
     position: absolute;
     right: 15px;
@@ -173,6 +172,18 @@ text-overflow: clip; */
     position: relative;
     top: 4px;
     left: 3px;
+}
+
+.icon-close {
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-close>i {
+    color: #FD6921;
+    font-size: 22px;
 }
 
 /* cross sign */
@@ -316,4 +327,61 @@ text-overflow: clip; */
     box-shadow: 0px 2px 3px 0px #AAA;
     overflow: hidden;
     border-radius: 30px;
+}
+
+.adjust-quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.adjust-quantity>span {
+    padding: 0px 10px 0px 10px;
+}
+
+.quantity-minus {
+    box-shadow: 0px 2px 3px 0px #AAA;
+    width: 30px!important;
+    height: 30px!important;
+    margin: 0px;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FAF9F9!important;
+    border-color: #FAF9F9!important;
+    border-radius: 8px!important;
+    text-shadow: none!important;
+}
+
+.quantity-minus>i {
+    font-size: 20px!important;
+    color: black;
+}
+
+.quantity-plus {
+    box-shadow: 0px 2px 3px 0px #AAA;
+    width: 30px!important;
+    height: 30px!important;
+    margin: 0px;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FD6921!important;
+    border-color: #FD6921!important;
+    border-radius: 8px!important;
+    text-shadow: none!important;
+}
+
+.quantity-plus>i {
+    font-size: 20px!important;
+    color: white;
+}
+
+@media (max-width: 767px) {
+    .footer-right>img {
+        width: 135px;
+        height: 65px;
+    }
 }
