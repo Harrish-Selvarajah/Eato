@@ -43,7 +43,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    border-radius: 50px;
+    border-radius: 110px;
     border: 4px solid white;
     margin-bottom: 12px;
     width: 90px;
@@ -60,6 +60,8 @@
 .vendor-details>p {
     margin-top: 20px;
     color: #707070;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 .vendor-details>div {
@@ -161,4 +163,40 @@
     min-width: 225px;
     width: 300px;
     margin: auto;
+}
+
+@media (max-width: 767px) {
+    .vendor-bg {
+        height: 160px;
+    }
+    .vendor-logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 110px;
+        height: 110px;
+    }
+    .vendor-details {
+        margin: 25px 0px 0px 0px;
+    }
+    .vendor-details>h1 {
+        text-align: center;
+    }
+    .vendor-highlights {
+        display: block!important;
+        text-align: center;
+    }
+    .vendor-highlights>* {
+        padding-right: 0px;
+    }
+    .vendor-highlights>p:nth-child(2), .vendor-highlights>p:nth-child(4) {
+        display: none;
+    }
+    .vendor-highlight-rating {
+        justify-content: center;
+    }
+    .food-card {
+        min-width: 100%;
+    }
 }

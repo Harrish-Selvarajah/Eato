@@ -14,6 +14,7 @@ $(document).ready(function(){
   firebase.initializeApp(firebaseConfig);
   // var Key = firebase.database().ref().child('movies').push().key;
   var rootRef = new Firebase("https://eato-69-default-rtdb.firebaseio.com/").ref();
+  console.log(rootRef);
 
     /* 1. Visualizing things on Hover - See next part for action on click */
     $('#stars li').on('mouseover', function(){
