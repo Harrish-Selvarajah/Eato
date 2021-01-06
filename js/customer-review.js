@@ -33,6 +33,7 @@ $(document).ready(function(){
           date: childData.date,
           rating: childData.rating,
           review: childData.review,
+          reviewResponse: childData.reviewResponse,
           userObj : {
               name: childData.userobj.name,
               profilepicLink: childData.userobj.profilepicLink
@@ -49,8 +50,8 @@ function ShowVendorReply(id) {
   console.log('here');
   // $.mobile.changePage( "#vendor-feedback" );
   var status = document.getElementById(`vendor-feedback-${id}`);
-  var status1 = document.getElementById("upArrow");
-  var status2 = document.getElementById("downArrow");
+  var status1 = document.getElementById(`upArrow-${id}`);
+  var status2 = document.getElementById(`downArrow-${id}`);
   console.log(status, "status");
   status.style.display = "flex";
   status1.style.display = "flex";
@@ -58,9 +59,9 @@ function ShowVendorReply(id) {
 }
 
 function hideVendorReply(id) {
-  var status = document.getElementById(`vendor-feedback-${id}`);
-  var status1 = document.getElementById("upArrow");
-  var status2 = document.getElementById("downArrow");
+    var status = document.getElementById(`vendor-feedback-${id}`);
+    var status1 = document.getElementById(`upArrow-${id}`);
+    var status2 = document.getElementById(`downArrow-${id}`);
   console.log(status, "status");
   status.style.display = "none";
   status1.style.display = "none";
@@ -90,11 +91,11 @@ function repeat() {
                                     <!-- <a href="#" class="ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all">No text</a> -->
                                     <!-- <img src="../assets/downArrow.png" style="height: 10px;"> -->
                                     <!-- <a id='btnShowSignUp' data-role="button" href='#' onclick="ShowSignUp();">Sign Up</a> -->
-                                    <a id='downArrow' href="#" data-shadow="false" data-theme="none"
+                                    <a id='downArrow-${item.key}' href="#" data-shadow="false" data-theme="none"
                                         onclick="ShowVendorReply('${item.key}');">
                                         <img src="../assets/downArrow.png" style="height: 15px;">
                                     </a>
-                                    <a id='upArrow' href="#" data-shadow="false" data-theme="none"
+                                    <a id='upArrow-${item.key}' href="#" data-shadow="false" data-theme="none"
                                         onclick="hideVendorReply('${item.key}');" style="display: none;">
                                         <img src="../assets/upArrow.png" style="height: 15px;">
                                     </a>
