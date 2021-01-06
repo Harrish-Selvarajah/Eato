@@ -2,18 +2,17 @@ var ratingValue;
 $(document).ready(function(){
 
   var firebaseConfig = {
-    apiKey: "AIzaSyBDwiPGqXFeormDpnISyavzwju3BnCUPTo",
-    authDomain: "eato-69.firebaseapp.com",
-    databaseURL: "https://eato-69-default-rtdb.firebaseio.com",
-    projectId: "eato-69",
-    storageBucket: "eato-69.appspot.com",
-    messagingSenderId: "274943061802",
-    appId: "1:274943061802:web:9916cf1cb84f515bdab853"
+    apiKey: "AIzaSyCaz3jxfddaasAJLueb9lP9qfUblutlWHY",
+    authDomain: "dfood-6b02c.firebaseapp.com",
+    projectId: "dfood-6b02c",
+    storageBucket: "dfood-6b02c.appspot.com",
+    messagingSenderId: "414378093119",
+    appId: "1:414378093119:web:db24e2caa44942abc8268a"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   // var Key = firebase.database().ref().child('movies').push().key;
-  var rootRef = new Firebase("https://eato-69-default-rtdb.firebaseio.com/").ref();
+  // var rootRef = new Firebase("https://eato-69-default-rtdb.firebaseio.com/").ref();
   console.log(rootRef);
 
     /* 1. Visualizing things on Hover - See next part for action on click */
@@ -69,15 +68,15 @@ $(document).ready(function(){
     var userObj = sessionStorage.getItem('userobj');
     // console.log(ratingValue, "rating value")
     var bla = $('#reviewComment').val();
-    firebase.database().ref('Vendors/'+ 1).child('reviews').push({
-      // name: 'Melt House',
-          review: bla,
-          reviewResponse: '',
-          rating: ratingValue,
-          date: "26/10/2020",
-          userobj : {
-            name: JSON.parse(userObj).name,
-            profilepicLink: ''
+    var foodItemID = '-MQIVU18l9mKwEdlWQ3I';
+    firebase.database().ref('Vendors/'+ 1).child('foodItem/' + foodItemID).child('reviews').push({
+          // name: 'Melt House',
+          rating: 20,
+          review: 'sdhabvjhsdabvdasb',
+          reviewResponse: 'hsbahvbbdsjvbsk',
+          date: '20/20/20',
+          userObj: {
+            name: 'leesha'
           }
     }, (error) => {
       if (error) {

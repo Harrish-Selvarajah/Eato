@@ -2,16 +2,15 @@
 // status.style.display = "none";
 var reviews = [];
 var firebaseConfig = {
-  apiKey: "AIzaSyBDwiPGqXFeormDpnISyavzwju3BnCUPTo",
-  authDomain: "eato-69.firebaseapp.com",
-  databaseURL: "https://eato-69-default-rtdb.firebaseio.com",
-  projectId: "eato-69",
-  storageBucket: "eato-69.appspot.com",
-  messagingSenderId: "274943061802",
-  appId: "1:274943061802:web:9916cf1cb84f515bdab853"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+    apiKey: "AIzaSyCaz3jxfddaasAJLueb9lP9qfUblutlWHY",
+    authDomain: "dfood-6b02c.firebaseapp.com",
+    projectId: "dfood-6b02c",
+    storageBucket: "dfood-6b02c.appspot.com",
+    messagingSenderId: "414378093119",
+    appId: "1:414378093119:web:db24e2caa44942abc8268a"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
 var rootRef = new Firebase("https://eato-69-default-rtdb.firebaseio.com/").ref();
 $(document).ready(function(){
   // firebase.database().ref('Vendors/'+ 1).child('reviews').once('value', (snapshot) => {
@@ -20,22 +19,23 @@ $(document).ready(function(){
   //   reviews.push(data);
   //   console.log(reviews, "reviews");
   // });
-
-  firebase.database().ref('Vendors/'+1).child('reviews').once('value', function(snapshot) {
+    var foodItemID = '-MQIVU18l9mKwEdlWQ3I';
+  firebase.database().ref('Vendors/'+ 1).child('foodItem/'+ foodItemID).child('reviews').once('value', function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
       var childData = childSnapshot.val();
     //   var childData = childSnapshot.val();
 		  
       //   console.log(childData);
-      //   reviews.push(childData);
+        // reviews.push(childData);
       var item = {
           key: childSnapshot.key,
           date: childData.date,
           rating: childData.rating,
           review: childData.review,
+          reviewResponse: childData.reviewResponse,
           userObj : {
-              name: childData.userobj.name,
-              profilepicLink: childData.userobj.profilepicLink
+              name: childData.userObj.name
+            //   profilepicLink: childData.userobj.profilepicLink
           }
       }
       reviews.push(item);
