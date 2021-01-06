@@ -280,3 +280,14 @@
     margin: 0px 18px auto 15px !important;
 }
 
+a{
+    color: white;
+    
+}
+
+#error-message{
+  margin-top: 5px;
+  margin-right: 110px;
+  color: #FD6921;
+  display: none;
+}

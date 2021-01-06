@@ -3,6 +3,7 @@ var allFavVendorList = []
 var favVendorList = []
 var selectedFavList = []
 var demoUserId = "-MQN7UYipYUXF5l7caW6"
+const emailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
 
 var firebaseConfig = {
     apiKey: "AIzaSyBDwiPGqXFeormDpnISyavzwju3BnCUPTo",
@@ -50,9 +51,9 @@ function loadFavVendorList() {
 
     var poiContent = ""
 
-    favVendorList.forEach(favVendor => {
+    favVendorList.forEach((favVendor,idx) => {
         poiContent = poiContent.concat(`<!-- Start of POI -->
-        <div class="poi-container" id="vendor-${favVendor.vendorID}">
+        <div class="poi-container" id="poi-container">
             <div class="image-container">
                 <div class="heart-container"> 
                     <i class=" material-icons icon-fav">favorite</i>
@@ -62,7 +63,7 @@ function loadFavVendorList() {
             <div class="info-container">
                 <div class= "info-line-1">
                     <h2>${favVendor.vendorName}</h2>
-                    <input type="checkbox" id="" class="checkbox"/>
+                    <input type="checkbox" id="checkbox-${favVendor.vendorID}" onClick="addCheckBoxClick(${favVendor.vendorID},${idx})" class="checkbox"/>
                 </div>
                 <div class= "info-line-2">
                     <i class=" material-icons icon-star">grade</i>
@@ -72,8 +73,8 @@ function loadFavVendorList() {
         </div>
         <!-- End of POI -->`)       
     });
-    
    $flexContainer.append(poiContent)
+
 }
 
 
@@ -103,7 +104,7 @@ $(document).ready(function(){
 
     // Add all favourites in the screen to selected favourites
     selectedFavList = favVendorList;
-
+    activeShareButton();
     }else{
 
         console.log("Un-click")
@@ -113,9 +114,12 @@ $(document).ready(function(){
          });
 
     // Unselected all 
-      selectedFavList = favVendorList.filter(function(element){
-          return !selectedFavList.includes(element)
-      })
+    //   selectedFavList = favVendorList.filter(function(element){
+    //       return !selectedFavList.includes(element)
+    //   })
+    selectedFavList = []
+
+      disableSharebutton();
     } 
 
     console.log(selectedFavList)
@@ -145,9 +149,30 @@ $(document).ready(function(){
         content = content.concat(`</ul> </body> </html>`)
 
         var email = $('#email-input').val()
-
-        SendEmail(email, content)
+        
+        if(validateEmail(email)){
+            $("#error-message").css("display", "none");
+            SendEmail(email, content)
+        }else{
+            console.error("Invalid Email")
+            $("#error-message").css("display", "block");;
+        }
     });
+
+    // Adding Item to select FavList
+    // $('.poi-container .checkbox').each(function(element){
+    //     console.log(element)
+    //     element.click(function(e){
+    //       console.log(e.target.value)
+    //       console.log("Errrrrr")
+    //     });
+    // });
+
+    // $('.poi-container .checkbox').click(function(e){
+    //     console.log("sdsdfsdfsdfsdfsdfsdf")
+    // })
+
+
 
   });
 
@@ -166,4 +191,53 @@ $(document).ready(function(){
 }).then(
     message => alert(message)
 );
+}
+
+function addCheckBoxClick(id,idx){
+
+   if($(`#checkbox-${id}`).is(":checked") == true){
+     
+    var selectedItem = favVendorList.find(function(element){
+         return element.vendorID == id;
+     })
+
+    selectedFavList = selectedFavList.concat(selectedItem)
+    console.log(selectedItem)
+    console.log(selectedFavList)
+
+    // Make Share Actives
+     activeShareButton();
+        
+   }else{
+    console.log("Unchecked")
+    selectedFavList = selectedFavList.filter(function(element){
+        return id != element.vendorID;
+    })
+    console.log(selectedFavList);
+    
+    if(selectedFavList.length == 0){
+        console.log("Wicked")
+        disableSharebutton();
+    }
+   }
+}
+
+function activeShareButton(){
+console.log("act")
+  $('#share-button-container').attr('style', 'background-color: #FD6921 !important');
+}
+
+function disableSharebutton(){
+   $('#share-button-container').attr('style', 'background-color: #707070 !important');
+}
+
+function validateEmail(email){
+   if(emailRegex.test($.trim(email))){
+       // console.log("valid email")
+       return true;
+
+   }else{
+       //console.log("invalid email")
+        return false;
+   }
 }

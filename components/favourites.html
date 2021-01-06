@@ -52,9 +52,12 @@
  
 
 
-                <div data-position="fixed" class="share-button-container">
-                    <i class="material-icons" id="icon-share" > <a href="#popupLogin" data-rel="popup" data-position-to="window"
-                        data-transition="pop">share</a></i>
+                <div data-position="fixed" class="share-button-container" id= "share-button-container">
+                    <a href="#popupLogin" data-rel="popup" data-position-to="window"
+                        data-transition="pop">
+                        <i class="material-icons" id="icon-share" >share </i>
+                    </a>
+                   
                 </div>
 
                 <div class="reply-div" data-position="fixed" id="div1">
@@ -70,6 +73,7 @@
                                 <div class="input-field-container">
                                     <input type="email" placeholder="Reciever Email" name="email" id="email-input" style="height: 50px; width: 285px;">
                                 </div>
+                                <p id="error-message"> Invalid Email Address </p>
                                 <div class="action-btn popup-btn">
                                     <button type="button" id="share-btn">
                                         <p class="primaryText">Share</p>
