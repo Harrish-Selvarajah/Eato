@@ -69,11 +69,11 @@ function repeat() {
                 </div>
             </div>
             <div class="adjust-quantity food-item-page-quantity">
-                <button class="quantity-minus">
+                <button class="quantity-minus" onclick=quantity('minus')>
                     <i class="material-icons">remove</i>
                 </button>
                 <span id="display-quantity">1</span>
-                <button class="quantity-plus">
+                <button class="quantity-plus" onclick=quantity('plus')>
                     <i class="material-icons">add</i>
                 </button>
             </div>
@@ -107,5 +107,16 @@ function clearCart() {
 
 function checkout() {
     sessionStorage.setItem('cart', JSON.stringify(cart));
-    
+
 }
+
+// function quantity(operation) {
+//     var oriQuantity = document.getElementById('display-quantity');
+//     if (operation == 'plus') {
+//         console.log('plus');
+
+//     } else 
+//     if (operation == 'minus') {
+//         console.log('minus');
+//     }
+// }
