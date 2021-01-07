@@ -1,0 +1,70 @@
+.payment-container{
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.input-container {
+    margin-top: 15px;
+}
+
+form .input-container:first-child{
+    margin-top: 0px;
+}
+
+.input-container .field {
+    width: 80%;
+    height: 40px;
+    border-radius: 25px;
+    padding-left: 18px;
+    margin-top: 5px;
+}
+
+.input-flex-container .input-container{
+    margin-top: 15px !important;
+   
+    margin-right: 1px;
+}
+
+.input-container .field-small {
+   width: 70%;
+   height: 40px;
+   border-radius: 25px;
+   padding-left: 18px;
+   margin-top: 5px !important;
+}
+
+.input-container .field-smaller {
+   width: 60%;
+   height: 40px;
+   border-radius: 25px;
+   padding-left: 18px;
+   margin-top: 5px !important;
+}
+
+#all-error-msg {
+    color: red;
+    margin-top: 15px;
+}
+
+#btn-confirm-order {
+    width: 80%;
+    height: 40px;
+    margin: 0px 10% 20px 10%;
+    background-color: #FD6921;
+    color: white;
+    border-radius: 20px;
+    border: 1px solid #FD6921;
+}
+.btn-footer{
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
+
+#add-loyaltly-label{
+    position: relative;
+}
+
+.other-info-container{
+    margin-left: 20px;
+}
