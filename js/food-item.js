@@ -61,7 +61,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
 function addToCart(id) {
     // var quan = 5;
     var x = 0;
-    // cart = JSON.parse(sessionStorage.getItem('cart'));
+    cart = JSON.parse(sessionStorage.getItem('cart'));
     fooditem.forEach(function (item) {
         if (item.id == id) {
             item.quantity = foodQuantity;
@@ -71,7 +71,6 @@ function addToCart(id) {
     console.log(cart);
     sessionStorage.setItem('cart', JSON.stringify(cart));
     console.log(sessionStorage);
-    debugger;
     document.location.href = "./customer-vendor.html";
 }
 
@@ -96,9 +95,10 @@ function handleFoodItemPopup(action, id) {
 
 function quantity(operation) {
     // debugger;
-    // var oriQuantity = $('#display-quantity').value;
-    // var oriQuantity = document.getElementById('display-quantity').value;
-    console.log(foodQuantity)
+    var oriQuantity = $('#display-quantity').value;
+    var oriQuantity = document.getElementById('display-quantity').value;
+    var vallue = $('#display-quantity').html();
+    console.log(vallue, 'val');
     var x;
     if (operation == 'plus') {
         console.log('plus');
