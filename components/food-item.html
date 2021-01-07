@@ -34,11 +34,11 @@
                     </div>
                 </div>
                 <div class="adjust-quantity food-item-page-quantity">
-                    <button class="quantity-minus">
+                    <button class="quantity-minus" onclick="quantity('minus')">
                         <i class="material-icons">remove</i>
                     </button>
-                    <span id="display-quantity">1</span>
-                    <button class="quantity-plus">
+                    <span id="display-quantity"></span>
+                    <button class="quantity-plus" onclick="quantity('plus')">
                         <i class="material-icons">add</i>
                     </button>
                 </div>
@@ -49,7 +49,7 @@
                 <div>
                     <div>
                         <div class="action-btn">
-                            <button type="button">
+                            <button type="button" onclick="addToCart('m1')">
                                 <p class="primaryText">Add To Cart</p>
                             </button>
                         </div>
