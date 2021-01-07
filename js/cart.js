@@ -116,8 +116,7 @@ function clearCart() {
 
 function checkout() {
     console.log(cart);
-    // sessionStorage.setItem('cart', JSON.stringify(cart));
-
+    sessionStorage.setItem('cart', JSON.stringify(cart));
 }
 
 function calculateTotal(value, id) {
