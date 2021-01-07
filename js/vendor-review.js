@@ -1,13 +1,12 @@
 reviews = [];
 var currentID;
 var firebaseConfig = {
-	apiKey: "AIzaSyBDwiPGqXFeormDpnISyavzwju3BnCUPTo",
-	authDomain: "eato-69.firebaseapp.com",
-	databaseURL: "https://eato-69-default-rtdb.firebaseio.com",
-	projectId: "eato-69",
-	storageBucket: "eato-69.appspot.com",
-	messagingSenderId: "274943061802",
-	appId: "1:274943061802:web:9916cf1cb84f515bdab853"
+    apiKey: "AIzaSyCaz3jxfddaasAJLueb9lP9qfUblutlWHY",
+    authDomain: "dfood-6b02c.firebaseapp.com",
+    projectId: "dfood-6b02c",
+    storageBucket: "dfood-6b02c.appspot.com",
+    messagingSenderId: "414378093119",
+    appId: "1:414378093119:web:db24e2caa44942abc8268a"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
@@ -48,11 +47,12 @@ $(document).ready(function() {
 		$(this).prev().toggle();
 		return false;
 	});
-	firebase.database().ref('Vendors/'+1).child('reviews').once('value', function(snapshot) {
+	var foodItemID = '-MQIVU18l9mKwEdlWQ3I';
+	firebase.database().ref('Vendors/'+ 1).child('foodItem/'+ foodItemID).child('reviews').once('value', function(snapshot) {
 		snapshot.forEach(function(childSnapshot) {
 			// console.log(childSnapshot);
 		  var childData = childSnapshot.val();
-		  
+		//   debugger;
 		//   console.log(childData);
 		//   reviews.push(childData);
 		var item = {
@@ -61,8 +61,8 @@ $(document).ready(function() {
 			rating: childData.rating,
 			review: childData.review,
 			userObj : {
-				name: childData.userobj.name,
-				profilepicLink: childData.userobj.profilepicLink
+				name: childData.userObj.name,
+				// profilepicLink: childData.userobj.profilepicLink
 			}
 		}
 		reviews.push(item);
@@ -131,9 +131,10 @@ function reply(id) {
 }
 
 function submitResponse() {
+	var foodItemID = '-MQIVU18l9mKwEdlWQ3I';
 	var response = $('#reviewReply').val();
 	console.log(currentID, "currentID")
-	firebase.database().ref('Vendors/'+ 1).child('reviews/' + currentID).update({
+	firebase.database().ref('Vendors/'+ 1).child('foodItem/'+ foodItemID).child('reviews/' + currentID).update({
 		// name: 'Melt House',
 			reviewResposne : response ,
 			}
