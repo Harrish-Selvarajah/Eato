@@ -5,12 +5,22 @@
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="../lib/jquery-1.12.4.min.js"></script>
-    <script src="../lib/jquery.mobile-1.4.5.min.js"></script>
-<link rel="stylesheet" href="../css/site.css" />
+
+    <link rel="stylesheet" href="../css/site.css" />
+    <link rel="stylesheet" href="../css/vendor-review.css"/>
     <link rel="stylesheet" href="../css/favourites.css" />
     
-    <script src="../js/login.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <!-- <script src="../js/login.js"></script> -->
+    <script src="../js/favourites.js"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -22,7 +32,7 @@
 
                 <div class="input-field-container input-field-container-ovrd">
                     <i class=" material-icons input-field-icon input-icon-reverse">search</i>
-                    <input class="input-field-icon-input input-size-ovrd" type="text" placeholder="Search..." name="search">
+                    <input class="input-field-icon-input input-size-ovrd" type="text" placeholder="Search..." name="search" id= "search-bar"/>
                 </div>
                    
                 <div class="search-filter-container">
@@ -32,250 +42,47 @@
 
             
             <!-- Flexc for POI Part -->
-            <div class="flex-container">
+            <div class="flex-container" id="poi-flex-container">
                 <div id= "select-all-container">
                         <input class= "checkbox" id="select-all" type="checkbox"/>
                         <label> Select All</label>
                 </div>           
-                <!-- Start of POI -->
-                <div class="poi-container">
-                    <div class="image-container">
-                        <div class="heart-container"> 
-                            <i class=" material-icons icon-fav">favorite</i>
-                        </div>
-                    </div>
-
-                    <div class="info-container">
-                        <div class= "info-line-1">
-                            <h2>Melt House</h2>
-                            <input type="checkbox" />
-                        </div>
-                        <div class= "info-line-2">
-                            <i class=" material-icons icon-star">grade</i>
-                            <h4> 4.9</h4>
-                        </div>
-                    </div>    
-                </div>
-                <!-- End of POI -->
-
-                 <!-- Start of POI -->
-                 <div class="poi-container">
-                    <div class="image-container">
-                        <div class="heart-container"> 
-                            <i class=" material-icons icon-fav">favorite</i>
-                        </div>
-                    </div>
-
-                    <div class="info-container">
-                        <div class= "info-line-1">
-                            <h2>Melt House</h2>
-                            <input type="checkbox" />
-                        </div>
-                        <div class= "info-line-2">
-                            <i class=" material-icons icon-star">grade</i>
-                            <h4> 4.9</h4>
-                        </div>
-                    </div>    
-                </div>
-                <!-- End of POI -->
-
-                 <!-- Start of POI -->
-                 <div class="poi-container">
-                    <div class="image-container">
-                        <div class="heart-container"> 
-                            <i class=" material-icons icon-fav">favorite</i>
-                        </div>
-                    </div>
-
-                    <div class="info-container">
-                        <div class= "info-line-1">
-                            <h2>Melt House</h2>
-                            <input type="checkbox" />
-                        </div>
-                        <div class= "info-line-2">
-                            <i class=" material-icons icon-star">grade</i>
-                            <h4> 4.9</h4>
-                        </div>
-                    </div>    
-                </div>
-                <!-- End of POI -->
-
-
-                 <!-- Start of POI -->
-                 <div class="poi-container">
-                    <div class="image-container">
-                        <div class="heart-container"> 
-                            <i class=" material-icons icon-fav">favorite</i>
-                        </div>
-                    </div>
-
-                    <div class="info-container">
-                        <div class= "info-line-1">
-                            <h2>Melt House</h2>
-                            <input type="checkbox" />
-                        </div>
-                        <div class= "info-line-2">
-                            <i class=" material-icons icon-star">grade</i>
-                            <h4> 4.9</h4>
-                        </div>
-                    </div>    
-                </div>
-                <!-- End of POI -->
-
-                 <!-- Start of POI -->
-                 <div class="poi-container">
-                    <div class="image-container">
-                        <div class="heart-container"> 
-                            <i class=" material-icons icon-fav">favorite</i>
-                        </div>
-                    </div>
-
-                    <div class="info-container">
-                        <div class= "info-line-1">
-                            <h2>Melt House</h2>
-                            <input type="checkbox" />
-                        </div>
-                        <div class= "info-line-2">
-                            <i class=" material-icons icon-star">grade</i>
-                            <h4> 4.9</h4>
-                        </div>
-                    </div>    
-                </div>
-                <!-- End of POI -->
-
-                 <!-- Start of POI -->
-                 <div class="poi-container">
-                    <div class="image-container">
-                        <div class="heart-container"> 
-                            <i class=" material-icons icon-fav">favorite</i>
-                        </div>
-                    </div>
-
-                    <div class="info-container">
-                        <div class= "info-line-1">
-                            <h2>Melt House</h2>
-                            <input type="checkbox" />
-                        </div>
-                        <div class= "info-line-2">
-                            <i class=" material-icons icon-star">grade</i>
-                            <h4> 4.9</h4>
-                        </div>
-                    </div>    
-                </div>
-                <!-- End of POI -->
-
-
-                 <!-- Start of POI -->
-                 <div class="poi-container">
-                    <div class="image-container">
-                        <div class="heart-container"> 
-                            <i class=" material-icons icon-fav">favorite</i>
-                        </div>
-                    </div>
-
-                    <div class="info-container">
-                        <div class= "info-line-1">
-                            <h2>Melt House</h2>
-                            <input type="checkbox" />
-                        </div>
-                        <div class= "info-line-2">
-                            <i class=" material-icons icon-star">grade</i>
-                            <h4> 4.9</h4>
-                        </div>
-                    </div>    
-                </div>
-                <!-- End of POI -->
-
-                 <!-- Start of POI -->
-                 <div class="poi-container">
-                    <div class="image-container">
-                        <div class="heart-container"> 
-                            <i class=" material-icons icon-fav">favorite</i>
-                        </div>
-                    </div>
-
-                    <div class="info-container">
-                        <div class= "info-line-1">
-                            <h2>Melt House</h2>
-                            <input type="checkbox" />
-                        </div>
-                        <div class= "info-line-2">
-                            <i class=" material-icons icon-star">grade</i>
-                            <h4> 4.9</h4>
-                        </div>
-                    </div>    
-                </div>
-                <!-- End of POI -->
-
-
-                 <!-- Start of POI -->
-                 <div class="poi-container">
-                    <div class="image-container">
-                        <div class="heart-container"> 
-                            <i class=" material-icons icon-fav">favorite</i>
-                        </div>
-                    </div>
-
-                    <div class="info-container">
-                        <div class= "info-line-1">
-                            <h2>Melt House</h2>
-                            <input type="checkbox" />
-                        </div>
-                        <div class= "info-line-2">
-                            <i class=" material-icons icon-star">grade</i>
-                            <h4> 4.9</h4>
-                        </div>
-                    </div>    
-                </div>
-                <!-- End of POI -->
-
-                 <!-- Start of POI -->
-                 <div class="poi-container">
-                    <div class="image-container">
-                        <div class="heart-container"> 
-                            <i class=" material-icons icon-fav">favorite</i>
-                        </div>
-                    </div>
-
-                    <div class="info-container">
-                        <div class= "info-line-1">
-                            <h2>Melt House</h2>
-                            <input type="checkbox" />
-                        </div>
-                        <div class= "info-line-2">
-                            <i class=" material-icons icon-star">grade</i>
-                            <h4> 4.9</h4>
-                        </div>
-                    </div>    
-                </div>
-                <!-- End of POI -->
-
- <!-- Start of POI -->
- <div class="poi-container">
-    <div class="image-container">
-        <div class="heart-container"> 
-            <i class=" material-icons icon-fav">favorite</i>
-        </div>
-    </div>
-
-    <div class="info-container">
-        <div class= "info-line-1">
-            <h2>Melt House</h2>
-            <input type="checkbox" />
-        </div>
-        <div class= "info-line-2">
-            <i class=" material-icons icon-star">grade</i>
-            <h4> 4.9</h4>
-        </div>
-    </div>    
-</div>
-<!-- End of POI -->
+                
  </div>
+ 
 
 
-                <div data-position="fixed" class="share-button-container">
-                    <i class="material-icons" id="icon-share" >share</i>
+                <div data-position="fixed" class="share-button-container" id= "share-button-container">
+                    <a href="#popupLogin" id="share-link" data-rel="popup" data-position-to="window"
+                        data-transition="pop">
+                        <i class="material-icons" id="icon-share" >share </i>
+                    </a>
+                   
                 </div>
+
+                <div class="reply-div" data-position="fixed" id="div1">
+                   
+                    <div data-role="popup" data-position="fixed" id="popupLogin" data-theme="a" class="ui-corner-all" style="height: 230px;
+                    width: 335px; border-radius: 20px;">
+                           <div class="pop-up-header">
+                            <i class="close" id="close-click"></i>
+                            <h5>Share Favourites</h5>
+                        </div>
+                        <div class="ui-content-header popup-header">
+                            <div class="pop-up-content-contianer">
+                                <div class="input-field-container">
+                                    <input type="email" placeholder="Reciever Email" name="email" id="email-input" style="height: 50px; width: 285px;">
+                                </div>
+                                <p id="error-message"> Invalid Email Address </p>
+                                <div class="action-btn popup-btn">
+                                    <button type="button" id="share-btn">
+                                        <p class="primaryText">Share</p>
+                                    </button>
+                                </div>
+                            </div>
+                          
+                        </div>
+                    </div>
 
             <div data-role="footer" data-position="fixed" style="height: 50px;" data-tap-toggle="false" > 
                 
@@ -284,6 +91,7 @@
         </div>
     </div>
 </div>
+
 </body>
 
 </html>

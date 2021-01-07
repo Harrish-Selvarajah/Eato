@@ -6,7 +6,7 @@
     /* //align-items : center; */
     padding: 28px !important;
     justify-content: space-between !important;
-    /* gap : 30px; */
+    gap : 10px;
     margin: auto;
     align-content: flex-start !important;
     position: relative;
@@ -19,8 +19,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 225px;
-    width: 300px;
+    flex-grow: 1;
     margin: auto;
 }
 
@@ -33,6 +32,7 @@
     margin-top: 12px;
     margin-bottom: 12px;
     border-radius: 26px;
+    /* margin-left: 2px; */
     padding: 0px;
     box-shadow: 4px 4px 18px -2px rgba(0,0,0,0.36);
 }
@@ -162,15 +162,18 @@
 }
 
 /*Targets the Iphone - LandScape*/
-@media(min-width : 769px) and (max-width : 849px){
+@media(min-width : 768px) and (max-width : 849px){
     #select-all-container input {
         right: 30px;
         margin-left: 35px !important;
     }
-  
+   
+    .flex-container > div{
+        margin-left: 15px;;
+    }
 }
 
-@media (min-width: 481px) and (max-width: 768px){
+@media (min-width: 481px) and (max-width: 767px){
     
     .input-icon-reverse{
         left: 87% !important;
@@ -271,5 +274,20 @@
     margin-top: 0px !important;
 }
 
+.checkbox{
+    width: 20px !important;
+    height: 20px !important;
+    margin: 0px 18px auto 15px !important;
+}
 
+a{
+    color: white;
+    
+}
 
+#error-message{
+  margin-top: 5px;
+  margin-right: 110px;
+  color: #FD6921;
+  display: none;
+}
