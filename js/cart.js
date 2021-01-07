@@ -25,7 +25,7 @@ var cart = [];
 var totalPrice;
 var subTotal;
 
-$(document).ready(function() { 
+$(document).ready(function () {
     // var fooditemID = getUrlParameter('fooditemID');
     // console.log(fooditemID, 'fooditemID');
     // debugger;
@@ -33,7 +33,7 @@ $(document).ready(function() {
 });
 
 function updateCart(id) {
-    cart = cart.filter(function(item) { return item.id !== id});
+    cart = cart.filter(function (item) { return item.id !== id });
     // sessionStorage.setItem('cart', JSON.stringify(cart));
 }
 
@@ -43,7 +43,7 @@ function clearCart() {
 }
 
 function calTotal() {
-    cart.forEach(function(item) {
+    cart.forEach(function (item) {
         totalPrice = totalPrice + item.price;
     })
     subTotal = totalPrice + 250;
@@ -52,6 +52,3 @@ function calTotal() {
 function checkout() {
     sessionStorage.setItem('cart', JSON.stringify(cart));
 }
-
-
-
