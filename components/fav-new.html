@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <title>Favourites | Eato</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <link rel="stylesheet" href="../css/site.css" />
+    <link rel="stylesheet" href="../css/fav-new.css" />
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <script src="../js/favourites.js"></script>
+
+
+</head>
+
+<body>
+    <div data-role="page">
+        <div data-role="header" data-postion="fixed" data-fullscreen="true" class="header-bar">
+            <!-- <img src="../assets/logo new.svg"> -->
+            <i class="arrow arrow-left"></i>
+            <h4>Favourites</h4>
+        </div>
+        <div role="main" class="ui-content ui-content-header">
+            <div class="main-container">
+                <div class="search-container">
+                    <div class="input-field-container search-bar">
+                        <i class=" material-icons input-field-icon">search</i>
+                        <input type="text" placeholder="Search..." name="usrnm" id="usrnm">
+                    </div>
+                    <div class="search-filter">
+                        <i class=" material-icons">sort</i>
+                    </div>
+                </div>
+                <div class="fav-checkbox">
+                    <div>
+                        <h4>Select All</h4>
+                        <input class="checkbox" id="select-all" type="checkbox" />
+                    </div>
+                </div>
+                <div class="favourites">
+                    <ul>
+                        <li class="item">
+                            <div class="item-img">
+                                <div class="icon-container">
+                                    <i class=" material-icons icon-fav">favorite</i>
+                                </div>
+                            </div>
+                            <div class="fav-checkbox">
+                                <div>
+                                    <h4>Melt House</h4>
+                                    <input class="checkbox" id="select-all" type="checkbox" />
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <i class="material-icons icon-star">grade</i>
+                                <h4>4.9</h4>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div data-position="fixed" class="share-button">
+                    <a>
+                        <i class="material-icons icon-share">share</i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
