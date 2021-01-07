@@ -22,13 +22,13 @@
             <h4></h4>
         </div>
         <div role="main" class="ui-content ui-content-header">
-            <div class="main-container cart-container">
-                <div class="items-container cards">
-                    <div class="d-flex">
+            <div class="main-container cart-container" id="cart-filled">
+                <div class="items-container cards" id="repeat">
+                    <div class="d-flex" onclick="clearCart()">
                         <a class="subtitle">Clear</a>
                     </div>
                     <!-- Start Item -->
-                    <div class="cards cart-item">
+                    <!-- <div class="cards cart-item">
                         <div>
                             <img src="../assets/food_item.jpg">
                         </div>
@@ -49,29 +49,7 @@
                             </button>
                         </div>
                         <i class="material-icons">close</i>
-                    </div>
-                    <div class="cards cart-item">
-                        <div>
-                            <img src="../assets/food_item.jpg">
-                        </div>
-                        <div class="food-item-details">
-                            <h4>Cheese Pizza</h4>
-                            <div>
-                                <span>Rs</span>
-                                <span>650</span>
-                            </div>
-                        </div>
-                        <div class="adjust-quantity food-item-page-quantity">
-                            <button class="quantity-minus">
-                                <i class="material-icons">remove</i>
-                            </button>
-                            <span id="display-quantity">1</span>
-                            <button class="quantity-plus">
-                                <i class="material-icons">add</i>
-                            </button>
-                        </div>
-                        <i class="material-icons">close</i>
-                    </div>
+                    </div> -->
                     <!-- End Item -->
                 </div>
                 <div class="checkout-container cards">
@@ -80,18 +58,18 @@
                     </section>
                     <div>
                         <span>Total Price:</span>
-                        <span>Rs 3250</span>
+                        <span id="totalPrice"></span>
                     </div>
                     <div>
                         <span>Delivery Services:</span>
-                        <span>Rs 250</span>
+                        <span >Rs 250</span>
                     </div>
                     <section class="web-only">
                         <hr class='dotted-line' />
                     </section>
                     <div>
                         <span>Sub Total:</span>
-                        <span>Rs 3500</span>
+                        <span id="subTotal"></span>
                     </div>
                     <div>
                         <div class="action-btn">
@@ -101,6 +79,9 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div id="cart-empty" style="display: none;">
+                Cart is Empty
             </div>
         </div>
         <div data-role="footer" class="footer">
