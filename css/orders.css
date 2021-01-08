@@ -1,0 +1,170 @@
+.order-item-details {
+    padding: 20px 50px 20px 50px;
+    display: grid;
+    grid-template-columns: 335px 2fr;
+    grid-gap: 20px;
+}
+
+.store-details {
+    background-image: url(../assets/food/indian.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 205px;
+    width: 100%;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.layer {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    border-radius: 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.store-details>div:last-child {
+    display: flex;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.store-details>div:last-child>* {
+    color: white;
+    padding: 5px;
+}
+
+.store-details>div:last-child>a {
+    font-weight: 100;
+    text-decoration: underline;
+}
+
+.order-details {
+    width: 100%;
+    position: relative;
+}
+
+.order-details>:last-child>button {
+    background-color: #EEEEEE;
+    border-color: #C7C7C7;
+    border-radius: 0px;
+}
+
+.order-status {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.order-status>div:first-child>:last-child {
+    color: #666666;
+}
+
+.order-status>div>div>i {
+    font-size: 16px;
+    color: #27AE60;
+    margin-right: 10px;
+}
+
+.order-status>div>div>:last-child {
+    font-weight: 600;
+}
+
+.order-status>div:last-child {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.action-btn>button {
+    width: 100%!important;
+    margin: 0px!important;
+    background-color: unset!important;
+}
+
+.action-btn>button>p {
+    color: #FD6921!important;
+}
+
+.item-details {
+    margin: 15px 0px 15px 0px;
+}
+
+.item-details>div:first-child {
+    margin-bottom: 5px;
+}
+
+.item-details>div:last-child {
+    margin-top: 5px;
+}
+
+.quantity {
+    border: 1px solid #787878;
+    border-radius: 50px;
+    width: 10px;
+    height: 10px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #787878;
+    margin-right: 5px!important;
+}
+
+.order-total {
+    margin-top: 35px;
+}
+
+.order-total>:first-child {
+    margin-right: 5px!important;
+}
+
+.order-divider {
+    background-color: #EEEEEE;
+    padding: 10px;
+    margin: 0px 50px 0px 50px;
+}
+
+.order-item .order-item-details .order-details .order-status>div:first-child>:nth-child(2) {
+    display: none!important;
+}
+
+.ongoing-order .order-item-details .order-details .order-status>div:first-child>:first-child {
+    display: none!important;
+}
+
+.ongoing-order .order-item-details .order-details .order-status>div:first-child>:nth-child(2) {
+    display: block!important;
+    color: #FD6921;
+}
+
+.ongoing-order .order-item-details .order-details .order-status>div:last-child .action-btn>button {
+    background-color: #FD6921!important;
+}
+
+.ongoing-order .order-item-details .order-details .order-status>div:last-child .action-btn>button>p {
+    color: white!important;
+}
+
+@media (max-width: 767px) {
+    .order-item-details {
+        display: block;
+        padding: 20px 0px 20px 0px
+    }
+    .order-divider {
+        margin: unset;
+    }
+    .order-details {
+        margin-top: 20px;
+    }
+    .store-details {
+        height: 135px;
+    }
+}
