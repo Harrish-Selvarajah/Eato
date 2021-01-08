@@ -62,10 +62,24 @@ function addToCart(id) {
     // var quan = 5;
     var x = 0;
     cart = JSON.parse(sessionStorage.getItem('cart'));
+    vendorID = JSON.parse(sessionStorage.getItem('vendorID'));
     fooditem.forEach(function (item) {
         if (item.id == id) {
-            item.quantity = foodQuantity;
-            cart.push(item);
+            // item.quantity = foodQuantity;
+            var vendorName = "";
+            if (vendorID == 1) {
+                vendorName = 'Melt House';
+            }
+            items = {
+                vendorID: vendorID,
+                vendorName: vendorName,
+                foodID: item.id,
+                foodName: item.name,
+                price: item.price,
+                quantity: foodQuantity,
+                totalPrice: 0
+            }
+            cart.push(items);
         }
     })
     console.log(cart);
