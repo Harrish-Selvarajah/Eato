@@ -15,28 +15,29 @@
     border-radius: 5px;
     height: 300px;
 }
-.items{
+
+.items {
     display: flex;
     overflow: auto;
 }
 
-.items::-webkit-scrollbar{
+.items::-webkit-scrollbar {
     display: none;
 }
 
-.items .item{
+.items .item {
     min-width: 150px;
     height: 60px;
-    background-color:#fff;
+    background-color: #fff;
     margin: 10px;
     border-radius: 35px;
-    box-shadow: 0px 2px 8px 2px rgba(0,0,0,0.28);
+    box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.28);
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
 
-.circle{
+.circle {
     margin: 10px;
     height: 40px;
     width: 40px;
@@ -58,8 +59,7 @@
     margin-bottom: 20px;
 }
 
-.submit-button
-{
+.submit-button {
     display: flex;
     justify-content: center;
 }
@@ -68,35 +68,44 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 30px!important;
 }
 
 /* Rating Star Widgets Style */
+
 .rating-stars ul {
-    list-style-type:none;
-    padding:0;
-    
-    -moz-user-select:none;
-    -webkit-user-select:none;
-  }
-  .rating-stars ul > li.star {
-    display:inline-block;
-    
-  }
-  
-  /* Idle State of the stars */
-  .rating-stars ul > li.star > i.fa {
-    font-size:2.5em; /* Change the size of the stars */
-    color:#ccc; /* Color on idle state */
-  }
-  
-  /* Hover state of the stars */
-  .rating-stars ul > li.star.hover > i.fa {
-    color:#FFCC36;
-  }
-  
-  /* Selected state of the stars */
-  .rating-stars ul > li.star.selected > i.fa {
-    color:#FF912C;
-  }
-  
-  .text-center {text-align:center;}
+    list-style-type: none;
+    padding: 0;
+    margin: 30px 0px 30px 0px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+.rating-stars ul>li.star {
+    display: inline-block;
+}
+
+/* Idle State of the stars */
+
+.rating-stars ul>li.star>i.fa {
+    font-size: 2.5em;
+    /* Change the size of the stars */
+    color: #ccc;
+    /* Color on idle state */
+}
+
+/* Hover state of the stars */
+
+.rating-stars ul>li.star.hover>i.fa {
+    color: #FFCC36;
+}
+
+/* Selected state of the stars */
+
+.rating-stars ul>li.star.selected>i.fa {
+    color: #FF912C;
+}
+
+.text-center {
+    text-align: center;
+}
