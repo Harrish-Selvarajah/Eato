@@ -5,15 +5,14 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="../css/site.css" />
+    
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-
-
     <script src="/js/food-item.js"></script>
-    <link rel="stylesheet" href="../css/site.css" />
-    <link rel="stylesheet" href="../css/food-item.css" />
-
+   
+   
 </head>
 
 <body>
@@ -23,14 +22,14 @@
             <i class="arrow arrow-left"></i>
             <h4>Food Item</h4>
         </div>
-        <div role="main" class="ui-content ui-content-header">
-            <div class="main-container food-item-page">
+        <div role="main" class="ui-content ui-content-header" id="render-food-item">
+            <!-- <div class="main-container food-item-page">
                 <div class="item-bg"></div>
                 <div class="d-flex item-details">
-                    <h4>Cheese Pizza</h4>
+                    <h4 id="food-name"></h4>
                     <div>
                         <span>Rs</span>
-                        <span>650</span>
+                        <span id="price"></span>
                     </div>
                 </div>
                 <div class="adjust-quantity food-item-page-quantity">
@@ -55,7 +54,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </body>
