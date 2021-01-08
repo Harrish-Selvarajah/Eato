@@ -2,80 +2,81 @@
 <html>
 
 <head>
-    <!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" /> -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- <script src="../lib/jquery-1.12.4.min.js"></script>
-    <script src="../lib/jquery.mobile-1.4.5.min.js"></script> -->
+    <title>Reviews | Eato</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <link rel="stylesheet" href="../css/site.css" />
+    <link rel="stylesheet" href="../css/vendor-review.css" />
+
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
     <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
-
-
-    <link rel="stylesheet" href="../css/vendor-review.css" />
-    <link rel="stylesheet" href="../css/site.css">
-    <link rel="stylesheet" href="../css/card-css.css">
     <script src="../js/vendor-review.js"></script>
-    <!-- <script src="../js/food-item.js"></script> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
     <div data-role="page">
         <div data-role="header" data-postion="fixed" data-fullscreen="true" class="header-bar">
-            <img src="../assets/logo/eoto_logo_dark.png">
+            <img src="../assets/logo new.svg">
             <!-- <i class="arrow arrow-left"></i> -->
-            <!-- <h4>Vendor Review</h4> -->
+            <!-- <h4>Reviews</h4> -->
         </div>
         <div role="main" class="ui-content ui-content-header">
-            <div class="ui-content" id="repeat">  
-            </div>
-                <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all" class="pop-over">
-                       <div class="pop-up-header">
-                        <i class="close"></i>
-                        <h5>Type Response</h5>
-                    </div>
-                    <div class="ui-content-header popup-header">
-                        <div class="pop-up-content-contianer">
-                            <div class="input-field-container">
-                                <input type="text" placeholder="Type message here" id="reviewReply" style="height: 150px;">
+            <!-- <div class="main-container" id="reviews">
+                <div class="review-item cards">
+                    <div class="review-details">
+                        <div class="profile-pic-container">
+                            <div class="profile-pic"></div>
+                        </div>
+                        <div>
+                            <p class="primaryText">S. Harrish</p>
+                            <div>
+                                <span class="stars-container stars-${item.rating}">★★★★★</span>
+                                <span class="date">26.10.2020</span>
                             </div>
-                            <div class="action-btn popup-btn">
-                                <button type="button" onclick="submitResponse()">
-                                    <p class="primaryText">Login</p>
-                                </button>
+                            <div class="review">
+                                <p class="secondaryText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
+                                    suscipit ipsum in nulla malesuada.</p>
                             </div>
                         </div>
                     </div>
-                </div>
+                    <div class="reply">
+                        <a href="#popup-modal" id="reply-btn" data-rel="popup" data-position-to="window"
+                            data-transition="pop">Reply</a>
+                    </div>
+                    <div class="vendor-response" id="vendor-feedback" style="display: none;">
+                        <p class="secondaryText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
+                            suscipit ipsum in nulla malesuada.</p>
+                    </div>
+                </div> -->
         </div>
-        <div data-role="footer" class="footer">
-            <div class="footer-top">
-                <div class="footer-left">
-                    <h4>Contact</h4>
-                    <p class="secondaryText"><a href="mailto:info@eato.eat">info@eato.eat</a></p>
-                    <br>
-                    <h4>Address</h4>
-                    <p class="secondaryText">50, Chez Road, Panisse</p>
-                </div>
-                <div class="footer-right">
-                    <img src="../assets/logo/eoto_logo_light.png">
+
+        <div data-role="popup" class="popup" id="popup-modal" data-theme="a" style="border-radius: 20px;">
+            <div class="popup-header">
+                <i class=" material-icons">close</i>
+                <h4>Type Response</h4>
+            </div>
+            <div class="popup-body">
+                <div class="popup-input">
+                    <textarea placeholder="Your message here..."></textarea>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <i class="material-icons">account_circle</i>
-                <i class="material-icons">account_circle</i>
-                <i class="material-icons">account_circle</i>
-                <p class="footer-copyrights infoText">© 2021 Eato. All Rights Reserved.</p>
+            <div class="popup-footer">
+                <div class="action-btn">
+                    <button type="button">
+                        <p class="primaryText">Reply</p>
+                    </button>
+                </div>
             </div>
         </div>
+
+    </div>
     </div>
 </body>
-
-
-
 
 </html>

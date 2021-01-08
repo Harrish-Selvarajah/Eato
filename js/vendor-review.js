@@ -8,36 +8,36 @@ var firebaseConfig = {
 	storageBucket: "eato-69.appspot.com",
 	messagingSenderId: "274943061802",
 	appId: "1:274943061802:web:9916cf1cb84f515bdab853"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  var rootRef = new Firebase("https://eato-69-default-rtdb.firebaseio.com/").ref();
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+var rootRef = new Firebase("https://eato-69-default-rtdb.firebaseio.com/").ref();
 function openPopup() {
-    location.href = "./popup.html"
+	location.href = "./popup.html"
 }
 
-$(document).ready(function() {
+$(document).ready(function () {
 	var showChar = 100;
 	var ellipsestext = "...";
 	var moretext = "more";
 	var lesstext = "less";
-	$('.more').each(function() {
+	$('.more').each(function () {
 		var content = $(this).html();
 
-		if(content.length > showChar) {
+		if (content.length > showChar) {
 
 			var c = content.substr(0, showChar);
-			var h = content.substr(showChar-1, content.length - showChar);
+			var h = content.substr(showChar - 1, content.length - showChar);
 
-			var html = c + '<span class="moreellipses">' + ellipsestext+ '&nbsp;</span><span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp;<a href="" class="morelink">' + moretext + '</a></span>';
+			var html = c + '<span class="moreellipses">' + ellipsestext + '&nbsp;</span><span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp;<a href="" class="morelink">' + moretext + '</a></span>';
 
 			$(this).html(html);
 		}
 
 	});
 
-	$(".morelink").click(function(){
-		if($(this).hasClass("less")) {
+	$(".morelink").click(function () {
+		if ($(this).hasClass("less")) {
 			$(this).removeClass("less");
 			$(this).html(moretext);
 		} else {
@@ -50,100 +50,66 @@ $(document).ready(function() {
 	});
 	getReviews();
 	// var fooditemID = getUrlParameter('fooditemID');
-	// console.log(fooditemID, 'fooditemID');
 });
 
 function getReviews() {
 	reviews = [];
-	firebase.database().ref('Vendors/'+1).child('reviews').once('value', function(snapshot) {
-		snapshot.forEach(function(childSnapshot) {
-			// console.log(childSnapshot);
-		  var childData = childSnapshot.val();
-		  
-		//   console.log(childData);
-		//   reviews.push(childData);
-		var item = {
-			key: childSnapshot.key,
-			date: childData.date,
-			rating: childData.rating,
-			review: childData.review,
-			reviewResponse: childData.reviewResponse.response,
-			userObj : {
-				name: childData.userobj.name,
-				profilepicLink: childData.userobj.profilepicLink
+	firebase.database().ref('Vendors/' + 1).child('reviews').once('value', function (snapshot) {
+		snapshot.forEach(function (childSnapshot) {
+			var childData = childSnapshot.val();
+
+			//   reviews.push(childData);
+			var item = {
+				key: childSnapshot.key,
+				date: childData.date,
+				rating: childData.rating,
+				review: childData.review,
+				reviewResponse: childData.reviewResponse.response,
+				userObj: {
+					name: childData.userobj.name,
+					profilepicLink: childData.userobj.profilepicLink
+				}
 			}
-		}
-		reviews.push(item);
+			reviews.push(item);
 		})
-		console.log(reviews);
-		repeat();
-	  })
+		renderReview();
+	})
 }
 
-function repeat() {
-	// $flexContainer = $('.flex-container')
-
-    $(".container").remove();
+function renderReview() {
 	var renderHtml = "";
 	if (reviews.length > 0) {
 		reviews.forEach(function (item) {
-			renderHtml += ` <div class="container">
-			<div class="card review-card">
-				<div class="left-container">
-					<div class="outer-circle">
-						<div class="circular_image">
-							<img src="../assets/harrish.jpg">
-						</div>
-					</div>
-				</div>
-				<div class="right-container">
-					<div style="width: 100%;">
-						<div>
-							<h5>
-								${item.userObj.name}
-							</h5>
-							<div class="ui-grid-a">
-								<div class="ui-block-a" style="width: 80px;">
-									<div style="width:74px">
-										<div class="ui-grid-d">
-										<span class="stars-container stars-${item.rating}">★★★★★</span>
-										</div>
-									</div>
-								</div>
-								<div class="ui-block-b date-container">
-									<div class="date">
-										${item.date}
-									</div>
-								</div>
-							</div>
-							<div class="infoText">
-								${item.review}
-								
-							</div>
-						</div>
-					   
-						<div class="reply-div-${item.key}" id="reply-div-${item.key}" style="display: none;">
-							<a onclick = "reply('${item.key}')" href="#popupLogin" data-rel="popup" data-position-to="window"
-								data-transition="pop">Reply</a>
-							
-						</div>
-					</div>
-				</div>
-				<div page-role="page" id="vendor-feedback-${item.key}" style="display: none;">
-                        <div class="feedback">
-                            <div class="feedback-cont">
-                                <p class="infoText" style="background-color: orange;">
-                                    ${item.reviewResponse}</p>
+			console.log(item);
+			renderHtml += `<div class="review-item cards">
+                    <div class="review-details">
+                        <div class="profile-pic-container">
+                            <div class="profile-pic"></div>
+                        </div>
+                        <div>
+                            <p class="primaryText">${item.userObj.name}</p>
+                            <div>
+                                <span class="stars-container stars-${item.rating}">★★★★★</span>
+                                <span class="date">${item.date}</span>
+                            </div>
+                            <div class="review">
+                                <p class="secondaryText">${item.review}</p>
                             </div>
                         </div>
                     </div>
-			</div>
-		</div>`
+                    <div class="reply" id="reply-div-${item.key}">
+                        <a onclick="reply('${item.key}')" href="#popup-modal" id="reply-btn" data-rel="popup" data-position-to="window"
+                            data-transition="pop">Reply</a>
+					</div>
+					<div class="vendor-response" id="vendor-feedback-${item.key}" style="display: none;">
+                        <p class="secondaryText">${item.reviewResponse}</p>
+                    </div>
+                </div>`
 		})
-		$('#repeat').append(renderHtml);
+		$('#reviews').append(renderHtml);
 	}
 
-	reviews.forEach(function(item) {
+	reviews.forEach(function (item) {
 		var status = document.getElementById(`vendor-feedback-${item.key}`);
 		var status2 = document.getElementById(`reply-div-${item.key}`);
 		if (item.reviewResponse == "") {
@@ -157,28 +123,26 @@ function repeat() {
 }
 
 function reply(id) {
-	console.log(id, "reply funciton");
 	currentID = id;
 }
 
 function submitResponse() {
 	var response = $('#reviewReply').val();
-	console.log(currentID, "currentID")
-	firebase.database().ref('Vendors/'+ 1).child('reviews/' + currentID).child('reviewResponse').update({
+	firebase.database().ref('Vendors/' + 1).child('reviews/' + currentID).child('reviewResponse').update({
 		// name: 'Melt House',
-			response
+		response
+	}
+		, (error) => {
+			if (error) {
+				console.log("Push to firebase failed!");
+
+			} else {
+				console.log("pushed to firebase succesfully!");
+				getReviews();
+				showResponse(currentID);
+				// $("#mydiv").load(location.href + " #mydiv");
 			}
-	  , (error) => {
-		if (error) {
-		  console.log("Push to firebase failed!");
-		
-		} else {
-		  console.log("pushed to firebase succesfully!");
-		  getReviews();
-		  showResponse(currentID);
-		// $("#mydiv").load(location.href + " #mydiv");
-		}
-	  });
+		});
 }
 
 function showResponse(id) {
@@ -187,16 +151,16 @@ function showResponse(id) {
 }
 
 var getUrlParameter = function getUrlParameter(sParam) {
-    var sPageURL = window.location.search.substring(1),
-        sURLVariables = sPageURL.split('&'),
-        sParameterName,
-        i;
+	var sPageURL = window.location.search.substring(1),
+		sURLVariables = sPageURL.split('&'),
+		sParameterName,
+		i;
 
-    for (i = 0; i < sURLVariables.length; i++) {
-        sParameterName = sURLVariables[i].split('=');
+	for (i = 0; i < sURLVariables.length; i++) {
+		sParameterName = sURLVariables[i].split('=');
 
-        if (sParameterName[0] === sParam) {
-            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
-        }
-    }
+		if (sParameterName[0] === sParam) {
+			return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+		}
+	}
 };
