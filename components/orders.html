@@ -24,161 +24,164 @@
         <div role="main" class="ui-content ui-content-header">
             <div class="main-container">
                 <!-- <<Ongoing Order>> -->
-                <div class="order-item ongoing-order">
-                    <div class="order-item-details">
-                        <div class="store-details">
-                            <div class="layer"></div>
-                            <div>
-                                <h3>Melt House</h3>
-                                <a class="secondaryText">View Store</a>
-                            </div>
-                        </div>
-                        <div class="order-details">
-                            <div class="order-status d-flex">
-                                <div>
-                                    <div class="d-flex">
-                                        <i class="material-icons">check_circle_outline</i>
-                                        <p class="subtitle">Order delivered</p>
-                                    </div>
-                                    <h4>On Going</h4>
-                                    <p class="secondaryText">Order #E3B47</p>
-                                </div>
-                                <div>
-                                    <div class="action-btn">
-                                        <button type="button">
-                                            <p class="primaryText">Track Order</p>
-                                        </button>
+    
+                        <div class="order-item ongoing-order">
+                            <div class="order-item-details">
+                                <div class="store-details">
+                                    <div class="layer"></div>
+                                    <div>
+                                        <h3 id="vendor-name"></h3>
+                                        <a class="secondaryText">View Store</a>
                                     </div>
                                 </div>
-                            </div>
-                            <hr />
-                            <div class="item-details">
-                                <div class="d-flex">
-                                    <div class="quantity infoText">1</div>
-                                    <span>Yellow Rice With Chicken Meatballs</span>
+                                <div class="order-details">
+                                    <div class="order-status d-flex">
+                                        <div>
+                                            <div class="d-flex">
+                                                <i class="material-icons">check_circle_outline</i>
+                                                <p class="subtitle">Order delivered</p>
+                                            </div>
+                                            <h4>On Going</h4>
+                                            <p class="secondaryText">Order #E3B47</p>
+                                        </div>
+                                        <div>
+                                            <div class="action-btn">
+                                                <button type="button">
+                                                    <p class="primaryText">Track Order</p>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="item-details" id="repeat-ongoing-order-items">
+                                        <!-- <div class="d-flex">
+                                            <div class="quantity infoText">1</div>
+                                            <span>Yellow Rice With Chicken Meatballs</span>
+                                        </div>
+                                        <div class="d-flex">
+                                            <div class="quantity infoText">1</div>
+                                            <span>Fried Rice</span>
+                                        </div> -->
+                                    </div>
+                                    <hr />
+                                    <div class="order-total d-flex">
+                                        <h4>Total</h4>
+                                        <h4 id="ongoing-price"></h4>
+                                    </div>
                                 </div>
-                                <div class="d-flex">
-                                    <div class="quantity infoText">1</div>
-                                    <span>Fried Rice</span>
-                                </div>
                             </div>
-                            <hr />
-                            <div class="order-total d-flex">
-                                <h4>Total</h4>
-                                <h4>Rs 1500.00</h4>
-                            </div>
+                            <div class="order-divider"></div>
                         </div>
-                    </div>
-                    <div class="order-divider"></div>
-                </div>
                 <!-- <<Ongoing Order End>> -->
 
                 <!-- <<Past Orders>> -->
-                <div class="order-item">
-                    <div class="order-item-details">
-                        <div class="store-details">
-                            <div class="layer"></div>
-                            <div>
-                                <h3>Melt House</h3>
-                                <a class="secondaryText">View Store</a>
-                            </div>
-                        </div>
-                        <div class="order-details">
-                            <div class="order-status d-flex">
-                                <div>
-                                    <div class="d-flex">
-                                        <i class="material-icons">check_circle_outline</i>
-                                        <p class="subtitle">Order delivered</p>
+                    <div id="repeat-past-orders">
+                        <div class="order-item">
+                            <div class="order-item-details">
+                                <div class="store-details">
+                                    <div class="layer"></div>
+                                    <div>
+                                        <h3>Melt House</h3>
+                                        <a class="secondaryText">View Store</a>
                                     </div>
-                                    <h4>On Going</h4>
-                                    <p class="secondaryText">Order #E3B47</p>
                                 </div>
-                                <div>
-                                    <div class="action-btn">
-                                        <button type="button">
-                                            <p class="primaryText">Order Again</p>
+                                <div class="order-details">
+                                    <div class="order-status d-flex">
+                                        <div>
+                                            <div class="d-flex">
+                                                <i class="material-icons">check_circle_outline</i>
+                                                <p class="subtitle">Order delivered</p>
+                                            </div>
+                                            <h4>On Going</h4>
+                                            <p class="secondaryText">Order #E3B47</p>
+                                        </div>
+                                        <div>
+                                            <div class="action-btn">
+                                                <button type="button" onclick="orderAgain(1)">
+                                                    <p class="primaryText">Order Again</p>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="item-details" id="repeat-past-items">
+                                        <div class="d-flex">
+                                            <div class="quantity infoText">1</div>
+                                            <span>Yellow Rice With Chicken Meatballs</span>
+                                        </div>
+                                        <div class="d-flex">
+                                            <div class="quantity infoText">1</div>
+                                            <span>Fried Rice</span>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="order-total d-flex">
+                                        <h4>Total</h4>
+                                        <h4>Rs 1500.00</h4>
+                                    </div>
+                                    <div>
+                                        <button type="button" onclick="rateVendor(1)">
+                                            <p class="primaryText">RATE VENDOR</p>
                                         </button>
                                     </div>
                                 </div>
                             </div>
-                            <hr />
-                            <div class="item-details">
-                                <div class="d-flex">
-                                    <div class="quantity infoText">1</div>
-                                    <span>Yellow Rice With Chicken Meatballs</span>
-                                </div>
-                                <div class="d-flex">
-                                    <div class="quantity infoText">1</div>
-                                    <span>Fried Rice</span>
-                                </div>
-                            </div>
-                            <hr />
-                            <div class="order-total d-flex">
-                                <h4>Total</h4>
-                                <h4>Rs 1500.00</h4>
-                            </div>
-                            <div>
-                                <button type="button">
-                                    <p class="primaryText">RATE VENDOR</p>
-                                </button>
-                            </div>
+                            <div class="order-divider"></div>
                         </div>
-                    </div>
-                    <div class="order-divider"></div>
-                </div>
-
-                <div class="order-item">
-                    <div class="order-item-details">
-                        <div class="store-details">
-                            <div class="layer"></div>
-                            <div>
-                                <h3>Melt House</h3>
-                                <a class="secondaryText">View Store</a>
-                            </div>
-                        </div>
-                        <div class="order-details">
-                            <div class="order-status d-flex">
-                                <div>
-                                    <div class="d-flex">
-                                        <i class="material-icons">check_circle_outline</i>
-                                        <p class="subtitle">Order delivered</p>
+        
+                        <div class="order-item">
+                            <div class="order-item-details">
+                                <div class="store-details">
+                                    <div class="layer"></div>
+                                    <div>
+                                        <h3>Melt House</h3>
+                                        <a class="secondaryText">View Store</a>
                                     </div>
-                                    <h4>On Going</h4>
-                                    <p class="secondaryText">Order #E3B47</p>
                                 </div>
-                                <div>
-                                    <div class="action-btn">
-                                        <button type="button">
-                                            <p class="primaryText">Order Again</p>
+                                <div class="order-details">
+                                    <div class="order-status d-flex">
+                                        <div>
+                                            <div class="d-flex">
+                                                <i class="material-icons">check_circle_outline</i>
+                                                <p class="subtitle">Order delivered</p>
+                                            </div>
+                                            <h4>On Going</h4>
+                                            <p class="secondaryText">Order #E3B47</p>
+                                        </div>
+                                        <div>
+                                            <div class="action-btn">
+                                                <button type="button">
+                                                    <p class="primaryText">Order Again</p>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="item-details">
+                                        <div class="d-flex">
+                                            <div class="quantity infoText">1</div>
+                                            <span>Yellow Rice With Chicken Meatballs</span>
+                                        </div>
+                                        <div class="d-flex">
+                                            <div class="quantity infoText">1</div>
+                                            <span>Fried Rice</span>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="order-total d-flex">
+                                        <h4>Total</h4>
+                                        <h4>Rs 1500.00</h4>
+                                    </div>
+                                    <div>
+                                        <button type="button" onclick="rateVendor('m2')">
+                                            <p class="primaryText">RATE VENDOR</p>
                                         </button>
                                     </div>
                                 </div>
                             </div>
-                            <hr />
-                            <div class="item-details">
-                                <div class="d-flex">
-                                    <div class="quantity infoText">1</div>
-                                    <span>Yellow Rice With Chicken Meatballs</span>
-                                </div>
-                                <div class="d-flex">
-                                    <div class="quantity infoText">1</div>
-                                    <span>Fried Rice</span>
-                                </div>
-                            </div>
-                            <hr />
-                            <div class="order-total d-flex">
-                                <h4>Total</h4>
-                                <h4>Rs 1500.00</h4>
-                            </div>
-                            <div>
-                                <button type="button">
-                                    <p class="primaryText">RATE VENDOR</p>
-                                </button>
-                            </div>
+                            <div class="order-divider"></div>
                         </div>
                     </div>
-                    <div class="order-divider"></div>
-                </div>
                 <!-- <<Past Orders End>> -->
             </div>
         </div>

@@ -46,8 +46,6 @@ $(document).ready(function () {
             status.style.display = "grid";
         }
     }
-
-    
     repeat();
 });
 
@@ -62,6 +60,7 @@ function repeat() {
             // debugger;
             totalPrice = totalPrice + (item.price * item.quantity);
             $('#totalPrice').text('Rs' + totalPrice);
+            item.totalPrice = totalPrice + 250; 
             renderHtml += `
         <!-- Start Item -->
         <div class="cards cart-item">
@@ -69,22 +68,22 @@ function repeat() {
                 <img src="../assets/food_item.jpg">
             </div>
             <div class="food-item-details">
-                <h4>${item.name}</h4>
+                <h4>${item.foodName}</h4>
                 <div>
                     <span>Rs</span>
                     <span>${item.price}</span>
                 </div>
             </div>
             <div class="adjust-quantity food-item-page-quantity">
-                <button class="quantity-minus" id="dec-${item.id}" onclick=decQuantity('${item.id}')>
+                <button class="quantity-minus" id="dec-${item.foodID}" onclick=decQuantity('${item.foodID}')>
                     <i class="material-icons">remove</i>
                 </button>
-                <span id="display-quantity-${item.id}">${item.quantity}</span>
-                <button class="quantity-plus" id="inc-${item.id}" onclick=incQuantity('${item.id}')>
+                <span id="display-quantity-${item.foodID}">${item.quantity}</span>
+                <button class="quantity-plus" id="inc-${item.foodID}" onclick=incQuantity('${item.foodID}')>
                     <i class="material-icons">add</i>
                 </button>
             </div>
-            <i onclick="removeItem('${item.id}')" class="material-icons">close</i>
+            <i onclick="removeItem('${item.foodID}')" class="material-icons">close</i>
         </div>
        `
     //    $('#display-quantity').text(5);
@@ -120,15 +119,20 @@ function checkout() {
 }
 
 function calculateTotal(value, id) {
+    debugger
     totalPrice = 0;
     cart.forEach(function(item) {
-        if (item.id == id) {
+        if (item.foodID == id) {
             // debugger;
             totalPrice = totalPrice + (item.price * value);
             $('#totalPrice').text('Rs' + totalPrice);
             subTotal = totalPrice + 250;
             $('#subTotal').text('Rs' + subTotal);
             item.quantity = value;
+            item.totalPrice = subTotal;
+            // cartItem = {
+            //     vendorName: item.vendorName
+            // }
         }
     })
 }
