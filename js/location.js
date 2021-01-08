@@ -3,9 +3,10 @@ var savedLocation = [];
 
 function initAutocomplete() {
   const map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: -33.8688, lng: 151.2195 },
-    zoom: 10,
+    center: { lat: 6.927079, lng: 79.861244 },
+    zoom: 15,
     mapTypeId: "roadmap",
+    disableDefaultUI: true,
   });
   // Create the search box and link it to the UI element.
   const input = document.getElementById("pac-input");
@@ -67,7 +68,7 @@ function initAutocomplete() {
 
   infoWindow = new google.maps.InfoWindow();
   const locationButton = document.createElement("button");
-  locationButton.textContent = "Pan to Current Location";
+  locationButton.textContent = "Current Location";
   locationButton.classList.add("custom-map-control-button");
   map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
   locationButton.addEventListener("click", () => {
@@ -80,7 +81,7 @@ function initAutocomplete() {
             lat: position.coords.latitude,
             lng: position.coords.longitude,
           };
-          codeLatLng( position.coords.latitude, position.coords.longitude);
+          codeLatLng(position.coords.latitude, position.coords.longitude);
           infoWindow.setPosition(pos);
           infoWindow.setContent("Location found.");
           infoWindow.open(map);
@@ -153,28 +154,28 @@ function saveLocation() {
 function codeLatLng(lat, lng) {
   geocoder = new google.maps.Geocoder();
   var latlng = new google.maps.LatLng(lat, lng);
-  geocoder.geocode({'latLng': latlng}, function(results, status) {
+  geocoder.geocode({ 'latLng': latlng }, function (results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
-    console.log(results)
+      console.log(results)
       if (results[1]) {
-       //formatted address
-      //  alert(results[0].formatted_address)
-      console.log(results[0].formatted_address);
-      //find country name
-           for (var i=0; i<results[0].address_components.length; i++) {
-          for (var b=0;b<results[0].address_components[i].types.length;b++) {
+        //formatted address
+        //  alert(results[0].formatted_address)
+        console.log(results[0].formatted_address);
+        //find country name
+        for (var i = 0; i < results[0].address_components.length; i++) {
+          for (var b = 0; b < results[0].address_components[i].types.length; b++) {
 
-          //there are different types that might hold a city admin_area_lvl_1 usually does in come cases looking for sublocality type will be more appropriate
-              if (results[0].address_components[i].types[b] == "administrative_area_level_1") {
-                  //this is the object you are looking for
-                  city= results[0].address_components[i];
-                  break;
-              }
+            //there are different types that might hold a city admin_area_lvl_1 usually does in come cases looking for sublocality type will be more appropriate
+            if (results[0].address_components[i].types[b] == "administrative_area_level_1") {
+              //this is the object you are looking for
+              city = results[0].address_components[i];
+              break;
+            }
           }
-      }
-      //city data
-      // alert(city.short_name + " " + city.long_name)
-      console.log(city.short_name + " " + city.long_name)
+        }
+        //city data
+        // alert(city.short_name + " " + city.long_name)
+        console.log(city.short_name + " " + city.long_name)
 
       } else {
         alert("No results found");

@@ -1,85 +1,184 @@
-/* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-       #map {
-        height: 100%;
-      }
-      
-      /* Optional: Makes the sample page fill the window. */
-      html,
-      body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      
-      #description {
-        font-family: Roboto;
-        font-size: 15px;
-        font-weight: 300;
-      }
-      
-      #infowindow-content .title {
-        font-weight: bold;
-      }
-      
-      #infowindow-content {
-        display: none;
-      }
-      
-      #map #infowindow-content {
-        display: inline;
-      }
-      
-      .pac-card {
-        margin: 10px 10px 0 0;
-        border-radius: 2px 0 0 2px;
-        box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        outline: none;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-        background-color: #fff;
-        font-family: Roboto;
-      }
-      
-      #pac-container {
-        padding-bottom: 12px;
-        margin-right: 12px;
-      }
-      
-      .pac-controls {
-        display: inline-block;
-        padding: 5px 11px;
-      }
-      
-      .pac-controls label {
-        font-family: Roboto;
-        font-size: 13px;
-        font-weight: 300;
-      }
-      
-      #pac-input {
-        background-color: #fff;
-        font-family: Roboto;
-        font-size: 15px;
-        font-weight: 300;
-        margin-left: 12px;
-        padding: 0 11px 0 13px;
-        text-overflow: ellipsis;
-        width: 400px;
-      }
-      
-      #pac-input:focus {
-        border-color: #4d90fe;
-      }
-      
-      #title {
-        color: #fff;
-        background-color: #4d90fe;
-        font-size: 25px;
-        font-weight: 500;
-        padding: 6px 12px;
-      }
-      
-      #target {
-        width: 345px;
-      }
+#map {
+  height: 88vh!important;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.location-page {
+  overflow: hidden;
+}
+
+.map-container {
+  margin-top: 68px;
+}
+
+.map-container>div {
+  display: flex;
+  margin-bottom: 20px!important;
+}
+
+.map-container>div>div:first-child {
+  flex: 2;
+}
+
+.map-container>div>div:last-child {
+  flex: 1;
+}
+
+.custom-map-control-button {
+  bottom: 40px;
+  right: 40px;
+  top: unset!important;
+  left: unset!important;
+  background-color: #FD6921;
+  color: white;
+  font-size: 15px;
+}
+
+.saved-location {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 15px;
+}
+
+#description {
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+#infowindow-content .title {
+  font-weight: bold;
+}
+
+#infowindow-content {
+  display: none;
+}
+
+#map #infowindow-content {
+  display: inline;
+}
+
+.pac-card {
+  margin: 10px 10px 0 0;
+  border-radius: 2px 0 0 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+  font-family: Roboto;
+}
+
+#pac-container {
+  padding-bottom: 12px;
+  margin-right: 12px;
+}
+
+.pac-controls {
+  display: inline-block;
+  padding: 5px 11px;
+}
+
+.pac-controls label {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+#pac-input {
+  background-color: #fff;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  width: 80%;
+  left: 50%!important;
+  top: 20px!important;
+  transform: translate(-50%)!important;
+  height: 46px!important;
+  border-radius: 27px!important;
+  border: none!important;
+  box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.36)!important;
+}
+
+#pac-input:focus {
+  outline: none;
+}
+
+#title {
+  color: #fff;
+  background-color: #4d90fe;
+  font-size: 25px;
+  font-weight: 500;
+  padding: 6px 12px;
+}
+
+#target {
+  width: 345px;
+}
+
+.selected-location {
+  display: block;
+  position: relative;
+  padding-left: 45px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 19px;
+  user-select: none;
+}
+
+.selected-location input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  border: 3px solid #FD6921;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.selected-location input:checked~.checkmark {
+  background-color: white;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.selected-location input:checked~.checkmark:after {
+  display: block;
+}
+
+.selected-location .checkmark:after {
+  top: 5px;
+  left: 5px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #FD6921;
+}
+
+@media (max-width: 767px) {
+  .map-container>div {
+    display: block;
+  }
+  .saved-location {
+    display: none;
+  }
+}
