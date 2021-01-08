@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Search | Eato</title>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../css/site.css" />
+    <link rel="stylesheet" href="../css/search.css" />
+    <link rel="stylesheet" type="text/css" href="../css/lightslider.css">
+    <link rel="stylesheet" href="../lib/jquery.mobile-1.4.5.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="../lib/jquery-1.12.4.min.js"></script>
+    <script src="../lib/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+        $(".item").click(function () {
+        $(".item.active-state").removeClass("active-state");
+        $(this).addClass("active-state");   
+    });
+    });     
+ 
+    </script>
+
+</head>
+
+<body>
+    <div data-role="page">
+        <div data-role="header" class="header" data-position="fixed" data-tap-toggle="false">
+            <img src="../assets/logo new.svg" alt="Computer Man" class="logo">
+        </div>
+        <div class="body">
+            <div class="container">
+                <div class="search-container">
+                    <div class="input-field-container search-bar">
+                        <i class=" material-icons input-field-icon">search</i>
+                        <input type="text" placeholder=" Search..." name="usrnm" id="usrnm"></input>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="items">
+                    <div class="item active-state">
+                        <i class="material-icons ">filter_alt</i>
+                        <div class="filter">Filter</div>
+                    </div>
+                    <div class="item">
+                        <div class="filter">Rice</div>
+                    </div>
+                    <div class="item">
+                        <div class="filter">Pizza</div>  
+                    </div>
+                    <div class="item">
+                        <div class="filter">Burger</div>
+                    </div>
+                    <div class="item">
+                        <div class="filter">Pasta</div>
+                    </div>
+                </div>
+            </div>
+            <!-- search results -->
+            <div class="section">
+                <div class="section-card">
+                    <div class="vendor-img">
+                        <img src="../assets/food/indian.jpg">
+                    </div>
+                    <div class="vendor-details">
+                        <div class="vendor-title"> Melt House Indian</div>
+                        <div class="vendor-ratings"> 4.9<i class="material-icons start-icon">star</i></div>
+                    </div>
+
+                </div>
+                <div class="section-card">
+                    <div class="vendor-img">
+                        <img src="../assets/food/suburban.jpeg">
+                    </div>
+                    <div class="vendor-details">
+                        <div class="vendor-title"> Suburban Kitchen</div>
+                        <div class="vendor-ratings"> 4.5<i class="material-icons start-icon">star</i></div>
+                    </div>
+
+                </div>
+                <div class="section-card">
+                    <div class="vendor-img">
+                        <img src="../assets/food/italian.jpg">
+                    </div>
+                    <div class="vendor-details">
+                        <div class="vendor-title"> italian Cuisine</div>
+                        <div class="vendor-ratings"> 3.5<i class="material-icons start-icon">star</i></div>
+                    </div>
+
+                </div>
+                <div class="section-card">
+                    <div class="vendor-img">
+                        <img src="../assets/food/Desserts.jpg">
+                    </div>
+                    <div class="vendor-details">
+                        <div class="vendor-title"> Desserts Dine</div>
+                        <div class="vendor-ratings"> 3.5<i class="material-icons start-icon">star</i></div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <!-- Navbar  -->
+        <div data-role="footer" class="nav-glyphish-example bottom-nav" data-position="fixed" data-tap-toggle="false">
+            <div data-role="navbar" data-grid="d" data-theme="a">
+                <ul>
+                    <li><a href="#" id="beer" data-icon="home">Home</a></li>
+                    <li><a href="#" id="beer" class="ui-btn-active" data-icon="search">Search</a></li>
+                    <li><a href="#" id="beer" data-icon="shop">Cart</a></li>
+                    <li><a href="#" id="beer" data-icon="grid">Order</a></li>
+                    <li><a href="#" id="user" data-icon="user">Profile</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
