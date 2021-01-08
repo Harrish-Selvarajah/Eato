@@ -57,7 +57,6 @@ function getReviews() {
 	firebase.database().ref('Vendors/' + 1).child('reviews').once('value', function (snapshot) {
 		snapshot.forEach(function (childSnapshot) {
 			var childData = childSnapshot.val();
-
 			//   reviews.push(childData);
 			var item = {
 				key: childSnapshot.key,
@@ -110,6 +109,7 @@ function renderReview() {
 	}
 
 	reviews.forEach(function (item) {
+		debugger;
 		var status = document.getElementById(`vendor-feedback-${item.key}`);
 		var status2 = document.getElementById(`reply-div-${item.key}`);
 		if (item.reviewResponse == "") {
