@@ -163,13 +163,7 @@ form .input-container:first-child{
     margin-left: 50px !important;
 }
 
-input :active {
-    all:unset ;
-}
 
-input:focus{
-    all: unset;
-}
 
 
 
