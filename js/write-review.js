@@ -59,16 +59,7 @@ $(document).ready(function(){
   function writeUserData() {
     var userObj = sessionStorage.getItem('userobj');
     var bla = $('#reviewComment').val();
-    var id = 0;
-    if (vendorId == 'm1') {
-      id = 1
-    } else {
-      if (vendorId == 'm2') {
-        id = 2
-      }
-    }
-    console.log(id);
-    firebase.database().ref('Vendors/'+ id).child('reviews').push({
+    firebase.database().ref('Vendors/'+ vendorId).child('reviews').push({
       // name: 'Melt House',
           review: bla,
           reviewResponse: '',
