@@ -32,12 +32,23 @@ $(document).ready(function () {
 });
 
 function login() {
+  cart = [];
     var firstName = $('#usrnm').val();
     var password = $('#pswrd').val();
 
-    users.forEach(function(users) {
+    users.forEach(function(user) {
       // debugger
-      if (users.name == firstName && users.password == password) {
+      if (user.name == firstName && user.password == password) {
+        userObj = {
+          id: user.key,
+          name: user.name,
+          mobileNumber: user.mobileNumber,
+          email: user.email,
+          profilePic: ''
+      }
+      sessionStorage.setItem('userobj', JSON.stringify(userObj));
+      sessionStorage.setItem('cart', JSON.stringify(cart));
+      console.log(sessionStorage.getItem('userobj')); 
         document.location.href = "./home.html";
       } else {
         console.log("Login error");
