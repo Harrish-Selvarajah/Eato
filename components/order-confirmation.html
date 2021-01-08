@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-    <link rel="stylesheet" href="../css/site.css" />
+    <link rel="stylesheet" href="../css/site.css" /> -->
     <link rel="stylesheet" href="../css/order-confirmation.css" />
     
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -22,7 +22,7 @@
         <h4>Order confirmation</h4>
     </div>
 
-    <div role="main" class="ui-content ui-content-header">  
+    <div data-role="main" class="ui-content ui-content-header">  
          <div class="payment-container">
             <h4>Payment Details</h4>'
             <form action="">
@@ -58,8 +58,46 @@
 
     <div class="other-info-container">
             <div id="loyalty-points-checkbox" style="display: inline-flex; justify-content: flex-start;">
-                    <label id="add-loyalty-label" for="add-loyalty">Add Loyalty Points</label>
+                    <label id="add-loyalty-label" >Add Loyalty Points</label>
                     <input type="checkbox"  id="add-loyalty" />
+            </div>
+
+            <div class="delivery-address">
+                 <h4>Delivery Address</h4>
+                 <div style="display: inline-flex;">
+                     <div style="display: inline-flex;" class="location-info-container">
+                            
+                        <div class="ovrd-icon-container">
+                            <span class="material-icons">
+                                room
+                                </span>
+                        </div>
+
+                        <div class="location-title-container">
+                             <p class="location-title"> 12, Selvarajah Road, Modara, Colombo 15</p>  
+                        </div>
+                     </div>
+
+                     <div class="edit-location-container">
+                        <div class="ovrd-icon-container">
+                            <span class="material-icons">
+                                edit
+                                </span>
+                        </div>
+                     </div>
+                 </div>
+            </div>
+
+            <div class="pricing-and-time-info-container">
+                    <div style="display: inline-flex; width: 100%;" class="time-info-container">
+                          <h4 class="info-key">Estimated Delivery Time :</h4>
+                          <h3 class="info-value">45 mins</h3>
+                    </div>
+                    
+                    <div style="display: inline-flex; width: 100%;" class="price-info-container">
+                        <h4 class="info-key" >Total Price</h4>
+                        <h2 class="info-value">$ 230</h2>
+                    </div>
             </div>
     </div>
     </div>
