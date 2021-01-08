@@ -141,4 +141,14 @@
     text-shadow: none;
 }
 
-@media (max-width: 767px) {}
+@media (max-width: 767px) {
+    .search-bar {
+        margin-right: 20px;
+    }
+    .search-bar>div>input {
+        max-width: 270px!important;
+    }
+    .search-bar .input-field-icon {
+        left: 90%;
+    }
+}
