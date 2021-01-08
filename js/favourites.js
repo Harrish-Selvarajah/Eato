@@ -163,22 +163,6 @@ $(document).ready(function(){
             $("#error-message").css("display", "block");;
         }
     });
-
-    // Adding Item to select FavList
-    // $('.poi-container .checkbox').each(function(element){
-    //     console.log(element)
-    //     element.click(function(e){
-    //       console.log(e.target.value)
-    //       console.log("Errrrrr")
-    //     });
-    // });
-
-    // $('.poi-container .checkbox').click(function(e){
-    //     console.log("sdsdfsdfsdfsdfsdfsdf")
-    // })
-
-
-
   });
 
 
