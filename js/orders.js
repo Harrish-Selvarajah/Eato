@@ -192,3 +192,59 @@ function rateVendor(id) {
     window.location.href = '../components/write-review.html?vendorID=' + id;
 }
 
+function orderAgain(id) {
+    if (id == 1) {
+        debugger;
+        var cart = []
+        sessionStorage.setItem('cart', JSON.stringify(cart));
+        item = {
+            foodID: 1,
+            foodName: 'Yellow Rice Chicken Meatballs',
+            price: 650,
+            quantity: 1,
+            totalPrice: 1500,
+            vendorId: 1,
+            vendorName: 'Melt House'
+        }
+        item2 = {
+            foodID: 2,
+            foodName: 'Fried Rice',
+            price: 650,
+            quantity: 1,
+            totalPrice: 1500,
+            vendorId: 1,
+            vendorName: 'Melt House'
+        }
+        cart.push(item);
+        cart.push(item2);
+        sessionStorage.setItem('cart', JSON.stringify(cart));
+        document.location.href = "./cart.html";
+    } else {
+        if (id == 2) {
+            var cart = []
+            sessionStorage.setItem('cart', JSON.stringify(cart));
+            item1 = {
+                foodID: 1,
+                foodName: 'Yellow Rice Chicken Meatballs',
+                price: 650,
+                quantity: 1,
+                totalPrice: 1500,
+                vendorId: 1,
+                vendorName: 'Melt House'
+            }
+            item2 = {
+                foodID: 2,
+                foodName: 'Fried Rice',
+                price: 650,
+                quantity: 1,
+                totalPrice: 1500,
+                vendorId: 1,
+                vendorName: 'Melt House'
+            }
+            cart.push(item);
+            cart.push(item2);
+            sessionStorage.setItem('cart', JSON.stringify(cart));
+            document.location.href = "./cart.html";
+        }
+    }
+}
