@@ -1,9 +1,14 @@
 var savedLocation = [];
 
 $(document).ready(function () {
-  debugger;
+  // debugger;
   savedLocation = JSON.parse(sessionStorage.getItem('savedLocation'));
   renderRadioButton();
+  $('input:radio[name=radio]').change(function() {
+    console.log(this.value);
+    sessionStorage.setItem('location', this.value);
+    console.log(sessionStorage)
+});
 })
 
 
@@ -178,7 +183,7 @@ function renderRadioButton() {
   var renderHtml = "";
   savedLocation.forEach(function (x) {
     renderHtml += `<label class="selected-location">${x}
-    <input type="radio" name="radio" id="selected-location-${x}">
+    <input type="radio" name="radio" id="selected-location" value='${x}'>
     <span class="checkmark"></span>
   </label>
   <hr style="margin-top: 20px;">`
@@ -186,4 +191,8 @@ function renderRadioButton() {
   $('#render-radio-button').append(renderHtml);
 }
 
-console.log(document.getElementById(`selected-location-${x}`));
+// console.log(document.getElementById(`#selected-location-${x}`));
+
+// $('#selected-location').on('change', function() {
+//   alert( this.value );
+// });
