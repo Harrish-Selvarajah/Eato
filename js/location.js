@@ -1,6 +1,8 @@
 let map, infoWindow, userLocation;
-var savedLocation = [];
-
+// var savedLocation = [];
+// var location = [];
+// sessionStorage.setItem('savedLocation', JSON.stringify(savedLocation));
+console.log(sessionStorage);
 function initAutocomplete() {
   const map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 6.927079, lng: 79.861244 },
@@ -55,6 +57,12 @@ function initAutocomplete() {
       );
       userLocation = place.name;
       console.log(place.name, "place name");
+      savedLocation = JSON.parse(sessionStorage.getItem('savedLocation'));
+      savedLocation.push(userLocation);
+      sessionStorage.setItem('location', userLocation);
+      sessionStorage.setItem('savedLocation', JSON.stringify(savedLocation));
+      console.log(sessionStorage, 'session');
+        // console.log(location, 'location');
 
       if (place.geometry.viewport) {
         // Only geocodes have viewport.
@@ -99,42 +107,6 @@ function initAutocomplete() {
 }
 
 
-
-// function initMap() {
-//   map = new google.maps.Map(document.getElementById("map"), {
-//     center: { lat: -34.397, lng: 150.644 },
-//     zoom: 15,
-//   });
-//   infoWindow = new google.maps.InfoWindow();
-//   const locationButton = document.createElement("button");
-//   locationButton.textContent = "Pan to Current Location";
-//   locationButton.classList.add("custom-map-control-button");
-//   map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
-//   locationButton.addEventListener("click", () => {
-//     // Try HTML5 geolocation.
-//     if (navigator.geolocation) {
-//       navigator.geolocation.getCurrentPosition(
-//         (position) => {
-//           const pos = {
-//             lat: position.coords.latitude,
-//             lng: position.coords.longitude,
-//           };
-//           infoWindow.setPosition(pos);
-//           infoWindow.setContent("Location found.");
-//           infoWindow.open(map);
-//           map.setCenter(pos);
-//         },
-//         () => {
-//           handleLocationError(true, infoWindow, map.getCenter());
-//         }
-//       );
-//     } else {
-//       // Browser doesn't support Geolocation
-//       handleLocationError(false, infoWindow, map.getCenter());
-//     }
-//   });
-// }
-
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.setPosition(pos);
   infoWindow.setContent(
@@ -164,9 +136,9 @@ function codeLatLng(lat, lng) {
         //find country name
         for (var i = 0; i < results[0].address_components.length; i++) {
           for (var b = 0; b < results[0].address_components[i].types.length; b++) {
-
+            // debugger;
             //there are different types that might hold a city admin_area_lvl_1 usually does in come cases looking for sublocality type will be more appropriate
-            if (results[0].address_components[i].types[b] == "administrative_area_level_1") {
+            if (results[0].address_components[i].types[b] == "establishment") {
               //this is the object you are looking for
               city = results[0].address_components[i];
               break;
@@ -176,7 +148,14 @@ function codeLatLng(lat, lng) {
         //city data
         // alert(city.short_name + " " + city.long_name)
         console.log(city.short_name + " " + city.long_name)
-
+        savedLocation = JSON.parse(sessionStorage.getItem('savedLocation'));
+        savedLocation.push(city.short_name);
+        sessionStorage.setItem('location', city.short_name);
+        sessionStorage.setItem('savedLocation', JSON.stringify(savedLocation));
+        // savedLocation.push(userLocation);
+        console.log(sessionStorage, 'session');
+        // console.log(location, 'location');
+        
       } else {
         alert("No results found");
       }
