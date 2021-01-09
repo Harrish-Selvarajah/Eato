@@ -70,5 +70,6 @@ function signUp() {
           sessionStorage.setItem('cart', JSON.stringify(cart));
           sessionStorage.setItem('locations', JSON.stringify(locations))
           console.log(sessionStorage.getItem('userobj'));
+          document.location.href = "./home.html";
       });
 }

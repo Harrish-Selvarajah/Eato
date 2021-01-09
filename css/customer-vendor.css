@@ -164,11 +164,12 @@
     border-radius: 20px;
 }
 
-.food-item-page-web>div:nth-child(2) {
+.food-item-page-web>div:last-child {
     padding: 0px 20px 0px 20px;
+    height: 60%;
 }
 
-.food-item-page-web>div:last-child {
+.food-item-page-web>div:last-child>div:last-child {
     position: absolute;
     left: 50%;
     bottom: 12px;
