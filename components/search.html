@@ -16,61 +16,63 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script>
-        $(document).ready(function() {
-        $(".item").click(function () {
-        $(".item.active-state").removeClass("active-state");
-        $(this).addClass("active-state");   
-    });
-    }); 
+        $(document).ready(function () {
+            $(".bottom-nav").removeClass("slideup")
+            $(".item").click(function () {
+                $(".item.active-state").removeClass("active-state");
+                $(this).addClass("active-state");
+            });
+        });
 
-    function searchVendor() { 
-    let input = document.getElementById('search').value 
-    input=input.toLowerCase(); 
-    let title = document.getElementsByClassName('vendor-title'); 
-    let card = document.getElementsByClassName('section-card');
-      
-    for (i = 0; i < title.length; i++) {  
-        if (!title[i].innerHTML.toLowerCase().includes(input)) { 
-            card[i].style.display="none"; 
-        } 
-        else { 
-            card[i].style.display="unset"; 
-            ;                  
-        } 
-    } 
-}    
- 
+        function searchVendor() {
+            let input = document.getElementById('search').value
+            input = input.toLowerCase();
+            let title = document.getElementsByClassName('vendor-title');
+            let card = document.getElementsByClassName('section-card');
+
+            for (i = 0; i < title.length; i++) {
+                if (!title[i].innerHTML.toLowerCase().includes(input)) {
+                    card[i].style.display = "none";
+                }
+                else {
+                    card[i].style.display = "unset";
+                    ;
+                }
+            }
+        }
+
     </script>
 
 </head>
 
 <body>
     <div data-role="page">
-        <div data-role="header" class="header" data-position="fixed" data-tap-toggle="false">
-            <img src="../assets/logo new.svg" alt="Computer Man" class="logo">
+        <div data-role="header" data-postion="fixed" data-fullscreen="true" class="header-bar">
+            <img src="../assets/logo new.svg">
         </div>
         <div class="body">
             <div class="container">
                 <div class="search-container">
                     <div class="input-field-container search-bar">
                         <i class=" material-icons input-field-icon">search</i>
-                        <input type="text" placeholder=" Search..." name="search" id="search" onkeyup="searchVendor()"></input>
+                        <input type="text" placeholder=" Search..." name="search" id="search"
+                            onkeyup="searchVendor()"></input>
                     </div>
                 </div>
             </div>
             <div class="container">
                 <div class="items">
-                    <a href="#filter-popup"  data-rel="popup" data-position-to="window" data-transition="slideup">
-                    <div class="item active-state">
-                        <i class="material-icons ">filter_alt</i>
-                        <div class="filter">Filter</div>
-                    </div>
-                </a>
+                    <a href="#filter-popup" data-rel="popup" data-position-to="window" data-transition="slideup">
+                        <div class="item active-state">
+                            <i class="material-icons ">filter_alt</i>
+                            <div class="filter">Filter</div>
+                        </div>
+                    </a>
                     <div class="item">
                         <div class="filter">Rice</div>
                     </div>
                     <div class="item">
-                        <div class="filter">Pizza</div>  
+                        <div class="filter">Pizza</div>
                     </div>
                     <div class="item">
                         <div class="filter">Burger</div>
@@ -123,7 +125,7 @@
 
                 </div>
 
-                <div data-role="popup" id="filter-popup" data-theme="a" class="filter-popup" >
+                <div data-role="popup" id="filter-popup" data-theme="a" class="filter-popup">
                     <div class="popup-top">popup
                     </div>
                     <div class="popup-middle">
@@ -134,8 +136,8 @@
                             <button type="button" onclick="" data-role="button">
                                 <p class="primaryText">Filter</p>
                             </button>
-                        </div> 
-                    </div>                  
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -144,11 +146,11 @@
         <div data-role="footer" class="nav-glyphish-example bottom-nav" data-position="fixed" data-tap-toggle="false">
             <div data-role="navbar" data-grid="d" data-theme="a">
                 <ul>
-                    <li><a href="#"  data-icon="home" class="nav-home navbar-btn">Home</a></li>
-                    <li><a href="#"  class="ui-btn-active nav-search navbar-btn" data-icon="search">Search</a></li>
-                    <li><a href="#"  data-icon="shop" class="nav-cart navbar-btn">Cart</a></li>
-                    <li><a href="#"  data-icon="grid" class="nav-order navbar-btn">Order</a></li>
-                    <li><a href="#"  data-icon="user"class="nav-profile navbar-btn">Profile</a></li>
+                    <li><a href="#" data-icon="home" class="nav-home navbar-btn">Home</a></li>
+                    <li><a href="#" class="ui-btn-active nav-search navbar-btn" data-icon="search">Search</a></li>
+                    <li><a href="#" data-icon="shop" class="nav-cart navbar-btn">Cart</a></li>
+                    <li><a href="#" data-icon="grid" class="nav-order navbar-btn">Order</a></li>
+                    <li><a href="#" data-icon="user" class="nav-profile navbar-btn">Profile</a></li>
                 </ul>
             </div>
         </div>
