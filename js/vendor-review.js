@@ -109,7 +109,7 @@ function renderReview() {
 	}
 
 	reviews.forEach(function (item) {
-		debugger;
+		// debugger;
 		var status = document.getElementById(`vendor-feedback-${item.key}`);
 		var status2 = document.getElementById(`reply-div-${item.key}`);
 		if (item.reviewResponse == "") {
