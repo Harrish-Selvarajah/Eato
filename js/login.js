@@ -22,7 +22,8 @@ $(document).ready(function () {
       email: childData.email,
       mobileNumber: childData.mobileNumber,
       name: childData.name,
-      password: childData.password
+      password: childData.password,
+      favourites : childData.favourites
     }
     users.push(item);
     })
@@ -38,7 +39,9 @@ function login() {
 
     users.forEach(function(user) {
       // debugger
+     
       if (user.name == firstName && user.password == password) {
+        console.log(user)
         userObj = {
           id: user.key,
           name: user.name,
@@ -46,10 +49,12 @@ function login() {
           email: user.email,
           profilePic: ''
       }
+
+      userObj['favourites'] = user.favourites
       sessionStorage.setItem('userobj', JSON.stringify(userObj));
       sessionStorage.setItem('cart', JSON.stringify(cart));
       console.log(sessionStorage.getItem('userobj')); 
-        document.location.href = "./home.html";
+      document.location.href = "./home.html";
       } else {
         console.log("Login error");
       }
