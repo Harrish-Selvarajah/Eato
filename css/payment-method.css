@@ -33,16 +33,41 @@
     width: 70px;
 }
 
+.add-button-container {
+    background-color: #FD6921 !important;
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    bottom: 70px;
+    right: 15px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-button-container>a>i {
+    color: white;
+    font-size: 40px;
+    text-shadow: none;
+}
+
 @media (max-width: 767px) {
     .card-item {
-        width: 335px;
+        width: 350px;
         height: 190px;
+    }
+}
+
+@media (max-width: 376px) {
+    .card-item {
+        width: 310px;
     }
 }
 
 @media (max-width: 320px) {
     .card-item {
-        width: 280px;
-        height: 190px;
+        width: 260px;
     }
 }
