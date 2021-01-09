@@ -47,10 +47,10 @@
 
 <body>
     <div data-role="page">
-        <div data-role="header" data-postion="fixed" data-fullscreen="true" class="header-bar">
+        <div data-role="header" data-postion="fixed" data-fullscreen="true" class="header-bar" style="position: fixed;">
             <img src="../assets/logo new.svg">
         </div>
-        <div class="body">
+        <div role="main" class="ui-content ui-content-header">
             <div class="container">
                 <div class="search-container">
                     <div class="input-field-container search-bar">
@@ -62,7 +62,7 @@
             </div>
             <div class="container">
                 <div class="items">
-                    <a href="#filter-popup" data-rel="popup" data-position-to="window" data-transition="slideup">
+                    <a href="#filter-popup" data-rel="popup" data-position-to="window" data-transition="pop">
                         <div class="item active-state">
                             <i class="material-icons ">filter_alt</i>
                             <div class="filter">Filter</div>
@@ -126,10 +126,28 @@
                 </div>
 
                 <div data-role="popup" id="filter-popup" data-theme="a" class="filter-popup">
-                    <div class="popup-top">popup
-                    </div>
-                    <div class="popup-middle">
-
+                    <div class="popup-top">
+                        <div class="sort-title">
+                            <i class="material-icons start-icon">sort</i>
+                            <div>Sort</div> 
+                        </div>
+                        <div class="sort-catagory">
+                            <div class="sort-item">A>Z</div>
+                            <div class="sort-item">Z>A</div>
+                            <div class="sort-item">Rating</div>    
+                        </div>
+                        <div class="sort-title">
+                            <i class="material-icons start-icon">filter_alt</i>
+                            <div>Sort</div> 
+                        </div>
+                        <div class="sort-catagory">
+                            <i class="material-icons start-icon">star</i>
+                            <i class="material-icons start-icon">star</i>
+                            <i class="material-icons start-icon">star</i>
+                            <i class="material-icons start-icon">star</i>
+                            <i class="material-icons start-icon">star</i>  
+                        </div>
+                        
                     </div>
                     <div class="popup-bottom">
                         <div class="action-btn filter-btn">
@@ -138,6 +156,26 @@
                             </button>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div data-role="footer" class="footer">
+                <div class="footer-top">
+                    <div class="footer-left">
+                        <h4>Contact</h4>
+                        <p class="secondaryText"><a href="mailto:info@eato.eat">info@eato.eat</a></p>
+                        <br>
+                        <h4>Address</h4>
+                        <p class="secondaryText">50, Chez Road, Panisse</p>
+                    </div>
+                    <div class="footer-right">
+                        <img src="../assets/logo/eoto_logo_light.png">
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <i class="material-icons">account_circle</i>
+                    <i class="material-icons">account_circle</i>
+                    <i class="material-icons">account_circle</i>
+                    <p class="footer-copyrights infoText">© 2021 Eato. All Rights Reserved.</p>
                 </div>
             </div>
 
