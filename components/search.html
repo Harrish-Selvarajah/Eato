@@ -21,7 +21,24 @@
         $(".item.active-state").removeClass("active-state");
         $(this).addClass("active-state");   
     });
-    });     
+    }); 
+
+    function searchVendor() { 
+    let input = document.getElementById('search').value 
+    input=input.toLowerCase(); 
+    let title = document.getElementsByClassName('vendor-title'); 
+    let card = document.getElementsByClassName('section-card');
+      
+    for (i = 0; i < title.length; i++) {  
+        if (!title[i].innerHTML.toLowerCase().includes(input)) { 
+            card[i].style.display="none"; 
+        } 
+        else { 
+            card[i].style.display="unset"; 
+            ;                  
+        } 
+    } 
+}    
  
     </script>
 
@@ -37,16 +54,18 @@
                 <div class="search-container">
                     <div class="input-field-container search-bar">
                         <i class=" material-icons input-field-icon">search</i>
-                        <input type="text" placeholder=" Search..." name="usrnm" id="usrnm"></input>
+                        <input type="text" placeholder=" Search..." name="search" id="search" onkeyup="searchVendor()"></input>
                     </div>
                 </div>
             </div>
             <div class="container">
                 <div class="items">
+                    <a href="#filter-popup"  data-rel="popup" data-position-to="window" data-transition="slideup">
                     <div class="item active-state">
                         <i class="material-icons ">filter_alt</i>
                         <div class="filter">Filter</div>
                     </div>
+                </a>
                     <div class="item">
                         <div class="filter">Rice</div>
                     </div>
@@ -103,6 +122,21 @@
                     </div>
 
                 </div>
+
+                <div data-role="popup" id="filter-popup" data-theme="a" class="filter-popup" >
+                    <div class="popup-top">popup
+                    </div>
+                    <div class="popup-middle">
+
+                    </div>
+                    <div class="popup-bottom">
+                        <div class="action-btn filter-btn">
+                            <button type="button" onclick="" data-role="button">
+                                <p class="primaryText">Filter</p>
+                            </button>
+                        </div> 
+                    </div>                  
+                </div>
             </div>
 
         </div>
@@ -110,11 +144,11 @@
         <div data-role="footer" class="nav-glyphish-example bottom-nav" data-position="fixed" data-tap-toggle="false">
             <div data-role="navbar" data-grid="d" data-theme="a">
                 <ul>
-                    <li><a href="#" id="beer" data-icon="home">Home</a></li>
-                    <li><a href="#" id="beer" class="ui-btn-active" data-icon="search">Search</a></li>
-                    <li><a href="#" id="beer" data-icon="shop">Cart</a></li>
-                    <li><a href="#" id="beer" data-icon="grid">Order</a></li>
-                    <li><a href="#" id="user" data-icon="user">Profile</a></li>
+                    <li><a href="#"  data-icon="home" class="nav-home navbar-btn">Home</a></li>
+                    <li><a href="#"  class="ui-btn-active nav-search navbar-btn" data-icon="search">Search</a></li>
+                    <li><a href="#"  data-icon="shop" class="nav-cart navbar-btn">Cart</a></li>
+                    <li><a href="#"  data-icon="grid" class="nav-order navbar-btn">Order</a></li>
+                    <li><a href="#"  data-icon="user"class="nav-profile navbar-btn">Profile</a></li>
                 </ul>
             </div>
         </div>

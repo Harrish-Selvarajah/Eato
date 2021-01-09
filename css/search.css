@@ -152,6 +152,7 @@ a{
 }
 
 .section{
+    min-height: 230px;
     width:auto;
     background-color: #fff;
     padding: 20px;
@@ -200,10 +201,27 @@ a{
 .start-icon{
     color: #FD6921;
 }
+
+/* popup styles start */
+.filter-popup{
+    padding:10px;
+    border-radius: 20px !important;
+    height: 260px;
+    width: 460px;
+
+}
+
+/* popup styles end */
+
+/*Remove a tag defauls styles*/
+.ui-page-theme-a a{
+    color: unset !important;
+    font-weight: unset !important;
+
+}
+
+
 /* Search section style end */
-
-
-
 
 
 /*Navbar UI changes start*/
@@ -215,7 +233,7 @@ a{
     /* box-shadow: 0px 2px 8px 2px rgba(0,0,0,0.28); */
 }
 
-.ui-icon-home{
+.nav-home{
     border-top-left-radius: 20px !important;
 }
 .ui-icon-user{
@@ -223,96 +241,83 @@ a{
 }
 
 /* Home icon chanegs */
-.ui-icon-home:after {
+.nav-home:after {
     background: url('../assets/navbar-icons/home.png') no-repeat !important;
     background-size: 20px 20px !important;
 }
 
-.ui-btn.ui-btn-active.ui-icon-home:after {
+.ui-btn.ui-btn-active.nav-home:after {
     background: url('../assets/navbar-icons/home-filled.png') no-repeat !important;
     background-size: 20px 20px !important;
 }
 
 /* search icon chanegs */
-.ui-icon-search:after {
+.nav-search:after {
     background: url('../assets/navbar-icons/search.png') no-repeat !important;
     background-size: 20px 20px !important;
 }
-.ui-btn.ui-btn-active.ui-icon-search:after{
+.ui-btn.ui-btn-active.nav-search:after{
     background: url('../assets/navbar-icons/search-filled.png') no-repeat !important;
     background-size: 20px 20px !important;
 }
 
 
 /* cart icon chanegs */
-.ui-icon-shop:after {
+.nav-cart:after {
     background: url('../assets/navbar-icons/shopping-cart.png') no-repeat !important;
     background-size: 20px 20px !important;
 }
 
-.ui-btn.ui-btn-active.ui-icon-shop:after{
+.ui-btn.ui-btn-active.nav-cart:after{
     background: url('../assets/navbar-icons/shopping-cart_filled.png') no-repeat !important;
     background-size: 20px 20px !important;  
 }
 
 /* Order icon chanegs */
-.ui-icon-grid:after {
+.nav-order:after {
     background: url('../assets/navbar-icons/order-history.png') no-repeat !important;
     background-size: 20px 20px !important;
 }
 
-.ui-btn.ui-btn-active.ui-icon-grid:after{
+.ui-btn.ui-btn-active.nav-order:after{
     background: url('../assets/navbar-icons/order-history_filled.png') no-repeat !important;
     background-size: 20px 20px !important;
 }
 
 /* Profile icon chanegs */
 
-.ui-icon-user:after {
+.nav-profile:after {
     background: url('../assets/navbar-icons/profile.png') no-repeat !important;
     background-size: 20px 20px !important;
 }
 
-.ui-btn.ui-btn-active.ui-icon-user:after{
+.ui-btn.ui-btn-active.nav-profile:after{
     background: url('../assets/navbar-icons/profile-filled.png') no-repeat !important;
     background-size: 20px 20px !important;
 }
 
 
-.ui-page-theme-a .ui-btn,.ui-page-theme-a .ui-btn:visited {
+.ui-page-theme-a .navbar-btn.ui-btn,.ui-page-theme-a .navbar-btn.ui-btn:visited {
     background-color: #fff !important;
     border-color: #fff !important;
     color: #333;
     text-shadow: 0 1px 0 #f3f3f3;
 }
 
-.ui-btn-icon-left:after, .ui-btn-icon-right:after, .ui-btn-icon-top:after, .ui-btn-icon-bottom:after, .ui-btn-icon-notext:after {
+.navbar-btn.ui-btn-icon-left:after, .navbar-btn.ui-btn-icon-right:after, .navbar-btn.ui-btn-icon-top:after,
+ .navbar-btn.ui-btn-icon-bottom:after, .navbar-btn.ui-btn-icon-notext:after {
     background-color: unset !important;    
 }
 
 
-.ui-page-theme-a .ui-btn:hover{
-    background-color: #ededed;
-    border-color: #ddd;
-    color: #333 ;
-    text-shadow: 0 1px 0 #f3f3f3;
-}
-
-.ui-page-theme-a .ui-btn,.ui-page-theme-a .ui-btn:visited{
-    background-color: #f6f6f6;
-    border-color: #ddd;
-    color: #333;
-    text-shadow: 0 1px 0 #f3f3f3;
-}
-
-.ui-page-theme-a .ui-btn.ui-btn-active {
+.ui-page-theme-a .navbar-btn.ui-btn.ui-btn-active {
     background-color: #fff !important;
     border-color: #fff !important;
     color: #FD6921 !important;
     text-shadow: unset !important;
 }
 
-.ui-page-theme-a .ui-btn:focus{
+.ui-page-theme-a .navbar-btn.ui-btn:focus{
     -webkit-box-shadow: unset !important;
     -moz-box-shadow: unset !important;
     box-shadow: unset !important;
@@ -323,6 +328,19 @@ a{
 /* mobile style start */
 
 @media only screen and (max-width: 700px) {
+
+    .filter-popup {
+        border-radius: 20px !important;
+        height: 260px !important;
+        width: 100vw !important;
+    }
+    
+    
+    .ui-popup-container{
+        top: 320px !important;
+        left: unset !important;
+    }
+
     .section{
         justify-content: center; 
     }
@@ -346,13 +364,6 @@ a{
     .logo{
         padding: 10px; 
         height:28px;
-    }
-
-    .ui-page-theme-a .ui-btn,.ui-page-theme-a .ui-btn:visited {
-        background-color: #fff !important;
-        border-color: #fff !important;
-        color: #333;
-        text-shadow: 0 1px 0 #f3f3f3;
     }
 
     .search-bar .input-field-icon {
