@@ -12,6 +12,25 @@
     border-radius: 20px;
     width: 425px;
     height: 245px;
+    padding: 10px;
+    color: white;
+}
+
+.card-item>div {
+    margin: 10px 10px 0px 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-item>div>div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-item>div>div>img {
+    width: 70px;
 }
 
 @media (max-width: 767px) {
