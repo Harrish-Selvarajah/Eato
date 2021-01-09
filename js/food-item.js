@@ -247,22 +247,70 @@ function addToCart(id) {
 }
 
 function handleFoodItemPopup(action, id) {
+    // debugger;
     if ($(window).width() < 768) {
         $("#food-item-popup").popup("close");
         $('body').css('overflow', 'auto');
         window.location.href = '../components/food-item.html?fooditemID=' + id;
     }
     else {
+       
         popupAction = action
         if (popupAction === "open") {
+            renderPopup(id);
             $('body').css('overflow', 'hidden');
             $("#food-item-popup").popup("open");
+            
+
         }
         else {
             $('body').css('overflow', 'auto');
             $("#food-item-popup").popup("close");
         }
     }
+}
+
+function renderPopup(foodId) {
+    // debugger
+    var renderHtml = "";
+    vendorID = JSON.parse(sessionStorage.getItem('vendorID'));
+    vendor.forEach(function (x) {
+        if (x.id == Number(vendorID)) {
+            x.foodItems.forEach(function(y){
+                if (foodId == y.id) {
+                    renderHtml += `<div class="d-flex fipw-item-details">
+                    <h4>${y.name}</h4>
+                    <div>
+                        <span>Rs</span>
+                        <span>${y.price}</span>
+                    </div>
+                </div>
+                <div class="adjust-quantity fipw-food-item-page-quantity">
+                    <button class="quantity-minus" onclick="quantity('minus')">
+                        <i class="material-icons">remove</i>
+                    </button>
+                    <span id="display-quantity">1</span>
+                    <button class="quantity-plus" onclick="quantity('plus')">
+                        <i class="material-icons">add</i>
+                    </button>
+                </div>
+                <div class="fipw-item-description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum non ante
+                        tristique
+                        rutrum.</p>
+                </div>
+                <div>
+                                <div class="action-btn">
+                                    <button type="button"  onclick="addToCart('${y.id}')>
+                                        <p class="primaryText">Add To Cart</p>
+                                    </button>
+                                </div>
+                            </div>`
+                }
+            })
+            $('#render-fooditem-popup').append(renderHtml);
+        }
+    })
 }
 
 function quantity(operation) {
