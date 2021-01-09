@@ -1,97 +1,87 @@
-<!DOCTYPE html>
 <html>
 
 <head>
+    <title>Favourites | Eato</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
     <link rel="stylesheet" href="../css/site.css" />
-    <link rel="stylesheet" href="../css/vendor-review.css"/>
     <link rel="stylesheet" href="../css/favourites.css" />
-    
+
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
     <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
 
-    <!-- <script src="../js/login.js"></script> -->
-    <script src="../js/favourites.js"></script>
+    <script src="../js/fav-new.js"></script>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 
 <body>
     <div data-role="page">
-        <div class="ui-content">
-
-            <div class="search-flex-container">
-
-                <div class="input-field-container input-field-container-ovrd">
-                    <i class=" material-icons input-field-icon input-icon-reverse">search</i>
-                    <input class="input-field-icon-input input-size-ovrd" type="text" placeholder="Search..." name="search" id= "search-bar"/>
+        <div data-role="header" data-postion="fixed" data-fullscreen="true" class="header-bar">
+            <!-- <img src="../assets/logo new.svg"> -->
+            <i class="arrow arrow-left"></i>
+            <h4>Favourites</h4>
+        </div>
+        <div role="main" class="ui-content ui-content-header">
+            <div class="main-container">
+                <div class="search-container">
+                    <div class="input-field-container search-bar">
+                        <i class=" material-icons input-field-icon">search</i>
+                        <input type="text" placeholder="Search..." name="search" id="search">
+                    </div>
+                    <div class="search-filter">
+                        <i class=" material-icons">sort</i>
+                    </div>
                 </div>
-                   
-                <div class="search-filter-container">
-                    <i class=" material-icons" id= "icon-sort">sort</i>
+                <div class="fav-checkbox">
+                    <div>
+                        <h4>Select All</h4>
+                        <input class="checkbox" id="select-all" type="checkbox" />
+                    </div>
                 </div>
-            </div>
-
-            
-            <!-- Flexc for POI Part -->
-            <div class="flex-container" id="poi-flex-container">
-                <div id= "select-all-container">
-                        <input class= "checkbox" id="select-all" type="checkbox"/>
-                        <label> Select All</label>
-                </div>           
-                
- </div>
- 
-
-
-                <div data-position="fixed" class="share-button-container" id= "share-button-container">
-                    <a href="#popupLogin" id="share-link" data-rel="popup" data-position-to="window"
-                        data-transition="pop">
-                        <i class="material-icons" id="icon-share" >share </i>
-                    </a>
-                   
+                <div class="favourites">
+                    <ul id="fav-list">
+                       
+                    </ul>
                 </div>
 
-                <div class="reply-div" data-position="fixed" id="div1">
-                   
-                    <div data-role="popup" data-position="fixed" id="popupLogin" data-theme="a" class="ui-corner-all" style="height: 230px;
-                    width: 335px; border-radius: 20px;">
-                           <div class="pop-up-header">
-                            <i class="close" id="close-click"></i>
-                            <h5>Share Favourites</h5>
-                        </div>
-                        <div class="ui-content-header popup-header">
-                            <div class="pop-up-content-contianer">
-                                <div class="input-field-container">
-                                    <input type="email" placeholder="Reciever Email" name="email" id="email-input" style="height: 50px; width: 285px;">
-                                </div>
-                                <p id="error-message"> Invalid Email Address </p>
-                                <div class="action-btn popup-btn">
-                                    <button type="button" id="share-btn">
-                                        <p class="primaryText">Share</p>
-                                    </button>
-                                </div>
-                            </div>
-                          
+                <div data-role="popup" class="popup" id="popup-modal" data-theme="a" style="border-radius: 20px; min-height: 265px;">
+                    <div class="popup-header">
+                        <i class=" material-icons" id="close-btn">close</i>
+                        <h4>Share Favourites</h4>
+                    </div>
+                    <div class="popup-body">
+                        <div class="popup-input">
+                            <span class="subtitle" style="margin-left: 5px !important;">Email to:</span>
+                            <textarea id="input-email" placeholder="Email" style="padding-left: 13px; padding-top:16px;"></textarea>
+                            <p id="error-msg">email address is invalid</p>
                         </div>
                     </div>
+                    <div class="popup-footer">
+                        <div class="action-btn">
+                            <button type="button" id="last-share-btn">
+                                <p class="primaryText">Share</p>
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
-            <div data-role="footer" data-position="fixed" style="height: 50px;" data-tap-toggle="false" > 
-                
+                <div data-position="fixed" class="share-button" id="share-btn">
+                    <a>
+                        <i class="material-icons icon-share">share</i>
+                    </a>
+                </div>
             </div>
-
         </div>
     </div>
-</div>
-
 </body>
 
 </html>
