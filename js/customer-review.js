@@ -30,7 +30,7 @@ $(document).ready(function () {
                 date: childData.date,
                 rating: childData.rating,
                 review: childData.review,
-                reviewResponse: childData.reviewResponse.response,
+                reviewResponse: childData.reviewResponse,
                 userObj: {
                     name: childData.userobj.name,
                     profilepicLink: childData.userobj.profilepicLink

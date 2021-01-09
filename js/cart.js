@@ -119,7 +119,6 @@ function checkout() {
 }
 
 function calculateTotal(value, id) {
-    debugger
     totalPrice = 0;
     cart.forEach(function(item) {
         if (item.foodID == id) {
