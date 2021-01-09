@@ -301,7 +301,7 @@ function renderPopup(foodId) {
                 </div>
                 <div>
                                 <div class="action-btn">
-                                    <button type="button"  onclick="addToCart('${y.id}')>
+                                    <button type="button"  onclick="addToCart('${y.id}')">
                                         <p class="primaryText">Add To Cart</p>
                                     </button>
                                 </div>
