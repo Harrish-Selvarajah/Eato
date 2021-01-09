@@ -27,6 +27,7 @@ function signUp() {
     var spsrwd = $('cpswrd').val();
     var userId;
     var userObj = {};
+    var locations = [];
     
     firebase.database().ref('users/').push({
         name: firstName,
@@ -67,6 +68,7 @@ function signUp() {
         } 
           sessionStorage.setItem('userobj', JSON.stringify(userObj));
           sessionStorage.setItem('cart', JSON.stringify(cart));
+          sessionStorage.setItem('locations', JSON.stringify(locations))
           console.log(sessionStorage.getItem('userobj'));
       });
 }
