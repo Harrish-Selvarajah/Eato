@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Search | Eato</title>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../css/site.css" />
+    <link rel="stylesheet" href="../css/search.css" />
+    <link rel="stylesheet" type="text/css" href="../css/lightslider.css">
+    <link rel="stylesheet" href="../lib/jquery.mobile-1.4.5.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="../lib/jquery-1.12.4.min.js"></script>
+    <script src="../lib/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $(".bottom-nav").removeClass("slideup")
+            $(".item").click(function () {
+                $(".item.active-state").removeClass("active-state");
+                $(this).addClass("active-state");
+            });
+        });
+
+        function searchVendor() {
+            let input = document.getElementById('search').value
+            input = input.toLowerCase();
+            let title = document.getElementsByClassName('vendor-title');
+            let card = document.getElementsByClassName('section-card');
+
+            for (i = 0; i < title.length; i++) {
+                if (!title[i].innerHTML.toLowerCase().includes(input)) {
+                    card[i].style.display = "none";
+                }
+                else {
+                    card[i].style.display = "unset";
+                    ;
+                }
+            }
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <div data-role="page">
+        <div data-role="header" data-postion="fixed" data-fullscreen="true" class="header-bar" style="position: fixed;">
+            <img src="../assets/logo new.svg">
+        </div>
+        <div role="main" class="ui-content ui-content-header">
+            <div class="container">
+                <div class="search-container">
+                    <div class="input-field-container search-bar">
+                        <i class=" material-icons input-field-icon">search</i>
+                        <input type="text" placeholder=" Search..." name="search" id="search"
+                            onkeyup="searchVendor()"></input>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="items">
+                    <a href="#filter-popup" data-rel="popup" data-position-to="window" data-transition="pop">
+                        <div class="item active-state">
+                            <i class="material-icons ">filter_alt</i>
+                            <div class="filter">Filter</div>
+                        </div>
+                    </a>
+                    <div class="item">
+                        <div class="filter">Rice</div>
+                    </div>
+                    <div class="item">
+                        <div class="filter">Pizza</div>
+                    </div>
+                    <div class="item">
+                        <div class="filter">Burger</div>
+                    </div>
+                    <div class="item">
+                        <div class="filter">Pasta</div>
+                    </div>
+                </div>
+            </div>
+            <!-- search results -->
+            <div class="section">
+                <div class="section-card">
+                    <div class="vendor-img">
+                        <img src="../assets/food/indian.jpg">
+                    </div>
+                    <div class="vendor-details">
+                        <div class="vendor-title"> Melt House Indian</div>
+                        <div class="vendor-ratings"> 4.9<i class="material-icons start-icon">star</i></div>
+                    </div>
+
+                </div>
+                <div class="section-card">
+                    <div class="vendor-img">
+                        <img src="../assets/food/suburban.jpeg">
+                    </div>
+                    <div class="vendor-details">
+                        <div class="vendor-title"> Suburban Kitchen</div>
+                        <div class="vendor-ratings"> 4.5<i class="material-icons start-icon">star</i></div>
+                    </div>
+
+                </div>
+                <div class="section-card">
+                    <div class="vendor-img">
+                        <img src="../assets/food/italian.jpg">
+                    </div>
+                    <div class="vendor-details">
+                        <div class="vendor-title"> italian Cuisine</div>
+                        <div class="vendor-ratings"> 3.5<i class="material-icons start-icon">star</i></div>
+                    </div>
+
+                </div>
+                <div class="section-card">
+                    <div class="vendor-img">
+                        <img src="../assets/food/Desserts.jpg">
+                    </div>
+                    <div class="vendor-details">
+                        <div class="vendor-title"> Desserts Dine</div>
+                        <div class="vendor-ratings"> 3.5<i class="material-icons start-icon">star</i></div>
+                    </div>
+
+                </div>
+
+                <div data-role="popup" id="filter-popup" data-theme="a" class="filter-popup">
+                    <div class="popup-top">
+                        <div class="sort-title">
+                            <i class="material-icons start-icon">sort</i>
+                            <div>Sort</div> 
+                        </div>
+                        <div class="sort-catagory">
+                            <div class="sort-item">A>Z</div>
+                            <div class="sort-item">Z>A</div>
+                            <div class="sort-item">Rating</div>    
+                        </div>
+                        <div class="sort-title">
+                            <i class="material-icons start-icon">filter_alt</i>
+                            <div>Sort</div> 
+                        </div>
+                        <div class="sort-catagory">
+                            <i class="material-icons start-icon">star</i>
+                            <i class="material-icons start-icon">star</i>
+                            <i class="material-icons start-icon">star</i>
+                            <i class="material-icons start-icon">star</i>
+                            <i class="material-icons start-icon">star</i>  
+                        </div>
+                        
+                    </div>
+                    <div class="popup-bottom">
+                        <div class="action-btn filter-btn">
+                            <button type="button" onclick="" data-role="button">
+                                <p class="primaryText">Filter</p>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-role="footer" class="footer">
+                <div class="footer-top">
+                    <div class="footer-left">
+                        <h4>Contact</h4>
+                        <p class="secondaryText"><a href="mailto:info@eato.eat">info@eato.eat</a></p>
+                        <br>
+                        <h4>Address</h4>
+                        <p class="secondaryText">50, Chez Road, Panisse</p>
+                    </div>
+                    <div class="footer-right">
+                        <img src="../assets/logo/eoto_logo_light.png">
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <i class="material-icons">account_circle</i>
+                    <i class="material-icons">account_circle</i>
+                    <i class="material-icons">account_circle</i>
+                    <p class="footer-copyrights infoText">© 2021 Eato. All Rights Reserved.</p>
+                </div>
+            </div>
+
+        </div>
+        <!-- Navbar  -->
+        <div data-role="footer" class="nav-glyphish-example bottom-nav" data-position="fixed" data-tap-toggle="false">
+            <div data-role="navbar" data-grid="d" data-theme="a">
+                <ul>
+                    <li><a href="#" data-icon="home" class="nav-home navbar-btn">Home</a></li>
+                    <li><a href="#" class="ui-btn-active nav-search navbar-btn" data-icon="search">Search</a></li>
+                    <li><a href="#" data-icon="shop" class="nav-cart navbar-btn">Cart</a></li>
+                    <li><a href="#" data-icon="grid" class="nav-order navbar-btn">Order</a></li>
+                    <li><a href="#" data-icon="user" class="nav-profile navbar-btn">Profile</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

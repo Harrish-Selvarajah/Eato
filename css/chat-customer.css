@@ -1,0 +1,108 @@
+.profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: 1px solid #D3D3D3;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.profile-pic-container {
+    border: 5px solid #FD6921;
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    padding: 4px;
+    margin-bottom: 5px;
+}
+
+.profile-pic {
+    background-image: url(../assets/vendor_logo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.rating {
+    align-items: center;
+}
+
+.rating>i {
+    color: #FD6921;
+    font-size: 16px;
+    margin-left: 5px;
+}
+
+.messages .sent-message {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.recieved-message {
+    background-color: #F1F0F0;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 25px;
+    border-top-left-radius: 0px;
+    width: 50%;
+}
+
+.sent-message>div {
+    background-color: #FD6921;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 25px;
+    border-top-right-radius: 0px;
+    width: 50%;
+}
+
+.sent-message>:first-child {
+    color: white;
+    text-shadow: none;
+}
+
+.message-input {
+    position: absolute;
+    width: 90%;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.input-field-container>div {
+    width: 100%;
+    border: 1px solid #C8C8C8!important;
+    background-color: #F5F5F5!important;
+    box-shadow: unset!important;
+}
+
+.input-field-container>div>input {
+    width: 90%;
+    background-color: #F5F5F5!important;
+}
+
+.input-field-icon {
+    right: 5px!important;
+    left: unset!important;
+    color: white;
+}
+
+.send-btn {
+    width: 35px;
+    height: 35px;
+    background-color: #FD6921;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.send-btn>i {
+    font-size: 22px;
+    transform: rotate(-25deg);
+}

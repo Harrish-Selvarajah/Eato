@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <title>Chats | Eato</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <link rel="stylesheet" href="../css/site.css" />
+    <link rel="stylesheet" href="../css/chats-vendor.css" />
+</head>
+
+<body>
+    <div data-role="page">
+        <div data-role="header" data-postion="fixed" data-fullscreen="true" class="header-bar">
+            <img src="../assets/logo new.svg">
+        </div>
+        <div role="main" class="ui-content ui-content-header">
+            <div class="main-container chats-container">
+                <div>
+                    <div class="search-container">
+                        <div class="input-field-container search-bar">
+                            <i class=" material-icons input-field-icon">search</i>
+                            <input type="text" placeholder=" Search..." name="search" id="search"
+                                onkeyup="searchVendor()"></input>
+                        </div>
+                    </div>
+                </div>
+                <div class="recent-chats">
+                    <!-- <<<<<Repeat>>>>> -->
+                    <div class="chat d-flex">
+                        <div class="profile-pic-container">
+                            <div class="profile-pic"></div>
+                        </div>
+                        <div>
+                            <h4>Kamala Harris</h4>
+                        </div>
+                    </div>
+                    <!-- <<<<<Repeat End>>>>> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
