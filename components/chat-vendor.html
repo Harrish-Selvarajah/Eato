@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="../css/site.css" />
     <link rel="stylesheet" href="../css/chat-vendor.css" />
-    <script src="../js/chat-vendor.js"></script>
+    <script src="../js/chat.js"></script>
 </head>
 
 <body>
@@ -30,23 +30,27 @@
                     <h2>Joy Brendon</h2>
                     <span class="subtitle">Order ID : 256734</span>
                 </div>
-                <div class="messages">
-                    <div class="recieved-message">
-                        <span class="primaryText">How long will it take to prepare the order?</span>
-                    </div>
-                    <div class="sent-message">
-                        <div>
+                <div class="messages" id="render-messages">
+                    <div id="render-message-cust">
+                        <!-- <div class="recieved-message">
                             <span class="primaryText">How long will it take to prepare the order?</span>
-                        </div>
+                        </div> -->
+                    </div>
+                    <div id="render-message-vend">
+                        <!-- <div class="sent-message">
+                            <div>
+                                <span class="primaryText">How long will it take to prepare the order?</span>
+                            </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
             <div class="message-input">
                 <div class="input-field-container">
                     <section class="send-btn input-field-icon">
-                        <i class=" material-icons">send</i>
+                        <i class=" material-icons" onclick="sendMessageVendor()">send</i>
                     </section>
-                    <input type="text" placeholder="Type message...">
+                    <input type="text" placeholder="Type message..." id="message">
                 </div>
             </div>
         </div>

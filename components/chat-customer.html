@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="../css/site.css" />
     <link rel="stylesheet" href="../css/chat-customer.css" />
-    <script src="../js/chat-customer.js"></script>
+    <script src="../js/customer-chat.js"></script>
 </head>
 
 <body>
@@ -33,23 +33,28 @@
                         <i class="material-icons">grade</i>
                     </div>
                 </div>
-                <div class="messages">
-                    <div class="recieved-message">
+                <div class="messages" id="render-messages">
+                    <div id="render-message-vend">
+                        <!-- <div class="recieved-message" >
                         <span class="primaryText">How long will it take to prepare the order?</span>
+                    </div> -->
                     </div>
-                    <div class="sent-message">
-                        <div>
-                            <span class="primaryText">How long will it take to prepare the order?</span>
-                        </div>
+                    <div id="render-message-cust">
+                        <!-- <div class="sent-message" >
+                            <div>
+                                <span class="primaryText">How long will it take to prepare the order?</span>
+                            </div>
+                        </div> -->
                     </div>
+                    
                 </div>
             </div>
             <div class="message-input">
                 <div class="input-field-container">
                     <section class="send-btn input-field-icon">
-                        <i class=" material-icons">send</i>
+                        <i class=" material-icons" onclick="sendMessageCustomer()">send</i>
                     </section>
-                    <input type="text" placeholder="Type message...">
+                    <input type="text" placeholder="Type message..." id="message">
                 </div>
             </div>
         </div>
