@@ -69,7 +69,7 @@ function signUp() {
           sessionStorage.setItem('userobj', JSON.stringify(userObj));
           sessionStorage.setItem('cart', JSON.stringify(cart));
           sessionStorage.setItem('locations', JSON.stringify(locations))
-          console.log(sessionStorage.getItem('userobj'));
+          console.log(JSON.parse(sessionStorage.getItem('userobj')));
           document.location.href = "./home.html";
       });
 }
