@@ -145,12 +145,11 @@ function renderVendorDetails() {
 function renderFooditemsInVendor() {
     var renderHtml = "";
     vendorID = JSON.parse(sessionStorage.getItem('vendorID'));
-    if (Number(vendorID) !== 0) { 
+    if (Number(vendorID) !== 0) {
         vendor.forEach(function (x) {
-             if (x.id == Number(vendorID)) {
-            x.foodItems.forEach(function (y) {
-                renderHtml += `  <ul>
-                <li onclick="handleFoodItemPopup('open', '${y.id}');" class="food-item">
+            if (x.id == Number(vendorID)) {
+                x.foodItems.forEach(function (y) {
+                    renderHtml += `<li onclick="handleFoodItemPopup('open', '${y.id}');" class="food-item">
                     <div>
                         <img src="../assets/food_item.jpg">
                     </div>
@@ -161,12 +160,12 @@ function renderFooditemsInVendor() {
                             <span>${y.price}</span>
                         </div>
                     </div>
-                </li>
-            </ul>`
-            })
-        }})
+                </li>`
+                })
+            }
+        })
         $('#menu-items').append(renderHtml);
-    } 
+    }
 }
 
 function renderFooditem() {
@@ -174,10 +173,10 @@ function renderFooditem() {
     var renderHtml = "";
     vendorID = JSON.parse(sessionStorage.getItem('vendorID'));
     vendor.forEach(function (x) {
-        if (x.id == Number(vendorID)) { 
+        if (x.id == Number(vendorID)) {
             x.foodItems.forEach(function (y) {
-              if (foodId == y.id)  {
-               renderHtml += `<div class="main-container food-item-page">
+                if (foodId == y.id) {
+                    renderHtml += `<div class="main-container food-item-page">
                <div class="item-bg"></div>
                <div class="d-flex item-details">
                    <h4 id="food-name">${y.name}</h4>
@@ -209,7 +208,7 @@ function renderFooditem() {
                    </div>
                </div>
            </div>`
-              }
+                }
             })
             $('#render-food-item').append(renderHtml);
         }
@@ -275,14 +274,14 @@ function quantity(operation) {
     var x;
     if (operation == 'plus') {
         console.log('plus');
-        x = foodQuantity = foodQuantity +1;
+        x = foodQuantity = foodQuantity + 1;
         $('#display-quantity').text(x);
-    } else 
-    if (operation == 'minus') {
-        console.log('minus');
-        x = foodQuantity = foodQuantity -1;
-        $('#display-quantity').text(x);
-    }
+    } else
+        if (operation == 'minus') {
+            console.log('minus');
+            x = foodQuantity = foodQuantity - 1;
+            $('#display-quantity').text(x);
+        }
 }
 
 var getUrlParameter = function getUrlParameter(sParam) {
