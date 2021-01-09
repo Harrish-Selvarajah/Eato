@@ -1,0 +1,29 @@
+.card-items {
+    display: grid;
+    place-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(425px, 1fr));
+    grid-gap: 2rem;
+}
+
+.card-item {
+    background-color: #707070;
+    box-shadow: 0px 2px 3px 0px #AAA;
+    border-radius: 20px;
+    width: 425px;
+    height: 245px;
+}
+
+@media (max-width: 767px) {
+    .card-item {
+        width: 335px;
+        height: 190px;
+    }
+}
+
+@media (max-width: 320px) {
+    .card-item {
+        width: 280px;
+        height: 190px;
+    }
+}
