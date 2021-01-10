@@ -26,20 +26,19 @@
         </div>
         <div role="main" class="ui-content ui-content-header">
             <div class="profile-body-container d-flex">
-                <div>
+                <div class="profile-right">
                     <div class="card loyalty-balance d-flex">
-                        <div>
-                            <h4>Loyalty Balance</h4>
+                        <div class= "balance_left">
+                            <div>Loyalty Balance</div>
                             <img src="../assets/trophy.png">
                             <h4>1234 Points</h4>
-                            <h5>1500 points till your next reward</h5>
+                            <p style="text-align: center;">
+                                1500 points till your next reward</p>
                         </div>
-                        <div>
-                            <div class="vertical-line"></div>
-                        </div>
-                        <div>
-                            <h4>Share and get 200 points</h4>
-                            <h5>Refer your friends and get 200 loyalty<br>points each on their first transactions</h5>
+                        <div class="balance_right">
+                            <h4 style="text-align: center; padding: 5px;">Share and get 200 points</h4>
+                            <p style="text-align: center;">
+                                Refer your friends and get 200 loyalty points each on their first transactions</h5>
                             <div class="action-btn">
                                 <button type="button">
                                     <p class="primaryText">Share Invite Code</p>
@@ -47,12 +46,76 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card recent-activity">
-                        <h4>Recent Activity</h4>
+
+                    <div class="acitivity_order card">
+                        <div style="padding-left: 20px; padding-top: 20px;"> Recent Activity</div>
+                        <div class="acitivity card">
+                            <div class="acitivity_circle">
+                                <img src="../assets/food/indian.jpg" alt="vendor">
+                            </div>
+                            <div style="text-align: center;"> <b>You earned 70 points</b> <br> LKR700 at Melt House</div>
+                            <div class="acitivity_circle" style="border: 1px solid  black;">+70</div>
+                        </div>
+
+                        <div class="acitivity card">
+                            <div class="acitivity_circle">
+                                <img src="../assets/food/indian.jpg" alt="vendor">
+                            </div>
+                            <div style="text-align: center;"> <b>You earned 70 points</b> <br> LKR700 at Melt House</div>
+                            <div class="acitivity_circle" style="border: 1px solid  black;">+70</div>
+                        </div>
+                        <div class="acitivity card">
+                            <div class="acitivity_circle">
+                                <img src="../assets/food/indian.jpg" alt="vendor">
+                            </div>
+                            <div style="text-align: center;"> <b>You earned 70 points</b> <br> LKR700 at Melt House</div>
+                            <div class="acitivity_circle" style="border: 1px solid  black;">+70</div>
+                        </div>
+
                     </div>
+
                 </div>
-                <div class="card">
-                    <p>Hello</p>
+                <div class="profile-left card">
+                    <div class="user-profile">
+                        <div class="user-picture">
+                            <img src="../assets/harrish.jpg">
+                            <div class="change-pic">
+                                <i class="material-icons ">camera_alt</i>
+                            </div>
+                        </div>
+                        <div class="user-details">
+                            <div>Hello, 
+                                <h2 class="user-name">Harrish</h2>
+                            </div>
+                            </div>
+
+                    </div>
+                    <div class="tabs">
+                        <div class="tab">
+                            <i class="material-icons ">payment</i>
+                            <div class="tab-name">Payment Method</div>
+                        </div>
+                        <div class="tab">
+                            <i class="material-icons ">favorite_border</i>
+                            <div class="tab-name">Favourites</div>
+                        </div>
+                        <div class="tab loyalty-tab">
+                            <i class="material-icons ">loyalty</i>
+                            <div class="tab-name">Loyalty Points</div>
+                        </div>
+                        <div class="tab">
+                            <i class="material-icons ">crop_free</i>
+                            <div class="tab-name">QR Cam</div>
+                        </div>
+                        <div class="tab">
+                            <i class="material-icons ">error_outline</i>
+                            <div class="tab-name">Feedback</div>
+                        </div>
+                        <div class="tab">
+                            <i class="material-icons ">logout</i>
+                            <div class="tab-name">Logout</div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- <a onclick="goToQRCamera()" data-role="button">QR camera</a> -->
@@ -75,6 +138,18 @@
                 <i class="material-icons">account_circle</i>
                 <i class="material-icons">account_circle</i>
                 <p class="footer-copyrights infoText">© 2021 Eato. All Rights Reserved.</p>
+            </div>
+        </div>
+        <!-- Navbar  -->
+        <div data-role="footer" class="nav-glyphish-example bottom-nav" data-position="fixed" data-tap-toggle="false">
+            <div data-role="navbar" data-grid="d" data-theme="a">
+                <ul>
+                    <li><a href="#" data-icon="home" class="nav-home navbar-btn">Home</a></li>
+                    <li><a href="#" class= "nav-search navbar-btn" data-icon="search">Search</a></li>
+                    <li><a href="#" data-icon="shop" class="nav-cart navbar-btn">Cart</a></li>
+                    <li><a href="#" data-icon="grid" class="nav-order navbar-btn">Order</a></li>
+                    <li><a href="#" data-icon="user" class="nav-profile navbar-btn ui-btn-active">Profile</a></li>
+                </ul>
             </div>
         </div>
     </div>
