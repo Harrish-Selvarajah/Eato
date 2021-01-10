@@ -57,6 +57,19 @@ a{
     height:40px;
 }
 
+.location{
+    padding: 10px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.location i{
+    color:#FD6921 ;
+}
+
+.location-details{
+    font-weight: 100 ;
+}
 .header{
     display: flex;
     justify-content: space-between;

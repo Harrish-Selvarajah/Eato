@@ -5,38 +5,31 @@
     <title>Home | Eato</title>
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="../css/site.css" />
-    <link rel="stylesheet" href="../css/home.css" />
+    <script src="../lib/jquery-1.12.4.min.js"></script>
+    <script src="../lib/jquery.mobile-1.4.5.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/lightslider.css">
     <link rel="stylesheet" href="../lib/jquery.mobile-1.4.5.min.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="../lib/jquery-1.12.4.min.js"></script>
-    <script src="../lib/jquery.mobile-1.4.5.min.js"></script>
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
-
-    <script src="../js/script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $(".item").click(function () {
-                $(".item.active-state").removeClass("active-state");
-                $(this).addClass("active-state");
-            });
-        });
-
-    </script>
-
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <link rel="stylesheet" href="../css/site.css" />
+    <link rel="stylesheet" href="../css/home.css" />
+    <script src="../js/script.js"></script>
+    <script src="../js/home.js"></script>
+      
     <!-- jQuery -->
     <script type="text/javascript" src="../js/JQuery3.3.1.js"></script>
     <script type="text/javascript" src="../js/lightslider.js"></script>
-    <script src="../js/home.js"></script>
-
 </head>
 
 <body>
     <div data-role="page">
         <div data-role="header" class="header" data-position="fixed" data-tap-toggle="false">
             <img src="../assets/logo new.svg" alt="Computer Man" class="logo">
+            <div class="location">
+                <i class="material-icons start-icon">location_on</i> 
+                <div class="location-details">Colombo,LK</div>
+            </div>
         </div>
         <div class="body">
             <div class="container">
@@ -97,7 +90,7 @@
                         <div class="circle">
                             <img src="../assets/food/Desserts.jpg">
                         </div>
-                        <div class="catogory">Desserts</div>
+                        <div class="catogory">Dessert</div>
                     </div>
                     <div class="item">
                         <div class="circle">
@@ -142,6 +135,29 @@
                     <div class="vendor-title"> Desserts Dine</div>
                 </div>
             </div>
+
+            <!-- Footer -->
+            <div data-role="footer" class="footer">
+                <div class="footer-top">
+                    <div class="footer-left">
+                        <h4>Contact</h4>
+                        <p class="secondaryText"><a href="mailto:info@eato.eat">info@eato.eat</a></p>
+                        <br>
+                        <h4>Address</h4>
+                        <p class="secondaryText">50, Chez Road, Panisse</p>
+                    </div>
+                    <div class="footer-right">
+                        <img src="../assets/logo/eoto_logo_light.png">
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <i class="material-icons">account_circle</i>
+                    <i class="material-icons">account_circle</i>
+                    <i class="material-icons">account_circle</i>
+                    <p class="footer-copyrights infoText">© 2021 Eato. All Rights Reserved.</p>
+                </div>
+            </div>
+            <!-- Footer -->
 
         </div>
         <!-- Navbar  -->
