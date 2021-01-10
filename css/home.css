@@ -6,6 +6,8 @@ body {
     background-color: #fff;
     }
 
+/* Home section style start */
+
 ul{ 
     list-style: none;    
 }
@@ -52,10 +54,25 @@ a{
 
 .logo{
     padding: 10px; 
-    height:48px;
+    height:40px;
 }
 
+.location{
+    padding: 10px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.location i{
+    color:#FD6921 ;
+}
+
+.location-details{
+    font-weight: 100 ;
+}
 .header{
+    display: flex;
+    justify-content: space-between;
     background-color: #fff !important;
     /* box-shadow: 0px 2px 8px 2px rgba(0,0,0,0.28); */
 
@@ -115,8 +132,6 @@ a{
     margin-left: 10px;
 }
 
-/* Home section style start */
-
 .catogory-title{
     width:100%;
     background-color: #fff;
@@ -171,188 +186,62 @@ a{
 }
 /*Carousel UI style end */
 
-/*Navbar UI changes start*/
 
-.bottom-nav{
-    border: 1px solid #ddd !important;
-    border-top-left-radius: 20px !important;
-    border-top-right-radius: 20px !important;
-    /* box-shadow: 0px 2px 8px 2px rgba(0,0,0,0.28); */
-}
+  /* mobile style start */
 
-.ui-icon-home{
-    border-top-left-radius: 20px !important;
-}
-.ui-icon-user{
-    border-top-right-radius: 20px !important;
-}
-
-/* Home icon chanegs */
-.ui-icon-home:after {
-    background: url('../assets/navbar-icons/home.png') no-repeat !important;
-    background-size: 20px 20px !important;
-}
-
-.ui-btn.ui-btn-active.ui-icon-home:after {
-    background: url('../assets/navbar-icons/home-filled.png') no-repeat !important;
-    background-size: 20px 20px !important;
-}
-
-/* search icon chanegs */
-.ui-icon-search:after {
-    background: url('../assets/navbar-icons/search.png') no-repeat !important;
-    background-size: 20px 20px !important;
-}
-.ui-btn.ui-btn-active.ui-icon-search:after{
-    background: url('../assets/navbar-icons/search-filled.png') no-repeat !important;
-    background-size: 20px 20px !important;
-}
-
-
-/* cart icon chanegs */
-.ui-icon-shop:after {
-    background: url('../assets/navbar-icons/shopping-cart.png') no-repeat !important;
-    background-size: 20px 20px !important;
-}
-
-.ui-btn.ui-btn-active.ui-icon-shop:after{
-    background: url('../assets/navbar-icons/shopping-cart_filled.png') no-repeat !important;
-    background-size: 20px 20px !important;  
-}
-
-/* Order icon chanegs */
-.ui-icon-grid:after {
-    background: url('../assets/navbar-icons/order-history.png') no-repeat !important;
-    background-size: 20px 20px !important;
-}
-
-.ui-btn.ui-btn-active.ui-icon-grid:after{
-    background: url('../assets/navbar-icons/order-history_filled.png') no-repeat !important;
-    background-size: 20px 20px !important;
-}
-
-/* Profile icon chanegs */
-
-.ui-icon-user:after {
-    background: url('../assets/navbar-icons/profile.png') no-repeat !important;
-    background-size: 20px 20px !important;
-}
-
-.ui-btn.ui-btn-active.ui-icon-user:after{
-    background: url('../assets/navbar-icons/profile-filled.png') no-repeat !important;
-    background-size: 20px 20px !important;
-}
-
-
-.ui-page-theme-a .ui-btn,.ui-page-theme-a .ui-btn:visited {
-    background-color: #fff !important;
-    border-color: #fff !important;
-    color: #333;
-    text-shadow: 0 1px 0 #f3f3f3;
-}
-
-.ui-btn-icon-left:after, .ui-btn-icon-right:after, .ui-btn-icon-top:after, .ui-btn-icon-bottom:after, .ui-btn-icon-notext:after {
-    background-color: unset !important;    
-}
-
-
-.ui-page-theme-a .ui-btn:hover{
-    background-color: #ededed;
-    border-color: #ddd;
-    color: #333 ;
-    text-shadow: 0 1px 0 #f3f3f3;
-}
-
-.ui-page-theme-a .ui-btn,.ui-page-theme-a .ui-btn:visited{
-    background-color: #f6f6f6;
-    border-color: #ddd;
-    color: #333;
-    text-shadow: 0 1px 0 #f3f3f3;
-}
-
-.ui-page-theme-a .ui-btn.ui-btn-active {
-    background-color: #fff !important;
-    border-color: #fff !important;
-    color: #FD6921 !important;
-    text-shadow: unset !important;
-}
-
-.ui-page-theme-a .ui-btn:focus{
-    -webkit-box-shadow: unset !important;
-    -moz-box-shadow: unset !important;
-    box-shadow: unset !important;
-}
-
-/*Navbar UI changes end*/
-
-/* mobile style start */
-
-@media only screen and (max-width: 600px) {
-    .section{
-        justify-content: center; 
+@media only screen and (max-width: 700px) {
+    .filter-popup {
+        border-radius: 20px !important;
+        height: 260px !important;
+        width: 93% !important;
     }
-
-    .section-card{  
+    .section {
+        justify-content: center;
+    }
+    .section-card {
         width: 100%;
         height: 180px;
-        margin-left:unset !important; 
-        
+        margin-left: unset !important;
     }
-    
-    .vendor-img{
+    .vendor-img {
         width: 100%;
         height: 120px;
     }
-    
-    .vendor-img img{
+    .vendor-img img {
         width: 100%;
         height: 120px;
     }
-    .logo{
-        padding: 10px; 
-        height:28px;
+    .logo {
+        padding: 10px;
+        height: 28px;
     }
+    .search-bar .input-field-icon {
+        left: 88% !important;
+    }
+}
 
-    .ui-page-theme-a .ui-btn,.ui-page-theme-a .ui-btn:visited {
-        background-color: #fff !important;
-        border-color: #fff !important;
-        color: #333;
-        text-shadow: 0 1px 0 #f3f3f3;
-    }
-  }
-  /* mobile style end */
+/* mobile style end */
 
-  /*Targets the Ipad - Landscape*/
-@media only screen and (min-width : 850px) and (max-width : 1024px){
+/*Targets the Ipad - Landscape*/
 
-    .section-card{
-        width: 280px;
-        
+@media only screen and (min-width: 850px) and (max-width: 1024px) {
+    .section {
+        justify-content: center;
     }
-    
-    .vendor-img{
-        width: 280px;
-        height: 150px;
-    }
-    
-    .vendor-img img{
-        width: 280px;
-    }
-
 }
 
 /*Targets the Iphone - LandScape*/
-@media only screen and (min-width : 769px) and (max-width : 849px){
 
+@media only screen and (min-width: 769px) and (max-width: 849px) {
+    .section {
+        justify-content: center;
+    }
 }
 
-/* Targets Ipad - Portrait  */
-@media only screen and (min-width : 450px) and (max-width : 768px){
+/*Targets the Ipad Pro - LandScape*/
 
+@media only screen and (min-width: 1025px) {
+    .section {
+        justify-content: center;
+    }
 }
-
-/* Targets the mobile screen - potrait view */
-@media only screen and (max-width : 450px){
-
-
-} 
