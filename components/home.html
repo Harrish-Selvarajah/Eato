@@ -2,30 +2,30 @@
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width"/>
+    <title>Home | Eato</title>
+    <meta name="viewport" content="width=device-width" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="../css/site.css" />
     <link rel="stylesheet" href="../css/home.css" />
-    <link rel="stylesheet" type="text/css" href="../css/lightslider.css"> 
+    <link rel="stylesheet" type="text/css" href="../css/lightslider.css">
     <link rel="stylesheet" href="../lib/jquery.mobile-1.4.5.min.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="../lib/jquery-1.12.4.min.js"></script>
     <script src="../lib/jquery.mobile-1.4.5.min.js"></script>
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
-    <link rel="stylesheet" href="https://cdn.rawgit.com/mfd/09b70eb47474836f25a21660282ce0fd/raw/e06a670afcb2b861ed2ac4a1ef752d062ef6b46b/Gilroy.css">
 
     <script src="../js/script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-        $(document).ready(function() {
-        $(".item").click(function () {
-        $(".item.active-state").removeClass("active-state");
-        $(this).addClass("active-state");   
-    });
-    });     
- 
+        $(document).ready(function () {
+            $(".item").click(function () {
+                $(".item.active-state").removeClass("active-state");
+                $(this).addClass("active-state");
+            });
+        });
+
     </script>
-   
+
     <!-- jQuery -->
     <script type="text/javascript" src="../js/JQuery3.3.1.js"></script>
     <script type="text/javascript" src="../js/lightslider.js"></script>
@@ -44,31 +44,34 @@
                 <!--slider------------------->
                 <ul id="autoWidth" class="cs-hidden">
                     <!--1-start------------------------------>
-                    <li class="item-a"> <!-- slider-box -->
+                    <li class="item-a">
+                        <!-- slider-box -->
                         <div class="box">
                             <!-- promo 01 -->
                             <img src="../assets/img-home/promotion.jpg" class="model" height="100px">
-        
+
                         </div>
                     </li>
                     <!--1-end------------------------------>
 
                     <!--2-start------------------------------>
-                    <li class="item-a"> <!-- slider-box -->
+                    <li class="item-a">
+                        <!-- slider-box -->
                         <div class="box">
                             <!-- promo 02 -->
                             <img src="../assets/img-home/promotion2.jpg" class="model" height="100px">
-        
+
                         </div>
                     </li>
                     <!--2-end------------------------------>
 
                     <!--3-start------------------------------>
-                    <li class="item-a"> <!-- slider-box -->
+                    <li class="item-a">
+                        <!-- slider-box -->
                         <div class="box">
                             <!-- promo 03 -->
                             <img src="../assets/img-home/promotion3.jpg" class="model" height="100px">
-        
+
                         </div>
                     </li>
                     <!--3-end------------------------------>
@@ -80,31 +83,31 @@
                 <div class="items">
                     <div class="item active-state">
                         <div class="circle">
-                            <img src="../assets/food/indian.jpg" >
+                            <img src="../assets/food/indian.jpg">
                         </div>
                         <div class="catogory">Indian</div>
                     </div>
                     <div class="item">
                         <div class="circle">
-                            <img src="../assets/food/bakery.jpg" >
+                            <img src="../assets/food/bakery.jpg">
                         </div>
                         <div class="catogory">Bakery</div>
                     </div>
                     <div class="item">
                         <div class="circle">
-                            <img src="../assets/food/Desserts.jpg" >
+                            <img src="../assets/food/Desserts.jpg">
                         </div>
                         <div class="catogory">Desserts</div>
                     </div>
                     <div class="item">
                         <div class="circle">
-                            <img src="../assets/food/italian.jpg" >
+                            <img src="../assets/food/italian.jpg">
                         </div>
                         <div class="catogory">Italian</div>
                     </div>
                     <div class="item">
                         <div class="circle">
-                            <img src="../assets/food/Burger.jpg" >
+                            <img src="../assets/food/Burger.jpg">
                         </div>
                         <div class="catogory">Burger</div>
                     </div>
@@ -116,43 +119,45 @@
             <div class="section">
                 <div class="section-card" onclick="goToVendor(1)">
                     <div class="vendor-img">
-                        <img src="../assets/food/indian.jpg" >
+                        <img src="../assets/food/indian.jpg">
                     </div>
                     <div class="vendor-title"> Melt House Indian</div>
                 </div>
                 <div class="section-card" onclick="goToVendor(2)">
                     <div class="vendor-img">
-                        <img src="../assets/food/suburban.jpeg" >
+                        <img src="../assets/food/suburban.jpeg">
                     </div>
                     <div class="vendor-title"> Suburban Kitchen</div>
                 </div>
                 <div class="section-card">
                     <div class="vendor-img">
-                        <img src="../assets/food/italian.jpg" >
+                        <img src="../assets/food/italian.jpg">
                     </div>
                     <div class="vendor-title"> italian Cuisine</div>
                 </div>
                 <div class="section-card">
                     <div class="vendor-img">
-                        <img src="../assets/food/Desserts.jpg" >
+                        <img src="../assets/food/Desserts.jpg">
                     </div>
                     <div class="vendor-title"> Desserts Dine</div>
                 </div>
             </div>
 
         </div>
-        <div data-role="footer" class="nav-glyphish-example bottom-nav" data-position="fixed" data-tap-toggle="false" >
-            <div data-role="navbar"  data-grid="d" data-theme="a">
+        <!-- Navbar  -->
+        <div data-role="footer" class="nav-glyphish-example bottom-nav" data-position="fixed" data-tap-toggle="false">
+            <div data-role="navbar" data-grid="d" data-theme="a">
                 <ul>
-                    <li><a href="#" id="beer" class="ui-btn-active" data-icon="home" >Home</a></li>
-                    <li><a href="#" id="beer" data-icon="search">Search</a></li>  
-                    <li><a href="#" id="beer" data-icon="shop">Cart</a></li>
-                    <li><a href="#" id="beer" data-icon="grid">Order</a></li>  
-                    <li><a href="../components/favourites.html" id="user" data-icon="user">Profile</a></li>
+                    <li><a href="#" data-icon="home" class="ui-btn-active nav-home navbar-btn">Home</a></li>
+                    <li><a href="#" class="nav-search navbar-btn" data-icon="search">Search</a></li>
+                    <li><a href="#" data-icon="shop" class="nav-cart navbar-btn">Cart</a></li>
+                    <li><a href="#" data-icon="grid" class="nav-order navbar-btn">Order</a></li>
+                    <li><a href="#" data-icon="user" class="nav-profile navbar-btn">Profile</a></li>
                 </ul>
             </div>
-            </div>
         </div>
+        <!-- Navbar  -->
+    </div>
     </div>
 </body>
 
