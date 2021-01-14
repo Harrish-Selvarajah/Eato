@@ -5,19 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <link rel="stylesheet" href="../css/site.css" /> -->
+    
     <link rel="stylesheet" href="../css/add-payment.css"/>
     
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script src="https://js.stripe.com/v3/"></script>
-    <!-- <script src="../js/order-confirmation.js" defer></script> -->
+    <script src="../js/order-confirmation.js" defer></script>
+    <script src="../js/add-payment.js"></script>
 
     <title>Add Payment</title>
 </head>
 <body>
     <div data-role="page">
-    <div data-role="header" data-postion="fixed" data-fullscreen="true" class="header-bar">
+    <div data-role="header" data-postion="fixed" data-fullscreen="true" class="header-bar" id="header-bar">
         <!-- <img src="../assets/logo new.svg"> -->
         <i class="arrow arrow-left"></i>
         <h4>Add Payment</h4>
@@ -61,8 +63,8 @@
     </div>
 </div>
 
-    <div data-role="footer" data-postion="fixed" data-fullscreen="true" class="btn-footer">
-          <button id="btn-confirm-order">Add Payment</button>
+    <div class="btn-footer" id="btn-footer" style="display: inline-flex; justify-content:center ;">
+          <button id="btn-confirm">Add Payment</button>
     </div>
 </body>
 </html>

@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="../css/site.css" />
     <link rel="stylesheet" href="../css/payment-method.css" />
     <script src="../js/common.js"></script>
+    <script src="../js/payment-method.js"></script>
+    
 </head>
 
 <body>
@@ -22,23 +24,12 @@
         </div>
         <div role="main" class="ui-content ui-content-header">
             <div class="main-container">
-                <section class="card-items">
+                <section class="card-items" id="card-items">
                     <!-- <<<<<<Item>>>>>> -->
-                    <div class="card-item">
-                        <div>
-                            <h1>**** **** **** 4567</h1>
-                            <div>
-                                <div>
-                                    <h3>Expiry Date</h3>
-                                    <h5>09/22</h5>
-                                </div>
-                                <img src="../assets/visa.png" />
-                            </div>
-                        </div>
-                    </div>
+                    
                     <!-- <<<<<<Item End>>>>>> -->
                 </section>
-                <div data-position="fixed" class="add-button-container">
+                <div data-position="fixed" class="add-button-container" id="add-payment">
                     <a href="#" data-rel="popup" data-position-to="window" data-transition="pop">
                         <i class="material-icons" id="icon-share">add</i>
                     </a>
@@ -64,6 +55,15 @@
                 <i class="material-icons">account_circle</i>
                 <p class="footer-copyrights infoText">© 2021 Eato. All Rights Reserved.</p>
             </div>
+        </div>
+
+        <div data-role="popup" class="pop" id="add-payment-pop" style="overflow-y: hidden; height: 646px; width:390px  ">
+            <div class="popup-header">
+                <i class=" material-icons" id="close">close</i>
+                <h4>Add Payment</h4>
+            </div>
+            <iframe src="../components/add-payment.html?popup=true" id="y" style="width:390px; overflow: hidden;height:646px;border-radius:0px 0px 20px 20px;border: none !important;"></iframe>
+            <!-- <button id="btn-confirm">Add Payment</button> -->
         </div>
 
         <div data-role="footer" class="nav-glyphish-example bottom-nav" data-position="fixed" data-tap-toggle="false">

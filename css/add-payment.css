@@ -163,4 +163,12 @@ body{
    .btn-footer{
        background-color: white !important;
    }
+
+   #btn-confirm {
+    width: 80%;
+    background-color: #FD6921;
+    color: white;
+    border-radius: 20px;
+    border: 1px solid #FD6921;
+}
       
