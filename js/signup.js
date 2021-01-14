@@ -28,12 +28,13 @@ function signUp() {
     var userId;
     var userObj = {};
     var locations = [];
-    
+    debugger
     firebase.database().ref('users/').push({
         name: firstName,
         mobileNumber: mobileNumber,
         email: email,
         password: password,
+        favourites : []
         // favourites :[
         //   {​​​​
         //   vendorName : "Melt House",
@@ -65,7 +66,7 @@ function signUp() {
             mobileNumber: mobileNumber,
             email: email,
             profilePic: '',
-            favorites: []
+            favourites: []
         } 
           sessionStorage.setItem('userobj', JSON.stringify(userObj));
           sessionStorage.setItem('cart', JSON.stringify(cart));

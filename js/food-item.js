@@ -373,18 +373,19 @@ var getUrlParameter = function getUrlParameter(sParam) {
 };
 
 function addFav(id) {
-    // debugger;
+    debugger;
     var userObj = JSON.parse(sessionStorage.getItem('userobj'));
     vendorobj = {
         rating: 4,
         vendorID: id,
         vandorName: "Melt House"
     };
+    userObj['favourites'] = vendorobj;
     // userObj['favorites']
     console.log(userObj.id);
-    firebase.database().ref('Users/' + userObj.id).child('favourites/').set({
+    firebase.database().ref('Users/' + userObj.id).update({
 		// name: 'Melt House',
-		vendorobj
+		userObj
 	}
 		, (error) => {
 			if (error) {
