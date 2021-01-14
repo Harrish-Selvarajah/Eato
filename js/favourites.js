@@ -2,8 +2,10 @@ var favVendorList = []
 var selectedFavList = []
 var userID = "-MQN7UYipYUXF5l7caW6" // This should change to local storage
 const emailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
-
-
+sortFilterQuery = {
+    sort : "none",
+    filter : 0
+}
 var firebaseConfig = {
     apiKey: "AIzaSyBDwiPGqXFeormDpnISyavzwju3BnCUPTo",
     authDomain: "eato-69.firebaseapp.com",
@@ -62,7 +64,7 @@ function loadFavListFromSession(favouriteList){
         </div>
         <div class="fav-checkbox">
             <div>
-                <h4>${favVendor.vendorName}</h4>
+                <h4 id="vendor-name" >${favVendor.vendorName}</h4>
                 <input class="checkbox" id="select-${favVendor.vendorID}" type="checkbox" />
             </div>
         </div>
@@ -97,7 +99,7 @@ function loadFavListFromSessionDB(){
         </div>
         <div class="fav-checkbox">
             <div>
-                <h4>${favVendor.vendorName}</h4>
+                <h4 id="vendor-name" >${favVendor.vendorName}</h4>
                 <input class="checkbox" onClick="addCheckBoxClick(${favVendor.vendorID})" id="select-${favVendor.vendorID}" type="checkbox" />
             </div>
         </div>
@@ -115,8 +117,13 @@ function loadFavListFromSessionDB(){
 
 
 function loadFavVendorList(){
-    var favouriteList = JSON.parse(sessionStorage.getItem('userobj')).favourites;
-    if(favouriteList ==null){
+    var favouriteList;
+    try{
+          favouriteList = JSON.parse(sessionStorage.getItem('userobj')).favourites;
+    }catch(e){
+        loadFavListFromSessionDB();
+    }
+    if(favouriteList !=null){
         console.log("Session Pull")
         loadFavListFromSession(favouriteList);
     }else{
@@ -129,7 +136,7 @@ $(document).ready(function () {
 
     disableSharebutton();
     $('#error-msg').hide();
-    
+   
     loadFavVendorList();
 
    $("#select-all").click(function () {
@@ -173,6 +180,17 @@ $('#close-btn').click(function (e) {
     $('#popup-modal').popup('close')
 });
 
+$('#search-filter').click(function (e) { 
+    $('#filter-popup').popup('open')
+    
+});
+
+$('#confirm-filter').click(function (e) { 
+    filterPOI();
+    $('#filter-popup').popup('close')
+    
+});
+
 $('#last-share-btn').click(function(){
     var email = $('#input-email').val()
     content = "<html> <body> <ul>"
@@ -202,7 +220,61 @@ $(document).on('input', '#search', function(e) {
 
   });
 
+
+// Highlighlight selection in filter
+$('#sort-catagory-sorting div').click(function(e){
+    sortFilterQuery['sort'] = 'none';
+
+if(!$(`#${e.target.id}`).hasClass('button-selected')){
+    $('#sort-catagory-sorting div').each(function (idx,element) {  
+         
+        if(e.target.id == element.id){
+            $(`#${e.target.id}`).removeClass('button-unselected')
+            $(`#${e.target.id}`).addClass('button-selected')
+            sortFilterQuery['sort'] = e.target.id;
+        }else{
+            $(`#${element.id}`).removeClass('button-selected')
+            $(`#${element.id}`).addClass('button-unselected')
+        }
+    });
+}else{
+    $(`#${e.target.id}`).removeClass('button-selected')
+    $(`#${e.target.id}`).addClass('button-unselected')
+}
+     });
+
+// Selecting Stars 
+$('#star-container i').click(function (e) { 
+    
+    sortFilterQuery['filter'] = 0;
+
+    if (e.target.id == "star-1" && $(`#star-1`).hasClass('selected') && $(`#star-2`).hasClass('unselected')){
+        $(`#${e.target.id}`).removeClass('selected')
+        $(`#${e.target.id}`).addClass('unselected')
+        
+    }else{
+    var done = false;
+    $('#star-container i').each(function (idx,element) {
+       
+        if(!done){
+            $(`#${element.id}`).removeClass('unselected')
+            $(`#${element.id}`).addClass('selected')
+        }else{
+            $(`#${element.id}`).removeClass('selected')
+            $(`#${element.id}`).addClass('unselected')
+        }
+
+        if(e.target.id == element.id){
+            done = true;
+            sortFilterQuery['filter'] = idx + 1;
+        }
+    });
+}
+
 });
+
+});
+
 
 function activeShareButton() {
     console.log("disabling")
@@ -310,3 +382,81 @@ function filterArrayById(array, id) {
     })
 }
 
+function filterPOI() {
+    console.log(sortFilterQuery)
+    var sort = sortFilterQuery.sort;
+    var filter = sortFilterQuery.filter
+    
+    // Filter First 
+    favVendorList.forEach(function(element,idx){
+        if (element.rating < filter){
+             $(`#li-${idx}`).css('display','none')
+        }else{
+          $(`#li-${idx}`).css('display','block')
+        }
+   });
+
+   // Sort
+
+   var favChildElements = $('#fav-list').children()
+   console.log(favChildElements)
+   favChildElements = sortFromAtoZ(favChildElements);
+   console.log(favChildElements)
+   $('#fav-list').empty();
+   $('#fav-list').append(favChildElements)
+}
+
+function sortFromAtoZ(favList) {  
+
+    favList = favList.sort(function(a,b){
+        var last = $(`#${a.id}`).find('#vendor-name').text().toLowerCase()
+        var first = $(`#${b.id}`).find('#vendor-name').text().toLowerCase()
+        
+        if (first > last){
+            return -1;
+        }else if(last > first){
+            return 1;
+        }
+
+        return 0;
+    })
+
+  return favList;
+}
+
+
+function sortFromZtoA(favList) {  
+
+    favList = favList.sort(function(a,b){
+        var last = $(`#${a.id}`).find('#vendor-name').text().toLowerCase()
+        var first = $(`#${b.id}`).find('#vendor-name').text().toLowerCase()
+        
+        if (first > last){
+            return 1;
+        }else if(last > first){
+            return -1;
+        }
+
+        return 0;
+    })
+
+  return favList;
+}
+
+function sortByRating(favList){
+    
+    favList = favList.sort(function(a,b){
+        var last = $(`#${a.id}`).find('#vendor-name').text().toLowerCase()
+        var first = $(`#${b.id}`).find('#vendor-name').text().toLowerCase()
+        
+        if (first > last){
+            return -1;
+        }else if(last > first){
+            return 1;
+        }
+
+        return 0;
+    })
+
+  return favList;
+}
