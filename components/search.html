@@ -11,11 +11,13 @@
     <link rel="stylesheet" href="../lib/jquery.mobile-1.4.5.min.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
     <link rel="stylesheet" href="../css/site.css" />
     <link rel="stylesheet" href="../css/search.css" />
+    <script type="text/javascript" src="../json/vendor.json"></script>
     <script src="../js/search.js"></script>
     <script src="../js/common.js"></script>
+
 </head>
 <body>
     <div data-role="page">
@@ -35,95 +37,54 @@
             <div class="container"> 
                 <div class="items">
                     <a href="#filter-popup" data-rel="popup" data-position-to="window" id=" popup" data-transition="slideup">
-                        <div class="item active-state">
+                        <div class="item active-state" id="filter-sorter">
                             <i class="material-icons ">filter_alt</i>
                             <div class="filter">Filter</div>
                         </div>
                     </a>
                     <div class="item">
-                        <div class="filter">Rice</div>
+                        <div class="filter quick-filter" id='Rice'>Rice</div>
                     </div>
                     <div class="item">
-                        <div class="filter">Pizza</div>
+                        <div class="filter  quick-filter" id= 'Pizza'>Pizza</div>
                     </div>
                     <div class="item">
-                        <div class="filter">Burger</div>
+                        <div class="filter  quick-filter" id="Burger">Burger</div>
                     </div>
                     <div class="item">
-                        <div class="filter">Pasta</div>
+                        <div class="filter  quick-filter" id="Pasta">Pasta</div>
                     </div>
                 </div>
             </div>
             <!-- search results -->
-            <div class="section">
-                <div class="section-card">
-                    <div class="vendor-img">
-                        <img src="../assets/food/indian.jpg">
-                    </div>
-                    <div class="vendor-details">
-                        <div class="vendor-title"> Melt House Indian</div>
-                        <div class="vendor-ratings"> 4.9<i class="material-icons start-icon">star</i></div>
-                    </div>
-
-                </div>
-                <div class="section-card">
-                    <div class="vendor-img">
-                        <img src="../assets/food/suburban.jpeg">
-                    </div>
-                    <div class="vendor-details">
-                        <div class="vendor-title"> Suburban Kitchen</div>
-                        <div class="vendor-ratings"> 4.5<i class="material-icons start-icon">star</i></div>
-                    </div>
-
-                </div>
-                <div class="section-card">
-                    <div class="vendor-img">
-                        <img src="../assets/food/italian.jpg">
-                    </div>
-                    <div class="vendor-details">
-                        <div class="vendor-title"> italian Cuisine</div>
-                        <div class="vendor-ratings"> 3.5<i class="material-icons start-icon">star</i></div>
-                    </div>
-
-                </div>
-                <div class="section-card">
-                    <div class="vendor-img">
-                        <img src="../assets/food/Desserts.jpg">
-                    </div>
-                    <div class="vendor-details">
-                        <div class="vendor-title"> Desserts Dine</div>
-                        <div class="vendor-ratings"> 3.5<i class="material-icons start-icon">star</i></div>
-                    </div>
-
-                </div>
-
+            <div class="section" id="section">
                 <div data-role="popup" id="filter-popup" data-theme="a" class="filter-popup">
                     <div class="popup-top">
                         <div class="sort-title">
                             <i class="material-icons start-icon">sort</i>
                             <div>Sort</div> 
                         </div>
-                        <div class="sort-catagory">
-                            <div class="sort-item">A>Z</div>
-                            <div class="sort-item">Z>A</div>
-                            <div class="sort-item">Rating</div>    
+                        <div class="sort-catagory" id="sort-catagory-sorting">
+                            <div class="sort-item" id="a-z">A>Z</div>
+                            <div class="sort-item" id="z-a">Z>A</div>
+                            <div class="sort-item" id="rating">Rating</div>    
                         </div>
                         <div class="sort-title">
                             <i class="material-icons start-icon">filter_alt</i>
                             <div>Sort</div> 
                         </div>
-                        <div class="sort-catagory">
-                            <i class="material-icons start-icon">star</i>
-                            <i class="material-icons start-icon">star</i>
-                            <i class="material-icons start-icon">star</i>
-                            <i class="material-icons start-icon">star</i>
-                            <i class="material-icons start-icon">star</i>  
+                        <div class="sort-catagory" id= "star-container">
+                            <i class="material-icons start-icon unselected" id="star-1">star</i>
+                            <i class="material-icons start-icon unselected" id="star-2">star</i>
+                            <i class="material-icons start-icon unselected" id="star-3">star</i>
+                            <i class="material-icons start-icon unselected" id="star-4">star</i>
+                            <i class="material-icons start-icon unselected" id="star-5">star</i>  
                         </div>
                         
                     </div>
                     <div class="popup-bottom">
                         <div class="action-btn filter-btn">
-                            <button type="button" onclick="" data-role="button">
+                            <button type="button" id="confirm-filter" data-role="button">
                                 <p class="primaryText">Filter</p>
                             </button>
                         </div>
