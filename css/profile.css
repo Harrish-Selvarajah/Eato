@@ -1,4 +1,8 @@
-.profile-body-container>div:first-child {
+.profile-body-container {
+    height: 80vh;
+    padding: 20px;
+}
+/* .profile-body-container>div:first-child {
     flex: 2;
     display: flex;
     flex-direction: column;
@@ -6,8 +10,10 @@
 
 .profile-body-container>div:last-child {
     flex: 1;
+} */
+.loyalty-balance{
+    height: 40%;
 }
-
 .loyalty-balance>div:first-child, .loyalty-balance>div:last-child {
     flex: 3;
     display: flex;
@@ -33,10 +39,171 @@
 }
 
 .loyalty-balance>div:first-child>img {
-    width: 68px;
+    padding: 5px;
+    width: 65px;
 }
 
 .vertical-line {
     border-left: 2.5px solid #ADADAD;
     height: 100px;
+}
+
+.card{
+    border-radius: 20px !important;
+}
+
+.profile-right{
+    width: 70%;
+    height: 600px;
+    margin: 10px;
+}
+
+.profile-left{
+    width: 30%;
+    height: 600px;
+    margin: 10px;
+}
+
+.user-profile{
+    padding: 10px;
+    height: 210px;
+}
+
+.user-picture{
+    justify-content:center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    height: 150px;
+    border-radius: 50%;
+}
+.user-picture img{
+    padding: 5px;
+    border: 3.5px #FD6921 solid;
+    width: 125px;
+    height: 125px;
+     border-radius: 50%;
+}
+
+.change-pic{
+    cursor: default;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 50%;
+    top: 50%;
+    background: white;
+    left: 58%;
+    transform: translate(-68%, 94%);
+    -ms-transform: translate(-68%, 94%);
+    height: 40px;
+    width: 40px;
+    color: #FD6921;
+}
+
+.user-details{
+    padding: 10px;
+}
+.tabs{
+    padding: 10px;
+    height: 300px;
+}
+
+.tab{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    height: 30px;
+}
+.tab:hover{
+    cursor: default;
+    color: #FD6921;   
+}
+
+.tab:active{
+    cursor: default;
+    color: white;
+    background-color: #FD6921;
+}
+.tab-name{
+    padding-left: 20px;
+}
+
+.loyalty-tab{
+    display: none;
+}
+.action-btn>button{
+    width: 100% !important;
+}
+
+.balance_left{
+    border-right: 3px solid #ADADAD;
+    margin: 13px;
+
+}
+
+.balance_right{
+    margin: 13px;
+}
+.acitivity_order{
+    height: 58%;
+}
+.acitivity{
+    justify-content: space-between;
+    padding: 10px !important;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 13px;
+    height: 60px;
+}
+
+.acitivity_circle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+}
+
+.acitivity_circle img{
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+@media only screen and (max-width: 700px) {
+    .profile-body-container{
+        height: 100% !important;
+        padding: 0px;
+    }
+
+    .user-profile{
+        width: 50% !important;
+        align-items: center !important;
+    display: flex !important;
+
+    }
+    .user-picture{
+        justify-content:flex-start !important;
+    }
+    .profile-left{
+        width: 100% !important;
+        margin: 0px !important;
+        height: 100%;
+    } 
+    .profile-right{
+        display: none !important;
+    }
+
+    .card{
+        box-shadow: unset !important;
+    }
+
+    .loyalty-tab{
+        display: flex !important;
+    }
 }

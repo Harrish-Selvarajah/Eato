@@ -52,7 +52,6 @@ $(document).ready(function(){
       else {
           msg = "We will improve ourselves. You rated this " + ratingValue + " stars.";
       }
-      responseMessage(msg);
     });
   });
   

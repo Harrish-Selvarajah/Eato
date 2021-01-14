@@ -1,18 +1,42 @@
-.signup-body-container>div {
+/* .signup-body-container>div {
     flex: 1;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+} */
+
+.left-section{
+    flex: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
 }
 
+.middle-section{
+    display: none;
+}
+
+.right-section{
+    flex: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+
+}
 .signup-body-container>div:not(:first-child) {
     background-color: #F9F9F9;
 }
 
 .signup-body-container>div:not(:first-child)>img {
-    height: 270px;
+    height: 240px;
     margin: 25px;
 }
 
@@ -32,4 +56,40 @@
 
 .to-login-text>a {
     color: #FD6921;
+}
+
+.img-curve{
+    display: none;
+}
+
+@media only screen and (max-width: 700px){
+    .signup-body-container{
+        flex-direction: column-reverse;
+    }
+    .left-section{
+        padding: 20px;
+        min-height: 70vh !important;
+        justify-content: unset !important;
+    }
+    .middle-section{
+        display: flex !important;
+        background-color: unset !important;
+        min-height: 10vh !important;
+    }
+
+    .right-section{
+        justify-content: unset !important;
+        min-height: 20vh !important
+    }
+    .signup-img {
+        height: 160px !important;
+        margin: 0px !important;
+    }
+
+    .img-curve{
+        display: flex !important;
+        width: 100% !important;
+        height: unset !important;
+        margin: unset !important;
+    }
 }
