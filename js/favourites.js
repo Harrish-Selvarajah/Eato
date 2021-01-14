@@ -211,14 +211,7 @@ $('#last-share-btn').click(function(){
 
 $(document).on('input', '#search', function(e) {
      var input = e.target.value;
-     favVendorList.forEach(function(element,idx){
-          if (!element.vendorName.toUpperCase().includes(e.target.value.toUpperCase())){
-               $(`#li-${idx}`).css('display','none')
-          }else{
-            $(`#li-${idx}`).css('display','block')
-          }
-     });
-
+     search(input);
   });
 
 
@@ -406,6 +399,9 @@ function filterPOI() {
    
    $('#fav-list').empty();
    $('#fav-list').append(favChildElements)
+
+   // finally calling search to combine active searches
+   document.getElementById("search").value = ""
 }
 
 function sortFromAtoZ(favList) {  
@@ -461,4 +457,16 @@ function sortByRating(favList){
     })
 
   return favList;
+}
+
+
+function search(input) {  
+
+    favVendorList.forEach(function(element,idx){
+        if (!element.vendorName.toUpperCase().substring(0, input.length).includes(input.toUpperCase())){
+             $(`#li-${idx}`).css('display','none')
+        }else{
+          $(`#li-${idx}`).css('display','block')
+        }
+   });
 }
