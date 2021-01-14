@@ -96,8 +96,9 @@ function repeat() {
 }
 
 function removeItem(id) {
+    debugger
     console.log('removeItem')
-    cart = cart.filter(function (item) { return item.id !== id });
+    cart = cart.filter(function (item) { return item.foodID !== id });
     repeat();
     // sessionStorage.setItem('cart', JSON.stringify(cart));
 }

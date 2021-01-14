@@ -346,3 +346,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
         }
     }
 };
+
+function navigateToHome() {
+    document.location.href = './home.html'
+}

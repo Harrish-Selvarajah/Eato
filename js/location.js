@@ -1,14 +1,22 @@
-var savedLocation = [];
+// var savedLocation = [];
 
 $(document).ready(function () {
   // debugger;
+  
   savedLocation = JSON.parse(sessionStorage.getItem('savedLocation'));
-  renderRadioButton();
-  $('input:radio[name=radio]').change(function() {
-    console.log(this.value);
-    sessionStorage.setItem('location', this.value);
-    console.log(sessionStorage)
-});
+  if (savedLocation == null) {
+    savedLocation = [];
+    console.log(savedLocation);
+    sessionStorage.setItem('savedLocation', JSON.stringify(savedLocation));
+  } else {
+    renderRadioButton();
+    $('input:radio[name=radio]').change(function() {
+      console.log(this.value);
+      sessionStorage.setItem('location', this.value);
+      console.log(sessionStorage)
+  }); 
+  }
+
 })
 
 
@@ -72,11 +80,13 @@ function initAutocomplete() {
       userLocation = place.name;
       console.log(place.name, "place name");
       savedLocation = JSON.parse(sessionStorage.getItem('savedLocation'));
+      
       savedLocation.push(userLocation);
       sessionStorage.setItem('location', userLocation);
       sessionStorage.setItem('savedLocation', JSON.stringify(savedLocation));
       console.log(sessionStorage, 'session');
         // console.log(location, 'location');
+        renderRadioButton();
 
       if (place.geometry.viewport) {
         // Only geocodes have viewport.
@@ -169,6 +179,7 @@ function codeLatLng(lat, lng) {
         // savedLocation.push(userLocation);
         console.log(sessionStorage, 'session');
         // console.log(location, 'location');
+        renderRadioButton();
         
       } else {
         alert("No results found");
@@ -181,6 +192,7 @@ function codeLatLng(lat, lng) {
 
 function renderRadioButton() {
   var renderHtml = "";
+  $(".selected-location").remove();
   savedLocation.forEach(function (x) {
     renderHtml += `<label class="selected-location">${x}
     <input type="radio" name="radio" id="selected-location" value='${x}'>

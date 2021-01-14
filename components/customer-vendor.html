@@ -30,7 +30,7 @@
     <div data-role="page">
         <div data-role="header" data-postion="fixed" data-fullscreen="true" class="header-bar">
             <!-- <img src="../assets/logo new.svg"> -->
-            <i onclick="goBack()" class="arrow arrow-left"></i>
+            <i onclick="navigateToHome()" class="arrow arrow-left"></i>
             <h4>Vendor</h4>
         </div>
         <div role="main" class="ui-content ui-content-header">
@@ -151,6 +151,22 @@
                 <i class="material-icons">account_circle</i>
                 <i class="material-icons">account_circle</i>
                 <p class="footer-copyrights infoText">© 2021 Eato. All Rights Reserved.</p>
+            </div>
+        </div>
+
+        <div data-role="footer" class="nav-glyphish-example bottom-nav" data-position="fixed" data-tap-toggle="false">
+            <div data-role="navbar" data-grid="d" data-theme="a">
+                <ul>
+                    <li><a href="#" data-icon="home" class="ui-btn-active nav-home navbar-btn"
+                            onclick="navigation('home')">Home</a></li>
+                    <li><a href="#" class="nav-search navbar-btn" data-icon="search"
+                            onclick="navigation('search')">Search</a></li>
+                    <li><a href="#" data-icon="shop" class="nav-cart navbar-btn" onclick="navigation('cart')">Cart</a>
+                    </li>
+                    <li><a href="#" data-icon="grid" class="nav-order navbar-btn"
+                            onclick="navigation('order')">Order</a></li>
+                    <li><a href="#" data-icon="user" class="nav-profile navbar-btn"
+                            onclick="navigation('profile')">Profile</a></li>
             </div>
         </div>
     </div>
