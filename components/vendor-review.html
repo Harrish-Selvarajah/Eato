@@ -16,11 +16,14 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
     <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
     <script src="../js/vendor-review.js"></script>
 </head>
 
 <body>
     <div data-role="page">
+        <div class="se-pre-con"></div>
         <div data-role="header" data-postion="fixed" data-fullscreen="true" class="header-bar">
             <img src="../assets/logo new.svg">
             <!-- <i class="arrow arrow-left"></i> -->
@@ -58,17 +61,17 @@
 
         <div data-role="popup" class="popup" id="popup-modal" data-theme="a" style="border-radius: 20px;">
             <div class="popup-header">
-                <i class=" material-icons">close</i>
+                <i id="close-btn" class=" material-icons">close</i>
                 <h4>Type Response</h4>
             </div>
             <div class="popup-body">
                 <div class="popup-input">
-                    <textarea placeholder="Your message here..."></textarea>
+                    <textarea id="reviewReply" placeholder="Your message here..."></textarea>
                 </div>
             </div>
             <div class="popup-footer">
                 <div class="action-btn">
-                    <button type="button">
+                    <button type="button" onclick="submitResponse()">
                         <p class="primaryText">Reply</p>
                     </button>
                 </div>

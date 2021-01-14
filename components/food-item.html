@@ -12,6 +12,7 @@
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script src="/js/food-item.js"></script>
+    <script src="../js/common.js"></script>
 
 
 </head>
@@ -20,7 +21,7 @@
     <div data-role="page">
         <div data-role="header" data-postion="fixed" data-fullscreen="true" class="header-bar">
             <!-- <img src="../assets/logo new.svg"> -->
-            <i class="arrow arrow-left"></i>
+            <i onclick="goBack()" class="arrow arrow-left"></i>
             <h4>Food Item</h4>
         </div>
         <div role="main" class="ui-content ui-content-header" id="render-food-item">

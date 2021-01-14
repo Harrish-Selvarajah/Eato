@@ -62,6 +62,7 @@ function hideVendorReply(id) {
 }
 
 function renderReviews() {
+    $(".se-pre-con").fadeOut("fast");
     var renderHtml = "";
     if (reviews.length > 0) {
         reviews.forEach(function (item) {

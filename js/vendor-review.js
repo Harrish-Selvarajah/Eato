@@ -49,11 +49,18 @@ $(document).ready(function () {
 		return false;
 	});
 	getReviews();
-	// var fooditemID = getUrlParameter('fooditemID');
+	// var fooditemID = getUrlParameter('fooditemID');	
 });
+
+$('#close-btn').click(function (e) { 
+	$('#popup-modal').popup('close')
+});
+
+
 
 function getReviews() {
 	reviews = [];
+	// debugger
 	firebase.database().ref('Vendors/' + 1).child('reviews').once('value', function (snapshot) {
 		snapshot.forEach(function (childSnapshot) {
 			var childData = childSnapshot.val();
@@ -63,7 +70,7 @@ function getReviews() {
 				date: childData.date,
 				rating: childData.rating,
 				review: childData.review,
-				reviewResponse: childData.reviewResponse.response,
+				reviewResponse: childData.reviewResponse,
 				userObj: {
 					name: childData.userobj.name,
 					profilepicLink: childData.userobj.profilepicLink
@@ -75,8 +82,12 @@ function getReviews() {
 	})
 }
 
+
+
 function renderReview() {
+	$(".se-pre-con").fadeOut("fast");
 	var renderHtml = "";
+	$(".review-item").remove();
 	if (reviews.length > 0) {
 		reviews.forEach(function (item) {
 			console.log(item);
@@ -97,8 +108,7 @@ function renderReview() {
                         </div>
                     </div>
                     <div class="reply" id="reply-div-${item.key}">
-                        <a onclick="reply('${item.key}')" href="#popup-modal" id="reply-btn" data-rel="popup" data-position-to="window"
-                            data-transition="pop">Reply</a>
+							<div  onclick="reply('${item.key}')" id="reply-btn">Reply</div>
 					</div>
 					<div class="vendor-response" id="vendor-feedback-${item.key}" style="display: none;">
                         <p class="secondaryText">${item.reviewResponse}</p>
@@ -107,6 +117,16 @@ function renderReview() {
 		})
 		$('#reviews').append(renderHtml);
 	}
+
+	$("#reply-btn").click(function () {
+		console.log("ebifebwfb")
+		$('#popup-modal').popup('open')
+	})
+
+	$('#close-btn').click(function (e) { 
+		$('#popup-modal').popup('close')
+	});
+	
 
 	reviews.forEach(function (item) {
 		// debugger;
@@ -124,13 +144,17 @@ function renderReview() {
 
 function reply(id) {
 	currentID = id;
+	// $("#reply-btn").click(function () {
+	// 	console.log("ebifebwfb")
+	// 	$('#popup-modal').popup('open')
+	// })
 }
 
 function submitResponse() {
 	var response = $('#reviewReply').val();
-	firebase.database().ref('Vendors/' + 1).child('reviews/' + currentID).child('reviewResponse').update({
+	firebase.database().ref('Vendors/' + 1).child('reviews/' + currentID).update({
 		// name: 'Melt House',
-		response
+		reviewResponse: response,
 	}
 		, (error) => {
 			if (error) {
@@ -146,6 +170,8 @@ function submitResponse() {
 }
 
 function showResponse(id) {
+		$('#popup-modal').popup('close')
+
 	var status = document.getElementById(`vendor-feedback-${id}`);
 	status.style.display = "flex";
 }
@@ -164,3 +190,4 @@ var getUrlParameter = function getUrlParameter(sParam) {
 		}
 	}
 };
+
