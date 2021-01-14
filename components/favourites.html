@@ -10,6 +10,7 @@
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
     <link rel="stylesheet" href="../css/site.css" />
+    <!-- <link rel="stylesheet" href="../css/search.css"> -->
     <link rel="stylesheet" href="../css/favourites.css" />
 
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
@@ -37,7 +38,7 @@
                         <i class=" material-icons input-field-icon">search</i>
                         <input type="text" placeholder="Search..." name="search" id="search">
                     </div>
-                    <div class="search-filter">
+                    <div class="search-filter" id="search-filter">
                         <i class=" material-icons">sort</i>
                     </div>
                 </div>
@@ -69,6 +70,40 @@
                         <div class="action-btn">
                             <button type="button" id="last-share-btn">
                                 <p class="primaryText">Share</p>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filter Popup -->
+                <div data-role="popup" id="filter-popup" data-theme="a" class="filter-popup">
+                    <div class="popup-top">
+                        <div class="sort-title">
+                            <i class="material-icons start-icon">sort</i>
+                            <div>Sort</div> 
+                        </div>
+                        <div class="sort-catagory" id="sort-catagory-sorting">
+                            <div class="sort-item" id="a-z">A>Z</div>
+                            <div class="sort-item" id="z-a">Z>A</div>
+                            <div class="sort-item" id="rate">Rating</div>    
+                        </div>
+                        <div class="sort-title">
+                            <i class="material-icons start-icon">filter_alt</i>
+                            <div>Sort</div> 
+                        </div>
+                        <div class="sort-catagory" id="star-container">
+                            <i class="material-icons start-icon unselected" id="star-1">star</i>
+                            <i class="material-icons start-icon unselected" id="star-2">star</i>
+                            <i class="material-icons start-icon unselected" id="star-3">star</i>
+                            <i class="material-icons start-icon unselected" id="star-4">star</i>
+                            <i class="material-icons start-icon unselected" id="star-5">star</i>  
+                        </div>
+                        
+                    </div>
+                    <div class="popup-bottom">
+                        <div class="action-btn filter-btn">
+                            <button type="button" id="confirm-filter" data-role="button">
+                                <p class="primaryText">Filter</p>
                             </button>
                         </div>
                     </div>
