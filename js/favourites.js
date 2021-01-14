@@ -70,7 +70,7 @@ function loadFavListFromSession(favouriteList){
         </div>
         <div class="d-flex">
             <i class="material-icons icon-star">grade</i>
-            <h4>${favVendor.rating}</h4>
+            <h4 id="vendor-rating">${favVendor.rating}</h4>
         </div>
     </li>`
     )
@@ -105,7 +105,7 @@ function loadFavListFromSessionDB(){
         </div>
         <div class="d-flex">
             <i class="material-icons icon-star">grade</i>
-            <h4>${favVendor.rating}</h4>
+            <h4 id="vendor-rating">${favVendor.rating}</h4>
         </div>
     </li>`
     )
@@ -397,11 +397,15 @@ function filterPOI() {
    });
 
    // Sort
-
    var favChildElements = $('#fav-list').children()
-   console.log(favChildElements)
-   favChildElements = sortFromAtoZ(favChildElements);
-   console.log(favChildElements)
+   if (sort == "a-z"){
+    favChildElements = sortFromAtoZ(favChildElements);
+   }else if (sort == "z-a"){
+    favChildElements = sortFromZtoA(favChildElements);
+   }else{
+    favChildElements = sortByRating(favChildElements);
+   }
+   
    $('#fav-list').empty();
    $('#fav-list').append(favChildElements)
 }
@@ -431,10 +435,10 @@ function sortFromZtoA(favList) {
         var last = $(`#${a.id}`).find('#vendor-name').text().toLowerCase()
         var first = $(`#${b.id}`).find('#vendor-name').text().toLowerCase()
         
-        if (first > last){
-            return 1;
-        }else if(last > first){
+        if (first < last){
             return -1;
+        }else if(last < first){
+            return 1;
         }
 
         return 0;
@@ -444,14 +448,14 @@ function sortFromZtoA(favList) {
 }
 
 function sortByRating(favList){
-    
+
     favList = favList.sort(function(a,b){
-        var last = $(`#${a.id}`).find('#vendor-name').text().toLowerCase()
-        var first = $(`#${b.id}`).find('#vendor-name').text().toLowerCase()
+        var last = $(`#${a.id}`).find('#vendor-rating').text().toLowerCase()
+        var first = $(`#${b.id}`).find('#vendor-rating').text().toLowerCase()
         
-        if (first > last){
+        if (first < last){
             return -1;
-        }else if(last > first){
+        }else if(last < first){
             return 1;
         }
 
