@@ -163,6 +163,9 @@ form .input-container:first-child{
     background-color: white !important;
 }
 
+.other-info-container {
+    margin: 20px;
+}
 
 
 
