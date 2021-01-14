@@ -172,8 +172,9 @@ $(document).ready(function () {
 });
 
 $("#share-btn").click(function () {
-    console.log("ebifebwfb")
+  if($("#share-btn").hasClass('enabled')){
     $('#popup-modal').popup('open')
+    }
 })
 
 $('#close-btn').click(function (e) { 
@@ -278,16 +279,13 @@ $('#star-container i').click(function (e) {
 
 function activeShareButton() {
     console.log("disabling")
-    $('.share-button').attr('style', 'background-color: #FD6921 !important');
-    $('.share-button').attr('disabled', false);
-    $('.share-button').bind('click');
+    $('#share-btn').removeClass('disabled')
+    $('#share-btn').addClass('enabled')
 }
 
 function disableSharebutton() {
-    console.log("disabling")
-    $('.share-button').attr('style', 'background-color: #707070 !important');
-    $('.share-button').attr('disabled', true);
-    $('.share-button').unbind('click');
+    $('#share-btn').removeClass('enabled')
+    $('#share-btn').addClass('disabled')
 }
 
 function addCheckBoxClick(id) {
