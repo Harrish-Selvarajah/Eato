@@ -6,6 +6,7 @@ sortFilterQuery = {
     sort : "none",
     filter : 0
 }
+var test = false
 var firebaseConfig = {
     apiKey: "AIzaSyBDwiPGqXFeormDpnISyavzwju3BnCUPTo",
     authDomain: "eato-69.firebaseapp.com",
@@ -22,9 +23,10 @@ firebase.initializeApp(firebaseConfig);
 
 var ref = firebase.database().ref('users')
 
+function loadFavListFromFirebase(){
 ref.once('value', function (snapshot) {
     var data = snapshot.val()
-    // console.log(data)
+    console.log(data)
 
     if (Object.keys(data).includes(userID)) {
         console.log(data[userID]['favourites'])
@@ -32,7 +34,7 @@ ref.once('value', function (snapshot) {
             console.log("STARTING TO LOAD FAVOURITES LIST")
             favVendorList = data[userID]['favourites'];
             allFavVendorList = favVendorList;
-            loadFavListFromSessionDB();
+            loadFavVendorList(undefined);
         } else {
             console.log("USER HAS NOT FAVOURITED ANYTHING")
 
@@ -45,50 +47,34 @@ ref.once('value', function (snapshot) {
         console.log("Error: " + error.code);
     });
 
-
-function loadFavListFromSession(favouriteList){
-    var favouriteList = JSON.parse(sessionStorage.getItem('userobj')).favourites;
-
-    $favUiList = $('#fav-list')
-    $favUiList.empty();
-    var poiContent = ""
-
-    favouriteList.forEach((favVendor, idx) => {
-    
-    poiContent = poiContent.concat(
-            `<li class="item">
-        <div class="item-img">
-            <div class="icon-container">
-                <i class=" material-icons icon-fav">favorite</i>
-            </div>
-        </div>
-        <div class="fav-checkbox">
-            <div>
-                <h4 id="vendor-name" >${favVendor.vendorName}</h4>
-                <input class="checkbox" id="select-${favVendor.vendorID}" type="checkbox" />
-            </div>
-        </div>
-        <div class="d-flex">
-            <i class="material-icons icon-star">grade</i>
-            <h4 id="vendor-rating">${favVendor.rating}</h4>
-        </div>
-    </li>`
-    )
-    })
-
-
-    $favUiList.append(poiContent)
-
 }
+    function   loadDisplayData(){
+        console.log("dsdssd")
+        var favouriteList;
+        try{
+              favouriteList = JSON.parse(sessionStorage.getItem('userobj')).favourites;
+        }catch(e){
+            loadFavListFromFirebase();
+        }
+    
+        if(favouriteList !=null & test == false){
+            console.log("Session Pull")
+            loadFavVendorList(favouriteList);
+        }else{
+            console.log("DB Pull")
+            loadFavListFromFirebase();
+        }
+    }    
 
-function loadFavListFromSessionDB(){
-
+function loadFavVendorList(favList){
+     
+    favList =    favList != undefined ? favList : favVendorList
 
     $favUiList = $('#fav-list')
     $favUiList.empty();
     var poiContent = ""
 
-    favVendorList.forEach((favVendor, idx) => {
+    favList.forEach((favVendor, idx) => {
     
     poiContent = poiContent.concat(
             `<li class="item" id="li-${idx}">
@@ -114,30 +100,12 @@ function loadFavListFromSessionDB(){
     $favUiList.append(poiContent)
 }
 
-
-
-function loadFavVendorList(){
-    var favouriteList;
-    try{
-          favouriteList = JSON.parse(sessionStorage.getItem('userobj')).favourites;
-    }catch(e){
-        loadFavListFromSessionDB();
-    }
-    if(favouriteList !=null){
-        console.log("Session Pull")
-        loadFavListFromSession(favouriteList);
-    }else{
-        console.log("DB Pull")
-        loadFavListFromSessionDB();
-    }
-}
-
 $(document).ready(function () {
 
     disableSharebutton();
     $('#error-msg').hide();
    
-    loadFavVendorList();
+    loadDisplayData();
 
    $("#select-all").click(function () {
 
@@ -400,7 +368,8 @@ function filterPOI() {
    $('#fav-list').empty();
    $('#fav-list').append(favChildElements)
 
-   // finally calling search to combine active searches
+   // finally clear search
+
    document.getElementById("search").value = ""
 }
 
