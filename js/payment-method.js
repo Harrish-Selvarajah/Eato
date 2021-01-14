@@ -13,8 +13,10 @@ function loadPaymentData(){
     paymentData = JSON.parse(sessionStorage.getItem('paymentOpts'))
     paymentOpts = [] 
     paymentOpts.push(paymentDefault)
-
+    
+    if(paymentData != null && paymentData != undefined){
     paymentOpts = paymentOpts.concat(paymentData)
+    }
 
     console.log(paymentOpts)
 }
