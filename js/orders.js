@@ -46,9 +46,10 @@ $(document).ready(function () {
     console.log(sessionStorage);
     debugger;
     if (cart.length == 0) {
-        debugger
+        // debugger
         status.style.display = "none"
     } else {
+        status.style.display = "flex"
         repeatOngoingOrder();
     }
     
