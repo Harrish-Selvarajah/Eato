@@ -2,20 +2,20 @@
 <html>
 
 <head>
-    <title>Login | Eato</title>
+    <title>Signup | Eato</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <script src="../lib/jquery-1.12.4.min.js"></script>
+    <script src="../lib/jquery.mobile-1.4.5.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
     <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
 
     <link rel="stylesheet" href="../css/site.css" />
-    <link rel="stylesheet" href="../css/login.css" />
-    <script src="../js/login.js"></script>
+    <link rel="stylesheet" href="../css/signup-vendor.css" />
 </head>
 
 <body>
@@ -24,32 +24,36 @@
             <div class="icon-container">
                 <i class="material-icons">arrow_back_ios</i>
             </div>
-            <div class="login-body-container d-flex">
+            <div class="signup-body-container d-flex">
                 <div class="left-section">
                     <div>
-                        <h1>Login</h1>
+                        <h1>Sign up</h1>
+                        <div class="input-field-container">
+                            <i class=" material-icons input-field-icon">call</i>
+                            <input class="input-field-icon-input" type="text" placeholder="Mobile number" id="mobnum">
+                        </div>
+                        <div class="input-field-container">
+                            <i class=" material-icons input-field-icon">mail</i>
+                            <input class="input-field-icon-input" type="text" placeholder="Email" id="email">
+                        </div>
                         <div class="input-field-container">
                             <i class=" material-icons input-field-icon">person</i>
-                            <input class="input-field-icon-input" type="text" placeholder="Username" name="usrnm"
-                                id="usrnm">
+                            <input class="input-field-icon-input" type="text" placeholder="Full name" id="fnam">
+                        </div>
+                        <div class="input-field-container">
+                            <i class=" material-icons input-field-icon">vpn_key</i>
+                            <input class="input-field-icon-input" type="text" placeholder="Password" id="pswrd">
                         </div>
                         <div class="input-field-container">
                             <i class=" material-icons input-field-icon">lock</i>
-                            <input class="input-field-icon-input" type="text" placeholder="Password" name="pswrd"
-                                id="pswrd">
+                            <input class="input-field-icon-input" type="text" placeholder="Confirm password"
+                                id="cpswrd">
                         </div>
-                        <div class="remember-me-container">
-                            <div class="d-flex">
-                                <input type="checkbox">
-                                <p class="primaryText" style="padding-left: 20px;">Remember Me</p>
-                            </div>
-                            <p class="primaryText">Forgot Password?</p>
-                        </div>
-                        <div class="action-btn login-btn">
-                            <button type="button" onclick="login()">
-                                <p class="primaryText">Login</p>
+                        <div class="action-btn signup-btn">
+                            <button type="button" onclick="signUp()" data-role="button">
+                                <p class="primaryText">Signup</p>
                             </button>
-                            <p class="primaryText to-signup-text">Don't have an account? <a>Signup</a></p>
+                            <p class="primaryText to-login-text">Alread have an account? <a>Login</a></p>
                         </div>
                     </div>
                 </div>
@@ -57,10 +61,8 @@
                     <img class="img-curve" src="../assets/curve.svg">
                 </div>
                 <div class="right-section">
-                    <img src="../assets/logo/eoto_logo_dark.png">
-                    <img class="login-img-iPad" src="../assets/vectors/User_login_iPad.svg">
-                    <img class="login-img-iPhone" src="../assets/vectors/User_login_Mobile.svg">
-                    <h1>Welcome Back!</h1>
+                    <img class="signup-img" src="../assets/vectors/User_signup_iPad.svg">
+                    <h1>Lets Get Started!</h1>
                 </div>
             </div>
         </div>
