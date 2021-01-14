@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../css/card-css.css" />
 
     <script src="../js/profile.js"></script>
+    <script src="../js/common.js"></script>
 </head>
 
 <body>
@@ -91,27 +92,27 @@
 
                     </div>
                     <div class="tabs">
-                        <div class="tab">
+                        <div class="tab" onclick="navigation('payment-method')">
                             <i class="material-icons ">payment</i>
                             <div class="tab-name">Payment Method</div>
                         </div>
-                        <div class="tab">
+                        <div class="tab" onclick="navigation('favourites')">
                             <i class="material-icons ">favorite_border</i>
                             <div class="tab-name">Favourites</div>
                         </div>
-                        <div class="tab loyalty-tab">
+                        <div class="tab loyalty-tab" onclick="navigation('loyaltyPoints')">
                             <i class="material-icons ">loyalty</i>
                             <div class="tab-name">Loyalty Points</div>
                         </div>
-                        <div class="tab">
+                        <div class="tab" onclick="navigation('qr-cam')">
                             <i class="material-icons ">crop_free</i>
                             <div class="tab-name">QR Cam</div>
                         </div>
-                        <div class="tab">
+                        <div class="tab" onclick="navigation('feedback')">
                             <i class="material-icons ">error_outline</i>
                             <div class="tab-name">Feedback</div>
                         </div>
-                        <div class="tab">
+                        <div class="tab" onclick="navigation('logout')">
                             <i class="material-icons ">logout</i>
                             <div class="tab-name">Logout</div>
                         </div>
@@ -144,11 +145,11 @@
         <div data-role="footer" class="nav-glyphish-example bottom-nav" data-position="fixed" data-tap-toggle="false">
             <div data-role="navbar" data-grid="d" data-theme="a">
                 <ul>
-                    <li><a href="#" data-icon="home" class="nav-home navbar-btn">Home</a></li>
-                    <li><a href="#" class= "nav-search navbar-btn" data-icon="search">Search</a></li>
-                    <li><a href="#" data-icon="shop" class="nav-cart navbar-btn">Cart</a></li>
-                    <li><a href="#" data-icon="grid" class="nav-order navbar-btn">Order</a></li>
-                    <li><a href="#" data-icon="user" class="nav-profile navbar-btn ui-btn-active">Profile</a></li>
+                    <li><a href="#" data-icon="home" class="nav-home navbar-btn" onclick="navigation('home')">Home</a></li>
+                    <li><a href="#" class="nav-search navbar-btn" data-icon="search" onclick="navigation('search')">Search</a></li>
+                    <li><a href="#" data-icon="shop" class="nav-cart navbar-btn" onclick="navigation('cart')">Cart</a></li>
+                    <li><a href="#" data-icon="grid" class="nav-order navbar-btn" onclick="navigation('order')">Order</a></li>
+                    <li><a href="#" data-icon="user" class="ui-btn-active nav-profile navbar-btn" onclick="navigation('profile')">Profile</a></li>
                 </ul>
             </div>
         </div>
