@@ -34,6 +34,13 @@ function navigation(page) {
         case 'logout':
             document.location.href = "./login.html";
             break;
+        case 'location':
+            document.location.href = "./location.html"
+            break;
     }
    
+}
+
+function goBack() {
+    window.history.back();
 }
