@@ -49,18 +49,18 @@ $(document).ready(function () {
 		return false;
 	});
 	getReviews();
-	// var fooditemID = getUrlParameter('fooditemID');
-	
-	
+	// var fooditemID = getUrlParameter('fooditemID');	
 });
 
 $('#close-btn').click(function (e) { 
 	$('#popup-modal').popup('close')
 });
 
+
+
 function getReviews() {
 	reviews = [];
-	
+	// debugger
 	firebase.database().ref('Vendors/' + 1).child('reviews').once('value', function (snapshot) {
 		snapshot.forEach(function (childSnapshot) {
 			var childData = childSnapshot.val();
@@ -81,6 +81,8 @@ function getReviews() {
 		renderReview();
 	})
 }
+
+
 
 function renderReview() {
 	$(".se-pre-con").fadeOut("fast");
@@ -106,8 +108,7 @@ function renderReview() {
                         </div>
                     </div>
                     <div class="reply" id="reply-div-${item.key}">
-                        <a onclick="reply('${item.key}')" href="#popup-modal" id="reply-btn" data-rel="popup" data-position-to="window"
-                            data-transition="pop">Reply</a>
+							<div  onclick="reply('${item.key}')" id="reply-btn">Reply</div>
 					</div>
 					<div class="vendor-response" id="vendor-feedback-${item.key}" style="display: none;">
                         <p class="secondaryText">${item.reviewResponse}</p>
@@ -116,6 +117,16 @@ function renderReview() {
 		})
 		$('#reviews').append(renderHtml);
 	}
+
+	$("#reply-btn").click(function () {
+		console.log("ebifebwfb")
+		$('#popup-modal').popup('open')
+	})
+
+	$('#close-btn').click(function (e) { 
+		$('#popup-modal').popup('close')
+	});
+	
 
 	reviews.forEach(function (item) {
 		// debugger;
@@ -133,7 +144,10 @@ function renderReview() {
 
 function reply(id) {
 	currentID = id;
-	$('#popup-modal').popup('close')
+	// $("#reply-btn").click(function () {
+	// 	console.log("ebifebwfb")
+	// 	$('#popup-modal').popup('open')
+	// })
 }
 
 function submitResponse() {
@@ -156,6 +170,8 @@ function submitResponse() {
 }
 
 function showResponse(id) {
+		$('#popup-modal').popup('close')
+
 	var status = document.getElementById(`vendor-feedback-${id}`);
 	status.style.display = "flex";
 }
@@ -174,3 +190,4 @@ var getUrlParameter = function getUrlParameter(sParam) {
 		}
 	}
 };
+
