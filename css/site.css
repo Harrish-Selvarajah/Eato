@@ -550,6 +550,20 @@ text-overflow: clip; */
 
 /*Navbar UI changes end*/
 
+
+/*LOADER CSS*/
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(../assets/loader/25.svg) center no-repeat #fff;
+}
+
 @media (max-width: 767px) {
     .web-only {
         display: none;

@@ -54,6 +54,7 @@ $(document).ready(function () {
 
 function getReviews() {
 	reviews = [];
+	
 	firebase.database().ref('Vendors/' + 1).child('reviews').once('value', function (snapshot) {
 		snapshot.forEach(function (childSnapshot) {
 			var childData = childSnapshot.val();
@@ -63,7 +64,7 @@ function getReviews() {
 				date: childData.date,
 				rating: childData.rating,
 				review: childData.review,
-				reviewResponse: childData.reviewResponse.response,
+				reviewResponse: childData.reviewResponse,
 				userObj: {
 					name: childData.userobj.name,
 					profilepicLink: childData.userobj.profilepicLink
@@ -76,7 +77,9 @@ function getReviews() {
 }
 
 function renderReview() {
+	$(".se-pre-con").fadeOut("fast");
 	var renderHtml = "";
+	$(".review-item").remove();
 	if (reviews.length > 0) {
 		reviews.forEach(function (item) {
 			console.log(item);
@@ -128,9 +131,9 @@ function reply(id) {
 
 function submitResponse() {
 	var response = $('#reviewReply').val();
-	firebase.database().ref('Vendors/' + 1).child('reviews/' + currentID).child('reviewResponse').update({
+	firebase.database().ref('Vendors/' + 1).child('reviews/' + currentID).update({
 		// name: 'Melt House',
-		response
+		reviewResponse: response,
 	}
 		, (error) => {
 			if (error) {
