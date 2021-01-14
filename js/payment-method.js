@@ -35,7 +35,7 @@ function loadPaymentOptions() {
                             <div>
                                 <div>
                                     <h3>Expiry Date</h3>
-                                    <h5>09/22</h5>
+                                    <h5>${payment.expdt}</h5>
                                 </div>
                                 <img src="../assets/visa.png" />
                             </div>

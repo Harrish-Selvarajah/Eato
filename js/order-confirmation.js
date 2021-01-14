@@ -1,6 +1,7 @@
 var stripe = Stripe('pk_test_51I6yl2F5uJFec6fvNwc1l8AB9ca4GtV0dI9uojppdObsBc9GquBNjg6M6su4FvpCEyMnRL7HmjTIeEWtMB6p6vhF00CguWcTF9');
 var sk_token = "sk_test_51I6yl2F5uJFec6fvprw6NwQw8vxkAhw4S8Mrxy00RDgd3aYrKrcarpgBfz5uORnc9rOz8hmFOELy3CbTJYCmb0OA002i46dFYi";
 var elements = stripe.elements();
+var paymentOpts = []
 var amount = 1500;
 var sr_name = "Amjad"
 var style = {
@@ -160,8 +161,25 @@ function validateFields(){
     $('#btn-confirm-order').click(function (e) { 
        startPayment(); 
     });
+
+    
  });
 
+
+ function loadPaymentData(){
+  paymentData = JSON.parse(sessionStorage.getItem('paymentOpts'))
+  paymentOpts = [] 
+  paymentOpts.push(paymentDefault)
+
+  paymentOpts = paymentOpts.concat(paymentData)
+
+  console.log(paymentOpts)
+}
+
+
+function populateData(){
+  
+}
 
  function isEmpty(str){
      return str == null || str == undefined || str == "" || str.length == 0

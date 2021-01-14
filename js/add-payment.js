@@ -23,8 +23,6 @@ $(document).ready(function () {
                if(popup == false){
                document.location.href = '../components/payment-method.html'
                }else{
-                  parent.document.body
-                 console.log()
                  parent.document.getElementById("close").click()
                }
             }else{
