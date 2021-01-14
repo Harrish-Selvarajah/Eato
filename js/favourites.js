@@ -26,10 +26,10 @@ var ref = firebase.database().ref('users')
 function loadFavListFromFirebase(){
 ref.once('value', function (snapshot) {
     var data = snapshot.val()
-    console.log(data)
+   // console.log(data)
 
     if (Object.keys(data).includes(userID)) {
-        console.log(data[userID]['favourites'])
+      //  console.log(data[userID]['favourites'])
         if (data[userID]['favourites'] != undefined || data[userID]['favourites'].length != 0) {
             console.log("STARTING TO LOAD FAVOURITES LIST")
             favVendorList = data[userID]['favourites'];
@@ -111,7 +111,6 @@ $(document).ready(function () {
 
     if ($('#select-all').is(":checked")) {
 
-        console.log("Click")
         $('#fav-list').find(':checkbox').each(function (element) {
             $(this).prop('checked', true);
         });
@@ -120,8 +119,6 @@ $(document).ready(function () {
         selectedFavList = favVendorList;
         activeShareButton();
     } else {
-
-        console.log("Un-click")
 
         $('#fav-list').find(':checkbox').each(function (element) {
             $(this).prop('checked', false);
@@ -239,7 +236,6 @@ $('#star-container i').click(function (e) {
 
 
 function activeShareButton() {
-    console.log("disabling")
     $('#share-btn').removeClass('disabled')
     $('#share-btn').addClass('enabled')
 }
@@ -258,9 +254,6 @@ function addCheckBoxClick(id) {
         })
 
         selectedFavList = selectedFavList.concat(selectedItem)
-        console.log(selectedItem)
-        console.log(selectedFavList)
-
         // Make Share Actives
         activeShareButton();
 
@@ -269,8 +262,7 @@ function addCheckBoxClick(id) {
         selectedFavList = selectedFavList.filter(function (element) {
             return id != element.vendorID;
         })
-        console.log(selectedFavList);
-
+       
         if (selectedFavList.length == 0) {
             disableSharebutton();
         }
@@ -287,8 +279,7 @@ function validateEmail(email) {
 }
 
 function SendEmail(email, message) {
-    console.log(message)
-    console.log(email)
+   
     Email.send({
         Host: "smtp.gmail.com",
         Username: "eato.corp@gmail.com",
@@ -298,7 +289,7 @@ function SendEmail(email, message) {
         Subject: "List of Favourites",
         Body: content
     }).then(
-        message => alert(message)
+        message => console.log(message)
     );
 }
 
