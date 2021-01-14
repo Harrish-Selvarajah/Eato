@@ -64,7 +64,8 @@ function signUp() {
             name: firstName,
             mobileNumber: mobileNumber,
             email: email,
-            profilePic: ''
+            profilePic: '',
+            favorites: []
         } 
           sessionStorage.setItem('userobj', JSON.stringify(userObj));
           sessionStorage.setItem('cart', JSON.stringify(cart));

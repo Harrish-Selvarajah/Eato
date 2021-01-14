@@ -94,6 +94,18 @@ var cart = [];
 var foodQuantity = 1;
 var vendorID = 0;
 
+var firebaseConfig = {
+	apiKey: "AIzaSyBDwiPGqXFeormDpnISyavzwju3BnCUPTo",
+	authDomain: "eato-69.firebaseapp.com",
+	databaseURL: "https://eato-69-default-rtdb.firebaseio.com",
+	projectId: "eato-69",
+	storageBucket: "eato-69.appspot.com",
+	messagingSenderId: "274943061802",
+	appId: "1:274943061802:web:9916cf1cb84f515bdab853"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
 $(document).ready(function () {
     console.log('food-item');
     $('#display-quantity').text(foodQuantity);
@@ -117,11 +129,23 @@ function renderVendorDetails() {
     if (Number(vendorID) !== 0) {
         vendor.forEach(function (ven) {
             if (ven.id == Number(vendorID)) {
-                renderHtml += `<h1 id="vendor-name">${ven.name}</h1>
-                <div class="vendor-highlights">
-                    <p class="subtitle">Indian, Dosa, Vada</p>
-                    <p class="subtitle">•</p>
-                    <div class="vendor-highlight-rating">
+                renderHtml += `
+                    <div class="vendor-bg">
+                    <div class="bookmark">
+                        <h4>50 %</h4>
+                        <h3>OFF</h3>
+                    </div>
+                    <div class="icon-container" onclick="addFav(${ven.id})">
+                        <i class=" material-icons icon-fav">favorite_border</i>
+                    </div>
+                    <div class="vendor-logo"></div>
+                </div>
+                <div class="vendor-details" id="vendor-details">
+                    <h1>Melt House</h1>
+                    <div class="vendor-highlights">
+                        <p class="subtitle">Indian, Dosa, Vada</p>
+                        <p class="subtitle">•</p>
+                        <div class="vendor-highlight-rating">
                         <p class="subtitle">4.1</p>
                         <i class="material-icons">grade</i>
                         <p class="subtitle">(</p>
@@ -135,10 +159,11 @@ function renderVendorDetails() {
                     rutrum. Vivamus neque turpis,
                     scelerisque eget dapibus id, dictum ut dui. Nullam placerat porta eros vitae cursus. Aliquam
                     porttitor, eros non feugiat
-                    dapibus, felis metus condimentum purus, iaculis convallis purus arcu at dolor.</p>`
+                    dapibus, felis metus condimentum purus, iaculis convallis purus arcu at dolor.</p>
+                </div>`
             }
         })
-        $('#vendor-details').append(renderHtml);
+        $('#render-vendor').append(renderHtml);
     }
 }
 
@@ -346,3 +371,30 @@ var getUrlParameter = function getUrlParameter(sParam) {
         }
     }
 };
+
+function addFav(id) {
+    // debugger;
+    var userObj = JSON.parse(sessionStorage.getItem('userobj'));
+    vendorobj = {
+        rating: 4,
+        vendorID: id,
+        vandorName: "Melt House"
+    };
+    // userObj['favorites']
+    console.log(userObj.id);
+    firebase.database().ref('Users/' + userObj.id).child('favourites/').set({
+		// name: 'Melt House',
+		vendorobj
+	}
+		, (error) => {
+			if (error) {
+				console.log("Push to firebase failed!");
+
+			} else {
+				console.log("pushed to firebase succesfully!");
+				// getReviews();
+				// showResponse(currentID);
+				// $("#mydiv").load(location.href + " #mydiv");
+			}
+		});
+}
