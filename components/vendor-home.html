@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Vendor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="../css/site.css" />
+    <link rel="stylesheet" href="../css/vendor-home.css" />
+
+</head>
+
+<body>
+    <div data-role="page">
+        <div data-role="header" data-postion="fixed" data-fullscreen="true" class="header-bar">
+            <img src="../assets/logo new.svg">
+            <!-- <i class="arrow arrow-left"></i> -->
+        </div>
+        <div role="main" class="ui-content ui-content-header">
+            <div class="main-container">
+                <div class="status">
+                    <select name="flip-2" id="flip-2" data-role="flipswitch" data-theme="b">
+                        <option value="off">Offline</option>
+                        <option value="on">Online</option>                       
+                    </select>
+                    <div class="logout">
+                        <i class="material-icons ">logout</i>
+                    </div>
+                </div>
+
+                <div class="section-new">
+                    <div style="font-size: 18px;" class="py-10">New (01)</div>
+                    <div class="new-box">
+                        <div>
+                            <h3>Diana</h3>
+                            <p>FS0332</p>
+                        </div>
+                       
+                    </div>
+                </div>
+                <div class="section-progress py-10">
+                    <div>
+                        <div style="font-size: 18px;" class="py-10">In Progress (01)</div>
+                        <div class="progress-box">
+                            <div>
+                                <h3>Diana</h3>
+                                <p>FS0332</p>
+                            </div>
+                            <div class="ready-btn">
+                                Ready    
+                            </div>
+                        </div>
+                        <div class="progress-box">
+                            <div>
+                                <h3>David</h3>
+                                <p>FS0333</p>
+                            </div>
+                            <div class="logout  ">
+                                <i class="material-icons ">person</i>   
+                            </div>
+                        </div>
+                    </div>
+                </div>           
+            </div>
+
+        </div>
+        <div data-role="footer" class="footer">
+            <div class="footer-top">
+                <div class="footer-left">
+                    <h4>Contact</h4>
+                    <p class="secondaryText"><a href="mailto:info@eato.eat">info@eato.eat</a></p>
+                    <br>
+                    <h4>Address</h4>
+                    <p class="secondaryText">50, Chez Road, Panisse</p>
+                </div>
+                <div class="footer-right">
+                    <img src="../assets/logo/eoto_logo_light.png">
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <i class="material-icons">account_circle</i>
+                <i class="material-icons">account_circle</i>
+                <i class="material-icons">account_circle</i>
+                <p class="footer-copyrights infoText">© 2021 Eato. All Rights Reserved.</p>
+            </div>
+        </div>
+        <!-- Navbar  -->
+        <div data-role="footer" class="nav-glyphish-example bottom-nav" data-position="fixed" data-tap-toggle="false">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#" data-icon="home" class="ui-btn-active nav-home navbar-btn">Home</a></li>
+                    <li><a href="#" data-icon="grid" class="nav-order navbar-btn">Menu</a></li>
+                    <li><a href="#" data-icon="comment" class="nav-chat navbar-btn">Chat</a></li>
+                    <li><a href="#" data-icon="star" class="nav-review navbar-btn">Review</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Navbar  -->
+    </div>
+</body>
+
+</html>

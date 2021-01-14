@@ -464,6 +464,9 @@ text-overflow: clip; */
 .ui-icon-user {
     border-top-right-radius: 20px !important;
 }
+.ui-icon-star {
+    border-top-right-radius: 20px !important;
+}
 
 /* Home icon chanegs */
 
@@ -510,6 +513,30 @@ text-overflow: clip; */
 
 .ui-btn.ui-btn-active.nav-order:after {
     background: url('../assets/navbar-icons/order-history_filled.png') no-repeat !important;
+    background-size: 20px 20px !important;
+}
+
+/* Chat icon chanegs */
+
+.nav-chat:after {
+    background: url('../assets/navbar-icons/chat.png') no-repeat !important;
+    background-size: 20px 20px !important;
+}
+
+.ui-btn.ui-btn-active.nav-chat:after {
+    background: url('../assets/navbar-icons/chat_filled.png') no-repeat !important;
+    background-size: 20px 20px !important;
+}
+
+/* Review icon chanegs */
+
+.nav-review:after {
+    background: url('../assets/navbar-icons/Review.png') no-repeat !important;
+    background-size: 20px 20px !important;
+}
+
+.ui-btn.ui-btn-active.nav-review:after {
+    background: url('../assets/navbar-icons/Review-filled.png') no-repeat !important;
     background-size: 20px 20px !important;
 }
 
