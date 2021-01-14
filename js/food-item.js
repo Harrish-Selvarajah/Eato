@@ -271,8 +271,9 @@ function handleFoodItemPopup(action, id) {
 }
 
 function renderPopup(foodId) {
-    // debugger
+    debugger
     var renderHtml = "";
+    $(".d-flex").remove();
     vendorID = JSON.parse(sessionStorage.getItem('vendorID'));
     vendor.forEach(function (x) {
         if (x.id == Number(vendorID)) {
