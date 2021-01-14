@@ -62,7 +62,7 @@ $(document).ready(function(){
       // name: 'Melt House',
           review: bla,
           reviewResponse: '',
-          rating: ratingValue,
+          rating: ratingValue * 10,
           date: "26/10/2020",
           userobj : {
             name: JSON.parse(userObj).name,
@@ -73,6 +73,7 @@ $(document).ready(function(){
         console.log(error, "Push to firebase failed!")
       } else {
         console.log("pushed to firebase succesfully!");
+        document.location.href = "./orders.html"
       }
     });
   }

@@ -35,7 +35,19 @@ function navigation(page) {
             document.location.href = "./login.html";
             break;
         case 'location':
-            document.location.href = "./location.html"
+            document.location.href = "./location.html";
+            break;
+        case 'customer-login':
+            document.location.href = "./login.html";
+            break;
+        case 'vendor-login':
+            document.location.href = "./login-vendor.html";
+            break;
+        case 'cust-signup':
+            document.location.href = "./signup.html";
+            break;
+        case 'vend-signup':
+            document.location.href = "signup-vendor.html";
             break;
     }
    
