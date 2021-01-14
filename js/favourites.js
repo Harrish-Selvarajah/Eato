@@ -6,6 +6,7 @@ sortFilterQuery = {
     sort : "none",
     filter : 0
 }
+var test = false
 var firebaseConfig = {
     apiKey: "AIzaSyBDwiPGqXFeormDpnISyavzwju3BnCUPTo",
     authDomain: "eato-69.firebaseapp.com",
@@ -22,17 +23,18 @@ firebase.initializeApp(firebaseConfig);
 
 var ref = firebase.database().ref('users')
 
+function loadFavListFromFirebase(){
 ref.once('value', function (snapshot) {
     var data = snapshot.val()
-    // console.log(data)
+   // console.log(data)
 
     if (Object.keys(data).includes(userID)) {
-        console.log(data[userID]['favourites'])
+      //  console.log(data[userID]['favourites'])
         if (data[userID]['favourites'] != undefined || data[userID]['favourites'].length != 0) {
             console.log("STARTING TO LOAD FAVOURITES LIST")
             favVendorList = data[userID]['favourites'];
             allFavVendorList = favVendorList;
-            loadFavListFromSessionDB();
+            loadFavVendorList(undefined);
         } else {
             console.log("USER HAS NOT FAVOURITED ANYTHING")
 
@@ -45,50 +47,34 @@ ref.once('value', function (snapshot) {
         console.log("Error: " + error.code);
     });
 
-
-function loadFavListFromSession(favouriteList){
-    var favouriteList = JSON.parse(sessionStorage.getItem('userobj')).favourites;
-
-    $favUiList = $('#fav-list')
-    $favUiList.empty();
-    var poiContent = ""
-
-    favouriteList.forEach((favVendor, idx) => {
-    
-    poiContent = poiContent.concat(
-            `<li class="item">
-        <div class="item-img">
-            <div class="icon-container">
-                <i class=" material-icons icon-fav">favorite</i>
-            </div>
-        </div>
-        <div class="fav-checkbox">
-            <div>
-                <h4 id="vendor-name" >${favVendor.vendorName}</h4>
-                <input class="checkbox" id="select-${favVendor.vendorID}" type="checkbox" />
-            </div>
-        </div>
-        <div class="d-flex">
-            <i class="material-icons icon-star">grade</i>
-            <h4 id="vendor-rating">${favVendor.rating}</h4>
-        </div>
-    </li>`
-    )
-    })
-
-
-    $favUiList.append(poiContent)
-
 }
+    function   loadDisplayData(){
+        console.log("dsdssd")
+        var favouriteList;
+        try{
+              favouriteList = JSON.parse(sessionStorage.getItem('userobj')).favourites;
+        }catch(e){
+            loadFavListFromFirebase();
+        }
+    
+        if(favouriteList !=null & test == false){
+            console.log("Session Pull")
+            loadFavVendorList(favouriteList);
+        }else{
+            console.log("DB Pull")
+            loadFavListFromFirebase();
+        }
+    }    
 
-function loadFavListFromSessionDB(){
-
+function loadFavVendorList(favList){
+     
+    favList =    favList != undefined ? favList : favVendorList
 
     $favUiList = $('#fav-list')
     $favUiList.empty();
     var poiContent = ""
 
-    favVendorList.forEach((favVendor, idx) => {
+    favList.forEach((favVendor, idx) => {
     
     poiContent = poiContent.concat(
             `<li class="item" id="li-${idx}">
@@ -114,36 +100,17 @@ function loadFavListFromSessionDB(){
     $favUiList.append(poiContent)
 }
 
-
-
-function loadFavVendorList(){
-    var favouriteList;
-    try{
-          favouriteList = JSON.parse(sessionStorage.getItem('userobj')).favourites;
-    }catch(e){
-        loadFavListFromSessionDB();
-    }
-    if(favouriteList !=null){
-        console.log("Session Pull")
-        loadFavListFromSession(favouriteList);
-    }else{
-        console.log("DB Pull")
-        loadFavListFromSessionDB();
-    }
-}
-
 $(document).ready(function () {
 
     disableSharebutton();
     $('#error-msg').hide();
    
-    loadFavVendorList();
+    loadDisplayData();
 
    $("#select-all").click(function () {
 
     if ($('#select-all').is(":checked")) {
 
-        console.log("Click")
         $('#fav-list').find(':checkbox').each(function (element) {
             $(this).prop('checked', true);
         });
@@ -152,8 +119,6 @@ $(document).ready(function () {
         selectedFavList = favVendorList;
         activeShareButton();
     } else {
-
-        console.log("Un-click")
 
         $('#fav-list').find(':checkbox').each(function (element) {
             $(this).prop('checked', false);
@@ -172,8 +137,9 @@ $(document).ready(function () {
 });
 
 $("#share-btn").click(function () {
-    console.log("ebifebwfb")
+  if($("#share-btn").hasClass('enabled')){
     $('#popup-modal').popup('open')
+    }
 })
 
 $('#close-btn').click(function (e) { 
@@ -210,14 +176,7 @@ $('#last-share-btn').click(function(){
 
 $(document).on('input', '#search', function(e) {
      var input = e.target.value;
-     favVendorList.forEach(function(element,idx){
-          if (!element.vendorName.toUpperCase().includes(e.target.value.toUpperCase())){
-               $(`#li-${idx}`).css('display','none')
-          }else{
-            $(`#li-${idx}`).css('display','block')
-          }
-     });
-
+     search(input);
   });
 
 
@@ -277,17 +236,13 @@ $('#star-container i').click(function (e) {
 
 
 function activeShareButton() {
-    console.log("disabling")
-    $('.share-button').attr('style', 'background-color: #FD6921 !important');
-    $('.share-button').attr('disabled', false);
-    $('.share-button').bind('click');
+    $('#share-btn').removeClass('disabled')
+    $('#share-btn').addClass('enabled')
 }
 
 function disableSharebutton() {
-    console.log("disabling")
-    $('.share-button').attr('style', 'background-color: #707070 !important');
-    $('.share-button').attr('disabled', true);
-    $('.share-button').unbind('click');
+    $('#share-btn').removeClass('enabled')
+    $('#share-btn').addClass('disabled')
 }
 
 function addCheckBoxClick(id) {
@@ -299,9 +254,6 @@ function addCheckBoxClick(id) {
         })
 
         selectedFavList = selectedFavList.concat(selectedItem)
-        console.log(selectedItem)
-        console.log(selectedFavList)
-
         // Make Share Actives
         activeShareButton();
 
@@ -310,8 +262,7 @@ function addCheckBoxClick(id) {
         selectedFavList = selectedFavList.filter(function (element) {
             return id != element.vendorID;
         })
-        console.log(selectedFavList);
-
+       
         if (selectedFavList.length == 0) {
             disableSharebutton();
         }
@@ -328,8 +279,7 @@ function validateEmail(email) {
 }
 
 function SendEmail(email, message) {
-    console.log(message)
-    console.log(email)
+   
     Email.send({
         Host: "smtp.gmail.com",
         Username: "eato.corp@gmail.com",
@@ -339,7 +289,7 @@ function SendEmail(email, message) {
         Subject: "List of Favourites",
         Body: content
     }).then(
-        message => alert(message)
+        message => console.log(message)
     );
 }
 
@@ -408,6 +358,10 @@ function filterPOI() {
    
    $('#fav-list').empty();
    $('#fav-list').append(favChildElements)
+
+   // finally clear search
+
+   document.getElementById("search").value = ""
 }
 
 function sortFromAtoZ(favList) {  
@@ -463,4 +417,16 @@ function sortByRating(favList){
     })
 
   return favList;
+}
+
+
+function search(input) {  
+
+    favVendorList.forEach(function(element,idx){
+        if (!element.vendorName.toUpperCase().substring(0, input.length).includes(input.toUpperCase())){
+             $(`#li-${idx}`).css('display','none')
+        }else{
+          $(`#li-${idx}`).css('display','block')
+        }
+   });
 }

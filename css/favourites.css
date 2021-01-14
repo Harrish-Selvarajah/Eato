@@ -220,6 +220,11 @@
    font-size: 40px;
 }
 
+/* 
+---------------------------------------------------
+Don't Touch them.. Used in the funcationality  
+--------------------------------------------------
+*/
 .selected{
     color: #FD6921 !important;
 }
@@ -241,4 +246,12 @@
 [id^="select-"] {
     width: 25px !important;
     height: 25px !important;
+}
+
+.disabled {
+    background-color: #707070 !important;
+}
+
+.enabled {
+    background-color: #FD6921 !important;
 }
