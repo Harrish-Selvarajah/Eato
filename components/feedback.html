@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Feedback</title>
+    <title>Feedback | Eato</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
@@ -9,14 +9,9 @@
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
-    <!-- <script src="/js/food-item.js"></script> -->
     <link rel="stylesheet" href="../css/site.css" />
     <link rel="stylesheet" href="../css/feedback.css" />
-    <link rel="stylesheet" href="../css/card-css.css" />
     <script src="../js/feedback.js"></script>
-    <link rel="stylesheet" href="../css/write-review.css" />
-
-
 </head>
 
 <body>
@@ -27,24 +22,17 @@
             <h4>Feedback</h4>
         </div>
         <div role="main" class="ui-content ui-content-header">
-            <div class="main-container write-review-container">
-                <div class="review-desc">
+            <div class="main-container">
+                <div class="feedback-desc">
                     <img src="../assets/logo/eoto_logo_dark.png" style="height: 80px;">
                     <h3>Help Us Improve</h3>
+                    <p class="subtitle">Please drop your message below to let us know your concern</p>
                 </div>
-                
-                <div class="feedback-desc">
-                    Please drop your message below an let us
-                                know your concern
-                </div>
-                
                 <div class='text-message'></div>
-                <div class='clearfix'></div>
-                <textarea placeholder="Write a Review" id="reviewComment" style="width: 336px;
-                            height: 215px!important; border:1px solid #707070; border-radius:20px"></textarea>
+                <textarea class="text-area" placeholder="Your message here..." id="feedbackComment"></textarea>
                 <div class="submit-button">
                     <div class="action-btn submit-btn">
-                        <button type="button"  data-role="button">
+                        <button type="button" data-role="button">
                             <p class="primaryText">Submit</p>
                         </button>
                     </div>

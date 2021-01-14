@@ -16,6 +16,14 @@
     height: 300px;
 }
 
+.text-area {
+    min-height: 215px!important;
+    height: unset!important;
+    border: 1px solid #707070;
+    border-radius: 20px;
+    padding: 10px!important;
+}
+
 .items {
     display: flex;
     overflow: auto;

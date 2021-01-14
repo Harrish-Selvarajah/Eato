@@ -41,7 +41,7 @@
             <i class="arrow arrow-left"></i>
             <h4>Write a Review</h4>
         </div>
-        <div role="main" class="ui-content ui-content-header">
+        <div role="main" class="ui-content ui-content-header" style="overflow: hidden;">
             <div class="main-container write-review-container">
                 <div class="review-desc">
                     <p class="subtitle">Rate and Drop comments, to make your</p>
@@ -68,8 +68,7 @@
                 </div>
                 <div class='text-message'></div>
                 <div class='clearfix'></div>
-                <textarea placeholder="Write a Review" id="reviewComment" style="width: 336px;
-                            height: 215px!important; border:1px solid #707070; border-radius:20px"></textarea>
+                <textarea placeholder="Write a Review" id="reviewComment" class="text-area"></textarea>
                 <div class="submit-button">
                     <div class="action-btn submit-btn">
                         <button type="button" onclick="writeUserData()" data-role="button">
