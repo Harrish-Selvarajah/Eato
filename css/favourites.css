@@ -236,7 +236,7 @@
 .button-unselected {
     background-color: white !important;
     color: black;
-}
+}   
 
 [id^="select-"] {
     width: 25px !important;
