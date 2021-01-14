@@ -427,15 +427,21 @@ text-overflow: clip; */
     border-radius: 25px;
 }
 
+.popup-input>div>input {
+    padding: 10px;
+}
+
 .popup-input>textarea {
     border-radius: 25px;
+    min-height: 120px;
+    padding: 10px;
 }
 
 .popup-footer {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 25px;
 }
 
 .popup-footer .action-btn>button {
@@ -526,8 +532,7 @@ text-overflow: clip; */
     text-shadow: 0 1px 0 #f3f3f3;
 }
 
-.navbar-btn.ui-btn-icon-left:after, .navbar-btn.ui-btn-icon-right:after, .navbar-btn.ui-btn-icon-top:after, 
-.navbar-btn.ui-btn-icon-bottom:after, .navbar-btn.ui-btn-icon-notext:after {
+.navbar-btn.ui-btn-icon-left:after, .navbar-btn.ui-btn-icon-right:after, .navbar-btn.ui-btn-icon-top:after, .navbar-btn.ui-btn-icon-bottom:after, .navbar-btn.ui-btn-icon-notext:after {
     background-color: unset !important;
 }
 
