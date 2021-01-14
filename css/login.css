@@ -7,7 +7,7 @@
     align-items: center;
 } */
 
-.left-section{
+.left-section {
     flex: 1;
     min-height: 100vh;
     display: flex;
@@ -17,11 +17,11 @@
     padding: 15px;
 }
 
-.middle-section{
+.middle-section {
     display: none;
 }
 
-.right-section{
+.right-section {
     flex: 1;
     min-height: 100vh;
     display: flex;
@@ -29,7 +29,6 @@
     justify-content: center;
     align-items: center;
     padding: 15px;
-
 }
 
 .login-body-container>div:not(:first-child) {
@@ -42,8 +41,7 @@
 }
 
 .login-body-container>div:not(:first-child)>img:not(:first-child) {
-    height: 270px;
-    margin: 25px;
+    margin: 25px 0px 25px 0px;
 }
 
 .login-body-container>div:not(:first-child)>h1 {
@@ -70,56 +68,66 @@
     color: #FD6921;
 }
 
-.login-img-iPad{
-display: flex;
+.login-img-iPad {
+    display: flex;
 }
 
-.login-img-iPhone{
+.login-img-iPhone {
     display: none;
 }
 
-.img-curve{
+.img-curve {
     display: none;
 }
 
-@media only screen and (max-width: 700px){
-    .login-body-container{
+.ui-content .icon-container {
+    left: 15px!important;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ui-content .icon-container .material-icons {
+    color: #FD6921;
+    font-size: 20px;
+    text-shadow: none;
+    position: relative;
+    top: 0px;
+    left: 4px;
+}
+
+@media only screen and (max-width: 700px) {
+    .login-body-container {
         flex-direction: column-reverse;
     }
-
-    .login-img-iPad{
+    .login-img-iPad {
         display: none !important;
-        }
-        
-        .login-img-iPhone{
-            display: flex;
-            margin: 0px !important;
-        }
-
+    }
+    .login-img-iPhone {
+        display: flex;
+        margin: 0px !important;
+    }
     .login-body-container>div:not(:first-child)>img:not(:first-child) {
         height: 200px !important;
     }
-
-    .left-section{
+    .left-section {
         padding: 20px;
         min-height: 50vh !important;
         justify-content: unset !important;
     }
-    .middle-section{
+    .middle-section {
         display: flex !important;
         background-color: unset !important;
         min-height: 10vh !important;
     }
-
-    .right-section{
+    .right-section {
         justify-content: unset !important;
         min-height: 40vh !important;
     }
-
-    .img-curve{
+    .img-curve {
         display: flex !important;
         width: 100% !important;
         height: unset !important;
     }
-
 }

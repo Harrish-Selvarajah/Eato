@@ -1,4 +1,4 @@
-/* .signup-body-container>div {
+/* .login-body-container>div {
     flex: 1;
     min-height: 100vh;
     display: flex;
@@ -31,31 +31,49 @@
     padding: 15px;
 }
 
-.signup-body-container>div:not(:first-child) {
+.login-body-container>div:not(:first-child) {
     background-color: #F9F9F9;
 }
 
-.signup-body-container>div:not(:first-child)>img {
-    height: 240px;
-    margin: 25px;
+.login-body-container>div:not(:first-child)>img:first-child {
+    width: 160px;
+    height: 90px;
 }
 
-.signup-body-container>div:not(:first-child)>h1 {
+.login-body-container>div:not(:first-child)>img:not(:first-child) {
+    margin: 25px 0px 25px 0px;
+}
+
+.login-body-container>div:not(:first-child)>h1 {
     color: #37474F
 }
 
-.signup-body-container>div:first-child>div>h1 {
+.login-body-container>div:first-child>div>h1 {
     color: #37474F;
     margin-bottom: 25px;
 }
 
-.signup-btn {
+.remember-me-container {
+    justify-content: space-between;
+    display: flex;
+    margin-top: 10px;
+}
+
+.login-btn {
     margin-top: 35px;
     text-align: center;
 }
 
-.to-login-text>a {
+.to-signup-text>a {
     color: #FD6921;
+}
+
+.login-img-iPad {
+    display: flex;
+}
+
+.login-img-iPhone {
+    display: none;
 }
 
 .img-curve {
@@ -80,12 +98,22 @@
 }
 
 @media only screen and (max-width: 700px) {
-    .signup-body-container {
+    .login-body-container {
         flex-direction: column-reverse;
+    }
+    .login-img-iPad {
+        display: none !important;
+    }
+    .login-img-iPhone {
+        display: flex;
+        margin: 20px 0px 20px 0px !important;
+    }
+    .login-body-container>div:not(:first-child)>img:not(:first-child) {
+        height: 200px !important;
     }
     .left-section {
         padding: 20px;
-        min-height: 70vh !important;
+        min-height: 50vh !important;
         justify-content: unset !important;
     }
     .middle-section {
@@ -95,16 +123,11 @@
     }
     .right-section {
         justify-content: unset !important;
-        min-height: 20vh !important
-    }
-    .signup-img {
-        height: 160px !important;
-        margin: 0px !important;
+        min-height: 40vh !important;
     }
     .img-curve {
         display: flex !important;
         width: 100% !important;
         height: unset !important;
-        margin: unset !important;
     }
 }
