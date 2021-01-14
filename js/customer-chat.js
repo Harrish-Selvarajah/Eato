@@ -55,7 +55,10 @@ $(document).ready(function() {
     // sessionStorage.setItem('chats', JSON.stringify(chats));
     chats = JSON.parse(sessionStorage.getItem('chats'));
     console.log(chats);
-    renderMessagesCust();
+    if (chats.length !== 0) {
+        renderMessagesCust();
+    }
+   
 });
 
 function renderMessagesCust() {
@@ -130,7 +133,7 @@ function sendMessageCustomer() {
     }
     chats.push(chat);
     sessionStorage.setItem('chats', JSON.stringify(chats));
-    renderMessages();
+    renderMessagesCust();
 }
 
 // function sendMessageVendor() {

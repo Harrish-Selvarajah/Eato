@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
@@ -12,25 +13,28 @@
 
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-   <script src="../js/about-us.js"></script>
+    <script src="../js/about-us.js"></script>
+    <script src="../js/common.js"></script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
 </head>
-<body >
-<body >
-    <div data-role="page">
 
-        <div data-role="header" data-postion="fixed" data-fullscreen="true" class="header-bar" id="header-bar">
-            <!-- <img src="../assets/logo new.svg"> -->
-            <i class="arrow arrow-left"></i>
-            <h4>About Us</h4>
-        </div>
-    
-        <div class="ui-content">
+<body>
+
+    <body>
+        <div data-role="page">
+
+            <div data-role="header" data-postion="fixed" data-fullscreen="true" class="header-bar" id="header-bar">
+                <!-- <img src="../assets/logo new.svg"> -->
+                <i class="arrow arrow-left" onclick="goBack()"></i>
+                <h4>About Us</h4>
+            </div>
+
+            <div class="ui-content">
                 <div class="logo-center-container">
-                    <img src="../assets/logo new.svg" height="65px" width="125px"/>
+                    <img src="../assets/logo new.svg" height="65px" width="125px" />
                 </div>
                 <div class="what-we-do-container">
                     <div class="what-we-do-title">
@@ -40,8 +44,8 @@
                         <p>
                             We are a SriLankan startup connecting the
                             the barrier between the home kitchen chefs
-                            people who dying for home cooked food. 
-                            Our service is available in main cities 
+                            people who dying for home cooked food.
+                            Our service is available in main cities
                             of Sri Lanka.
                         </p>
                     </div>
@@ -51,59 +55,87 @@
                     <div class="our-numbers-title">
                         <h2>Our Numbers</h2>
                     </div>
-                     <div class="number-container our-numbers-container-top">
-                            <div>
-                                <h1>100K+</h1>
-                                <h5>Downloads</h5>
-                            </div>
+                    <div class="number-container our-numbers-container-top">
+                        <div>
+                            <h1>100K+</h1>
+                            <h5>Downloads</h5>
+                        </div>
 
-                            <div>
-                                <h1>10+</h1>
-                                <h5>Cities</h5>
-                            </div>
-                     </div> 
-                     <div class="number-container our-numbers-container-bottom">
+                        <div>
+                            <h1>10+</h1>
+                            <h5>Cities</h5>
+                        </div>
+                    </div>
+                    <div class="number-container our-numbers-container-bottom">
                         <div>
                             <h1>50+</h1>
                             <h5>Home Vendors</h5>
                         </div>
-                     </div>
+                    </div>
                 </div>
 
                 <div class="contact-us-container">
-                        <div class="contact-us-title">
-                             <h2>Contact Us</h2>
+                    <div class="contact-us-title">
+                        <h2>Contact Us</h2>
+                    </div>
+                    <div class="social-media-container">
+                        <div>
+                            <span class="iconify" data-icon="bx:bxl-facebook-circle" data-inline="false"></span>
+                            <p>@eato</p>
                         </div>
-                        <div class="social-media-container">
-                              <div>
-                                <span class="iconify" data-icon="bx:bxl-facebook-circle" data-inline="false"></span>
-                                   <p>@eato</p>
-                              </div>
 
-                              <div>
-                                <span class="iconify" data-icon="ant-design:instagram-outlined" data-inline="false"></span>
-                                   <p>@eato</p>
-                              </div>
-
-                              <div>
-                                <span class="iconify" data-icon="mdi-twitter" data-inline="false"></span>
-                                   <p>@eato</p>
-                              </div>
+                        <div>
+                            <span class="iconify" data-icon="ant-design:instagram-outlined" data-inline="false"></span>
+                            <p>@eato</p>
                         </div>
+
+                        <div>
+                            <span class="iconify" data-icon="mdi-twitter" data-inline="false"></span>
+                            <p>@eato</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div data-role="footer" class="nav-glyphish-example bottom-nav" data-position="fixed" data-tap-toggle="false" >
-                <div data-role="navbar"  data-grid="d" data-theme="a" class="footerr" id="footerr">
+            <div data-role="footer" class="footer">
+                <div class="footer-top">
+                    <div class="footer-left">
+                        <h4>Contact</h4>
+                        <p class="secondaryText"><a href="mailto:info@eato.eat">info@eato.eat</a></p>
+                        <br>
+                        <h4>Address</h4>
+                        <p class="secondaryText">50, Chez Road, Panisse</p>
+                    </div>
+                    <div class="footer-right">
+                        <img src="../assets/logo/eoto_logo_light.png">
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <i class="material-icons">account_circle</i>
+                    <i class="material-icons">account_circle</i>
+                    <i class="material-icons">account_circle</i>
+                    <p class="footer-copyrights infoText">© 2021 Eato. All Rights Reserved.</p>
+                </div>
+            </div>
+
+            <div data-role="footer" class="nav-glyphish-example bottom-nav" data-position="fixed"
+                data-tap-toggle="false">
+                <div data-role="navbar" data-grid="d" data-theme="a">
                     <ul>
-                        <li><a href="#" id="beer" class="ui-btn-active" data-icon="home" >Home</a></li>
-                        <li><a href="#" id="beer" data-icon="search">Search</a></li>  
-                        <li><a href="#" id="beer" data-icon="shop">Cart</a></li>
-                        <li><a href="#" id="beer" data-icon="grid">Order</a></li>  
-                        <li><a href="#" id="user" data-icon="user">Profile</a></li>
-                    </ul>
+                        <li><a href="#" data-icon="home" class="ui-btn-active nav-home navbar-btn"
+                                onclick="navigation('home')">Home</a></li>
+                        <li><a href="#" class="nav-search navbar-btn" data-icon="search"
+                                onclick="navigation('search')">Search</a></li>
+                        <li><a href="#" data-icon="shop" class="nav-cart navbar-btn"
+                                onclick="navigation('cart')">Cart</a>
+                        </li>
+                        <li><a href="#" data-icon="grid" class="nav-order navbar-btn"
+                                onclick="navigation('order')">Order</a></li>
+                        <li><a href="#" data-icon="user" class="nav-profile navbar-btn"
+                                onclick="navigation('profile')">Profile</a></li>
                 </div>
-                </div>
-    </div>
-</body>
+            </div>
+        </div>
+    </body>
+
 </html>

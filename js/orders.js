@@ -40,10 +40,19 @@ var pastOrders = [
 var cart = [];
 
 $(document).ready(function () {
+    var status = document.getElementById('#ongoing-order');
     cart = JSON.parse(sessionStorage.getItem('cart'));
     console.log(cart);
     console.log(sessionStorage);
-    repeatOngoingOrder();
+    // debugger;
+    if (cart.length == 0) {
+        // debugger
+        status.style.display = "none"
+    } else {
+        status.style.display = "flex"
+        repeatOngoingOrder();
+    }
+    
     // repeatPastOrders();
     // an();
 });

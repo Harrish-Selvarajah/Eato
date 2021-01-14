@@ -16,12 +16,13 @@
 
     <link rel="stylesheet" href="../css/site.css" />
     <link rel="stylesheet" href="../css/signup-vendor.css" />
+    <script src="../js/common.js"></script>
 </head>
 
 <body>
     <div data-role="page">
         <div role="main" class="ui-content">
-            <div class="icon-container">
+            <div class="icon-container" onclick="goBack()">
                 <i class="material-icons">arrow_back_ios</i>
             </div>
             <div class="signup-body-container d-flex">
@@ -53,7 +54,7 @@
                             <button type="button" onclick="signUp()" data-role="button">
                                 <p class="primaryText">Signup</p>
                             </button>
-                            <p class="primaryText to-login-text">Alread have an account? <a>Login</a></p>
+                            <p class="primaryText to-login-text" onclick="navigation('vendor-login')">Alread have an account? <a>Login</a></p>
                         </div>
                     </div>
                 </div>

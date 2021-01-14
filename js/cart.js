@@ -96,8 +96,9 @@ function repeat() {
 }
 
 function removeItem(id) {
+    debugger
     console.log('removeItem')
-    cart = cart.filter(function (item) { return item.id !== id });
+    cart = cart.filter(function (item) { return item.foodID !== id });
     repeat();
     // sessionStorage.setItem('cart', JSON.stringify(cart));
 }
@@ -118,17 +119,26 @@ function checkout() {
     sessionStorage.setItem('cart', JSON.stringify(cart));
 }
 
-function calculateTotal(value, id) {
-    totalPrice = 0;
+function calculateTotal(value, id, operation) {
     cart.forEach(function(item) {
         if (item.foodID == id) {
             // debugger;
-            totalPrice = totalPrice + (item.price * value);
-            $('#totalPrice').text('Rs' + totalPrice);
-            subTotal = totalPrice + 250;
-            $('#subTotal').text('Rs' + subTotal);
-            item.quantity = value;
-            item.totalPrice = subTotal;
+            if (operation == 'add') {
+                totalPrice = totalPrice + item.price;
+                $('#totalPrice').text('Rs' + totalPrice);
+                subTotal = totalPrice + 250;
+                $('#subTotal').text('Rs' + subTotal);
+                item.quantity = value;
+                item.totalPrice = subTotal;
+            } else {
+                totalPrice = totalPrice - item.price;
+                $('#totalPrice').text('Rs' + totalPrice);
+                subTotal = totalPrice + 250;
+                $('#subTotal').text('Rs' + subTotal);
+                item.quantity = value;
+                item.totalPrice = subTotal;
+            }
+           
             // cartItem = {
             //     vendorName: item.vendorName
             // }
@@ -155,17 +165,19 @@ function calculateTotal(value, id) {
 // }
 
 function incQuantity(id) {
+    debugger
     var vallue = $(`#display-quantity-${id}`).html();
     console.log(vallue, 'val');
     x = vallue +1;
     console.log(x);
     $(`#display-quantity-${id}`).text(Number(vallue) + 1);
-    calculateTotal(Number(vallue)+1, id);
+    calculateTotal(Number(vallue)+1, id, 'add');
 }
 
 function decQuantity(id) {
+    debugger
     var vallue = $(`#display-quantity-${id}`).html();
     console.log(vallue, 'val');
     $(`#display-quantity-${id}`).text(Number(vallue)-1);
-    calculateTotal(Number(vallue)-1, id);
+    calculateTotal(Number(vallue)-1, id, 'min');
 }

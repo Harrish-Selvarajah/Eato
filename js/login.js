@@ -10,6 +10,7 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 var users = [];
+var chats = [];
 
 $(document).ready(function () {
   console.log("im here");
@@ -53,6 +54,7 @@ function login() {
       userObj['favourites'] = user.favourites
       sessionStorage.setItem('userobj', JSON.stringify(userObj));
       sessionStorage.setItem('cart', JSON.stringify(cart));
+      sessionStorage.setItem('chats', JSON.stringify(chats));
       console.log(sessionStorage.getItem('userobj')); 
       document.location.href = "./home.html";
       } else {

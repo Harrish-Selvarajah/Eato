@@ -108,20 +108,23 @@ function renderReview() {
                         </div>
                     </div>
                     <div class="reply" id="reply-div-${item.key}">
-							<div  onclick="reply('${item.key}')" id="reply-btn">Reply</div>
+					<a onclick="reply('${item.key}')" href="#popup-modal" id="reply-btn" data-rel="popup" data-position-to="window"
+					data-transition="pop">Reply</a>
 					</div>
 					<div class="vendor-response" id="vendor-feedback-${item.key}" style="display: none;">
                         <p class="secondaryText">${item.reviewResponse}</p>
                     </div>
-                </div>`
+				</div>`
+				
+				// $(`#reply-btn-${item.key}`).click(function () {
+				// 	console.log("ebifebwfb")
+				// 	$('#popup-modal').popup('open')
+				// })
+			
+			
 		})
 		$('#reviews').append(renderHtml);
 	}
-
-	$("#reply-btn").click(function () {
-		console.log("ebifebwfb")
-		$('#popup-modal').popup('open')
-	})
 
 	$('#close-btn').click(function (e) { 
 		$('#popup-modal').popup('close')
