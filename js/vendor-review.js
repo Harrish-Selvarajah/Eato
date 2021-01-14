@@ -50,6 +50,12 @@ $(document).ready(function () {
 	});
 	getReviews();
 	// var fooditemID = getUrlParameter('fooditemID');
+	
+	
+});
+
+$('#close-btn').click(function (e) { 
+	$('#popup-modal').popup('close')
 });
 
 function getReviews() {
@@ -127,6 +133,7 @@ function renderReview() {
 
 function reply(id) {
 	currentID = id;
+	$('#popup-modal').popup('close')
 }
 
 function submitResponse() {
