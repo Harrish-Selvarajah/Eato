@@ -117,6 +117,18 @@
     margin: 20px 0px 20px 0px!important;
 }
 
+#cart-empty {
+    height: 90vh;
+    display: flex!important;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#cart-empty>img {
+    width: 70px;
+}
+
 @media (max-width: 767px) {
     .cart-container {
         display: block;
