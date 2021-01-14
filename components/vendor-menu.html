@@ -1,0 +1,129 @@
+<html>
+
+<head>
+    <title>Menu | Eato</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <link rel="stylesheet" href="../css/site.css" />
+    <link rel="stylesheet" href="../css/vendor-menu.css" />
+    <script src="../js/vendor-menu.js"></script>
+
+</head>
+
+<body>
+    <div data-role="page">
+        <div data-role="header" data-postion="fixed" data-fullscreen="true" class="header-bar">
+            <img src="../assets/logo new.svg">
+            <!-- <i class="arrow arrow-left"></i> -->
+            <!-- <h4>Vendor</h4> -->
+        </div>
+        <div role="main" class="ui-content ui-content-header">
+            <div class="main-container">
+                <div class="vendor-menu">
+                    <section class="menu-items">
+                        <ul id="menu-items">
+                            <li class="food-item">
+                                <div>
+                                    <img src="../assets/food_item.jpg">
+                                </div>
+                                <div class="food-item-details">
+                                    <h4>Cheese Pizza</h4>
+                                    <div>
+                                        <span>Rs</span>
+                                        <span>650</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="food-item">
+                                <div>
+                                    <img src="../assets/food_item.jpg">
+                                </div>
+                                <div class="food-item-details">
+                                    <h4>Cheese Pizza</h4>
+                                    <div>
+                                        <span>Rs</span>
+                                        <span>650</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="food-item">
+                                <div>
+                                    <img src="../assets/food_item.jpg">
+                                </div>
+                                <div class="food-item-details">
+                                    <h4>Cheese Pizza</h4>
+                                    <div>
+                                        <span>Rs</span>
+                                        <span>650</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div data-position="fixed" class="add-button-container" id="add-item-btn">
+                    <a>
+                        <i class="material-icons">add</i>
+                    </a>
+                </div>
+
+                <!-- Add Menu Item Popup -->
+                <div data-role="popup" class="popup" id="popup-modal" data-theme="a"
+                    style="border-radius: 20px; min-height: 265px;">
+                    <div class="popup-header">
+                        <i class=" material-icons" id="close-btn">close</i>
+                        <h4>Add Item</h4>
+                    </div>
+                    <div class="popup-body">
+                        <div class="popup-input">
+                            <span class="subtitle">Item Name</span>
+                            <input type="text" placeholder="Text" />
+                        </div>
+                        <div class="popup-input">
+                            <span class="subtitle">Item Description</span>
+                            <textarea placeholder="Text"></textarea>
+                        </div>
+                        <div class="popup-input">
+                            <span class="subtitle">Price</span>
+                            <input type="text" placeholder="Text" />
+                        </div>
+                    </div>
+                    <div class="popup-footer">
+                        <div class="action-btn">
+                            <button type="button">
+                                <p class="primaryText">Add Item</p>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-role="footer" class="footer">
+            <div class="footer-top">
+                <div class="footer-left">
+                    <h4>Contact</h4>
+                    <p class="secondaryText"><a href="mailto:info@eato.eat">info@eato.eat</a></p>
+                    <br>
+                    <h4>Address</h4>
+                    <p class="secondaryText">50, Chez Road, Panisse</p>
+                </div>
+                <div class="footer-right">
+                    <img src="../assets/logo/eoto_logo_light.png">
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <i class="material-icons">account_circle</i>
+                <i class="material-icons">account_circle</i>
+                <i class="material-icons">account_circle</i>
+                <p class="footer-copyrights infoText">© 2021 Eato. All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
