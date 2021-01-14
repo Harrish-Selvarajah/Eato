@@ -306,3 +306,23 @@ a {
         justify-content: center;
     }
 }
+
+
+/* Used for functionality, dont touch */
+.selected{
+    color: #FD6921 !important;
+}
+
+.unselected{
+    color: #ccc !important;
+}
+
+.button-selected {
+    background-color: #FD6921;
+    color : white;
+}
+
+.button-unselected {
+    background-color: white !important;
+    color: black;
+}   
