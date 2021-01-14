@@ -1,0 +1,58 @@
+ {
+    "data": [{
+            "id": 1,
+            "name": "Melt House",
+            "rating": 2,
+            "foodItems": [{
+                    "id": "m1",
+                    "name": "Cheese Pasta",
+                    "price": 650,
+                    "foodPicture": "",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.",
+                    "quantity": 1
+                }, {
+                    "id": "m2",
+                    "name": "Chico Fruit Salad",
+                    "price": 650,
+                    "foodPicture": "",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.",
+                    "quantity": 1
+                }, {
+                    "id": "m3",
+                    "name": "Squash Risotto",
+                    "price": 650,
+                    "foodPicture": "",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.",
+                    "quantity": 1
+                }
+            ]
+        }, {
+            "id": 2,
+            "name": "Suburban Kitchen",
+            "rating": 4,
+            "foodItems": [{
+                    "id": "s1",
+                    "name": "Cheese Pasta",
+                    "price": 650,
+                    "foodPicture": "",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.",
+                    "quantity": 1
+                }, {
+                    "id": "s2",
+                    "name": "Chico Fruit Salad",
+                    "price": 650,
+                    "foodPicture": "",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.",
+                    "quantity": 1
+                }, {
+                    "id": "s3",
+                    "name": "Squash Risotto",
+                    "price": 650,
+                    "foodPicture": "",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.",
+                    "quantity": 1
+                }
+            ]
+        }
+    ]
+}

@@ -1,24 +1,77 @@
 // Global Variables 
+
 var vendorList = [
     {
-        id : 1,
-        vendorName : "MeltHouse",
-        rating : 4,
-        type : 'Burger'
+        id: 1,
+        name: 'Melt House',
+        rating : 2,
+        foodItems: [
+            {
+                id: 'm1',
+                name: 'Cheese Pasta',
+                price: 650,
+                foodPicture: '',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.',
+                quantity: 1
+            },
+            {
+                id: 'm2',
+                name: 'Chico Fruit Salad',
+                price: 650,
+                foodPicture: '',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.',
+                quantity: 1
+            },
+            {
+                id: 'm3',
+                name: 'Squash Risotto',
+                price: 650,
+                foodPicture: '',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.',
+                quantity: 1
+            }
+        ]
     },
     {
-        id : 2,
-        vendorName : "Cart Lache",
-        rating : 3,
-        type : 'Burger'
-    },
-    {
-        id : 1,
-        vendorName : "City Villy",
+        id: 2,
+        name: 'Suburban Kitchen',
         rating : 4,
-        type : 'Rice'
+        foodItems: [
+            {
+                id: 's1',
+                name: 'Cheese Pasta',
+                price: 650,
+                foodPicture: '',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.',
+                quantity: 1
+            },
+            {
+                id: 's2',
+                name: 'Chico Fruit Salad',
+                price: 650,
+                foodPicture: '',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.',
+                quantity: 1
+            },
+            {
+                id: 's3',
+                name: 'Squash Risotto',
+                price: 650,
+                foodPicture: '',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.',
+                quantity: 1
+            }
+        ]
     }
+];
+
+var imgRef = [
+    "../assets/food/Burger.jpg",
+    "../assets/food/italian.jpg",
+    "../assets/food/Desserts.jpg"
 ]
+
+console.log(imgRef[Math.floor(Math.random() * imgRef.length)])
 
 sortFilterQuery = {
     sort : "none",
@@ -68,10 +121,10 @@ function populateVendors(){
                `
                <div class="section-card" id ="vendor-${idx}">
                     <div class="vendor-img">
-                        <img src="../assets/food/indian.jpg">
+                        <img src = "${imgRef[Math.floor(Math.random() * imgRef.length)]}" id="img-${idx}" onload="getImg(${idx})">
                     </div>
                     <div class="vendor-details">
-                        <div class="vendor-title" id="vendor-name"> ${vendor.vendorName} </div>
+                        <div class="vendor-title" id="vendor-name"> ${vendor.name} </div>
                         <div class="vendor-ratings" id="vendor-rating">${vendor.rating} <i class="material-icons start-icon">star</i></div>
                     </div>
 
@@ -149,6 +202,10 @@ $('#confirm-filter').click(function (e) {
 $('.quick-filter').click(function(e){
       filterWithType(e);
 });
+
+$('#filter-sorter').click(function(e) {  
+    filterWithType(e)
+})
 
 });
 
@@ -241,7 +298,8 @@ function sortByRating(venList){
 }
 
 function  filterWithType(e){  
-     console.log(e.target.id)
+     console.log($(`e.target.id`).hasClass('active-state'))
+   
      vendorList.forEach(function(element,idx){
          if(e.target.id == element.type){
             $(`#vendor-${idx}`).css('display','block')
@@ -249,4 +307,5 @@ function  filterWithType(e){
             $(`#vendor-${idx}`).css('display','none')
          }
      })
+    
 }
