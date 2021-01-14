@@ -1,10 +1,35 @@
-.login-body-container>div {
+/* .login-body-container>div {
     flex: 1;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+} */
+
+.left-section{
+    flex: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.middle-section{
+    display: none;
+}
+
+.right-section{
+    flex: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+
 }
 
 .login-body-container>div:not(:first-child) {
@@ -31,6 +56,7 @@
 }
 
 .remember-me-container {
+    justify-content: space-between;
     display: flex;
     margin-top: 10px;
 }
@@ -42,4 +68,58 @@
 
 .to-signup-text>a {
     color: #FD6921;
+}
+
+.login-img-iPad{
+display: flex;
+}
+
+.login-img-iPhone{
+    display: none;
+}
+
+.img-curve{
+    display: none;
+}
+
+@media only screen and (max-width: 700px){
+    .login-body-container{
+        flex-direction: column-reverse;
+    }
+
+    .login-img-iPad{
+        display: none !important;
+        }
+        
+        .login-img-iPhone{
+            display: flex;
+            margin: 0px !important;
+        }
+
+    .login-body-container>div:not(:first-child)>img:not(:first-child) {
+        height: 200px !important;
+    }
+
+    .left-section{
+        padding: 20px;
+        min-height: 50vh !important;
+        justify-content: unset !important;
+    }
+    .middle-section{
+        display: flex !important;
+        background-color: unset !important;
+        min-height: 10vh !important;
+    }
+
+    .right-section{
+        justify-content: unset !important;
+        min-height: 40vh !important;
+    }
+
+    .img-curve{
+        display: flex !important;
+        width: 100% !important;
+        height: unset !important;
+    }
+
 }
