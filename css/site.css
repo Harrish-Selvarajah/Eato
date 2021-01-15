@@ -318,6 +318,7 @@ text-overflow: clip; */
     color: #787878;
 }
 
+/* Button Emphasis styles start */
 .action-btn>button {
     width: 290px;
     height: 42px;
@@ -330,9 +331,27 @@ text-overflow: clip; */
     text-shadow: none!important;
 }
 
+.action-btn>button:hover {
+    background-color: #ff4500!important;
+    border-color: #ff4500!important;
+}
+
+.action-btn>button:active {  
+    background-color: #ff2400!important;
+    border-color: #ff2400!important;
+}
+
 .action-btn>button>p {
     color: white;
 }
+
+
+/* Button Emphasis styles end */
+
+a{
+    text-decoration: none;
+}
+
 
 .adjust-quantity {
     display: flex;

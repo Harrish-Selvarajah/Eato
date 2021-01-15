@@ -16,10 +16,17 @@
 
 .items-container>div:first-child>a {
     justify-content: flex-end;
-    text-decoration: underline;
+    text-decoration: none;
     color: #FD6A22!important;
 }
 
+a:active{
+    color: #ff2400;
+}
+
+a:hover{
+    color: #ff4500;
+}
 .cart-item {
     position: relative;
     margin-top: 15px!important;

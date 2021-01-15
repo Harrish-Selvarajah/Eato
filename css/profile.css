@@ -102,6 +102,14 @@
     color: #FD6921;
 }
 
+.change-pic:active{
+    color:  #ff4500!important;
+}
+
+.change-pic:hover{
+    color:  #ff2400!important;
+}
+
 .user-details{
     padding: 10px;
 }
@@ -118,13 +126,12 @@
 }
 .tab:hover{
     cursor: default;
-    color: #FD6921;   
+    color: #ff4500;   
 }
 
 .tab:active{
     cursor: default;
-    color: white;
-    background-color: #FD6921;
+    color: #ff2400;
 }
 .tab-name{
     padding-left: 20px;
