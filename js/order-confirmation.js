@@ -154,7 +154,7 @@ function validateFields(){
  }
 
  function  makePayment(token, name){
-
+     var usPrice = totalPrice/200 * 100
     var settings = {
         "url": "https://api.stripe.com/v1/charges",
         "method": "POST",
@@ -163,7 +163,7 @@ function validateFields(){
           "Content-Type": "application/x-www-form-urlencoded"
         },
         "data": {
-          "amount": amount,
+          "amount": usPrice,
           "currency": "usd",
           "description": `Eato Food Purchase by ${name}`,
           "source": token.id
