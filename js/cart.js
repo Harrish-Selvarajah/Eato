@@ -116,6 +116,7 @@ function clearCart() {
 
 function checkout() {
     console.log(cart);
+    //console.log(total)
     sessionStorage.setItem('cart', JSON.stringify(cart));
 }
 

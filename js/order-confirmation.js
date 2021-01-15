@@ -1,5 +1,5 @@
 var stripe = Stripe('pk_test_51I6yl2F5uJFec6fvNwc1l8AB9ca4GtV0dI9uojppdObsBc9GquBNjg6M6su4FvpCEyMnRL7HmjTIeEWtMB6p6vhF00CguWcTF9');
-var sk_token = "sk_test_51I6yl2F5uJFec6fvprw6NwQw8vxkAhw4S8Mrxy00RDgd3aYrKrcarpgBfz5uORnc9rOz8hmFOELy3CbTJYCmb0OA002i46dFYi";
+var sk_token = "sk_test_2DofWWLxr3TiIlSzzCZotVHj00mjwcntuw";
 var elements = stripe.elements();
 var paymentOpts = []
 var amount = 1500;
@@ -12,16 +12,27 @@ var style = {
     },
   };
 
+var paymentDefault = 
+    {
+        "cardnum" : "5454 5454 5454 5454",
+        "cardname" : "N.Amjad",
+        "cvc": "123",
+        "expdt" : "12/2025",
+        "pc": "12345",
+        "type":"master"
+    }
+
+  selectedPayment = {}
 
 function createCardTokenAndMakePayment(){
     
-    var form = $('#payment-form')
-    var cardnum = form.find('input[name="cardnum"]').val();
-    var cardname = form.find('input[name="cardname"]').val();
-    var expdt = form.find('input[name="expdt"]').val();
-    var cvc = form.find('input[name="cvc"]').val();
-    var pc = form.find('input[name="pc"]').val();
-    var nameInDesc = cardname != "" ? cardname : sr_name
+    
+
+    var cardnum = selectPaymentMethod.cardnum
+    var nameInDesc = selectPaymentMethod.cardname !=null ? selectPaymentMethod.cardname : "Eato"
+    var expdt = selectPaymentMethod.expdt
+    var cvc = selectPaymentMethod.cvc
+    var pc = selectPaymentMethod.pc
 
     var yyyy = expdt.split('/')[1]
     var mm = expdt.split('/')[0].replace(/0(\d+)/,"")
@@ -29,9 +40,9 @@ function createCardTokenAndMakePayment(){
     var settings = {
         "url": "https://api.stripe.com/v1/tokens",
         "method": "POST",
-        "timeout": 0,
+        "timeout": 0, 
         "headers": {
-          "Authorization": `Bearer ${sk_token}`,
+          "Authorization": `bearer ${sk_token}`,
           "Content-Type": "application/x-www-form-urlencoded"
         },
         "data": {
@@ -41,24 +52,28 @@ function createCardTokenAndMakePayment(){
           "card[cvc]": `${cvc}`
         }
       };
-      
+
+      console.log(settings)
+      console.log("MAKING SERVER REQEST FOR TOKEN")
       $.ajax(settings).done(function (response) {
         console.log(response);
         makePayment(response, nameInDesc)
-      });
+      }).fail(function (data) {  
+        console.log(data)
+      })
 
 }
 
 function validateFields(){
   
-    var form = $('#payment-form')
-    var message = "";
-    var cardnum = form.find('input[name="cardnum"]').val();
-    var cardname = form.find('input[name="cardname"]').val();
-    var expdt = form.find('input[name="expdt"]').val();
-    var cvc = form.find('input[name="cvc"]').val();
-    var pc = form.find('input[name="pc"]').val();
+  var cardnum = selectPaymentMethod.cardnum
+  var nameInDesc = selectPaymentMethod.cardname !=null ? selectPaymentMethod.cardname : "Eato"
+  var expdt = selectPaymentMethod.expdt
+  var cvc = selectPaymentMethod.cvc
+  var pc = selectPaymentMethod.pc
+  var cardname = selectPaymentMethod.cardname
     var res = true;
+    var message ="" 
     cardnum = cardnum.replaceAll(" ","")
 
     console.log(cardnum,cardname,expdt,cvc,pc)
@@ -121,7 +136,7 @@ function validateFields(){
     return res
 }
 
- function startPayment(){
+ function startCardPayment(){
  
 // clear error message if it exist
  $('#all-error-msg').empty();
@@ -152,35 +167,88 @@ function validateFields(){
       
       $.ajax(settings).done(function (response) {
         console.log(response);
-      
-      });
+        document.location.href = '../components/order-status.html'
+      }).fail(function(data){
+
+      })
  }
 
 
  $(document).ready(function(){
-    $('#btn-confirm-order').click(function (e) { 
-       startPayment(); 
-    });
 
+  loadPaymentData();
+  populateData();
+
+    $('#btn-confirm-order').click(function (e) { 
+      
+      if(selectPaymentMethod == null || selectPaymentMethod == {}){
+
+      }else{
+        if(selectPaymentMethod.type == 'cash'){
+          document.location.href = '../components/order-status.html'
+        }else{
+              startCardPayment(); 
+        }
+      }
+       
+    });
+  
     
- });
+ });  
 
 
  function loadPaymentData(){
   paymentData = JSON.parse(sessionStorage.getItem('paymentOpts'))
   paymentOpts = [] 
   paymentOpts.push(paymentDefault)
-
-  paymentOpts = paymentOpts.concat(paymentData)
+ 
+  if(paymentData !=null && paymentData != undefined){
+    paymentOpts = paymentOpts.concat(paymentData)
+  }
 
   console.log(paymentOpts)
 }
 
 
 function populateData(){
-  
+      $items = $('#items')
+     // $item = $('#item')
+      //$items.empty()
+      itemContent = ""
+      paymentOpts.forEach(function(payment, idx) { 
+        var cardnum = payment.cardnum; 
+           itemContent = itemContent.concat(
+            `<div class="item" id="card-${idx}" onclick="selectPaymentMethodNow(${idx})" >
+            <img src="../assets/${payment.type !=null ? payment.type : "master"}.png" />
+            <div>
+                <p> **** ${cardnum.substring(cardnum.length-4,cardnum.length)}</p>
+                <p>${payment.expdt}</p>
+            </div>
+        </div>`
+           )
+
+      });
+      $items.append(itemContent)
 }
 
  function isEmpty(str){
      return str == null || str == undefined || str == "" || str.length == 0
  }
+
+ function selectPaymentMethodNow(idx){
+    if(idx == -1){
+      // cash
+      selectPaymentMethod = {
+        type : "cash"
+      }
+
+    }else{
+      //card
+       selectPaymentMethod = paymentOpts[idx]
+    }
+
+    console.log(selectPaymentMethod)
+ }
+
+
+ function loadOtherSession() {  }

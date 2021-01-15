@@ -4,7 +4,8 @@ var paymentDefault =
         "cardname" : "N.Amjad",
         "cvc": "123",
         "expdt" : "12/2021",
-        "pc": "12345"
+        "pc": "12345",
+        "type":"master"
     }
 
 var paymentOpts = []
@@ -39,7 +40,7 @@ function loadPaymentOptions() {
                                     <h3>Expiry Date</h3>
                                     <h5>${payment.expdt}</h5>
                                 </div>
-                                <img src="../assets/visa.png" />
+                                <img src="../assets/${payment.type !=null ? payment.type : "master"}.png" />
                             </div>
                         </div>
                     </div>

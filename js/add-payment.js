@@ -121,13 +121,23 @@ function addPaymentToWallet(){
     if (paymentOptions == undefined){
         paymentOptions = []
     }
+    
+    var type = null
+    if(cardnum.substring(0,1) == "5"){
+        type = "master"
+    }else if(cardnum.substring(0,1) == "4"){
+        type = "visa"
+    }else if(cardnum.substring(0,1) == "4"){
+        type = "amex"
+    }
 
     paymentOptions.push({
         cardname : cardname,
         cardnum : cardnum,
         expdt: expdt,
         cvc : cvc,
-        pc : pc
+        pc : pc,
+        type:type
     })
 
     sessionStorage.setItem('paymentOpts', JSON.stringify(paymentOptions));
