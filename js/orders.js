@@ -40,19 +40,21 @@ var pastOrders = [
 var cart = [];
 
 $(document).ready(function () {
-    var status = document.getElementById('#ongoing-order');
+    var status = document.getElementById('ongoing-order');
     cart = JSON.parse(sessionStorage.getItem('cart'));
     console.log(cart);
     console.log(sessionStorage);
     // debugger;
     if (cart.length == 0) {
         // debugger
-        status.style.display = "none"
+        status.style.display = "none";
+        // repeatPastOrders();
     } else {
-        status.style.display = "flex"
+        status.style.display = "grid";
         repeatOngoingOrder();
+        // repeatPastOrders();
     }
-    
+    // repeatOngoingOrder();
     // repeatPastOrders();
     // an();
 });
@@ -78,10 +80,10 @@ function repeatOngoingOrder() {
 }
 
 function repeatPastOrders() {
-    // debugger;
+    debugger;
     var renderHtml = "";
     if (pastOrders.length > 0) {
-        pastOrders.forEach(function(item) {
+        pastOrders.forEach(function(y) {
                 renderHtml += `  <div class="order-item">
                 <div class="order-item-details">
                     <div class="store-details">

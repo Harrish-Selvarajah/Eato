@@ -11,6 +11,11 @@ var style = {
       color: '#32325d',
     },
   };
+var totalPrice = 0;
+
+// $(document).ready(function () {
+
+//  })
 
 var paymentDefault = 
     {
@@ -26,8 +31,6 @@ var paymentDefault =
 
 function createCardTokenAndMakePayment(){
     
-    
-
     var cardnum = selectPaymentMethod.cardnum
     var nameInDesc = selectPaymentMethod.cardname !=null ? selectPaymentMethod.cardname : "Eato"
     var expdt = selectPaymentMethod.expdt
@@ -61,6 +64,8 @@ function createCardTokenAndMakePayment(){
       }).fail(function (data) {  
         console.log(data)
       })
+
+   
 
 }
 
@@ -175,6 +180,13 @@ function validateFields(){
 
 
  $(document).ready(function(){
+  totalPrice = JSON.parse(sessionStorage.getItem('totalPrice')) + 250;
+  loyaltyPoints = JSON.parse(sessionStorage.getItem('loyaltyPoints'));
+  x = Number(totalPrice) + 250
+  $('#sub-price-tag').text('Rs' + x);
+  $('#discount-tag').text('Rs 0');
+  $('#price-tag').text('Rs' + x);
+  calculateLoyaltyPoints();
 
   loadPaymentData();
   populateData();
@@ -192,8 +204,23 @@ function validateFields(){
       }
        
     });
-  
-    
+
+    $("#add-loyalty").click(function () {
+      debugger;
+      if ($('#add-loyalty').is(":checked")) {
+        discount = loyaltyPoints/100;
+        totalPrice = totalPrice - discount;
+        $('#discount-tag').text('Rs' + discount);
+        $('#price-tag').text('Rs' + totalPrice);
+       } else {
+        discount = loyaltyPoints/100;
+        totalPrice = totalPrice +  discount + 250;
+        $('#discount-tag').text('Rs' + 0);
+        $('#price-tag').text('Rs' + totalPrice);
+       }
+   
+
+  }); 
  });  
 
 
@@ -235,6 +262,14 @@ function populateData(){
      return str == null || str == undefined || str == "" || str.length == 0
  }
 
+ function calculateLoyaltyPoints() {
+  //  debugger;
+  // 10 loyalty points == Rs 1
+  x = 10 * totalPrice;
+  loyaltyPoints = JSON.parse(sessionStorage.getItem('loyaltyPoints'));
+  totalLoyaltyPoints = loyaltyPoints + x;
+  sessionStorage.setItem('loyaltyPoints', loyaltyPoints);
+}
  function selectPaymentMethodNow(idx){
     if(idx == -1){
       // cash
