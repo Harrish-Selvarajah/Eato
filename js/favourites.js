@@ -3,8 +3,8 @@ var selectedFavList = []
 var userID = "-MQN7UYipYUXF5l7caW6" // This should change to local storage
 const emailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
 sortFilterQuery = {
-    sort : "none",
-    filter : 0
+    sort: "none",
+    filter: 0
 }
 var test = false
 var firebaseConfig = {
@@ -23,214 +23,213 @@ firebase.initializeApp(firebaseConfig);
 
 var ref = firebase.database().ref('users')
 
-function loadFavListFromFirebase(){
-ref.once('value', function (snapshot) {
-    var data = snapshot.val()
-   // console.log(data)
+function loadFavListFromFirebase() {
+    ref.once('value', function (snapshot) {
+        var data = snapshot.val()
+        // console.log(data)
 
-    if (Object.keys(data).includes(userID)) {
-      //  console.log(data[userID]['favourites'])
-        if (data[userID]['favourites'] != undefined || data[userID]['favourites'].length != 0) {
-            console.log("STARTING TO LOAD FAVOURITES LIST")
-            favVendorList = data[userID]['favourites'];
-            allFavVendorList = favVendorList;
-            loadFavVendorList(undefined);
+        if (Object.keys(data).includes(userID)) {
+            //  console.log(data[userID]['favourites'])
+            if (data[userID]['favourites'] != undefined || data[userID]['favourites'].length != 0) {
+                console.log("STARTING TO LOAD FAVOURITES LIST")
+                favVendorList = data[userID]['favourites'];
+                allFavVendorList = favVendorList;
+                loadFavVendorList(undefined);
+            } else {
+                console.log("USER HAS NOT FAVOURITED ANYTHING")
+
+            }
         } else {
-            console.log("USER HAS NOT FAVOURITED ANYTHING")
-
+            console.error("USER NOT FOUND")
         }
-    } else {
-        console.error("USER NOT FOUND")
-    }
-},
-    function (error) {
-        console.log("Error: " + error.code);
-    });
+    },
+        function (error) {
+            console.log("Error: " + error.code);
+        });
 
 }
-    function   loadDisplayData(){
-        console.log("dsdssd")
-        var favouriteList;
-        try{
-              favouriteList = JSON.parse(sessionStorage.getItem('userobj')).favourites;
-        }catch(e){
-            loadFavListFromFirebase();
-        }
-    
-        if(favouriteList !=null & test == false){
-            console.log("Session Pull")
-            loadFavVendorList(favouriteList);
-        }else{
-            console.log("DB Pull")
-            loadFavListFromFirebase();
-        }
-    }    
+function loadDisplayData() {
+    var favouriteList;
+    try {
+        favouriteList = JSON.parse(sessionStorage.getItem('userobj')).favourites;
+    } catch (e) {
+        loadFavListFromFirebase();
+    }
 
-function loadFavVendorList(favList){
-     
-    favList =    favList != undefined ? favList : favVendorList
+    if (favouriteList != null & test == false) {
+        console.log("Session Pull")
+        loadFavVendorList(favouriteList);
+    } else {
+        console.log("DB Pull")
+        loadFavListFromFirebase();
+    }
+}
+
+function loadFavVendorList(favList) {
+
+    favList = favList != undefined ? favList : favVendorList
 
     $favUiList = $('#fav-list')
     $favUiList.empty();
     var poiContent = ""
 
     favList.forEach((favVendor, idx) => {
-    
-    poiContent = poiContent.concat(
+
+        poiContent = poiContent.concat(
             `<li class="item" id="li-${idx}">
-        <div class="item-img">
-            <div class="icon-container" onClick="removeFavourite(${favVendor.vendorID})">
-                <i class=" material-icons icon-fav">favorite</i>
-            </div>
-        </div>
-        <div class="fav-checkbox">
-            <div>
-                <h4 id="vendor-name" >${favVendor.vendorName}</h4>
-                <input class="checkbox" onClick="addCheckBoxClick(${favVendor.vendorID})" id="select-${favVendor.vendorID}" type="checkbox" />
-            </div>
-        </div>
-        <div class="d-flex">
-            <i class="material-icons icon-star">grade</i>
-            <h4 id="vendor-rating">${favVendor.rating}</h4>
-        </div>
-    </li>`
-    )
+                <div class="item-img">
+                    <div class="icon-container" onClick="removeFavourite(${favVendor.vendorID})">
+                        <i class=" material-icons icon-fav">favorite</i>
+                    </div>
+                </div>
+                <div class="fav-checkbox">
+                    <div>
+                        <h4 id="vendor-name" >${favVendor.vendorName}</h4>
+                        <input class="checkbox" onClick="addCheckBoxClick(${favVendor.vendorID})" id="select-${favVendor.vendorID}" type="checkbox" />
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <i class="material-icons icon-star">grade</i>
+                    <h4 id="vendor-rating">${favVendor.rating}</h4>
+                </div>
+            </li>`
+        )
     })
 
     $favUiList.append(poiContent)
 }
 
 $(document).ready(function () {
-
+    $(".bottom-nav").removeClass("slideup")
     disableSharebutton();
     $('#error-msg').hide();
-   
+
     loadDisplayData();
 
-   $("#select-all").click(function () {
+    $("#select-all").click(function () {
 
-    if ($('#select-all').is(":checked")) {
+        if ($('#select-all').is(":checked")) {
 
-        $('#fav-list').find(':checkbox').each(function (element) {
-            $(this).prop('checked', true);
-        });
+            $('#fav-list').find(':checkbox').each(function (element) {
+                $(this).prop('checked', true);
+            });
 
-        // Add all favourites in the screen to selected favourites
-        selectedFavList = favVendorList;
-        activeShareButton();
-    } else {
+            // Add all favourites in the screen to selected favourites
+            selectedFavList = favVendorList;
+            activeShareButton();
+        } else {
 
-        $('#fav-list').find(':checkbox').each(function (element) {
-            $(this).prop('checked', false);
-        });
+            $('#fav-list').find(':checkbox').each(function (element) {
+                $(this).prop('checked', false);
+            });
 
-        // Unselected all 
-        //   selectedFavList = favVendorList.filter(function(element){
-        //       return !selectedFavList.includes(element)
-        //   })
-        selectedFavList = []
+            // Unselected all 
+            //   selectedFavList = favVendorList.filter(function(element){
+            //       return !selectedFavList.includes(element)
+            //   })
+            selectedFavList = []
 
-        disableSharebutton();
-    }
-    
-    
-});
+            disableSharebutton();
+        }
 
-$("#share-btn").click(function () {
-  if($("#share-btn").hasClass('enabled')){
-    $('#popup-modal').popup('open')
-    }
-})
 
-$('#close-btn').click(function (e) { 
-    $('#popup-modal').popup('close')
-});
+    });
 
-$('#search-filter').click(function (e) { 
-    $('#filter-popup').popup('open')
-    
-});
-
-$('#confirm-filter').click(function (e) { 
-    filterPOI();
-    $('#filter-popup').popup('close')
-    
-});
-
-$('#last-share-btn').click(function(){
-    var email = $('#input-email').val()
-    content = "<html> <body> <ul>"
-    selectedFavList.forEach(function (fav) {
-
-        content = content.concat(`<li> Vendor Name : ${fav.vendorName} Rating : ${fav.rating} </li>`)
+    $("#share-btn").click(function () {
+        if ($("#share-btn").hasClass('enabled')) {
+            $('#popup-modal').popup('open')
+        }
     })
 
-    if(!validateEmail(email)){
-          $('#error-msg').show();
-    }else{
-        console.log("Invalid email format")
-        $('#error-msg').hide();
-        SendEmail(email, content)
-    }
-});
+    $('#close-btn').click(function (e) {
+        $('#popup-modal').popup('close')
+    });
 
-$(document).on('input', '#search', function(e) {
-     var input = e.target.value;
-     search(input);
-  });
+    $('#search-filter').click(function (e) {
+        $('#filter-popup').popup('open')
 
+    });
 
-// Highlighlight selection in filter
-$('#sort-catagory-sorting div').click(function(e){
-    sortFilterQuery['sort'] = 'none';
+    $('#confirm-filter').click(function (e) {
+        filterPOI();
+        $('#filter-popup').popup('close')
 
-if(!$(`#${e.target.id}`).hasClass('button-selected')){
-    $('#sort-catagory-sorting div').each(function (idx,element) {  
-         
-        if(e.target.id == element.id){
-            $(`#${e.target.id}`).removeClass('button-unselected')
-            $(`#${e.target.id}`).addClass('button-selected')
-            sortFilterQuery['sort'] = e.target.id;
-        }else{
-            $(`#${element.id}`).removeClass('button-selected')
-            $(`#${element.id}`).addClass('button-unselected')
+    });
+
+    $('#last-share-btn').click(function () {
+        var email = $('#input-email').val()
+        content = "<html> <body> <ul>"
+        selectedFavList.forEach(function (fav) {
+
+            content = content.concat(`<li> Vendor Name : ${fav.vendorName} Rating : ${fav.rating} </li>`)
+        })
+
+        if (!validateEmail(email)) {
+            $('#error-msg').show();
+        } else {
+            console.log("Invalid email format")
+            $('#error-msg').hide();
+            SendEmail(email, content)
         }
     });
-}else{
-    $(`#${e.target.id}`).removeClass('button-selected')
-    $(`#${e.target.id}`).addClass('button-unselected')
-}
-     });
 
-// Selecting Stars 
-$('#star-container i').click(function (e) { 
-    
-    sortFilterQuery['filter'] = 0;
+    $(document).on('input', '#search', function (e) {
+        var input = e.target.value;
+        search(input);
+    });
 
-    if (e.target.id == "star-1" && $(`#star-1`).hasClass('selected') && $(`#star-2`).hasClass('unselected')){
-        $(`#${e.target.id}`).removeClass('selected')
-        $(`#${e.target.id}`).addClass('unselected')
-        
-    }else{
-    var done = false;
-    $('#star-container i').each(function (idx,element) {
-       
-        if(!done){
-            $(`#${element.id}`).removeClass('unselected')
-            $(`#${element.id}`).addClass('selected')
-        }else{
-            $(`#${element.id}`).removeClass('selected')
-            $(`#${element.id}`).addClass('unselected')
-        }
 
-        if(e.target.id == element.id){
-            done = true;
-            sortFilterQuery['filter'] = idx + 1;
+    // Highlighlight selection in filter
+    $('#sort-catagory-sorting div').click(function (e) {
+        sortFilterQuery['sort'] = 'none';
+
+        if (!$(`#${e.target.id}`).hasClass('button-selected')) {
+            $('#sort-catagory-sorting div').each(function (idx, element) {
+
+                if (e.target.id == element.id) {
+                    $(`#${e.target.id}`).removeClass('button-unselected')
+                    $(`#${e.target.id}`).addClass('button-selected')
+                    sortFilterQuery['sort'] = e.target.id;
+                } else {
+                    $(`#${element.id}`).removeClass('button-selected')
+                    $(`#${element.id}`).addClass('button-unselected')
+                }
+            });
+        } else {
+            $(`#${e.target.id}`).removeClass('button-selected')
+            $(`#${e.target.id}`).addClass('button-unselected')
         }
     });
-}
 
-});
+    // Selecting Stars 
+    $('#star-container i').click(function (e) {
+
+        sortFilterQuery['filter'] = 0;
+
+        if (e.target.id == "star-1" && $(`#star-1`).hasClass('selected') && $(`#star-2`).hasClass('unselected')) {
+            $(`#${e.target.id}`).removeClass('selected')
+            $(`#${e.target.id}`).addClass('unselected')
+
+        } else {
+            var done = false;
+            $('#star-container i').each(function (idx, element) {
+
+                if (!done) {
+                    $(`#${element.id}`).removeClass('unselected')
+                    $(`#${element.id}`).addClass('selected')
+                } else {
+                    $(`#${element.id}`).removeClass('selected')
+                    $(`#${element.id}`).addClass('unselected')
+                }
+
+                if (e.target.id == element.id) {
+                    done = true;
+                    sortFilterQuery['filter'] = idx + 1;
+                }
+            });
+        }
+
+    });
 
 });
 
@@ -258,11 +257,11 @@ function addCheckBoxClick(id) {
         activeShareButton();
 
     } else {
-        
+
         selectedFavList = selectedFavList.filter(function (element) {
             return id != element.vendorID;
         })
-       
+
         if (selectedFavList.length == 0) {
             disableSharebutton();
         }
@@ -279,7 +278,7 @@ function validateEmail(email) {
 }
 
 function SendEmail(email, message) {
-   
+
     Email.send({
         Host: "smtp.gmail.com",
         Username: "eato.corp@gmail.com",
@@ -320,7 +319,7 @@ function removeFavourite(vendorID) {
             loadFavVendorList();
 
         }).catch(function (error) {
-            console.trace(error,"Not Deleted Error")
+            console.trace(error, "Not Deleted Error")
         })
     });
 
@@ -336,97 +335,97 @@ function filterPOI() {
     console.log(sortFilterQuery)
     var sort = sortFilterQuery.sort;
     var filter = sortFilterQuery.filter
-    
+
     // Filter First 
-    favVendorList.forEach(function(element,idx){
-        if (element.rating < filter){
-             $(`#li-${idx}`).css('display','none')
-        }else{
-          $(`#li-${idx}`).css('display','block')
+    favVendorList.forEach(function (element, idx) {
+        if (element.rating < filter) {
+            $(`#li-${idx}`).css('display', 'none')
+        } else {
+            $(`#li-${idx}`).css('display', 'block')
         }
-   });
+    });
 
-   // Sort
-   var favChildElements = $('#fav-list').children()
-   if (sort == "a-z"){
-    favChildElements = sortFromAtoZ(favChildElements);
-   }else if (sort == "z-a"){
-    favChildElements = sortFromZtoA(favChildElements);
-   }else{
-    favChildElements = sortByRating(favChildElements);
-   }
-   
-   $('#fav-list').empty();
-   $('#fav-list').append(favChildElements)
+    // Sort
+    var favChildElements = $('#fav-list').children()
+    if (sort == "a-z") {
+        favChildElements = sortFromAtoZ(favChildElements);
+    } else if (sort == "z-a") {
+        favChildElements = sortFromZtoA(favChildElements);
+    } else {
+        favChildElements = sortByRating(favChildElements);
+    }
 
-   // finally clear search
+    $('#fav-list').empty();
+    $('#fav-list').append(favChildElements)
 
-   document.getElementById("search").value = ""
+    // finally clear search
+
+    document.getElementById("search").value = ""
 }
 
-function sortFromAtoZ(favList) {  
+function sortFromAtoZ(favList) {
 
-    favList = favList.sort(function(a,b){
+    favList = favList.sort(function (a, b) {
         var last = $(`#${a.id}`).find('#vendor-name').text().toLowerCase()
         var first = $(`#${b.id}`).find('#vendor-name').text().toLowerCase()
-        
-        if (first > last){
+
+        if (first > last) {
             return -1;
-        }else if(last > first){
+        } else if (last > first) {
             return 1;
         }
 
         return 0;
     })
 
-  return favList;
+    return favList;
 }
 
 
-function sortFromZtoA(favList) {  
+function sortFromZtoA(favList) {
 
-    favList = favList.sort(function(a,b){
+    favList = favList.sort(function (a, b) {
         var last = $(`#${a.id}`).find('#vendor-name').text().toLowerCase()
         var first = $(`#${b.id}`).find('#vendor-name').text().toLowerCase()
-        
-        if (first < last){
+
+        if (first < last) {
             return -1;
-        }else if(last < first){
+        } else if (last < first) {
             return 1;
         }
 
         return 0;
     })
 
-  return favList;
+    return favList;
 }
 
-function sortByRating(favList){
+function sortByRating(favList) {
 
-    favList = favList.sort(function(a,b){
+    favList = favList.sort(function (a, b) {
         var last = $(`#${a.id}`).find('#vendor-rating').text().toLowerCase()
         var first = $(`#${b.id}`).find('#vendor-rating').text().toLowerCase()
-        
-        if (first < last){
+
+        if (first < last) {
             return -1;
-        }else if(last < first){
+        } else if (last < first) {
             return 1;
         }
 
         return 0;
     })
 
-  return favList;
+    return favList;
 }
 
 
-function search(input) {  
+function search(input) {
 
-    favVendorList.forEach(function(element,idx){
-        if (!element.vendorName.toUpperCase().substring(0, input.length).includes(input.toUpperCase())){
-             $(`#li-${idx}`).css('display','none')
-        }else{
-          $(`#li-${idx}`).css('display','block')
+    favVendorList.forEach(function (element, idx) {
+        if (!element.vendorName.toUpperCase().substring(0, input.length).includes(input.toUpperCase())) {
+            $(`#li-${idx}`).css('display', 'none')
+        } else {
+            $(`#li-${idx}`).css('display', 'block')
         }
-   });
+    });
 }

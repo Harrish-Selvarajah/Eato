@@ -73,8 +73,9 @@
 
 .favourites>ul {
     display: grid;
+    place-items: center;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    grid-gap: 1rem;
+    grid-gap: 2rem;
     list-style-type: none;
     padding: 0px;
 }
@@ -84,6 +85,7 @@
     background: #FFF;
     box-shadow: 0px 2px 3px 0px #AAA;
     border-radius: 20px;
+    width: 300px;
 }
 
 .item-img {
@@ -91,7 +93,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    height: 205px;
+    height: 150px;
     width: 100%;
     border-radius: 20px;
     position: relative;
@@ -141,57 +143,43 @@
     text-shadow: none;
 }
 
-@media (max-width: 767px) {
-    .search-bar {
-        margin-right: 20px;
-    }
-    .search-bar>div>input {
-        max-width: 270px!important;
-    }
-    .search-bar .input-field-icon {
-        left: 90%;
-    }
-}
-
-#error-msg{
+#error-msg {
     color: red;
 }
 
 /* Extracted */
-.popup-top{
-    padding: 10px;   
+
+.popup-top {
+    padding: 10px;
 }
 
-.popup-middle{
+.popup-middle {
     padding: 10px;
     display: flex;
     align-items: center;
-
 }
-.popup-bottom{
+
+.popup-bottom {
     padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
-.sort-title{
+.sort-title {
     display: flex;
     width: 100%;
     border-bottom: 1.5px solid #707070;
-
 }
 
-.sort-catagory{
+.sort-catagory {
     padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-
-.sort-item{
+.sort-item {
     width: 70px;
     height: 28px;
     background-color: #fff;
@@ -204,20 +192,20 @@
     border: solid #FD6921 2px;
 }
 
-.filter-btn{
+.filter-btn {
     width: 300px;
 }
+
 .start-icon {
     color: #FD6921;
 }
 
-.filter-popup{
+.filter-popup {
     border-radius: 20px;
 }
 
-
-#star-container .start-icon{
-   font-size: 40px;
+#star-container .start-icon {
+    font-size: 40px;
 }
 
 /* 
@@ -225,27 +213,28 @@
 Don't Touch them.. Used in the funcationality  
 --------------------------------------------------
 */
-.selected{
+
+.selected {
     color: #FD6921 !important;
 }
 
-.unselected{
+.unselected {
     color: #ccc !important;
 }
 
 .button-selected {
     background-color: #FD6921;
-    color : white;
+    color: white;
 }
 
 .button-unselected {
     background-color: white !important;
     color: black;
-}   
+}
 
 [id^="select-"] {
-    width: 25px !important;
-    height: 25px !important;
+    width: 18px !important;
+    height: 18px !important;
 }
 
 .disabled {
@@ -254,4 +243,19 @@ Don't Touch them.. Used in the funcationality
 
 .enabled {
     background-color: #FD6921 !important;
+}
+
+@media (max-width: 767px) {
+    .search-bar {
+        margin-right: 20px;
+    }
+    .search-bar>div>input {
+        max-width: 270px!important;
+    }
+    .search-bar .input-field-icon {
+        left: 90%;
+    }
+    .favourites>ul>li {
+        width: 100%;
+    }
 }
