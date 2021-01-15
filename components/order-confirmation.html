@@ -30,25 +30,11 @@
                 </div>
                 <div class="slider-container">
                     <div class="items" id="items">
-                        <div class="item">
+                        <div class="item" id="cash" onclick='selectPaymentMethodNow(-1)'>
                             <img src="../assets/money.png" />
                             <div>
                                 <p>Pay Cash</p>
                                 <p></p>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img src="../assets/mastercard.png" />
-                            <div>
-                                <p>**** 2456</p>
-                                <p>09/22</p>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img src="../assets/visa.png" />
-                            <div>
-                                <p>**** 2456</p>
-                                <p>09/22</p>
                             </div>
                         </div>
                     </div>
@@ -99,12 +85,12 @@
                     </div>
                     <div class="price-info-container">
                         <div>Total Price</div>
-                        <h2>Rs 2200</h2>
+                        <h2>Rs <span id="price-tag">200</span></h2>
                     </div>
                 </div>
             </div>
             <div class="action-btn submit-btn">
-                <button id="btn-confirm-order" type="button" onclick="writeUserData()" data-role="button">
+                <button id="btn-confirm-order" type="button"  data-role="button">
                     <p class="primaryText">Confirm Order</p>
                 </button>
             </div>

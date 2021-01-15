@@ -119,6 +119,7 @@ function clearCart() {
 function checkout() {
     // calculateLoyaltyPoints();
     console.log(cart);
+    //console.log(total)
     sessionStorage.setItem('cart', JSON.stringify(cart));
     sessionStorage.setItem('totalPrice', JSON.stringify(totalPrice));
     document.location.href = './order-confirmation.html'

@@ -116,7 +116,7 @@ a {
 }
 
 .section {
-    min-height: 230px;
+    min-height: 70vh;
     width: auto;
     background-color: #fff;
     padding: 20px;
@@ -257,6 +257,7 @@ a {
         width: 93% !important;
     }
     .section {
+        min-height: 50vh;
         justify-content: center;
     }
     .section-card {

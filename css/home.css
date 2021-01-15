@@ -175,6 +175,16 @@ a{
     padding-bottom: 20px;
     font-weight: 200;
 }
+.video-popup {
+    background-color: #faf5f2;
+    display: flex;
+    padding: 10px;
+    border-radius: 20px !important;
+    height: 278px;
+    width: 323px;
+    justify-content: center;
+    align-items: center;
+}
 /* Home section style end */
 
 
