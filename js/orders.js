@@ -68,23 +68,23 @@ function repeatOngoingOrder() {
         cart.forEach(function (item) {
             renderHtml += `  <div class="d-flex">
             <div class="quantity infoText">${item.quantity}</div>
-            <span>${item.foodName}</span>
+            <span class="primaryText">${item.foodName}</span>
         </div>`
-        $('#vendor-name').text(item.vendorName);
-        $('#ongoing-price').text('Rs' + item.totalPrice);
+            $('#vendor-name').text(item.vendorName);
+            $('#ongoing-price').text('Rs' + item.totalPrice);
         })
         $('#repeat-ongoing-order-items').append(renderHtml);
-       
+
     }
-   
+
 }
 
 function repeatPastOrders() {
-    debugger;
+    // debugger;
     var renderHtml = "";
     if (pastOrders.length > 0) {
-        pastOrders.forEach(function(y) {
-                renderHtml += `  <div class="order-item">
+        pastOrders.forEach(function (y) {
+            renderHtml += `  <div class="order-item">
                 <div class="order-item-details">
                     <div class="store-details">
                         <div class="layer"></div>
@@ -129,7 +129,7 @@ function repeatPastOrders() {
                 </div>
                 <div class="order-divider"></div>`
         })
-       
+
     }
     $('#repeat-past-orders').append(renderHtml);
     an();
@@ -140,7 +140,7 @@ function an() {
     var id = 0;
     var renderParentHtml = "";
     var renderChildHtml = "";
-    pastOrders.forEach(function(x){
+    pastOrders.forEach(function (x) {
         id = x.id;
         renderParentHtml += `<div class="order-item">
         <div class="order-item-details">
@@ -186,14 +186,14 @@ function an() {
             </div>
         </div>
         <div class="order-divider"></div>`
-        x.fooditems.forEach(function(y) {
+        x.fooditems.forEach(function (y) {
             debugger;
             renderChildHtml += `<div class="d-flex">
             <div class="quantity infoText">${y.quantity}</div>
-            <span>${y.name}</span>
+            <span class="primaryText">${y.name}</span>
         </div>`
         })
-       
+
     })
     $('#repeat-past-orders').append(renderParentHtml);
     $(`#repeat-past-items-${id}`).append(renderChildHtml);
@@ -205,7 +205,6 @@ function rateVendor(id) {
 
 function orderAgain(id) {
     if (id == 1) {
-        debugger;
         var cart = []
         sessionStorage.setItem('cart', JSON.stringify(cart));
         item = {

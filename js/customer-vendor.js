@@ -1,13 +1,13 @@
-$(document).ready(function () { 
+$(document).ready(function () {
 
- // get vendor Id of the relavant page 
- var vendorID = getUrlParameter('vendorID')
-console.log(vendorID)
- markVendorFavOrNot(vendorID)
-// favourite selected or unselected
- $('#fav-icon-container').click(function(){
-     addOrRemoveFavourites(vendorID);
- })
+    // get vendor Id of the relavant page 
+    var vendorID = getUrlParameter('vendorID')
+    console.log(vendorID)
+    markVendorFavOrNot(vendorID)
+    // favourite selected or unselected
+    $('#fav-icon-container').click(function () {
+        addOrRemoveFavourites(vendorID);
+    })
 
 
 });
@@ -16,40 +16,40 @@ function goToRatings() {
     document.location.href = "./customer-review.html";
 }
 
-function addOrRemoveFavourites(vendorID){
-   
+function addOrRemoveFavourites(vendorID) {
+
     var userobj = JSON.parse(sessionStorage.getItem('userobj'));
-        //userobj.favourites
-    if($('#fav-icon').text() == 'favorite_border'){
+    //userobj.favourites
+    if ($('#fav-icon').text() == 'favorite_border') {
         $('#fav-icon').text('favorite')
-        
-          
-        if(userobj !=null && userobj.favourites !=null){
+
+
+        if (userobj != null && userobj.favourites != null) {
 
             var currentVendor = filterVendors(vendor, vendorID)
 
-            if(currentVendor !=null ){
-            userobj.favourites.push({
-                vendorID : `${vendorID}`,
-                vendorName : currentVendor.name,
-                rating : currentVendor.rating
-            })
-        }
-        }else if (userobj !=null){
-            serobj.favourites = []
-            var currentVendor = filterVendors(vendor, vendorID)
-            if(currentVendor !=null ){
+            if (currentVendor != null) {
                 userobj.favourites.push({
-                    vendorID : `${vendorID}`,
-                    vendorName : currentVendor.name,
-                    rating : currentVendor.rating
+                    vendorID: `${vendorID}`,
+                    vendorName: currentVendor.name,
+                    rating: currentVendor.rating
+                })
+            }
+        } else if (userobj != null) {
+            userobj.favourites = []
+            var currentVendor = filterVendors(vendor, vendorID)
+            if (currentVendor != null) {
+                userobj.favourites.push({
+                    vendorID: `${vendorID}`,
+                    vendorName: currentVendor.name,
+                    rating: currentVendor.rating
                 })
             }
         }
-        
-    }else{
+
+    } else {
         $('#fav-icon').text('favorite_border')
-        var favVendorList = removeVendor(userobj.favourites,vendorID)
+        var favVendorList = removeVendor(userobj.favourites, vendorID)
         userobj.favourites = favVendorList
     }
     //console.log(userobj)
@@ -57,27 +57,27 @@ function addOrRemoveFavourites(vendorID){
 }
 
 
-function filterVendors(vendors,vendorID){
+function filterVendors(vendors, vendorID) {
     var vendorArr = []
-    vendorArr = vendors.filter(function (element) {  
-         return element.id == vendorID
-     })
-     console.log(vendorArr[0])
-     return vendorArr[0]
- }
+    vendorArr = vendors.filter(function (element) {
+        return element.id == vendorID
+    })
+    console.log(vendorArr[0])
+    return vendorArr[0]
+}
 
- function filterFavList(vendors,vendorID){
+function filterFavList(vendors, vendorID) {
     var vendorArr = []
-    vendorArr = vendors.filter(function (element) {  
-         return element.vendorID == vendorID
-     })
-     console.log(vendorArr[0])
-     return vendorArr[0]
- }
+    vendorArr = vendors.filter(function (element) {
+        return element.vendorID == vendorID
+    })
+    console.log(vendorArr[0])
+    return vendorArr[0]
+}
 
- function removeVendor(vendors,vendorID){
+function removeVendor(vendors, vendorID) {
     var vendorArr = []
-    vendorArr = vendors.filter(function (element) {  
+    vendorArr = vendors.filter(function (element) {
         return element.vendorID != vendorID
     })
     console.log(vendorArr)
@@ -100,15 +100,15 @@ function getUrlParameter(sParam) {
 };
 
 
-function markVendorFavOrNot(vendorID){
+function markVendorFavOrNot(vendorID) {
     var userobj = JSON.parse(sessionStorage.getItem('userobj'));
 
-    if(userobj.favourites !=null){
+    if (userobj.favourites != null) {
         var currentVendor = filterFavList(userobj.favourites, vendorID)
-     //   console.log(currentVendor)
-        if(currentVendor != null && currentVendor != undefined){
+        //   console.log(currentVendor)
+        if (currentVendor != null && currentVendor != undefined) {
             $('#fav-icon').text('favorite')
-        }else{
+        } else {
             $('#fav-icon').text('favorite_border')
         }
     }

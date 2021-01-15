@@ -30,17 +30,16 @@ $(document).ready(function () {
     // var fooditemID = getUrlParameter('fooditemID');
     // console.log(fooditemID, 'fooditemID');
     // debugger;
-   
+
     var status = document.getElementById('cart-filled');
     var status1 = document.getElementById('cart-empty');
     cart = JSON.parse(sessionStorage.getItem('cart'));
     console.log(cart);
     if (cart.length == 0) {
-        debugger;
-        status.style.display = "none";
-        status1.style.display = "block";
+        status.style.display = "none !important";
+        status1.style.display = "block !important";
     } else {
-        status1.style.display = "none";
+        status1.style.display = "none !important";
         if ($(window).width() < 768) {
             status.style.display = "block";
         }
@@ -62,7 +61,7 @@ function repeat() {
             // debugger;
             totalPrice = totalPrice + (item.price * item.quantity);
             $('#totalPrice').text('Rs' + totalPrice);
-            item.totalPrice = totalPrice + 250; 
+            item.totalPrice = totalPrice + 250;
             renderHtml += `
         <!-- Start Item -->
         <div class="cards cart-item">
@@ -72,7 +71,7 @@ function repeat() {
             <div class="food-item-details">
                 <h4>${item.foodName}</h4>
                 <div>
-                    <span>Rs</span>
+                    <span class="subtitle">Rs</span>
                     <span>${item.price}</span>
                 </div>
             </div>
@@ -80,7 +79,7 @@ function repeat() {
                 <button class="quantity-minus" id="dec-${item.foodID}" onclick=decQuantity('${item.foodID}')>
                     <i class="material-icons">remove</i>
                 </button>
-                <span id="display-quantity-${item.foodID}">${item.quantity}</span>
+                <span id="display-quantity-${item.foodID}" class="subtitle">${item.quantity}</span>
                 <button class="quantity-plus" id="inc-${item.foodID}" onclick=incQuantity('${item.foodID}')>
                     <i class="material-icons">add</i>
                 </button>
@@ -88,7 +87,7 @@ function repeat() {
             <i onclick="removeItem('${item.foodID}')" class="material-icons">close</i>
         </div>
        `
-    //    $('#display-quantity').text(5);
+            //    $('#display-quantity').text(5);
         });
         $('#repeat').append(renderHtml);
         subTotal = totalPrice + 250;
@@ -126,7 +125,7 @@ function checkout() {
 }
 
 function calculateTotal(value, id, operation) {
-    cart.forEach(function(item) {
+    cart.forEach(function (item) {
         if (item.foodID == id) {
             // debugger;
             if (operation == 'add') {
@@ -144,7 +143,7 @@ function calculateTotal(value, id, operation) {
                 item.quantity = value;
                 item.totalPrice = subTotal;
             }
-           
+
             // cartItem = {
             //     vendorName: item.vendorName
             // }
@@ -174,18 +173,18 @@ function incQuantity(id) {
     // debugger
     var vallue = $(`#display-quantity-${id}`).html();
     console.log(vallue, 'val');
-    x = vallue +1;
+    x = vallue + 1;
     console.log(x);
     $(`#display-quantity-${id}`).text(Number(vallue) + 1);
-    calculateTotal(Number(vallue)+1, id, 'add');
+    calculateTotal(Number(vallue) + 1, id, 'add');
 }
 
 function decQuantity(id) {
     // debugger
     var vallue = $(`#display-quantity-${id}`).html();
     console.log(vallue, 'val');
-    $(`#display-quantity-${id}`).text(Number(vallue)-1);
-    calculateTotal(Number(vallue)-1, id, 'min');
+    $(`#display-quantity-${id}`).text(Number(vallue) - 1);
+    calculateTotal(Number(vallue) - 1, id, 'min');
 }
 
 function calculateLoyaltyPoints() {

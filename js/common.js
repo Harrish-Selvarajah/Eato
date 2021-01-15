@@ -23,7 +23,7 @@ function navigation(page) {
             document.location.href = "./favourites.html";
             break;
         case 'loyaltyPoints':
-            document.location.href = "./";
+            document.location.href = "./loyalty-points.html";
             break;
         case 'qr-cam':
             document.location.href = "./QR-scanner.html";

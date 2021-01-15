@@ -17,7 +17,7 @@
     <script src="../js/script.js"></script>
     <script src="../js/home.js"></script>
     <script src="../js/common.js"></script>
-      
+
     <!-- jQuery -->
     <script type="text/javascript" src="../js/JQuery3.3.1.js"></script>
     <script type="text/javascript" src="../js/lightslider.js"></script>
@@ -28,7 +28,7 @@
         <div data-role="header" class="header" data-position="fixed" data-tap-toggle="false">
             <img src="../assets/logo new.svg" alt="Computer Man" class="logo">
             <div class="location" onclick="navigation('location')">
-                <i class="material-icons start-icon">location_on</i> 
+                <i class="material-icons start-icon">location_on</i>
                 <div class="location-details" id="location"></div>
             </div>
         </div>
@@ -41,10 +41,10 @@
                     <li class="item-a">
                         <!-- slider-box -->
                         <div class="box">
-                            <a href="#video-popup" data-rel="popup" 
-                            data-position-to="window" id=" popup" data-transition="pop">
-                            <div style="position: absolute; color: white; top: 76px; font-size: 86px;" 
-                                class="material-icons ">play_circle_filled</div>  
+                            <a href="#video-popup" data-rel="popup" data-position-to="window" id=" popup"
+                                data-transition="pop">
+                                <div style="position: absolute; color: white; top: 76px; font-size: 86px;"
+                                    class="material-icons ">play_circle_filled</div>
                             </a>
                             <!-- promo 01 -->
                             <img src="../assets/img-home/promotion.jpg" class="model" height="100px">
@@ -84,31 +84,41 @@
                         <div class="circle">
                             <img src="../assets/food/indian.jpg">
                         </div>
-                        <div class="catogory">Indian</div>
+                        <div class="catogory">
+                            <p class="subtitle">Indian</p>
+                        </div>
                     </div>
                     <div class="item">
                         <div class="circle">
                             <img src="../assets/food/bakery.jpg">
                         </div>
-                        <div class="catogory">Bakery</div>
+                        <div class="catogory">
+                            <p class="subtitle">Bakery</p>
+                        </div>
                     </div>
                     <div class="item">
                         <div class="circle">
                             <img src="../assets/food/Desserts.jpg">
                         </div>
-                        <div class="catogory">Dessert</div>
+                        <div class="catogory">
+                            <p class="subtitle">Dessert</p>
+                        </div>
                     </div>
                     <div class="item">
                         <div class="circle">
                             <img src="../assets/food/italian.jpg">
                         </div>
-                        <div class="catogory">Italian</div>
+                        <div class="catogory">
+                            <p class="subtitle">Italian</p>
+                        </div>
                     </div>
                     <div class="item">
                         <div class="circle">
                             <img src="../assets/food/Burger.jpg">
                         </div>
-                        <div class="catogory">Burger</div>
+                        <div class="catogory">
+                            <p class="subtitle">Burger</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -120,25 +130,41 @@
                     <div class="vendor-img">
                         <img src="../assets/food/indian.jpg">
                     </div>
-                    <div class="vendor-title"> Melt House Indian</div>
+                    <div class="vendor-details">
+                        <div class="vendor-title">Melt House Indian</div>
+                        <div class="vendor-ratings" id="vendor-rating">4.9 <i class="material-icons star-icon">star</i>
+                        </div>
+                    </div>
                 </div>
                 <div class="section-card" onclick="goToVendor(2)">
                     <div class="vendor-img">
                         <img src="../assets/food/suburban.jpeg">
                     </div>
-                    <div class="vendor-title"> Suburban Kitchen</div>
+                    <div class="vendor-details">
+                        <div class="vendor-title">Suburban Kitchen</div>
+                        <div class="vendor-ratings" id="vendor-rating">4.5 <i class="material-icons star-icon">star</i>
+                        </div>
+                    </div>
                 </div>
                 <div class="section-card">
                     <div class="vendor-img">
                         <img src="../assets/food/italian.jpg">
                     </div>
-                    <div class="vendor-title"> italian Cuisine</div>
+                    <div class="vendor-details">
+                        <div class="vendor-title">italian Cuisine</div>
+                        <div class="vendor-ratings" id="vendor-rating">4.9 <i class="material-icons star-icon">star</i>
+                        </div>
+                    </div>
                 </div>
                 <div class="section-card">
                     <div class="vendor-img">
                         <img src="../assets/food/Desserts.jpg">
                     </div>
-                    <div class="vendor-title"> Desserts Dine</div>
+                    <div class="vendor-details">
+                        <div class="vendor-title">Desserts Dine</div>
+                        <div class="vendor-ratings" id="vendor-rating">4.5 <i class="material-icons star-icon">star</i>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- Video popup -->
@@ -147,7 +173,7 @@
                 <video width="300" height="200" controls>
                     <source src="../assets/video/promoVideo.mp4" type="video/mp4">
                     <source src="movie.ogg" type="video/ogg">
-                  </video>
+                </video>
             </div>
 
             <!-- Footer -->

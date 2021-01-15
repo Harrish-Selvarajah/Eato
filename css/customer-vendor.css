@@ -62,6 +62,8 @@
     color: #707070;
     text-align: justify;
     text-justify: inter-word;
+    font-family: "Gilroy-Medium";
+    font-size: 15px!important;
 }
 
 .vendor-details>div {
@@ -109,7 +111,6 @@
 }
 
 .vendor-menu>h1 {
-    font-weight: 500;
     color: black;
     margin-bottom: 18px!important;
 }
@@ -135,7 +136,7 @@
 
 .food-item-details>div>span:last-child {
     font-size: 19px;
-    font-weight: 600;
+    font-family: "Gilroy-Medium";
 }
 
 .menu-items>ul {

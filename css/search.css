@@ -1,19 +1,15 @@
 /* Search section style start */
+
 ul {
     list-style: none;
 }
+
 body {
-    font:18px 'Gilroy', sans-serif;
-    font-family: 'Gilroy';
     margin: 0px;
     padding: 0px;
     background-color: #fff;
-    }
-
-    /* font-family - gilroy */
-.ui-navbar li .ui-btn{
-        font-family: 'Gilroy' !important;
 }
+
 a {
     text-decoration: none;
 }
@@ -66,6 +62,7 @@ a {
 
 .filter {
     font-size: 15px;
+    font-family: "Gilroy-Medium";
 }
 
 .search-container {
@@ -147,7 +144,8 @@ a {
 }
 
 .vendor-title {
-    font-weight: 200;
+    font-family: "Gilroy-Light";
+    font-size: 20px;
 }
 
 .vendor-details {
@@ -162,6 +160,8 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: "Gilroy-Light";
+    font-size: 16px;
 }
 
 .start-icon {
@@ -177,40 +177,39 @@ a {
     width: 420px;
 }
 
-.popup-top{
-    padding: 10px;   
+.popup-top {
+    padding: 10px;
 }
 
-.popup-middle{
+.popup-middle {
     padding: 10px;
     display: flex;
     align-items: center;
-
 }
-.popup-bottom{
+
+.popup-bottom {
     padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
-.sort-title{
+.sort-title {
     display: flex;
     width: 100%;
     border-bottom: 1.5px solid #707070;
-
+    font-family: "Gilroy-Medium";
+    font-size: 18px;
 }
 
-.sort-catagory{
+.sort-catagory {
     padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-
-.sort-item{
+.sort-item {
     width: 70px;
     height: 28px;
     background-color: #fff;
@@ -221,9 +220,11 @@ a {
     justify-content: center;
     align-items: center;
     border: solid #FD6921 2px;
+    font-family: "Gilroy-Medium";
+    font-size: 18px;
 }
 
-.filter-btn{
+.filter-btn {
     width: 300px;
 }
 
@@ -238,15 +239,13 @@ a {
 
 /* Search section style end */
 
-
 /* mobile style start */
 
 @media only screen and (max-width: 700px) {
-    .action-btn>button{
+    .action-btn>button {
         width: 100% !important;
     }
-
-    .ui-popup-container{
+    .ui-popup-container {
         position: fixed !important;
         top: unset !important;
         bottom: 0px !important;
@@ -308,22 +307,22 @@ a {
     }
 }
 
-
 /* Used for functionality, dont touch */
-.selected{
+
+.selected {
     color: #FD6921 !important;
 }
 
-.unselected{
+.unselected {
     color: #ccc !important;
 }
 
 .button-selected {
     background-color: #FD6921;
-    color : white;
+    color: white;
 }
 
 .button-unselected {
     background-color: white !important;
     color: black;
-}   
+}

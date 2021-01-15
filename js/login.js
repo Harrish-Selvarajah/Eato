@@ -37,6 +37,8 @@ function login() {
   cart = [];
     var firstName = $('#usrnm').val();
     var password = $('#pswrd').val();
+    var loyaltyPoints = 0;
+    var loyaltyPointsArray = [];
 
     users.forEach(function(user) {
       // debugger
@@ -55,6 +57,8 @@ function login() {
       sessionStorage.setItem('userobj', JSON.stringify(userObj));
       sessionStorage.setItem('cart', JSON.stringify(cart));
       sessionStorage.setItem('chats', JSON.stringify(chats));
+      sessionStorage.setItem('loyaltyPoints', JSON.stringify(loyaltyPoints));
+      sessionStorage.setItem('loyaltyPointsArray', JSON.stringify(loyaltyPointsArray));
       console.log(sessionStorage.getItem('userobj')); 
       document.location.href = "./home.html";
       } else {
