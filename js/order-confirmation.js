@@ -180,7 +180,12 @@ function validateFields(){
 
 
  $(document).ready(function(){
-  totalPrice = JSON.parse(sessionStorage.getItem('totalPrice'));
+  totalPrice = JSON.parse(sessionStorage.getItem('totalPrice')) + 250;
+  loyaltyPoints = JSON.parse(sessionStorage.getItem('loyaltyPoints'));
+  x = Number(totalPrice) + 250
+  $('#sub-price-tag').text('Rs' + x);
+  $('#discount-tag').text('Rs 0');
+  $('#price-tag').text('Rs' + x);
   calculateLoyaltyPoints();
 
   loadPaymentData();
@@ -199,8 +204,23 @@ function validateFields(){
       }
        
     });
-  
-    
+
+    $("#add-loyalty").click(function () {
+      debugger;
+      if ($('#add-loyalty').is(":checked")) {
+        discount = loyaltyPoints/100;
+        totalPrice = totalPrice - discount;
+        $('#discount-tag').text('Rs' + discount);
+        $('#price-tag').text('Rs' + totalPrice);
+       } else {
+        discount = loyaltyPoints/100;
+        totalPrice = totalPrice +  discount + 250;
+        $('#discount-tag').text('Rs' + 0);
+        $('#price-tag').text('Rs' + totalPrice);
+       }
+   
+
+  }); 
  });  
 
 
