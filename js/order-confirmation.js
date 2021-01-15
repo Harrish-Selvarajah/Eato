@@ -154,11 +154,7 @@ function validateFields(){
  }
 
  function  makePayment(token, name){
-<<<<<<< HEAD
- 
-=======
      var usPrice = totalPrice/200 * 100
->>>>>>> dev
     var settings = {
         "url": "https://api.stripe.com/v1/charges",
         "method": "POST",
