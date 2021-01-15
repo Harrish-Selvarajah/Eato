@@ -298,34 +298,16 @@ function SendEmail(email, message) {
 
 function removeFavourite(vendorID) {
     console.log(vendorID)
+    favVendorList = filterArrayById(favVendorList, vendorID)
+    var userobj = JSON.parse(sessionStorage.getItem('userobj'));
+    userobj.favourites = favVendorList;
+    sessionStorage.setItem('userobj', JSON.stringify(userobj));
 
-    ref.child(userID).child('favourites').once('value', function (snapshot) {
-
-        var favourite = snapshot.val();
-
-        favourite = favourite.filter(function (fav) {
-            return vendorID != fav.vendorID;
-        })
-
-        ref.child(userID).update({
-            favourites: favourite
-        }).then(function () {
-
-            favVendorList = filterArrayById(favVendorList, vendorID)
-            var userobj = JSON.parse(sessionStorage.getItem('userobj'));
-            userobj.favourites = favVendorList;
-            sessionStorage.setItem('userobj', JSON.stringify(userobj));
-
-            selectedFavList = filterArrayById(selectedFavList, vendorID)
-            console.log("Successfully deleted")
+    selectedFavList = filterArrayById(selectedFavList, vendorID)
+    console.log("Successfully deleted")
 
 
-            loadFavVendorList();
-
-        }).catch(function (error) {
-            console.trace(error, "Not Deleted Error")
-        })
-    });
+    loadFavVendorList();
 
 }
 
