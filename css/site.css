@@ -36,6 +36,7 @@ h1 {
 
 h2 {
     margin: 0!important;
+    font-family: "Gilroy-Medium";
     font-size: 24px!important;
 }
 
@@ -111,7 +112,7 @@ p {
 
 .ui-content-header {
     margin-top: 48px;
-    min-height: 91vh!important;
+    min-height: 94vh!important;
 }
 
 .main-container {
@@ -456,6 +457,10 @@ p {
 
 .popup-body {
     padding: 20px;
+}
+
+.popup-input {
+    margin-top: 15px;
 }
 
 .popup-input>div {

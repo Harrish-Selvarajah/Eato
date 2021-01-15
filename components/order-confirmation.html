@@ -33,8 +33,8 @@
                         <div class="item" id="cash" onclick='selectPaymentMethodNow(-1)'>
                             <img src="../assets/money.png" />
                             <div>
-                                <p>Pay Cash</p>
-                                <p></p>
+                                <p class="primaryText">Pay Cash</p>
+                                <p class="primaryText"></p>
                             </div>
                         </div>
                     </div>
@@ -43,7 +43,7 @@
             <div class="other-info-container">
                 <div class="loyalty-points">
                     <div><input type="checkbox" id="add-loyalty" /></div>
-                    <div id="add-loyalty-label">Use Loyalty Points</div>
+                    <div id="add-loyalty-label"><span class="primaryText">Use Loyalty Points</span></div>
                 </div>
                 <div class="delivery-address">
                     <div>
@@ -55,7 +55,7 @@
                                 <div class="material-icons">access_time</div>
                             </div>
                             <div class="location-title-container">
-                                <p class="location-title"> Quick as possible</p>
+                                <p class="location-title primaryText"> Quick as possible</p>
                             </div>
                         </div>
                     </div>
@@ -73,32 +73,32 @@
                                 </span>
                             </div>
                             <div class="location-title-container">
-                                <p class="location-title"> 12, Selvarajah Road, Modara, Colombo 15</p>
+                                <p class="location-title primaryText"> 12, Selvarajah Road, Modara, Colombo 15</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="pricing-and-time-info-container">
                     <div class="time-info-container">
-                        <div>Estimated Delivery Time :</div>
+                        <div><span class="subtitle">Estimated Delivery Time :</span></div>
                         <h4>45 mins</h4>
                     </div>
                     <div class="price-info-container">
-                        <div>Sub Price</div>
-                        <h2><span id="sub-price-tag"></span></h2>
+                        <div><span class="subtitle">Sub Price</span></div>
+                        <h2 id="sub-price-tag"></h2>
                     </div>
                     <div class="price-info-container">
-                        <div>Discount</div>
+                        <div><span class="subtitle">Discount</span></div>
                         <h2>-<span id="discount-tag"></span></h2>
                     </div>
                     <div class="price-info-container">
-                        <div>Total Price</div>
+                        <div><span class="subtitle">Total Price</span></div>
                         <h2><span id="price-tag"></span></h2>
                     </div>
                 </div>
             </div>
             <div class="action-btn submit-btn">
-                <button id="btn-confirm-order" type="button"  data-role="button">
+                <button id="btn-confirm-order" type="button" data-role="button">
                     <p class="primaryText">Confirm Order</p>
                 </button>
             </div>

@@ -223,6 +223,6 @@ form .input-container:first-child {
     align-items: center;
 }
 
-.active-selected{
-    border : 2px solid #FD6921 !important;
+.active-selected {
+    border: 2px solid #FD6921 !important;
 }
