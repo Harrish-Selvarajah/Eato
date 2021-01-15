@@ -36,11 +36,10 @@ $(document).ready(function () {
     cart = JSON.parse(sessionStorage.getItem('cart'));
     console.log(cart);
     if (cart.length == 0) {
-        debugger;
-        status.style.display = "none";
-        status1.style.display = "block";
+        status.style.display = "none !important";
+        status1.style.display = "block !important";
     } else {
-        status1.style.display = "none";
+        status1.style.display = "none !important";
         if ($(window).width() < 768) {
             status.style.display = "block";
         }

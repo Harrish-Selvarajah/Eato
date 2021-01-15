@@ -16,6 +16,7 @@
 
     <script src="../js/profile.js"></script>
     <script src="../js/common.js"></script>
+    <script src="../js/loyalty-points.js"></script>
 </head>
 
 <body>
@@ -32,7 +33,7 @@
                         <div class="balance_left">
                             <div>Loyalty Balance</div>
                             <img src="../assets/trophy.png">
-                            <h4>1234 Points</h4>
+                            <h4 id="loyaltyPoints"></h4>
                             <p style="text-align: center;">
                                 1500 points till your next reward</p>
                         </div>
@@ -49,8 +50,8 @@
                     </div>
 
                     <div class="acitivity_order card">
-                        <div style="padding-left: 20px; padding-top: 20px;"> Recent Activity</div>
-                        <div class="acitivity card">
+                        <div style="padding-left: 20px; padding-top: 20px;" id="render-activity"> Recent Activity</div>
+                        <!-- <div class="acitivity card">
                             <div class="acitivity_circle">
                                 <img src="../assets/food/indian.jpg" alt="vendor">
                             </div>
@@ -74,7 +75,7 @@
                             <div style="text-align: center;"> <b>You earned 70 points</b> <br> LKR700 at Melt House
                             </div>
                             <div class="acitivity_circle" style="border: 1px solid  black;">+70</div>
-                        </div>
+                        </div>   -->
 
                     </div>
 

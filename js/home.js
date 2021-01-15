@@ -5,6 +5,7 @@ $(document).ready(function () {
     });
     var location = sessionStorage.getItem('location');
     $('#location').text(location);
+    console.log(sessionStorage, 'session')
 });
 
 function goToVendor(vendorID) {

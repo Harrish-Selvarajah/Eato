@@ -80,7 +80,7 @@ function repeatOngoingOrder() {
 }
 
 function repeatPastOrders() {
-    debugger;
+    // debugger;
     var renderHtml = "";
     if (pastOrders.length > 0) {
         pastOrders.forEach(function (y) {
@@ -205,7 +205,6 @@ function rateVendor(id) {
 
 function orderAgain(id) {
     if (id == 1) {
-        debugger;
         var cart = []
         sessionStorage.setItem('cart', JSON.stringify(cart));
         item = {
