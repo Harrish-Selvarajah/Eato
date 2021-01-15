@@ -1,3 +1,6 @@
+var stripe = Stripe('pk_test_51I6yl2F5uJFec6fvNwc1l8AB9ca4GtV0dI9uojppdObsBc9GquBNjg6M6su4FvpCEyMnRL7HmjTIeEWtMB6p6vhF00CguWcTF9');
+var sk_token = "sk_test_2DofWWLxr3TiIlSzzCZotVHj00mjwcntuw";
+
 $(document).ready(function () {
 
 
@@ -23,7 +26,7 @@ $(document).ready(function () {
         if (validateFields()) {
             addPaymentToWallet()
 
-            if (popup == false) {
+            if (popup == false || popup == undefined) {
                 document.location.href = '../components/payment-method.html'
             } else {
                 parent.document.getElementById("close").click()
@@ -38,17 +41,17 @@ $(document).ready(function () {
 
 function validateFields() {
 
-    var form = $('#payment-form')
     var message = "";
-    var cardnum = form.find('input[name="cardnum"]').val();
-    var cardname = form.find('input[name="cardname"]').val();
-    var expdt = form.find('input[name="expdt"]').val();
-    var cvc = form.find('input[name="cvc"]').val();
-    var pc = form.find('input[name="pc"]').val();
+    var cardnum = $('#cardnum').val()
+    var cardname = $('#cardname').val()
+    var expdt = $('#expdt').val()
+    var cvc = $('#cvc').val()
+    var pc = $('#pc').val()
     var res = true;
+    console.log(cardnum, cardname, expdt, cvc, pc)
     cardnum = cardnum.replaceAll(" ", "")
 
-    console.log(cardnum, cardname, expdt, cvc, pc)
+   
 
     if (isEmpty(cardnum)) {
         message = "Card Number is a mandatory field"
@@ -110,13 +113,14 @@ function validateFields() {
 
 function addPaymentToWallet() {
 
-    var form = $('#payment-form')
     var message = "";
-    var cardnum = form.find('input[name="cardnum"]').val();
-    var cardname = form.find('input[name="cardname"]').val();
-    var expdt = form.find('input[name="expdt"]').val();
-    var cvc = form.find('input[name="cvc"]').val();
-    var pc = form.find('input[name="pc"]').val();
+    var cardnum = $('#cardnum').val()
+    var cardname = $('#cardname').val()
+    var expdt = $('#expdt').val()
+    var cvc = $('#cvc').val()
+    var pc = $('#pc').val()
+    var res = true;
+    console.log(cardnum, cardname, expdt, cvc, pc)
     cardnum = cardnum.replaceAll(" ", "")
 
     var paymentOptions = JSON.parse(sessionStorage.getItem('paymentOpts'));
@@ -161,3 +165,8 @@ var getUrlParameter = function getUrlParameter(sParam) {
         }
     }
 };
+
+function isEmpty(str){
+    return str == null || str == undefined || str == "" || str.length == 0
+}
+

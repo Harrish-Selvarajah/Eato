@@ -14,7 +14,7 @@
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script src="https://js.stripe.com/v3/"></script>
-    <script src="../js/order-confirmation.js" defer></script>
+    <!--    <script src="../js/order-confirmation.js" defer></script> -->
     <script src="../js/add-payment.js"></script>
 </head>
 
@@ -42,13 +42,13 @@
                         </div>
                         <div class="popup-input">
                             <span class="subtitle" style="margin-left: 5px !important;">CVC</span>
-                            <input type="text" id="input" placeholder="CVC" />
+                            <input type="text" id="cvc" placeholder="CVC" />
                         </div>
                         <div class="popup-input">
                             <span class="subtitle" style="margin-left: 5px !important;">Postal Code</span>
                             <input type="text" id="pc" placeholder="Postal Code" />
                         </div>
-                        <p id="all-error-msg"></p>
+                        <p id="all-error-msg" style="color:red;"></p>
                     </form>
                 </div>
             </div>
