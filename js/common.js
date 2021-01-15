@@ -49,6 +49,9 @@ function navigation(page) {
         case 'vend-signup':
             document.location.href = "signup-vendor.html";
             break;
+        case 'about-us':
+            document.location.href = "about-us.html";
+            break
     }
    
 }
