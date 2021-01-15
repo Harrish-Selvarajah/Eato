@@ -275,20 +275,32 @@ function populateData(){
   sessionStorage.setItem('loyaltyPoints', JSON.stringify(totalLoyaltyPoints));
   sessionStorage.setItem('loyaltyPointsArray', JSON.stringify(loyaltyPointsArray));
 }
- function selectPaymentMethodNow(idx){
-    if(idx == -1){
-      // cash
-      selectPaymentMethod = {
-        type : "cash"
-      }
 
-    }else{
-      //card
-       selectPaymentMethod = paymentOpts[idx]
+function selectPaymentMethodNow(idx){
+  if(idx == -1){
+    
+    $(`#cash`).addClass('active-selected')
+
+    selectPaymentMethod = {
+      type : "cash"
     }
 
-    console.log(selectPaymentMethod)
- }
+  }else{
+    $(`#cash`).removeClass('active-selected')
+    //card
+     selectPaymentMethod = paymentOpts[idx]
+  }
+
+  console.log(selectPaymentMethod)
+
+  for (i = 0; i< paymentOpts.length; i++){
+    if (i == idx){
+      $(`#card-${i}`).addClass('active-selected')
+    }else{
+     $(`#card-${i}`).removeClass('active-selected')
+  }
+}
+}
 
 
  function loadOtherSession() {  }
