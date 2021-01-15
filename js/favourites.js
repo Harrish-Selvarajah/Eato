@@ -63,6 +63,8 @@ function loadDisplayData() {
         console.log("DB Pull")
         loadFavListFromFirebase();
     }
+
+    
 }
 
 function loadFavVendorList(favList) {
@@ -72,7 +74,7 @@ function loadFavVendorList(favList) {
     $favUiList = $('#fav-list')
     $favUiList.empty();
     var poiContent = ""
-
+    console.log(favList)
     favList.forEach((favVendor, idx) => {
 
         poiContent = poiContent.concat(
@@ -97,6 +99,7 @@ function loadFavVendorList(favList) {
     })
 
     $favUiList.append(poiContent)
+    favVendorList = favList;
 }
 
 $(document).ready(function () {
@@ -247,17 +250,18 @@ function disableSharebutton() {
 function addCheckBoxClick(id) {
 
     if ($(`#select-${id}`).is(":checked") == true) {
-
+        console.log(favVendorList   )
         var selectedItem = favVendorList.find(function (element) {
             return element.vendorID == id;
         })
-
+        console.log(selectedItem)
         selectedFavList = selectedFavList.concat(selectedItem)
+        
         // Make Share Actives
         activeShareButton();
 
     } else {
-
+        console.log(selectedFavList)
         selectedFavList = selectedFavList.filter(function (element) {
             return id != element.vendorID;
         })
