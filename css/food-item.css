@@ -28,11 +28,12 @@
 
 .item-details>div>span:first-child {
     color: #FD6921;
+    font-family: "Gilroy-Medium";
 }
 
 .item-details>div>span:last-child {
     font-size: 19px;
-    font-weight: 600;
+    font-family: "Gilroy-Medium";
 }
 
 .food-item-page-quantity {
@@ -48,4 +49,6 @@
     margin-top: 30px;
     color: #707070;
     text-align: justify;
+    font-size: 15px;
+    font-family: "Gilroy-Medium";
 }

@@ -88,7 +88,7 @@ function renderReviews() {
                     </div>
                     <div class="vendor-response" id="vendor-feedback-${item.key}" style="display: none;">
                         <h5>Melt House</h5>
-                        <p class="secondaryText">${item.reviewResponse}</p>
+                        <p class="infoText">${item.reviewResponse}</p>
                     </div>
                 </div>`
         })
