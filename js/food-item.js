@@ -30,6 +30,7 @@ var fooditem = [
 var vendor = [
     {
         id: 1,
+        rating : 5,
         name: 'Melt House',
         foodItems: [
             {
@@ -60,6 +61,7 @@ var vendor = [
     },
     {
         id: 2,
+        rating : 5,
         name: 'Suburban Kitchen',
         foodItems: [
             {
