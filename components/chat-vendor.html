@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/site.css" />
     <link rel="stylesheet" href="../css/chat-vendor.css" />
     <script src="../js/chat.js"></script>
+    <script src="../js/common.js"></script>
 </head>
 
 <body>
@@ -104,6 +105,16 @@
             </div>
         </div>
         <!-- Navbar  -->
+        <div data-role="footer" class="nav-glyphish-example bottom-nav" data-position="fixed" data-tap-toggle="false">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#" data-icon="home" class="nav-home navbar-btn" onclick="navigation('vendor-home')">Home</a></li>
+                    <li><a href="#" data-icon="grid" class="nav-order navbar-btn" onclick="navigation('vendor-menu')">Menu</a></li>
+                    <li><a href="#" data-icon="comment" class="ui-btn-active nav-chat navbar-btn" onclick="navigation('chat-vendor')">Chat</a></li>
+                    <li><a href="#" data-icon="star" class="nav-review navbar-btn" onclick="navigation('vendor-review')">Review</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
 </body>
 
