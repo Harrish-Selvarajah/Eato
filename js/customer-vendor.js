@@ -36,7 +36,7 @@ function addOrRemoveFavourites(vendorID){
             })
         }
         }else if (userobj !=null){
-            serobj.favourites = []
+            userobj.favourites = []
             var currentVendor = filterVendors(vendor, vendorID)
             if(currentVendor !=null ){
                 userobj.favourites.push({
