@@ -167,8 +167,10 @@ function validateFields(){
       
       $.ajax(settings).done(function (response) {
         console.log(response);
-      
-      });
+        document.location.href = '../components/order-status.html'
+      }).fail(function(data){
+
+      })
  }
 
 
@@ -182,7 +184,7 @@ function validateFields(){
       if(selectPaymentMethod == null || selectPaymentMethod == {}){
 
       }else{
-        if(selectPaymentMethodNow.type == 'cash'){
+        if(selectPaymentMethod.type == 'cash'){
           document.location.href = '../components/order-status.html'
         }else{
               startCardPayment(); 
