@@ -271,7 +271,6 @@ function handleFoodItemPopup(action, id) {
 }
 
 function renderPopup(foodId) {
-    debugger
     var renderHtml = "";
     $(".d-flex").remove();
     vendorID = JSON.parse(sessionStorage.getItem('vendorID'));

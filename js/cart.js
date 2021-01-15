@@ -24,6 +24,7 @@ var fooditem = [
 var cart = [];
 var totalPrice = 0;
 var subTotal = 0;
+var loyaltyPoints = 0;
 
 $(document).ready(function () {
     // var fooditemID = getUrlParameter('fooditemID');
@@ -35,6 +36,7 @@ $(document).ready(function () {
     cart = JSON.parse(sessionStorage.getItem('cart'));
     console.log(cart);
     if (cart.length == 0) {
+        debugger;
         status.style.display = "none";
         status1.style.display = "block";
     } else {
@@ -96,7 +98,7 @@ function repeat() {
 }
 
 function removeItem(id) {
-    debugger
+    // debugger
     console.log('removeItem')
     cart = cart.filter(function (item) { return item.foodID !== id });
     repeat();
@@ -115,8 +117,11 @@ function clearCart() {
 }
 
 function checkout() {
+    // calculateLoyaltyPoints();
     console.log(cart);
     sessionStorage.setItem('cart', JSON.stringify(cart));
+    sessionStorage.setItem('totalPrice', JSON.stringify(totalPrice));
+    document.location.href = './order-confirmation.html'
 }
 
 function calculateTotal(value, id, operation) {
@@ -165,7 +170,7 @@ function calculateTotal(value, id, operation) {
 // }
 
 function incQuantity(id) {
-    debugger
+    // debugger
     var vallue = $(`#display-quantity-${id}`).html();
     console.log(vallue, 'val');
     x = vallue +1;
@@ -175,9 +180,16 @@ function incQuantity(id) {
 }
 
 function decQuantity(id) {
-    debugger
+    // debugger
     var vallue = $(`#display-quantity-${id}`).html();
     console.log(vallue, 'val');
     $(`#display-quantity-${id}`).text(Number(vallue)-1);
     calculateTotal(Number(vallue)-1, id, 'min');
+}
+
+function calculateLoyaltyPoints() {
+    // 10 loyalty points == Rs 1
+    loyaltyPoints = 10 * totalPrice;
+    sessionStorage.getItem('loyaltyP')
+    sessionStorage.setItem('loyaltyPoints', loyaltyPoints);
 }

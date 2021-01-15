@@ -11,6 +11,11 @@ var style = {
       color: '#32325d',
     },
   };
+var totalPrice = 0;
+
+// $(document).ready(function () {
+
+//  })
 
 
 function createCardTokenAndMakePayment(){
@@ -21,7 +26,8 @@ function createCardTokenAndMakePayment(){
     var expdt = form.find('input[name="expdt"]').val();
     var cvc = form.find('input[name="cvc"]').val();
     var pc = form.find('input[name="pc"]').val();
-    var nameInDesc = cardname != "" ? cardname : sr_name
+    var nameInDesc = cardname != "" ? cardname : sr_name;
+   
 
     var yyyy = expdt.split('/')[1]
     var mm = expdt.split('/')[0].replace(/0(\d+)/,"")
@@ -46,6 +52,8 @@ function createCardTokenAndMakePayment(){
         console.log(response);
         makePayment(response, nameInDesc)
       });
+
+   
 
 }
 
@@ -158,6 +166,8 @@ function validateFields(){
 
 
  $(document).ready(function(){
+  totalPrice = JSON.parse(sessionStorage.getItem('totalPrice'));
+  calculateLoyaltyPoints();
     $('#btn-confirm-order').click(function (e) { 
        startPayment(); 
     });
@@ -184,3 +194,12 @@ function populateData(){
  function isEmpty(str){
      return str == null || str == undefined || str == "" || str.length == 0
  }
+
+ function calculateLoyaltyPoints() {
+   debugger;
+  // 10 loyalty points == Rs 1
+  x = 10 * totalPrice;
+  loyaltyPoints = JSON.parse(sessionStorage.getItem('loyaltyPoints'));
+  totalLoyaltyPoints = loyaltyPoints + x;
+  sessionStorage.setItem('loyaltyPoints', loyaltyPoints);
+}
