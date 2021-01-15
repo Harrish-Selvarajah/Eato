@@ -28,6 +28,8 @@ function signUp() {
     var userId;
     var userObj = {};
     var locations = [];
+    var loyaltyPoints = 0;
+    var loyaltyPointsArray = [];
     
     firebase.database().ref('users/').push({
         name: firstName,
@@ -69,6 +71,8 @@ function signUp() {
           sessionStorage.setItem('userobj', JSON.stringify(userObj));
           sessionStorage.setItem('cart', JSON.stringify(cart));
           sessionStorage.setItem('locations', JSON.stringify(locations))
+          sessionStorage.setItem('loyaltyPoints', JSON.stringify(loyaltyPoints));
+          sessionStorage.setItem('loyaltyPointsArray', JSON.stringify(loyaltyPointsArray));
           console.log(JSON.parse(sessionStorage.getItem('userobj')));
           document.location.href = "./home.html";
       });
