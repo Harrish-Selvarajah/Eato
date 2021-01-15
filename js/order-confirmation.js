@@ -27,7 +27,7 @@ var paymentDefault =
         "type":"master"
     }
 
-  selectedPayment = {}
+   selectPaymentMethod = {}
 
 function createCardTokenAndMakePayment(){
     
@@ -192,9 +192,9 @@ function validateFields(){
   populateData();
 
     $('#btn-confirm-order').click(function (e) { 
-      
-      if(selectPaymentMethod == null || selectPaymentMethod == {}){
-
+      console.log(selectPaymentMethod)
+      if(Object.keys(selectPaymentMethod).length == 0){
+            console.error("Payment method is not selected")
       }else{
         if(selectPaymentMethod.type == 'cash'){
           document.location.href = '../components/order-status.html'
@@ -272,17 +272,28 @@ function populateData(){
 }
  function selectPaymentMethodNow(idx){
     if(idx == -1){
-      // cash
+      
+      $(`#cash`).addClass('active-selected')
+
       selectPaymentMethod = {
         type : "cash"
       }
 
     }else{
+      $(`#cash`).removeClass('active-selected')
       //card
        selectPaymentMethod = paymentOpts[idx]
     }
 
     console.log(selectPaymentMethod)
+
+    for (i = 0; i< paymentOpts.length; i++){
+      if (i == idx){
+        $(`#card-${i}`).addClass('active-selected')
+      }else{
+       $(`#card-${i}`).removeClass('active-selected')
+    }
+  }
  }
 
 

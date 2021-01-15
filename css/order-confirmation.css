@@ -183,9 +183,9 @@ form .input-container:first-child {
     margin-bottom: 15px;
 }
 
-.item:active {
+/* .item:active {
     background-color: #FD6921;
-}
+} */
 
 .active-state {
     background-color: #FD6921;
@@ -225,4 +225,9 @@ form .input-container:first-child {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+.active-selected{
+    border : 2px solid #FD6921 !important
 }
