@@ -90,6 +90,15 @@
     color: #FD6921;
     font-weight: 400;
     text-decoration: underline;
+    cursor: pointer;
+}
+
+.vendor-highlight-rating>a:active {
+    color: #ff2400 !important;
+}
+
+.vendor-highlight-rating>a:hover {
+    color: #ff4500 !important;
 }
 
 .vendor-highlight-rating>p:nth-child(4) {

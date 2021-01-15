@@ -83,3 +83,13 @@
     font-size: 40px;
     text-shadow: none;
 }
+
+/* Button Emphasis styles start */
+.add-button-container:hover{
+    background-color: #ff4500 !important;
+}
+
+.add-button-container:active{
+    background-color: #ff2400 !important;
+}
+/* Button Emphasis styles end */

@@ -53,6 +53,16 @@
     text-shadow: none;
 }
 
+/* Button Emphasis styles start */
+.add-button-container:active{
+    background-color: #ff2400 !important;
+}
+
+.add-button-container:hover{
+    background-color: #ff4500 !important;
+}
+/* Button Emphasis styles end */
+
 @media (max-width: 767px) {
     .card-item {
         width: 350px;
