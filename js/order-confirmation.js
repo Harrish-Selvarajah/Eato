@@ -180,19 +180,20 @@ function validateFields(){
 
 
  $(document).ready(function(){
+  console.log(sessionStorage, 'session');
   totalPrice = JSON.parse(sessionStorage.getItem('totalPrice')) + 250;
   loyaltyPoints = JSON.parse(sessionStorage.getItem('loyaltyPoints'));
   x = Number(totalPrice) + 250
   $('#sub-price-tag').text('Rs' + x);
   $('#discount-tag').text('Rs 0');
   $('#price-tag').text('Rs' + x);
-  calculateLoyaltyPoints();
+  
 
   loadPaymentData();
   populateData();
 
     $('#btn-confirm-order').click(function (e) { 
-      
+      calculateLoyaltyPoints();
       if(selectPaymentMethod == null || selectPaymentMethod == {}){
 
       }else{
@@ -206,14 +207,13 @@ function validateFields(){
     });
 
     $("#add-loyalty").click(function () {
-      debugger;
       if ($('#add-loyalty').is(":checked")) {
-        discount = loyaltyPoints/100;
+        discount = loyaltyPoints/0.1;
         totalPrice = totalPrice - discount;
         $('#discount-tag').text('Rs' + discount);
         $('#price-tag').text('Rs' + totalPrice);
        } else {
-        discount = loyaltyPoints/100;
+        discount = loyaltyPoints/0.1;
         totalPrice = totalPrice +  discount + 250;
         $('#discount-tag').text('Rs' + 0);
         $('#price-tag').text('Rs' + totalPrice);
@@ -265,10 +265,15 @@ function populateData(){
  function calculateLoyaltyPoints() {
   //  debugger;
   // 10 loyalty points == Rs 1
-  x = 10 * totalPrice;
+  var loyaltyPointsArray = [];
+  x = 0.1 * totalPrice;
   loyaltyPoints = JSON.parse(sessionStorage.getItem('loyaltyPoints'));
   totalLoyaltyPoints = loyaltyPoints + x;
-  sessionStorage.setItem('loyaltyPoints', loyaltyPoints);
+  // sessionStorage.setItem('loyaltyPoints', JSON.stringify(loyaltyPoints));
+  loyaltyPointsArray = JSON.parse(sessionStorage.getItem('loyaltyPointsArray'))
+  loyaltyPointsArray.push(x);
+  sessionStorage.setItem('loyaltyPoints', JSON.stringify(totalLoyaltyPoints));
+  sessionStorage.setItem('loyaltyPointsArray', JSON.stringify(loyaltyPointsArray));
 }
  function selectPaymentMethodNow(idx){
     if(idx == -1){
