@@ -22,38 +22,88 @@
             <h4>Chat</h4>
         </div>
         <div role="main" class="ui-content ui-content-header">
-            <div class="main-container chat-container">
-                <div class="profile">
-                    <div class="profile-pic-container">
-                        <div class="profile-pic"></div>
+            <div class="left-section">
+                <div class="search-container">
+                    <div class="input-field-container search-bar">
+                        <i class=" material-icons input-field-icon">search</i>
+                        <input type="text" placeholder=" Search..." name="search" id="search"></input>
                     </div>
-                    <h2>Joy Brendon</h2>
-                    <span class="subtitle">Order ID : 256734</span>
                 </div>
-                <div class="messages" id="render-messages">
-                    <div id="render-message-cust">
-                        <!-- <div class="recieved-message">
-                            <span class="primaryText">How long will it take to prepare the order?</span>
-                        </div> -->
-                    </div>
-                    <div id="render-message-vend">
-                        <!-- <div class="sent-message">
-                            <div>
-                                <span class="primaryText">How long will it take to prepare the order?</span>
+                <div class="chat-list">
+                    <!-- customer chats -->
+                    <div class="chat-profile">
+                        <div class="selection">
+                            <div class="customer-profile-pic-container">
+                                <div class="profile-pic"></div>
                             </div>
-                        </div> -->
+                            <div class="customer-details">
+                                <h3> Kamala Harrish</h3>
+                                <p>Do you have any offers?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-profile">
+                        <div class="selection">
+                            <div class="customer-profile-pic-container">
+                                <div class="profile-pic"></div>
+                            </div>
+                            <div class="customer-details">
+                                <h3> Alaxander Nava</h3>
+                                <p>Do you have any offers?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- customer chats -->
+
+                </div>
+            </div>
+            <div class="right-section">
+                <div class="main-container chat-container">
+                    <div class="profile">
+                        <div class="profile-pic-container">
+                            <div class="profile-pic"></div>
+                        </div>
+                        <h2>Joy Brendon</h2>
+                        <span class="subtitle">Order ID : 256734</span>
+                    </div>
+                    <div class="messages" id="render-messages">
+                        <div id="render-message-cust">
+                            <!-- <div class="recieved-message">
+                                <span class="primaryText">How long will it take to prepare the order?</span>
+                            </div> -->
+                        </div>
+                        <div id="render-message-vend">
+                            <!-- <div class="sent-message">
+                                <div>
+                                    <span class="primaryText">How long will it take to prepare the order?</span>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="message-input">
+                    <div class="input-field-container">
+                        <section class="send-btn input-field-icon">
+                            <i class=" material-icons" onclick="sendMessageVendor()">send</i>
+                        </section>
+                        <input type="text" placeholder="Type message..." id="message">
                     </div>
                 </div>
             </div>
-            <div class="message-input">
-                <div class="input-field-container">
-                    <section class="send-btn input-field-icon">
-                        <i class=" material-icons" onclick="sendMessageVendor()">send</i>
-                    </section>
-                    <input type="text" placeholder="Type message..." id="message">
-                </div>
+            
+        </div>
+        <!-- Navbar  -->
+        <div data-role="footer" class="nav-glyphish-example bottom-nav" data-position="fixed" data-tap-toggle="false">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#" data-icon="home" class=" nav-home navbar-btn">Home</a></li>
+                    <li><a href="#" data-icon="grid" class="nav-order navbar-btn">Menu</a></li>
+                    <li><a href="#" data-icon="comment" class="ui-btn-active nav-chat navbar-btn">Chat</a></li>
+                    <li><a href="#" data-icon="star" class="nav-review navbar-btn">Review</a></li>
+                </ul>
             </div>
         </div>
+        <!-- Navbar  -->
     </div>
 </body>
 

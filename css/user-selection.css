@@ -71,12 +71,13 @@
     }
     .left-section {
         min-height: unset;
+        background: linear-gradient(to bottom, #ffffff 57%, #000000 100%);
     }
     .left-bg {
         background-image: url(../assets/vendor_bg_iphone.png);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
-        height: 46vh;
+        height: 56vh;
     }
 }

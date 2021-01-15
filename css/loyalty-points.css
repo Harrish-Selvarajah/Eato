@@ -1,0 +1,81 @@
+.loyalty-body-container{
+    padding: 20px;
+}
+.loyalty-balance{
+    height: 140px;
+    padding: 10px !important;
+
+}
+
+.share-code{
+    padding: 10px !important;
+    height: 100%;
+    
+
+}
+
+.action-btn>button{
+    width: 240px !important;
+}
+
+.action-btn{
+    display: flex;
+    justify-content: center;
+}
+
+
+.trophy img{
+    padding: 5px;
+    width: 65px;
+}
+
+.card{
+    border-radius: 20px !important;
+}
+
+.title{
+    padding: 8px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.loyalty-details{
+    display: flex;
+    align-items: center;
+
+}
+
+.points{
+    font-size: 23px !important;
+    font-weight: bold;
+    color: #FD6921;
+}
+
+.acitivity_order{
+    height: 58%;
+}
+.acitivity{
+    justify-content: space-between;
+    padding: 10px !important;
+    display: flex;
+    align-items: center;
+    margin-top: 13px;
+    height: 60px;
+}
+
+.acitivity_circle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.acitivity_circle img{
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
