@@ -1,61 +1,59 @@
-.loyalty-body-container{
+.loyalty-body-container {
     padding: 20px;
 }
-.loyalty-balance{
+
+.loyalty-balance {
     height: 140px;
     padding: 10px !important;
-
 }
 
-.share-code{
+.share-code {
     padding: 10px !important;
     height: 100%;
-    
-
 }
 
-.action-btn>button{
+.action-btn>button {
     width: 240px !important;
 }
 
-.action-btn{
+.action-btn {
     display: flex;
     justify-content: center;
 }
 
-
-.trophy img{
+.trophy img {
     padding: 5px;
     width: 65px;
 }
 
-.card{
+.card {
     border-radius: 20px !important;
 }
 
-.title{
+.title {
     padding: 8px;
-    font-size: 18px;
+    font-size: 20px;
+    font-family: "Gilroy-Medium";
     display: flex;
     align-items: center;
 }
 
-.loyalty-details{
+.loyalty-details {
     display: flex;
     align-items: center;
-
 }
 
-.points{
-    font-size: 23px !important;
-    font-weight: bold;
+.points {
+    font-size: 25px !important;
+    font-family: "Gilroy-Bold";
     color: #FD6921;
 }
 
-.acitivity_order{
+.acitivity_order {
     height: 58%;
 }
-.acitivity{
+
+.acitivity {
     justify-content: space-between;
     padding: 10px !important;
     display: flex;
@@ -64,16 +62,17 @@
     height: 60px;
 }
 
-.acitivity_circle{
+.acitivity_circle {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 40px;
     width: 40px;
     border-radius: 50%;
+    padding: 2px;
 }
 
-.acitivity_circle img{
+.acitivity_circle img {
     height: 45px;
     width: 45px;
     border-radius: 50%;

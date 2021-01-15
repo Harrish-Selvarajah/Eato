@@ -30,7 +30,7 @@ var fooditem = [
 var vendor = [
     {
         id: 1,
-        rating : 5,
+        rating: 5,
         name: 'Melt House',
         foodItems: [
             {
@@ -61,7 +61,7 @@ var vendor = [
     },
     {
         id: 2,
-        rating : 5,
+        rating: 5,
         name: 'Suburban Kitchen',
         foodItems: [
             {
@@ -158,7 +158,7 @@ function renderFooditemsInVendor() {
                     <div class="food-item-details">
                         <h4>${y.name}</h4>
                         <div>
-                            <span>Rs</span>
+                            <span class="primaryText">Rs</span>
                             <span>${y.price}</span>
                         </div>
                     </div>
@@ -191,7 +191,7 @@ function renderFooditem() {
                    <button class="quantity-minus" onclick="quantity('minus')">
                        <i class="material-icons">remove</i>
                    </button>
-                   <span id="display-quantity">1</span>
+                   <span id="display-quantity" class="subtitle">1</span>
                    <button class="quantity-plus" onclick="quantity('plus')">
                        <i class="material-icons">add</i>
                    </button>
@@ -256,13 +256,13 @@ function handleFoodItemPopup(action, id) {
         window.location.href = '../components/food-item.html?fooditemID=' + id;
     }
     else {
-       
+
         popupAction = action
         if (popupAction === "open") {
             renderPopup(id);
             $('body').css('overflow', 'hidden');
             $("#food-item-popup").popup("open");
-            
+
 
         }
         else {
@@ -278,7 +278,7 @@ function renderPopup(foodId) {
     vendorID = JSON.parse(sessionStorage.getItem('vendorID'));
     vendor.forEach(function (x) {
         if (x.id == Number(vendorID)) {
-            x.foodItems.forEach(function(y){
+            x.foodItems.forEach(function (y) {
                 if (foodId == y.id) {
                     renderHtml += `<div class="d-flex fipw-item-details">
                     <h4>${y.name}</h4>
@@ -291,7 +291,7 @@ function renderPopup(foodId) {
                     <button class="quantity-minus" onclick="quantity('minus')">
                         <i class="material-icons">remove</i>
                     </button>
-                    <span id="display-quantity">1</span>
+                    <span id="display-quantity" class="subtitle">1</span>
                     <button class="quantity-plus" onclick="quantity('plus')">
                         <i class="material-icons">add</i>
                     </button>

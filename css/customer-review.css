@@ -120,4 +120,10 @@
 
 .vendor-response>:first-child {
   margin-bottom: 5px!important;
+  font-family: "Gilroy-Bold";
+  font-size: 12px!important;
+}
+
+.infoText {
+  font-family: "Gilroy-Light";
 }
