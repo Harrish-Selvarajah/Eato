@@ -56,11 +56,26 @@ $(document).ready(function () {
 function writeUserData() {
   var userObj = sessionStorage.getItem('userobj');
   var bla = $('#reviewComment').val();
+
+  var popup = getUrlParameter('popup')
+
   if (ratingValue === "" || ratingValue === NaN || ratingValue === undefined || ratingValue === null) {
-    toastr.warning('Please Select Rating', 'Warning');
+
+    if(popup == true || popup == "true"){
+      parent.document.getElementById("stay-with-star-warn").click();
+     // console.log($(document).parents().find('#close'))
+    }else{
+      toastr.warning('Please Select Rating', 'Warning');
+    }
   }
   else if (bla === "") {
-    toastr.warning('Please Write A Review', 'Warning');
+
+    if(popup == true || popup == "true"){
+      parent.document.getElementById("stay-with-review-warn").click();
+     // console.log($(document).parents().find('#close'))
+    }else{
+        toastr.warning('Please Write A Review', 'Warning');
+    }
   }
   else {
     firebase.database().ref('Vendors/' + vendorId).child('reviews').push({
@@ -75,21 +90,22 @@ function writeUserData() {
       }
     }, (error) => {
       if (error) {
+        if(popup == true || popup == "true"){
+          parent.document.getElementById("error-close").click();
+         // console.log($(document).parents().find('#close'))
+        }else{
         toastr.error('Unable To Send Review', 'Error');
+      }
       } else {
-        toastr.success('Review Sent', 'Success');
-
-        var popup = getUrlParameter('popup')
-        setTimeout(function () { 
+        
+       
+       
           if(popup == true || popup == "true"){
-            parent.document.getElementById("close").click()
+            parent.document.getElementById("close-after-success").click();
            // console.log($(document).parents().find('#close'))
           }else{
             document.location.href = "./orders.html";
           }
-         }, 1000);
-
-        
       }
     });
   }
