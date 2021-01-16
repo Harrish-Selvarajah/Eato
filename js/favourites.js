@@ -34,7 +34,7 @@ toastr.options = {
     "hideEasing": "linear",
     "showMethod": "fadeIn",
     "hideMethod": "fadeOut"
-  }
+}
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
@@ -95,10 +95,10 @@ function loadFavVendorList(favList) {
     var poiContent = ""
     console.log(favList)
     favList.forEach((favVendor, idx) => {
-
         poiContent = poiContent.concat(
             `<li class="item" id="li-${idx}">
                 <div class="item-img">
+                    <img src="${favVendor.img}">
                     <div class="icon-container" onClick="removeFavourite(${favVendor.vendorID})">
                         <i class=" material-icons icon-fav">favorite</i>
                     </div>
@@ -117,8 +117,8 @@ function loadFavVendorList(favList) {
         )
     })
 
-    if(favList.length < 3){
-         poiContent = poiContent.concat(addEmptyComponentIfNotThree());
+    if (favList.length < 3) {
+        poiContent = poiContent.concat(addEmptyComponentIfNotThree());
     }
 
     $favUiList.append(poiContent)
@@ -145,14 +145,14 @@ $(document).ready(function () {
             selectedFavList = favVendorList;
 
             activeShareButton();
-            
+
         } else {
             //console.log($('#fav-list').children())
             $('#fav-list').find(':checkbox').each(function (element) {
                 $(this).prop('checked', false);
             });
 
-            
+
             selectedFavList = []
 
             disableSharebutton();
@@ -197,7 +197,7 @@ $(document).ready(function () {
             SendEmail(email, content)
             $('#popup-modal').popup('close')
         }
-       
+
     });
 
     $(document).on('input', '#search', function (e) {
@@ -318,7 +318,7 @@ function SendEmail(email, message) {
     }).then(
         message => toastr["success"]("Email Successfully Sent", "Success!")
     ).catch(
-        error =>  toastr["error"]("Email not Sent", "Error!")
+        error => toastr["error"]("Email not Sent", "Error!")
     )
 }
 
@@ -369,13 +369,13 @@ function filterPOI() {
 
     $('#fav-list').empty();
 
-   
+
     $('#fav-list').append(favChildElements)
 
-    if(favChildElements.length < 3){
+    if (favChildElements.length < 3) {
         var poiContent = addEmptyComponentIfNotThree();
     }
-    
+
     $('#fav-list').append(poiContent)
 
 
@@ -453,38 +453,38 @@ function search(input) {
     contentEmptyoperations();
 }
 
-function contentEmptyoperations(){
+function contentEmptyoperations() {
     console.log('in')
     $content = $('#fav-list').find('.item')
     $('#favourites').find('#fav-empty').remove()
-    $content = $content.filter(function(){
+    $content = $content.filter(function () {
         return $(this).css('display') != 'none';
     })
-    
+
     $('#share-btn').show()
 
-    if ($content.length > 0){
-            $('#fav-checkbox').css("display","block")
-    }else{
-          $('#fav-checkbox').css("display","none")
+    if ($content.length > 0) {
+        $('#fav-checkbox').css("display", "block")
+    } else {
+        $('#fav-checkbox').css("display", "none")
 
-          emptyContent = `<div id="fav-empty" style="display:flex; margin-top:10%; align-content:center; justify-content:center; flex-direction:column">
+        emptyContent = `<div id="fav-empty" style="display:flex; margin-top:10%; align-content:center; justify-content:center; flex-direction:column">
           <span class="iconify" data-icon="mdi:heart-broken" data-inline="false" style="margin-bottom:20px; margin-left:auto; margin-right:auto;"></span>                         
                                     <h4 style="text-align:center;">No favourites found</h4>
                           </div>`
-        $('#share-btn').hide()            
+        $('#share-btn').hide()
         $('#favourites').append(emptyContent)
     }
 }
 
-function addEmptyComponentIfNotThree() {  
+function addEmptyComponentIfNotThree() {
 
     var poiContent = ""
-    
-    for(var i=0; i < 2; i++){
+
+    for (var i = 0; i < 2; i++) {
         poiContent = poiContent.concat(`<li class="item-none" style="border: 0px none white !important"></li>`)
     }
-    
+
 
     return poiContent
 }
