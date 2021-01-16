@@ -18,6 +18,9 @@
     <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <!-- <script src="../lib/jquery-style-event.js"></script> -->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <!-- toast Links -->
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
     <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
@@ -43,14 +46,14 @@
                         <i class=" material-icons">sort</i>
                     </div>
                 </div>
-                <div class="fav-checkbox">
+                <div class="fav-checkbox" id="fav-checkbox">
                     <div>
                         <h4>Select All</h4>
                         <input class="checkbox" id="select-all" type="checkbox" />
                     </div>
                 </div>
-                <div class="favourites">
-                    <ul id="fav-list">
+                <div class="favourites" id="favourites">
+                    <ul id="fav-list" >
                     </ul>
                 </div>
                 <div data-role="popup" class="popup" id="popup-modal" data-theme="a"

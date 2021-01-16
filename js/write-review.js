@@ -47,6 +47,11 @@ $(document).ready(function () {
 });
 
 function writeUserData() {
+  var today = new Date();
+  var dd = String(today.getDate()).padStart(2, '0');
+  var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  var yyyy = today.getFullYear();
+  today = mm + '/' + dd + '/' + yyyy;
   var userObj = sessionStorage.getItem('userobj');
   var bla = $('#reviewComment').val();
   if (ratingValue === "" || ratingValue === NaN || ratingValue === undefined || ratingValue === null) {
@@ -61,7 +66,7 @@ function writeUserData() {
       review: bla,
       reviewResponse: '',
       rating: ratingValue * 10,
-      date: "26/10/2020",
+      date: today,
       userobj: {
         name: JSON.parse(userObj).name,
         profilepicLink: ''

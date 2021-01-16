@@ -59,7 +59,11 @@ function navigation(page) {
             document.location.href = "./vendor-menu.html";
             break;
         case 'chat-vendor':
-            document.location.href = "./chat-vendor.html";
+            if(!detectMobileWithAgent()) {
+                document.location.href = "./chat-vendor.html";
+            } else {
+                document.location.href = "./chats-vendor.html";
+            }      
             break;
         case 'vendor-review':
             document.location.href = './vendor-review.html';
@@ -79,4 +83,19 @@ function navigation(page) {
 
 function goBack() {
     window.history.back();
+}
+
+function detectMobileWithAgent() {
+    const toMatch = [
+        /Android/i,
+        /webOS/i,
+        /iPhone/i,
+        /iPod/i,
+        /BlackBerry/i,
+        /Windows Phone/i
+    ];
+
+    return toMatch.some((toMatchItem) => {
+        return navigator.userAgent.match(toMatchItem) 
+    });
 }

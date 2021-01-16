@@ -91,6 +91,7 @@ function renderReview() {
 	var renderHtml = "";
 	$(".review-item").remove();
 	if (reviews.length > 0) {
+		reviews = reviews.reverse();
 		reviews.forEach(function (item) {
 			console.log(item);
 			renderHtml += `<div class="review-item cards">

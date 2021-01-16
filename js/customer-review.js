@@ -66,6 +66,7 @@ function renderReviews() {
     $(".se-pre-con").fadeOut("fast");
     var renderHtml = "";
     if (reviews.length > 0) {
+        reviews = reviews.reverse();
         reviews.forEach(function (item) {
             renderHtml += `<div class="review-item cards">
                     <div class="review-details d-flex">

@@ -28,14 +28,12 @@ function renderChatList() {
     });
     $('chat-list').empty();
     uniqueNames.forEach(function(u) {
-        renderHtml += `    <div onclick=openChat('${u}') class="chat-profile">
-        <div class="selection">
-            <div class="customer-profile-pic-container">
-                <div class="profile-pic"></div>
-            </div>
-            <div class="customer-details">
-                <h3>${u}</h3> 
-            </div>
+        renderHtml += `<div class="chat d-flex" onclick="openChat('${u}')">
+        <div class="profile-pic-container">
+            <div class="profile-pic"></div>
+        </div>
+        <div>
+            <h4>${u}</h4>
         </div>
     </div>`
     })
@@ -144,3 +142,6 @@ function sendMessageVendor() {
     renderMessagesVend(customerName);
 }
 
+function openChat() {
+    
+}
