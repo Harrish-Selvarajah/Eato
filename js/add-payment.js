@@ -26,9 +26,14 @@ $(document).ready(function () {
         if (validateFields()) {
             addPaymentToWallet()
 
-            if (popup == false || popup == undefined) {
-                document.location.href = '../components/payment-method.html'
+            if (popup == false || popup == undefined) { 
+                toastr.success('Successfully Added To the Wallet', 'Success'); 
+                setTimeout(function(){
+                    document.location.href = '../components/payment-method.html'
+                },1000)           
+               
             } else {
+                parent.document.getElementById("close-with-success").click()
                 parent.document.getElementById("close").click()
             }
         } else {
@@ -148,6 +153,7 @@ function addPaymentToWallet() {
     })
 
     sessionStorage.setItem('paymentOpts', JSON.stringify(paymentOptions));
+   
 }
 
 
