@@ -2,8 +2,10 @@
 
 $(document).ready(function () {
   // debugger;
-
+  // currentLocation = sessionStorage.getItem('location');
   savedLocation = JSON.parse(sessionStorage.getItem('savedLocation'));
+
+  
   if (savedLocation == null) {
     savedLocation = [];
     sessionStorage.setItem('savedLocation', JSON.stringify(savedLocation));
@@ -180,17 +182,21 @@ function codeLatLng(lat, lng) {
 }
 
 function renderRadioButton() {
+  currentLocation = sessionStorage.getItem('location')
   var renderHtml = "";
   $(".selected-location").empty();
   $(".divider").remove();
   savedLocation.forEach(function (x) {
     renderHtml += `<label class="selected-location">${x}
-    <input type="radio" name="radio" id="selected-location" value='${x}'>
+    <input type="radio" name="radio" id="selected-location-${x}" value='${x}'>
     <span class="checkmark"></span>
   </label>
   <hr class="divider" style="margin-top: 20px;">`
+  // document.getElementById(`selected-location-${x}`).checked = true;
+  // $(`#selected-location-${x}`).prop("checked", true);
   })
   $('#render-radio-button').append(renderHtml);
+  document.getElementById(`selected-location-${currentLocation}`).checked = true;
 }
 
 
