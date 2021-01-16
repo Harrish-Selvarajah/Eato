@@ -63,7 +63,7 @@ function createCardTokenAndMakePayment() {
     console.log(response);
     makePayment(response, nameInDesc)
   }).fail(function (data) {
-    console.log(data)
+    toastr["error"]("Please Attempt With Another Payment Method", "Payment Failed")
   })
 
 
@@ -175,7 +175,7 @@ function makePayment(token, name) {
     console.log(response);
     document.location.href = '../components/order-status.html'
   }).fail(function (data) {
-
+    toastr["error"]("Eroor Occurred in Payment", "Error!")
   })
 }
 
@@ -199,7 +199,7 @@ $(document).ready(function () {
     calculateLoyaltyPoints();
     console.log(selectPaymentMethod)
     if (Object.keys(selectPaymentMethod).length == 0) {
-        toastr["warning"]("Payment type not selected", "Warning!")
+        toastr["warning"]("Payment Type Not Selected", "Warning!")
     } else {
       if (selectPaymentMethod.type == 'cash') {
         document.location.href = '../components/order-status.html'
