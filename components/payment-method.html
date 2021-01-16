@@ -11,6 +11,8 @@
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
     <link rel="stylesheet" href="../css/site.css" />
     <link rel="stylesheet" href="../css/payment-method.css" />
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script src="../js/common.js"></script>
     <script src="../js/payment-method.js"></script>
 
@@ -65,9 +67,10 @@
         <!-- Footer -->
 
         <div data-role="popup" class="pop" id="add-payment-pop"
-            style="overflow-y: hidden; height: 646px; width:390px  ">
+            style="overflow-y: hidden; height: 646px; width:390px; border-radius: 20px;">
             <div class="popup-header">
                 <i class=" material-icons" id="close">close</i>
+                <i style="display: none;" id="close-with-success">close</i>
                 <h4>Add Payment</h4>
             </div>
             <iframe src="../components/add-payment.html?popup=true" id="y"
