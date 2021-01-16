@@ -55,6 +55,46 @@
     display: flex;
     justify-content: center;
   }
+
+  
+  .points{
+    color:#FD6921;
+  }  
+
+
   .popup {
-    min-height: 280px !important;
-  }
+    background-color: white;
+    border-radius: 20px;
+    min-height: 250px !important;
+    width: 561px;
+    -webkit-box-shadow: 0 0 12px rgba(0,0,0,.6);
+    -moz-box-shadow: 0 0 12px rgba(0,0,0,.6);
+    box-shadow: 0 0 12px rgba(0,0,0,.6);
+}
+
+.popup-screen {
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background-color: #7e7e7e !important;
+}
+
+.pop-up-content{
+  padding: 20px;
+  text-align: center;
+}
+
+.camera-bg{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* iPhone 5 */
+@media only screen and (max-width: 320px)  {
+  .popup {
+    min-height: 256px !important;
+    width: 263px !important;
+}
+}
