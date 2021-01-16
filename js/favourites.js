@@ -64,7 +64,7 @@ function loadDisplayData() {
         loadFavListFromFirebase();
     }
 
-    
+
 }
 
 function loadFavVendorList(favList) {
@@ -250,13 +250,13 @@ function disableSharebutton() {
 function addCheckBoxClick(id) {
 
     if ($(`#select-${id}`).is(":checked") == true) {
-        console.log(favVendorList   )
+        console.log(favVendorList)
         var selectedItem = favVendorList.find(function (element) {
             return element.vendorID == id;
         })
         console.log(selectedItem)
         selectedFavList = selectedFavList.concat(selectedItem)
-        
+
         // Make Share Actives
         activeShareButton();
 
@@ -304,7 +304,7 @@ function removeFavourite(vendorID) {
     sessionStorage.setItem('userobj', JSON.stringify(userobj));
 
     selectedFavList = filterArrayById(selectedFavList, vendorID)
-    console.log("Successfully deleted")
+    toastr.success('Removed From Favourites', 'Success');
 
 
     loadFavVendorList();
