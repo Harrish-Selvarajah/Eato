@@ -381,6 +381,13 @@ p {
     color: white;
 }
 
+.footer-left a:active{
+    color: #ff2400 !important;
+}
+
+.footer-left a:hover{
+    color: #ff4500 !important;
+}
 
 /* Button Emphasis styles end */
 
