@@ -12,6 +12,7 @@ var style = {
   },
 };
 var totalPrice = 0;
+var checked = false;
 
 // $(document).ready(function () {
 
@@ -181,12 +182,14 @@ function makePayment(token, name) {
 
 $(document).ready(function () {
   console.log(sessionStorage, 'session');
-  totalPrice = JSON.parse(sessionStorage.getItem('totalPrice')) + 250;
+  totalPrice = JSON.parse(sessionStorage.getItem('totalPrice'));
   loyaltyPoints = JSON.parse(sessionStorage.getItem('loyaltyPoints'));
-  x = Number(totalPrice) + 250
+  var location = sessionStorage.getItem('location');
+  x = Number(totalPrice)
   $('#sub-price-tag').text('Rs' + x);
   $('#discount-tag').text('Rs 0');
   $('#price-tag').text('Rs' + x);
+  $('#location').text(location)
 
 
   loadPaymentData();
@@ -207,17 +210,38 @@ $(document).ready(function () {
   });
 
   $("#add-loyalty").click(function () {
-    if ($('#add-loyalty').is(":checked")) {
-      discount = loyaltyPoints / 0.1;
-      totalPrice = totalPrice - discount;
-      $('#discount-tag').text('Rs' + discount);
-      $('#price-tag').text('Rs' + totalPrice);
+    if (loyaltyPoints !== 0) {
+      if ($('#add-loyalty').is(":checked")) {
+        checked = true;
+        discount = loyaltyPoints * 0.1;
+        totalPrice = totalPrice - discount;
+        $('#discount-tag').text('Rs' + '' + discount);
+        $('#price-tag').text('Rs' + '' + totalPrice);
+      } else {
+        checked = false;
+        discount = loyaltyPoints * 0.1;
+        totalPrice = totalPrice + discount;
+        $('#discount-tag').text('Rs' + '' + 0);
+        $('#price-tag').text('Rs' + '' + totalPrice);
+      }
     } else {
-      discount = loyaltyPoints / 0.1;
-      totalPrice = totalPrice + discount + 250;
-      $('#discount-tag').text('Rs' + 0);
-      $('#price-tag').text('Rs' + totalPrice);
+      if (loyaltyPoints === 0) {
+        if ($('#add-loyalty').is(":checked")) {
+          checked = true;
+          discount = 0;
+          totalPrice = totalPrice - discount;
+          $('#discount-tag').text('Rs' +  '' + discount);
+          $('#price-tag').text('Rs' + '' + totalPrice);
+        } else {
+          checked = false;
+          discount = 0;
+          totalPrice = totalPrice + discount;
+          $('#discount-tag').text('Rs' +  '' + 0);
+          $('#price-tag').text('Rs' + '' + totalPrice);
+        }
+      }
     }
+   
 
 
   });
@@ -263,14 +287,20 @@ function isEmpty(str) {
 }
 
 function calculateLoyaltyPoints() {
-  //  debugger;
   // 10 loyalty points == Rs 1
   var loyaltyPointsArray = [];
-  x = 0.1 * totalPrice;
+  var dedLoyalty = 0;
+  var totalLoyaltyPoints = 0;
   loyaltyPoints = JSON.parse(sessionStorage.getItem('loyaltyPoints'));
-  totalLoyaltyPoints = loyaltyPoints + x;
+  loyaltyPointsArray = JSON.parse(sessionStorage.getItem('loyaltyPointsArray'));
+  x = 0.1 * totalPrice;
+  if (checked === true) {
+    dedLoyalty = loyaltyPoints - loyaltyPoints;
+    totalLoyaltyPoints = dedLoyalty + x;
+  } else {
+    totalLoyaltyPoints = loyaltyPoints + x;
+  }
   // sessionStorage.setItem('loyaltyPoints', JSON.stringify(loyaltyPoints));
-  loyaltyPointsArray = JSON.parse(sessionStorage.getItem('loyaltyPointsArray'))
   loyaltyPointsArray.push(x);
   sessionStorage.setItem('loyaltyPoints', JSON.stringify(totalLoyaltyPoints));
   sessionStorage.setItem('loyaltyPointsArray', JSON.stringify(loyaltyPointsArray));

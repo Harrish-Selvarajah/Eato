@@ -63,6 +63,16 @@ function navigation(page) {
             break;
         case 'vendor-review':
             document.location.href = './vendor-review.html';
+            break;
+        case 'customer-chat':
+            document.location.href = './chat-customer.html';
+            break;
+        case 'order-status':
+            document.location.href = './order-status.html';
+            break;
+        case 'user-selection':
+            document.location.href = './user-selection.html';
+            break;
     }
    
 }
