@@ -98,13 +98,15 @@ function writeUserData() {
       }
       } else {
         
-       
-       
           if(popup == true || popup == "true"){
             parent.document.getElementById("close-after-success").click();
            // console.log($(document).parents().find('#close'))
           }else{
-            document.location.href = "./orders.html";
+               toastr.success('Review Sent', 'Success');
+              setTimeout(function(){
+                document.location.href = "./orders.html";
+              },1000)
+             
           }
       }
     });

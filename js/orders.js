@@ -65,7 +65,7 @@ $(document).ready(function () {
 
     $('#close-after-success').click(function (e) { 
         $('#popup').popup('close')
-        toastr["success"]("Email Successfully Sent", "Success!")
+        toastr.success('Review Sent', 'Success');
     });
 
     $('#stay-with-star-warn').click(function (e) { 
@@ -80,10 +80,6 @@ $(document).ready(function () {
         toastr.error('Unable To Send Review', 'Error');
         $('#popup').popup('close')
     });
-
-   
-
-    
 
 });
 
