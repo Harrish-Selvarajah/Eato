@@ -11,6 +11,10 @@ $(document).ready(function () {
         $('#location').text(location);
     }
     console.log(sessionStorage, 'session')
+
+    $("#close-popup").click(function(){
+        $("#popup-modal").popup("close");
+    })
 });
 
 function goToVendor(vendorID) {
