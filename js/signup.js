@@ -87,6 +87,7 @@ function signUp() {
       }
       sessionStorage.setItem('userobj', JSON.stringify(userObj));
       sessionStorage.setItem('cart', JSON.stringify(cart));
+      sessionStorage.setItem('chats', JSON.stringify(chats));
       sessionStorage.setItem('locations', JSON.stringify(locations))
       sessionStorage.setItem('loyaltyPoints', JSON.stringify(loyaltyPoints));
       sessionStorage.setItem('loyaltyPointsArray', JSON.stringify(loyaltyPointsArray));
