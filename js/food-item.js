@@ -111,6 +111,10 @@ $(document).ready(function () {
     renderVendorDetails();
     renderFooditemsInVendor();
     renderFooditem();
+
+    $('#close-button').click(function (e) {
+        $('#food-item-popup').popup('close')
+    });
 });
 
 function renderVendorDetails() {
