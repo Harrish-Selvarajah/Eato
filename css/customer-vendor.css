@@ -187,7 +187,7 @@
 }
 
 .fipw-item-bg {
-    background-image: url(../assets/food_item.jpg);
+    /* background-image: ; */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
