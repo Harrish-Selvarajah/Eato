@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-   
+
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
     <link rel="stylesheet" href="../css/site.css" />
     <link rel="stylesheet" href="../css/orders.css" />
-   
+
     <script src="../js/common.js"></script>
     <script src="../js/orders.js"></script>
 </head>
@@ -110,11 +110,11 @@
                                 <div class="item-details" id="repeat-past-items">
                                     <div class="d-flex">
                                         <div class="quantity infoText">1</div>
-                                        <span class="primaryText">Yellow Rice With Chicken Meatballs</span>
+                                        <span class="primaryText">Cheese Pasta</span>
                                     </div>
                                     <div class="d-flex">
                                         <div class="quantity infoText">1</div>
-                                        <span class="primaryText">Fried Rice</span>
+                                        <span class="primaryText">Chico Fruit Salad</span>
                                     </div>
                                 </div>
                                 <hr />
@@ -163,11 +163,11 @@
                                 <div class="item-details">
                                     <div class="d-flex">
                                         <div class="quantity infoText">1</div>
-                                        <span class="primaryText">Yellow Rice With Chicken Meatballs</span>
+                                        <span class="primaryText">Chico Fruit Salad</span>
                                     </div>
                                     <div class="d-flex">
                                         <div class="quantity infoText">1</div>
-                                        <span class="primaryText">Fried Rice</span>
+                                        <span class="primaryText">Cheese Pasta</span>
                                     </div>
                                 </div>
                                 <hr />
@@ -176,7 +176,7 @@
                                     <h4>Rs 1500.00</h4>
                                 </div>
                                 <div>
-                                    <button type="button" onclick="rateVendor('m2')">
+                                    <button type="button" onclick="rateVendor(1)">
                                         <p class="primaryText">RATE VENDOR</p>
                                     </button>
                                 </div>
@@ -198,19 +198,20 @@
                     <h4>Address</h4>
                     <p class="secondaryText">50, Chez Road, Panisse</p>
                     <br>
-                    <a style="color: white;" onclick="navigation('about-us')"><h4>About Us</h4></a>
+                    <a style="color: white;" onclick="navigation('about-us')">
+                        <h4>About Us</h4>
+                    </a>
                 </div>
                 <div class="footer-right">
                     <img src="../assets/logo/eoto_logo_light.png">
                 </div>
             </div>
             <div class="footer-bottom">
-                <i class="iconify" style="color: white; width: 20px;"
-                 data-icon="bx:bxl-facebook-circle" data-inline="false"></i>
-                 <i class="iconify" style="color: white; width: 20px;"  
-                 data-icon="ant-design:instagram-outlined" data-inline="false"></i>
-                 <i class="iconify" style="color: white; width: 20px;"
-                 data-icon="mdi-twitter" data-inline="false"></i>
+                <i class="iconify" style="color: white; width: 20px;" data-icon="bx:bxl-facebook-circle"
+                    data-inline="false"></i>
+                <i class="iconify" style="color: white; width: 20px;" data-icon="ant-design:instagram-outlined"
+                    data-inline="false"></i>
+                <i class="iconify" style="color: white; width: 20px;" data-icon="mdi-twitter" data-inline="false"></i>
                 <p class="footer-copyrights infoText">© 2021 Eato. All Rights Reserved.</p>
             </div>
         </div>
@@ -232,13 +233,15 @@
             </div>
         </div>
 
-        <div data-role="popup" class="pop" id="popup" style="overflow-y: hidden; height:700px; width:368px; border-radius:20px; overflow-x: hidden;">
+        <div data-role="popup" class="pop" id="popup"
+            style="overflow-y: hidden; height:700px; width:368px; border-radius:20px; overflow-x: hidden;">
             <div class="popup-header">
                 <i class=" material-icons" id="close">close</i>
                 <h4>Write a Review</h4>
             </div>
-        <iframe id= "iframe" src="" style="width:390px; overflow: hidden !important;height:646px;border-radius:0px 0px 20px 20px;border: none !important;"></iframe>
-       </div>
+            <iframe id="iframe" src=""
+                style="width:368px; overflow: hidden !important;height:646px;border-radius:0px 0px 20px 20px;border: none !important;"></iframe>
+        </div>
 
     </div>
 </body>

@@ -8,7 +8,8 @@ var pastOrders = [
             {
                 id: 'm1',
                 name: 'Cheese Pasta',
-                quantity: 2
+                quantity: 2,
+                picture: 'https://images.unsplash.com/photo-1587206668283-c21d974993c3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw=&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80'
             },
         ],
         totalPrice: 2100
@@ -21,17 +22,20 @@ var pastOrders = [
             {
                 id: 'm1',
                 name: 'Chico Fruit Salad',
-                quantity: 1
+                quantity: 1,
+                picture: 'https://images.unsplash.com/photo-1568158958563-c13c713d69f1?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw=&auto=format&fit=crop&w=633&q=80'
             },
             {
                 id: 'm2',
                 name: 'Cheese Pasta',
-                quantity: 3
+                quantity: 3,
+                picture: 'https://images.unsplash.com/photo-1587206668283-c21d974993c3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw=&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80'
             },
             {
                 id: 'm3',
                 name: 'Squash Risotto',
-                quantity: 2
+                quantity: 2,
+                picture: '../assets/food_item.jpg'
             }
         ],
         totalPrice: 4200
@@ -224,22 +228,24 @@ function orderAgain(id) {
         var cart = []
         sessionStorage.setItem('cart', JSON.stringify(cart));
         item = {
-            foodID: 1,
-            foodName: 'Yellow Rice Chicken Meatballs',
+            foodID: 'm1',
+            foodName: 'Cheese Pasta',
             price: 650,
             quantity: 1,
             totalPrice: 1500,
             vendorId: 1,
-            vendorName: 'Melt House'
+            vendorName: 'Melt House',
+            image: 'https://images.unsplash.com/photo-1587206668283-c21d974993c3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw=&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80'
         }
         item2 = {
-            foodID: 2,
-            foodName: 'Fried Rice',
+            foodID: 'm2',
+            foodName: 'Chico Fruit Salad',
             price: 650,
             quantity: 1,
             totalPrice: 1500,
             vendorId: 1,
-            vendorName: 'Melt House'
+            vendorName: 'Melt House',
+            image: 'https://images.unsplash.com/photo-1568158958563-c13c713d69f1?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw=&auto=format&fit=crop&w=633&q=80'
         }
         cart.push(item);
         cart.push(item2);
@@ -249,23 +255,25 @@ function orderAgain(id) {
         if (id == 2) {
             var cart = []
             sessionStorage.setItem('cart', JSON.stringify(cart));
-            item1 = {
-                foodID: 1,
-                foodName: 'Yellow Rice Chicken Meatballs',
+            item = {
+                foodID: 'm1',
+                foodName: 'Cheese Pasta',
                 price: 650,
                 quantity: 1,
                 totalPrice: 1500,
                 vendorId: 1,
-                vendorName: 'Melt House'
+                vendorName: 'Melt House',
+                image: 'https://images.unsplash.com/photo-1587206668283-c21d974993c3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw=&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80'
             }
             item2 = {
-                foodID: 2,
-                foodName: 'Fried Rice',
+                foodID: 'm2',
+                foodName: 'Chico Fruit Salad',
                 price: 650,
                 quantity: 1,
                 totalPrice: 1500,
                 vendorId: 1,
-                vendorName: 'Melt House'
+                vendorName: 'Melt House',
+                image: 'https://images.unsplash.com/photo-1568158958563-c13c713d69f1?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw=&auto=format&fit=crop&w=633&q=80'
             }
             cart.push(item);
             cart.push(item2);
