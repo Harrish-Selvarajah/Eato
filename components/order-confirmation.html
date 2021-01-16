@@ -14,7 +14,13 @@
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
     <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script src="https://js.stripe.com/v3/"></script>
+
+    <!-- toast Links -->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
     <script src="../js/order-confirmation.js" defer></script>
+    <script src="../js/common.js"></script>
 
     <title>Order confirmation</title>
 </head>
@@ -22,7 +28,7 @@
 <body>
     <div data-role="page">
         <div data-role="header" data-postion="fixed" data-fullscreen="true" class="header-bar">
-            <i class="arrow arrow-left"></i>
+            <i class="arrow arrow-left" onclick="goBack()"></i>
             <h4>Order confirmation</h4>
         </div>
         <div data-role="main" class="ui-content ui-content-header">
@@ -75,7 +81,8 @@
                                 </span>
                             </div>
                             <div class="location-title-container">
-                                <p class="location-title primaryText"> 12, Selvarajah Road, Modara, Colombo 15</p>
+                                <p class="location-title primaryText" id="location"> 12, Selvarajah Road, Modara,
+                                    Colombo 15</p>
                             </div>
                         </div>
                     </div>

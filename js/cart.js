@@ -33,13 +33,17 @@ $(document).ready(function () {
 
     var status = document.getElementById('cart-filled');
     var status1 = document.getElementById('cart-empty');
+    // var status = document.getElementById('cart-filled');
+    // var status1 = document.getElementById('cart-empty');
+    // status.style.display = "none";
+    // status1.style.display = "grid";
     cart = JSON.parse(sessionStorage.getItem('cart'));
     console.log(cart);
     if (cart.length == 0) {
-        status.style.display = "none !important";
-        status1.style.display = "block !important";
+        status.style.display = "none";
+        status1.style.display = "block";
     } else {
-        status1.style.display = "none !important";
+        status1.style.display = "none";
         if ($(window).width() < 768) {
             status.style.display = "block";
         }
@@ -101,6 +105,7 @@ function removeItem(id) {
     console.log('removeItem')
     cart = cart.filter(function (item) { return item.foodID !== id });
     repeat();
+    toastr.success('Item Removed', 'Success');
     // sessionStorage.setItem('cart', JSON.stringify(cart));
 }
 
@@ -119,6 +124,7 @@ function checkout() {
     // calculateLoyaltyPoints();
     console.log(cart);
     //console.log(total)
+    totalPrice = totalPrice + 250;
     sessionStorage.setItem('cart', JSON.stringify(cart));
     sessionStorage.setItem('totalPrice', JSON.stringify(totalPrice));
     document.location.href = './order-confirmation.html'

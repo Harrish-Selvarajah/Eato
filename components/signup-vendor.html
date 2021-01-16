@@ -14,15 +14,20 @@
     <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
 
+    <!-- toast Links -->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
     <link rel="stylesheet" href="../css/site.css" />
     <link rel="stylesheet" href="../css/signup-vendor.css" />
+    <script src="../js/signup-vendor.js"></script>
     <script src="../js/common.js"></script>
 </head>
 
 <body>
     <div data-role="page">
         <div role="main" class="ui-content">
-            <div class="icon-container" onclick="goBack()">
+            <div class="icon-container" onclick="navigation('user-selection')">
                 <i class="material-icons">arrow_back_ios</i>
             </div>
             <div class="signup-body-container d-flex">

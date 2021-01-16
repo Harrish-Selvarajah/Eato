@@ -17,8 +17,14 @@
     <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
+
+    <!-- toast Links -->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
     <script src="../js/vendor-review.js"></script>
+    <script src="../js/common.js"></script>
 </head>
 
 <body>
@@ -56,7 +62,7 @@
                         <p class="secondaryText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
                             suscipit ipsum in nulla malesuada.</p>
                     </div> -->
-                </div>
+            </div>
         </div>
 
         <div data-role="popup" class="popup" id="popup-modal" data-theme="a" style="border-radius: 20px;">
@@ -75,6 +81,32 @@
                         <p class="primaryText">Reply</p>
                     </button>
                 </div>
+            </div>
+        </div>
+
+        <div data-role="footer" class="nav-glyphish-example bottom-nav" data-position="fixed" data-tap-toggle="false">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#" data-icon="home" class=" nav-home navbar-btn">Home</a></li>
+                    <li><a href="#" data-icon="grid" class="nav-order navbar-btn">Menu</a></li>
+                    <li><a href="#" data-icon="comment" class="ui-btn-active nav-chat navbar-btn">Chat</a></li>
+                    <li><a href="#" data-icon="star" class="nav-review navbar-btn">Review</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Navbar  -->
+        <div data-role="footer" class="nav-glyphish-example bottom-nav" data-position="fixed" data-tap-toggle="false">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#" data-icon="home" class="nav-home navbar-btn"
+                            onclick="navigation('vendor-home')">Home</a></li>
+                    <li><a href="#" data-icon="grid" class="nav-order navbar-btn"
+                            onclick="navigation('vendor-menu')">Menu</a></li>
+                    <li><a href="#" data-icon="comment" class="nav-chat navbar-btn"
+                            onclick="navigation('chat-vendor')">Chat</a></li>
+                    <li><a href="#" data-icon="star" class="ui-btn-active nav-review navbar-btn"
+                            onclick="navigation('vendor-review')">Review</a></li>
+                </ul>
             </div>
         </div>
 

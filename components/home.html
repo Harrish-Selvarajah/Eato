@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="../css/lightslider.css">
     <link rel="stylesheet" href="../lib/jquery.mobile-1.4.5.min.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
     <link rel="stylesheet" href="../css/site.css" />
     <link rel="stylesheet" href="../css/home.css" />
@@ -19,7 +19,7 @@
     <script src="../js/common.js"></script>
 
     <!-- jQuery -->
-    <script type="text/javascript" src="../js/JQuery3.3.1.js"></script>
+    <!-- <script type="text/javascript" src="../js/JQuery3.3.1.js"></script> -->
     <script type="text/javascript" src="../js/lightslider.js"></script>
 </head>
 
@@ -41,7 +41,7 @@
                     <li class="item-a">
                         <!-- slider-box -->
                         <div class="box">
-                            <a href="#video-popup" data-rel="popup" data-position-to="window" id=" popup"
+                            <a href="#popup-modal" data-rel="popup" data-position-to="window" id=" popup"
                                 data-transition="pop">
                                 <div style="position: absolute; color: white; top: 76px; font-size: 86px;"
                                     class="material-icons ">play_circle_filled</div>
@@ -85,7 +85,7 @@
                             <img src="../assets/food/indian.jpg">
                         </div>
                         <div class="catogory">
-                            <p class="subtitle">Indian</p>
+                            <p class="subtitle" onclick="food('Indian')">Indian</p>
                         </div>
                     </div>
                     <div class="item">
@@ -93,7 +93,7 @@
                             <img src="../assets/food/bakery.jpg">
                         </div>
                         <div class="catogory">
-                            <p class="subtitle">Bakery</p>
+                            <p class="subtitle" onclick="food('Bakery')">Bakery</p>
                         </div>
                     </div>
                     <div class="item">
@@ -101,7 +101,7 @@
                             <img src="../assets/food/Desserts.jpg">
                         </div>
                         <div class="catogory">
-                            <p class="subtitle">Dessert</p>
+                            <p class="subtitle" onclick="food('Dessert')">Dessert</p>
                         </div>
                     </div>
                     <div class="item">
@@ -109,7 +109,7 @@
                             <img src="../assets/food/italian.jpg">
                         </div>
                         <div class="catogory">
-                            <p class="subtitle">Italian</p>
+                            <p class="subtitle" onclick="food('Italian')">Italian</p>
                         </div>
                     </div>
                     <div class="item">
@@ -117,13 +117,13 @@
                             <img src="../assets/food/Burger.jpg">
                         </div>
                         <div class="catogory">
-                            <p class="subtitle">Burger</p>
+                            <p class="subtitle" onclick="food('Burger')">Burger</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="catogory-title">
-                <h3>Indian Foods </h1>
+                <h3 id="food-type">Indian Foods </h1>
             </div>
             <div class="section">
                 <div class="section-card" onclick="goToVendor(1)">
@@ -168,12 +168,35 @@
                 </div>
             </div>
             <!-- Video popup -->
-            <div data-role="popup" id="video-popup" data-theme="a" class="video-popup">
-                <div style="top: 20px;position: absolute;">Promo Video</div>
-                <video width="300" height="200" controls>
-                    <source src="../assets/video/promoVideo.mp4" type="video/mp4">
-                    <source src="movie.ogg" type="video/ogg">
-                </video>
+            <div data-role="popup" class="popup" id="popup-modal" data-theme="a" style="border-radius: 20px; ">
+                <div class="popup-header">
+                    <i id="close-popup" class=" material-icons">close</i>
+                    <h4>Promo Video</h4>
+                </div>
+                <div class="popup-body">
+                   <div class="popup-video-iPad">
+                    <video width="500" height="290" controls>
+                        <source src="../assets/video/promoVideo.mp4" type="video/mp4">
+                        <source src="movie.ogg" type="video/ogg">
+                    </video>
+                   </div>
+                   <div class="popup-video-iPhone">
+                    <video width="300" height="200" controls>
+                        <source src="../assets/video/promoVideo.mp4" type="video/mp4">
+                        <source src="movie.ogg" type="video/ogg">
+                    </video>
+                   </div>
+                   <div class="popup-iPhone5">
+                    <video width="250" height="160" controls>
+                        <source src="../assets/video/promoVideo.mp4" type="video/mp4">
+                        <source src="movie.ogg" type="video/ogg">
+                    </video>
+                   </div>
+                </div>
+                <div class="popup-details">
+                    <h5 style="color: #333;">Melt House Promo Code :</h5>
+                    <h5 style="color: #FD6921;">VCOFF50</h5>
+                </div>
             </div>
 
             <!-- Footer -->

@@ -13,6 +13,7 @@
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script src="../js/order-status.js"></script>
+    <script src="../js/common.js"></script>
     <title>Order Status</title>
 </head>
 <body>
@@ -22,7 +23,7 @@
         </div>
         <div data-role="header" data-postion="fixed" data-fullscreen="true" class="header-bar">
             <!-- <img src="../assets/logo new.svg"> -->
-            <i class="arrow arrow-left"></i>
+            <i class="arrow arrow-left" onclick="navigation('order')"></i>
             <h4>Order Status</h4>
         </div>
 
@@ -46,7 +47,7 @@
                    </div>
 
                    <div class="chat-container">
-                           <i class=" material-icons">chats</i>
+                           <i class=" material-icons" onclick="navigation('customer-chat')">chats</i>
                    </div>
                 </div>
         </div>

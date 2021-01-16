@@ -1,95 +1,64 @@
-// var chats = [
-//         {
-//             orderID: 1,
-//             cusotmerName: 'Kamala Harris',
-//             vendorName: 'Melt House',
-//             time: '',
-//             message: 'Dear Customer? Do you have any concerns with your order?',
-//             type: 'v'
-//         },
-//         {
-//             orderID: 1,
-//             cusotmerName: 'Kamala Harris', 
-//             vendorName: 'Melt House',
-//             time: '',
-//             message: 'How long will it take to prepare the order ?',
-//             type: 'c'
-//         },
-//         {
-//             orderID: 1,
-//             cusotmerName: 'Kamala Harris',
-//             vendorName: 'Melt House',
-//             time: '',
-//             message: "Your order will ready in 30 mins",
-//             type: 'v'
-//         },
-//         {
-//             orderID: 1,
-//             cusotmerName: 'Kamala Harris',
-//             vendorName: 'Melt House',
-//             time: '',
-//             message: "Thank You, I'm waiting",
-//             type: 'c'
-//         },
-//         {
-//             orderID: 1,
-//             cusotmerName: 'Kamala Harris',
-//             vendorName: 'Melt House',
-//             time: '',
-//             message: "Your welcome, enjoy your meal as it arrives", 
-//             type: 'v'
-//         },
-//         {
-//             orderID: 1,
-//             cusotmerName: 'Kamala Harris',
-//             vendorName: 'Melt House',
-//             time: '',
-//             message: "Cool !!!",
-//             type: 'c'
-//         }
-    
-// ];
+
 var chats = [];
+var users = [];
+var customerName = "";
+var uniqueNames = [];
 
 $(document).ready(function() {
     // sessionStorage.setItem('chats', JSON.stringify(chats));
+    
+    console.log(sessionStorage);
     chats = JSON.parse(sessionStorage.getItem('chats'));
     console.log(chats);
-    renderMessagesVend();
+    renderChatList();
+    renderMessagesVend('first');
 });
 
-// function renderMessagesCust() {
-//     var renderHtml = "";
-//     var renderHtml2 = "";
-//     $('#render-message-vend').empty();
-//     chats.forEach(function(chat) {
-//         if (chat.type == 'v') {
-//            renderHtml += `<div id="render-message-vend">
-//            <div class="recieved-message" >
-//            <span class="primaryText">${chat.message}</span>
-//        </div>
-//        </div>
-//         `
-//         } else {
-//             renderHtml += `
-//         <div id="render-message-cust">
-//             <div class="sent-message">
-//                 <div>
-//                     <span class="primaryText">${chat.message}</span>
-//                 </div>
-//             </div>
-//         </div>`
-//         }
-//     })
-//     $('#render-message-vend').append(renderHtml);
-//     // $('#render-message-cust').append(renderHtml2);
-// }
+function renderChatList() {
+    var renderHtml = "";
+    var vendorName = JSON.parse(sessionStorage.getItem('vendorObj')).name;
+    chats.forEach(function(user) {
+        if (user.vendorName === vendorName) {
+            users.push(user.cusotmerName)
+        }
+    })
+    // users = chats.filter(function (item) {return item.vendorName == vendorName});
+    $.each(users, function(i, el){
+        if($.inArray(el, uniqueNames) === -1) uniqueNames.push(el);
+    });
+    $('chat-list').empty();
+    uniqueNames.forEach(function(u) {
+        renderHtml += `    <div onclick=openChat('${u}') class="chat-profile">
+        <div class="selection">
+            <div class="customer-profile-pic-container">
+                <div class="profile-pic"></div>
+            </div>
+            <div class="customer-details">
+                <h3>${u}</h3> 
+            </div>
+        </div>
+    </div>`
+    })
+    $('#chat-list').append(renderHtml);
+}
 
-function renderMessagesVend() {
+function renderMessagesVend(name) {
     var renderHtml = "";
     var renderHtml2 = "";
+    var fchats = [];
+    var ffchats = [];
+    
+    if (name === 'first') {
+        customerName = uniqueNames[0];
+    } else {
+        customerName = name;
+    }
+    var vendorName = JSON.parse(sessionStorage.getItem('vendorObj')).name;
+    fchats = chats.filter(function (item) {return item.vendorName == vendorName});
+    ffchats = fchats.filter(function (item) {return item.cusotmerName == customerName});
+     $('#customer-name').text(customerName);
     $('#render-message-cust').empty();
-    chats.forEach(function(chat) {
+    ffchats.forEach(function(chat) {
         if (chat.type == 'c') {
            renderHtml += ` <div id="render-message-cust">
            <div class="recieved-message">
@@ -112,41 +81,54 @@ function renderMessagesVend() {
     // $('#render-message-cust').append(renderHtml2);
 }
 
-// function sendMessageCustomer() {
-//     var userObj = JSON.parse(sessionStorage.getItem('userobj'));
-//     var vendorId = sessionStorage.getItem('vendorID');
-//     var message = $('#message').val();
-//     var vendorName = "";
-//     if (vendorId == 1) {
-//         vendorName = 'Melt House';
-//     }
-//     chat = {
-//         orderID: 1,
-//         cusotmerName: userObj.name,
-//         vendorName: 'Melt House',
-//         time: '',
-//         message: message,
-//         type: 'c'
-//     }
-//     chats.push(chat);
-//     sessionStorage.setItem('chats', JSON.stringify(chats));
-//     renderMessages();
-// }
+function openChat(name) {
+    $('#render-message-cust').empty();
+    var renderHtml = "";
+    var renderHtml2 = "";
+    var fchats = [];
+    var ffchats = [];
+    customerName = name;
+    var vendorName = JSON.parse(sessionStorage.getItem('vendorObj')).name;
+    fchats = chats.filter(function (item) {return item.vendorName == vendorName});
+    ffchats = fchats.filter(function (item) {return item.cusotmerName == name});
+    $('#customer-name').text(customerName);
+    ffchats.forEach(function(chat) {
+        if (chat.type == 'c') {
+           renderHtml += `<div id="render-message-cust">
+           <div class="recieved-message">
+               <span class="primaryText">${chat.message}</span>
+           </div>
+       </div>
+        `
+        } else {
+            renderHtml += `
+            <div id="render-message-vend">
+                        <div class="sent-message">
+                            <div>
+                                <span class="primaryText">${chat.message}</span>
+                            </div>
+                        </div>
+                    </div>`
+        }
+    })
+    $('#render-message-cust').append(renderHtml);
+    // $('#render-message-cust').append(renderHtml2);
+}
 
 function sendMessageVendor() {
     var vendorId = sessionStorage.getItem('vendorID');
     var message = $('#message').val();
-    var vendorName = "";
+    var vendorName = JSON.parse(sessionStorage.getItem('vendorObj')).name;
     chat = {
         orderID: 1,
-        cusotmerName: 'Kamala Harris',
-        vendorName: 'Melt House',
+        cusotmerName: customerName,
+        vendorName: vendorName,
         time: '',
         message: message,
         type: 'v'
     }
     chats.push(chat);
     sessionStorage.setItem('chats', JSON.stringify(chats));
-    renderMessagesVend();
+    renderMessagesVend(customerName);
 }
 
