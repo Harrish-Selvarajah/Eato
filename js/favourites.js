@@ -71,6 +71,7 @@ function loadDisplayData() {
     var favouriteList;
     try {
         favouriteList = JSON.parse(sessionStorage.getItem('userobj')).favourites;
+        console.log(JSON.parse(sessionStorage.getItem('userobj')))
     } catch (e) {
         loadFavListFromFirebase();
     }
