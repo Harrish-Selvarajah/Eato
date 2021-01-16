@@ -469,7 +469,7 @@ function contentEmptyoperations() {
     } else {
         $('#fav-checkbox').css("display", "none")
 
-        emptyContent = `<div id="fav-empty" style="display:flex; margin-top:10%; align-content:center; justify-content:center; flex-direction:column">
+        emptyContent = `<div id="fav-empty" style="display:flex; margin-top:180px; align-content:center; justify-content:center; flex-direction:column">
           <span class="iconify" data-icon="mdi:heart-broken" data-inline="false" style="margin-bottom:20px; margin-left:auto; margin-right:auto;"></span>                         
                                     <h4 style="text-align:center;">No favourites found</h4>
                           </div>`
