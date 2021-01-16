@@ -431,7 +431,6 @@ var foodQuantity = 1;
 var vendorID = 0;
 
 $(document).ready(function () {
-    console.log('food-item');
     $('#display-quantity').text(foodQuantity);
     $(window).on('resize', function () {
         var win = $(this);
@@ -584,17 +583,12 @@ function addToCart(id) {
                     cart.push(items);
                 }
             })
-            console.log(cart);
             sessionStorage.setItem('cart', JSON.stringify(cart));
-            console.log(sessionStorage);
-            document.location.href = "./customer-vendor.html";
         }
     })
 
     toastr.success('Added To Cart', 'Success');
-    console.log(cart);
     sessionStorage.setItem('cart', JSON.stringify(cart));
-    console.log(sessionStorage);
 
     if (!detectMobileWithAgent()) {
         $("#food-item-popup").popup("close");
@@ -637,7 +631,6 @@ function renderPopup(foodId) {
     vendor.forEach(function (x) {
         if (x.id == Number(vendorID)) {
             x.foodItems.forEach(function (y) {
-                console
                 if (foodId == y.id) {
                     renderHtml += `<div class="fipw-item-bg">
                             <img src="${y.foodPicture}">
@@ -689,15 +682,12 @@ function quantity(operation) {
     var oriQuantity = $('#display-quantity').value;
     var oriQuantity = document.getElementById('display-quantity').value;
     var vallue = $('#display-quantity').html();
-    console.log(vallue, 'val');
     var x;
     if (operation == 'plus') {
-        console.log('plus');
         x = foodQuantity = foodQuantity + 1;
         $('#display-quantity').text(x);
     } else
         if (operation == 'minus') {
-            console.log('minus');
             x = foodQuantity = foodQuantity - 1;
             $('#display-quantity').text(x);
         }
