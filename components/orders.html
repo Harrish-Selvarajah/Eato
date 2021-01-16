@@ -1,0 +1,228 @@
+<html>
+
+<head>
+    <title>Orders | Eato</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <link rel="stylesheet" href="../css/site.css" />
+    <link rel="stylesheet" href="../css/orders.css" />
+    <script src="../js/orders.js"></script>
+    <script src="../js/common.js"></script>
+</head>
+
+<body>
+    <div data-role="page">
+        <div data-role="header" data-postion="fixed" data-fullscreen="true" class="header-bar">
+            <img src="../assets/logo new.svg">
+            <!-- <i class="arrow arrow-left"></i> -->
+            <h4></h4>
+        </div>
+        <div role="main" class="ui-content ui-content-header">
+            <div class="main-container">
+                <!-- <<Ongoing Order>> -->
+
+                <div class="order-item ongoing-order" id="ongoing-order">
+                    <div class="order-item-details">
+                        <div class="store-details">
+                            <div class="layer"></div>
+                            <div>
+                                <h3 id="vendor-name"></h3>
+                                <a class="secondaryText">View Store</a>
+                            </div>
+                        </div>
+                        <div class="order-details">
+                            <div class="order-status d-flex">
+                                <div>
+                                    <div class="d-flex">
+                                        <i class="material-icons">check_circle_outline</i>
+                                        <p class="subtitle">Order delivered</p>
+                                    </div>
+                                    <h4>On Going</h4>
+                                    <p class="secondaryText">Order #E3B47</p>
+                                </div>
+                                <div>
+                                    <div class="action-btn">
+                                        <button type="button" onclick="navigation('order-status')">
+                                            <p class="primaryText">Track Order</p>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="item-details" id="repeat-ongoing-order-items">
+                                <!-- <div class="d-flex">
+                                            <div class="quantity infoText">1</div>
+                                            <span>Yellow Rice With Chicken Meatballs</span>
+                                        </div>
+                                        <div class="d-flex">
+                                            <div class="quantity infoText">1</div>
+                                            <span>Fried Rice</span>
+                                        </div> -->
+                            </div>
+                            <hr />
+                            <div class="order-total d-flex">
+                                <h4>Total</h4>
+                                <h4 id="ongoing-price"></h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-divider"></div>
+                </div>
+                <!-- <<Ongoing Order End>> -->
+
+                <!-- <<Past Orders>> -->
+                <div id="repeat-past-orders">
+                    <div class="order-item">
+                        <div class="order-item-details">
+                            <div class="store-details">
+                                <div class="layer"></div>
+                                <div>
+                                    <h3>Melt House</h3>
+                                    <a class="secondaryText">View Store</a>
+                                </div>
+                            </div>
+                            <div class="order-details">
+                                <div class="order-status d-flex">
+                                    <div>
+                                        <div class="d-flex">
+                                            <i class="material-icons">check_circle_outline</i>
+                                            <p class="subtitle">Order delivered</p>
+                                        </div>
+                                        <h4>On Going</h4>
+                                        <p class="secondaryText">Order #E3B47</p>
+                                    </div>
+                                    <div>
+                                        <div class="action-btn">
+                                            <button type="button" onclick="orderAgain(1)">
+                                                <p class="primaryText">Order Again</p>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="item-details" id="repeat-past-items">
+                                    <div class="d-flex">
+                                        <div class="quantity infoText">1</div>
+                                        <span class="primaryText">Yellow Rice With Chicken Meatballs</span>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="quantity infoText">1</div>
+                                        <span class="primaryText">Fried Rice</span>
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="order-total d-flex">
+                                    <h4>Total</h4>
+                                    <h4>Rs 1500.00</h4>
+                                </div>
+                                <div>
+                                    <button type="button" onclick="rateVendor(1)">
+                                        <p class="primaryText">RATE VENDOR</p>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="order-divider"></div>
+                    </div>
+
+                    <div class="order-item">
+                        <div class="order-item-details">
+                            <div class="store-details">
+                                <div class="layer"></div>
+                                <div>
+                                    <h3>Melt House</h3>
+                                    <a class="secondaryText">View Store</a>
+                                </div>
+                            </div>
+                            <div class="order-details">
+                                <div class="order-status d-flex">
+                                    <div>
+                                        <div class="d-flex">
+                                            <i class="material-icons">check_circle_outline</i>
+                                            <p class="subtitle">Order delivered</p>
+                                        </div>
+                                        <h4>On Going</h4>
+                                        <p class="secondaryText">Order #E3B47</p>
+                                    </div>
+                                    <div>
+                                        <div class="action-btn">
+                                            <button type="button">
+                                                <p class="primaryText">Order Again</p>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="item-details">
+                                    <div class="d-flex">
+                                        <div class="quantity infoText">1</div>
+                                        <span class="primaryText">Yellow Rice With Chicken Meatballs</span>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="quantity infoText">1</div>
+                                        <span class="primaryText">Fried Rice</span>
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="order-total d-flex">
+                                    <h4>Total</h4>
+                                    <h4>Rs 1500.00</h4>
+                                </div>
+                                <div>
+                                    <button type="button" onclick="rateVendor('m2')">
+                                        <p class="primaryText">RATE VENDOR</p>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="order-divider"></div>
+                    </div>
+                </div>
+                <!-- <<Past Orders End>> -->
+            </div>
+        </div>
+        <div data-role="footer" class="footer">
+            <div class="footer-top">
+                <div class="footer-left">
+                    <h4>Contact</h4>
+                    <p class="secondaryText"><a href="mailto:info@eato.eat">info@eato.eat</a></p>
+                    <br>
+                    <h4>Address</h4>
+                    <p class="secondaryText">50, Chez Road, Panisse</p>
+                </div>
+                <div class="footer-right">
+                    <img src="../assets/logo/eoto_logo_light.png">
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <i class="material-icons">account_circle</i>
+                <i class="material-icons">account_circle</i>
+                <i class="material-icons">account_circle</i>
+                <p class="footer-copyrights infoText">© 2021 Eato. All Rights Reserved.</p>
+            </div>
+        </div>
+
+        <div data-role="footer" class="nav-glyphish-example bottom-nav" data-position="fixed" data-tap-toggle="false">
+            <div data-role="navbar" data-grid="d" data-theme="a">
+                <ul>
+                    <li><a href="#" data-icon="home" class="nav-home navbar-btn" onclick="navigation('home')">Home</a>
+                    </li>
+                    <li><a href="#" class="nav-search navbar-btn" data-icon="search"
+                            onclick="navigation('search')">Search</a></li>
+                    <li><a href="#" data-icon="shop" class="nav-cart navbar-btn" onclick="navigation('cart')">Cart</a>
+                    </li>
+                    <li><a href="#" data-icon="grid" class="ui-btn-active nav-order navbar-btn"
+                            onclick="navigation('order')">Order</a></li>
+                    <li><a href="#" data-icon="user" class="nav-profile navbar-btn"
+                            onclick="navigation('profile')">Profile</a></li>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

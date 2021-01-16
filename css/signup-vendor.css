@@ -1,0 +1,110 @@
+/* .signup-body-container>div {
+    flex: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */
+
+.left-section {
+    flex: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.middle-section {
+    display: none;
+}
+
+.right-section {
+    flex: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.signup-body-container>div:not(:first-child) {
+    background-color: #F9F9F9;
+}
+
+.signup-body-container>div:not(:first-child)>img {
+    height: 240px;
+    margin: 25px;
+}
+
+.signup-body-container>div:not(:first-child)>h1 {
+    color: #37474F
+}
+
+.signup-body-container>div:first-child>div>h1 {
+    color: #37474F;
+    margin-bottom: 25px;
+}
+
+.signup-btn {
+    margin-top: 35px;
+    text-align: center;
+}
+
+.to-login-text>a {
+    color: #FD6921;
+}
+
+.img-curve {
+    display: none;
+}
+
+.ui-content .icon-container {
+    left: 15px!important;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ui-content .icon-container .material-icons {
+    color: #FD6921;
+    font-size: 20px;
+    text-shadow: none;
+    position: relative;
+    top: 0px;
+    left: 4px;
+}
+
+@media only screen and (max-width: 700px) {
+    .signup-body-container {
+        flex-direction: column-reverse;
+    }
+    .left-section {
+        padding: 20px;
+        min-height: 70vh !important;
+        justify-content: unset !important;
+    }
+    .middle-section {
+        display: flex !important;
+        background-color: unset !important;
+        min-height: 10vh !important;
+    }
+    .right-section {
+        justify-content: unset !important;
+        min-height: 20vh !important
+    }
+    .signup-img {
+        height: 160px !important;
+        margin: 0px !important;
+    }
+    .img-curve {
+        display: flex !important;
+        width: 100% !important;
+        height: unset !important;
+        margin: unset !important;
+    }
+}

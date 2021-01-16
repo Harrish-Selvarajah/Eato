@@ -1,0 +1,119 @@
+.review-desc {
+    text-align: center;
+    /* padding: 25; */
+}
+
+.stars {
+    text-align: center;
+    padding: 25;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.comment-box {
+    border-radius: 5px;
+    height: 300px;
+}
+
+.text-area {
+    min-height: 215px!important;
+    height: unset!important;
+    border: 1px solid #707070;
+    border-radius: 20px;
+    padding: 10px!important;
+}
+
+.items {
+    display: flex;
+    overflow: auto;
+}
+
+.items::-webkit-scrollbar {
+    display: none;
+}
+
+.items .item {
+    min-width: 150px;
+    height: 60px;
+    background-color: #fff;
+    margin: 10px;
+    border-radius: 35px;
+    box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.28);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.circle {
+    margin: 10px;
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+    background-color: red;
+}
+
+.button-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit-btn {
+    width: 289px;
+    height: 41px;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 20px;
+}
+
+.submit-button {
+    display: flex;
+    justify-content: center;
+}
+
+.write-review-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px!important;
+}
+
+/* Rating Star Widgets Style */
+
+.rating-stars ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 30px 0px 30px 0px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+.rating-stars ul>li.star {
+    display: inline-block;
+}
+
+/* Idle State of the stars */
+
+.rating-stars ul>li.star>i.fa {
+    font-size: 2.5em;
+    /* Change the size of the stars */
+    color: #ccc;
+    /* Color on idle state */
+}
+
+/* Hover state of the stars */
+
+.rating-stars ul>li.star.hover>i.fa {
+    color: #FFCC36;
+}
+
+/* Selected state of the stars */
+
+.rating-stars ul>li.star.selected>i.fa {
+    color: #FF912C;
+}
+
+.text-center {
+    text-align: center;
+}

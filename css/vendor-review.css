@@ -1,0 +1,153 @@
+.cards {
+  border-radius: unset;
+  margin: 0px 15px 30px 15px;
+}
+
+.review-item {
+  padding: 15px;
+  min-height: 125px;
+  max-height: 230px;
+  margin-bottom: 30px;
+}
+
+.reply {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.reply>a {
+  color: #FD6921;
+}
+
+.profile-pic-container {
+  border: 3.5px solid #FD6921;
+  min-width: 90px;
+  min-height: 90px;
+  max-width: 90px;
+  max-height: 90px;
+  border-radius: 50%;
+  padding: 4px;
+  margin-right: 20px;
+}
+
+.profile-pic {
+  background-image: url(../assets/harrish.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.review-details {
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.review-details>div:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.review {
+  height: 50px;
+  margin-top: 10px;
+  overflow-x: auto;
+}
+
+.vendor-response {
+  background-color: #FD6921;
+  padding: 10px;
+  color: black;
+  text-shadow: none!important;
+}
+
+.stars-container {
+  position: relative;
+  display: inline-block;
+  color: transparent;
+}
+
+.stars-container:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '★★★★★';
+  color: lightgray;
+}
+
+.stars-container:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '★★★★★';
+  color: #FD6921;
+  overflow: hidden;
+}
+
+.stars-0:after {
+  width: 0%;
+}
+
+.stars-10:after {
+  width: 10%;
+}
+
+.stars-20:after {
+  width: 20%;
+}
+
+.stars-30:after {
+  width: 30%;
+}
+
+.stars-40:after {
+  width: 40%;
+}
+
+.stars-50:after {
+  width: 50%;
+}
+
+.stars-60:after {
+  width: 60%;
+}
+
+.stars-70:after {
+  width: 70%;
+}
+
+.stars-80:after {
+  width: 80%;
+}
+
+.stars-90:after {
+  width: 90%;
+}
+
+.stars-100:after {
+  width: 100;
+}
+
+/* .no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(../assets/loader/25.svg) center no-repeat #fff;
+} */
+
+@media (max-width: 767px) {
+  .profile-pic-container {
+    min-width: 70px;
+    min-height: 70px;
+    max-width: 70px;
+    max-height: 70px;
+  }
+}

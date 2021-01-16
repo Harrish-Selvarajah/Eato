@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="../css/site.css" /> -->
+    <link rel="stylesheet" href="../css/order-confirmation.css" />
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+
+    <!-- toast Links -->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+    <script src="../js/order-confirmation.js" defer></script>
+    <script src="../js/common.js"></script>
+
+    <title>Order confirmation</title>
+</head>
+
+<body>
+    <div data-role="page">
+        <div data-role="header" data-postion="fixed" data-fullscreen="true" class="header-bar">
+            <i class="arrow arrow-left" onclick="goBack()"></i>
+            <h4>Order confirmation</h4>
+        </div>
+        <div data-role="main" class="ui-content ui-content-header">
+            <div class="payment-container">
+                <div style="padding: 10px;">
+                    <h4>Select Payment</h4>
+                </div>
+                <div class="slider-container">
+                    <div class="items" id="items">
+                        <div class="item" id="cash" onclick='selectPaymentMethodNow(-1)'>
+                            <img src="../assets/money.png" />
+                            <div>
+                                <p class="primaryText">Pay Cash</p>
+                                <p class="primaryText"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="other-info-container">
+                <div class="loyalty-points">
+                    <div><input type="checkbox" id="add-loyalty" /></div>
+                    <div id="add-loyalty-label"><span class="primaryText">Use Loyalty Points</span></div>
+                </div>
+                <div class="delivery-address">
+                    <div>
+                        <h4> Time to Deliver</h4>
+                    </div>
+                    <div class="d-flex" style="width: 100%; justify-content: space-between">
+                        <div style="display: inline-flex;" class="location-info-container">
+                            <div class="ovrd-icon-container">
+                                <div class="material-icons">access_time</div>
+                            </div>
+                            <div class="location-title-container">
+                                <p class="location-title primaryText"> Quick as possible</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="delivery-address">
+                    <div>
+                        <h4>Delivery Address</h4>
+                    </div>
+                    <div class="d-flex" style="width: 100%; justify-content: space-between">
+                        <div style="display: inline-flex;" class="location-info-container">
+
+                            <div class="ovrd-icon-container">
+                                <span class="material-icons">
+                                    room
+                                </span>
+                            </div>
+                            <div class="location-title-container">
+                                <p class="location-title primaryText" id="location"> 12, Selvarajah Road, Modara,
+                                    Colombo 15</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pricing-and-time-info-container">
+                    <div class="time-info-container">
+                        <div><span class="subtitle">Estimated Delivery Time :</span></div>
+                        <h4>45 mins</h4>
+                    </div>
+                    <div class="price-info-container">
+                        <div><span class="subtitle">Sub Price</span></div>
+                        <h2 id="sub-price-tag"></h2>
+                    </div>
+                    <div class="price-info-container">
+                        <div><span class="subtitle">Discount</span></div>
+                        <h2>-<span id="discount-tag"></span></h2>
+                    </div>
+                    <div class="price-info-container">
+                        <div><span class="subtitle">Total Price</span></div>
+                        <h2><span id="price-tag"></span></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="action-btn submit-btn">
+                <button id="btn-confirm-order" type="button" data-role="button">
+                    <p class="primaryText">Confirm Order</p>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

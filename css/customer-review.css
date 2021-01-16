@@ -1,45 +1,129 @@
-.card-title {
-    text-align: center;
-  
+.cards {
+  border-radius: unset;
 }
 
-.circular_image {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    overflow: hidden;
-    background-color: blue;
-    /* commented for demo
-    float: left;
-    margin-left: 125px;
-    margin-top: 20px;
-    */
-    
-    /*for demo*/
-    display:inline-block;
-    vertical-align:middle;
-  }
-  .circular_image img{
-    width:100%;
-  }
+.review-item {
+  padding: 10px;
+  min-height: 125px;
+  margin-bottom: 15px;
+}
 
-  .outer-circle {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    overflow: hidden;
-    /* background-color: blue; */
-    display: inline-block;
-    vertical-align: middle;
-    border: 1px solid red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.review-details {
+  margin-bottom: 10px;
+  position: relative;
+}
 
-  .feedback-cont {
-    padding-top: 0px;
-    padding-bottom: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
-  }
+.review-details>div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.review-details>div:nth-child(3) {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
+.review-details>div:last-child {
+  display: none;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
+.profile-pic {
+  background-image: url(../assets/harrish.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 65px;
+  height: 65px;
+  border-radius: 50px;
+  margin-right: 10px;
+}
+
+.stars-container {
+  position: relative;
+  display: inline-block;
+  color: transparent;
+}
+
+.stars-container:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '★★★★★';
+  color: lightgray;
+}
+
+.stars-container:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '★★★★★';
+  color: #FD6921;
+  overflow: hidden;
+}
+
+.stars-0:after {
+  width: 0%;
+}
+
+.stars-10:after {
+  width: 10%;
+}
+
+.stars-20:after {
+  width: 20%;
+}
+
+.stars-30:after {
+  width: 30%;
+}
+
+.stars-40:after {
+  width: 40%;
+}
+
+.stars-50:after {
+  width: 50%;
+}
+
+.stars-60:after {
+  width: 60%;
+}
+
+.stars-70:after {
+  width: 70%;
+}
+
+.stars-80:after {
+  width: 80%;
+}
+
+.stars-90:after {
+  width: 90%;
+}
+
+.stars-100:after {
+  width: 100;
+}
+
+.vendor-response {
+  margin-top: 10px;
+  background-color: #FD6921;
+  padding: 10px;
+  color: black;
+  text-shadow: none!important;
+}
+
+.vendor-response>:first-child {
+  margin-bottom: 5px!important;
+  font-family: "Gilroy-Bold";
+  font-size: 12px!important;
+}
+
+.infoText {
+  font-family: "Gilroy-Light";
+}

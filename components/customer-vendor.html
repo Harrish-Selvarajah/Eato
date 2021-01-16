@@ -1,0 +1,179 @@
+<html>
+
+<head>
+    <title>Vendor</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+
+    <!-- toast Links -->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+    <script src="/js/food-item.js"></script>
+    <link rel="stylesheet" href="../css/site.css" />
+    <link rel="stylesheet" href="../css/customer-vendor.css" />
+    <link rel="stylesheet" href="../css/card-css.css" />
+    <link rel="stylesheet" href="../css/food-item.css" />
+    <script src="../js/customer-vendor.js"></script>
+    <script src="../js/common.js"></script>
+
+
+
+</head>
+
+<body>
+    <div data-role="page">
+        <div data-role="header" data-postion="fixed" data-fullscreen="true" class="header-bar">
+            <!-- <img src="../assets/logo new.svg"> -->
+            <i onclick="navigateToHome()" class="arrow arrow-left"></i>
+            <h4>Vendor</h4>
+        </div>
+        <div role="main" class="ui-content ui-content-header">
+            <div class="main-container">
+                <div class="vendor-bg">
+                    <div class="bookmark">
+                        <h4>50 %</h4>
+                        <h3>OFF</h3>
+                    </div>
+                    <div class="icon-container" id="fav-icon-container">
+                        <i class=" material-icons icon-fav" id="fav-icon">favorite_border</i>
+                        <!-- <i class=" material-icons icon-fav">favorite</i> -->
+                    </div>
+                    <div class="vendor-logo"></div>
+                </div>
+                <div class="vendor-details" id="vendor-details">
+                    <!-- <h1>Melt House</h1>
+                    <div class="vendor-highlights">
+                        <p class="subtitle">Indian, Dosa, Vada</p>
+                        <p class="subtitle">•</p>
+                        <div class="vendor-highlight-rating">
+                            <p class="subtitle">4.1</p>
+                            <i class="material-icons">grade</i>
+                            <p class="subtitle">(</p>
+                            <a class="subtitle" onclick="goToRatings();">10+ ratings</a>
+                            <p class="subtitle">) </p>
+                        </div>
+                        <p class="subtitle">•</p>
+                        <p class="subtitle"> $$</p>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum non ante tristique
+                        rutrum. Vivamus neque turpis,
+                        scelerisque eget dapibus id, dictum ut dui. Nullam placerat porta eros vitae cursus. Aliquam
+                        porttitor, eros non feugiat
+                        dapibus, felis metus condimentum purus, iaculis convallis purus arcu at dolor.</p> -->
+                </div>
+                <div class="vendor-menu">
+                    <h1>Menu</h1>
+                    <section class="menu-items">
+                        <ul id="menu-items">
+                            <!-- <li onclick="handleFoodItemPopup('open', 'm1');" class="food-item">
+                                <div>
+                                    <img src="../assets/food_item.jpg">
+                                </div>
+                                <div class="food-item-details">
+                                    <h4>Cheese Pizza</h4>
+                                    <div>
+                                        <span>Rs</span>
+                                        <span>650</span>
+                                    </div>
+                                </div>
+                            </li> -->
+                        </ul>
+                    </section>
+                </div>
+
+                <div data-role="popup" id="food-item-popup" data-theme="a" class="ui-corner-all"
+                    style="border-radius: 20px;">
+                    <div class="food-item-page-web">
+                        <div class="fipw-item-bg">
+                            <div onclick="handleFoodItemPopup('close', 'null');" class="icon-container icon-close">
+                                <i class=" material-icons">close</i>
+                            </div>
+                        </div>
+                        <div id="render-fooditem-popup">
+
+                            <!-- <div>
+                                <div class="d-flex fipw-item-details">
+                                    <h4>Cheese Pizza</h4>
+                                    <div>
+                                        <span>Rs</span>
+                                        <span>650</span>
+                                    </div>
+                                </div>
+                                <div class="adjust-quantity fipw-food-item-page-quantity">
+                                    <button class="quantity-minus">
+                                        <i class="material-icons">remove</i>
+                                    </button>
+                                    <span id="display-quantity">1</span>
+                                    <button class="quantity-plus">
+                                        <i class="material-icons">add</i>
+                                    </button>
+                                </div>
+                                <div class="fipw-item-description">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum non ante
+                                        tristique
+                                        rutrum.</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="action-btn">
+                                    <button type="button">
+                                        <p class="primaryText">Add To Cart</p>
+                                    </button>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div data-role="footer" class="footer">
+            <div class="footer-top">
+                <div class="footer-left">
+                    <h4>Contact</h4>
+                    <p class="secondaryText"><a href="mailto:info@eato.eat">info@eato.eat</a></p>
+                    <br>
+                    <h4>Address</h4>
+                    <p class="secondaryText">50, Chez Road, Panisse</p>
+                </div>
+                <div class="footer-right">
+                    <img src="../assets/logo/eoto_logo_light.png">
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <i class="material-icons">account_circle</i>
+                <i class="material-icons">account_circle</i>
+                <i class="material-icons">account_circle</i>
+                <p class="footer-copyrights infoText">© 2021 Eato. All Rights Reserved.</p>
+            </div>
+        </div>
+
+        <div data-role="footer" class="nav-glyphish-example bottom-nav" data-position="fixed" data-tap-toggle="false">
+            <div data-role="navbar" data-grid="d" data-theme="a">
+                <ul>
+                    <li><a href="#" data-icon="home" class="ui-btn-active nav-home navbar-btn"
+                            onclick="navigation('home')">Home</a></li>
+                    <li><a href="#" class="nav-search navbar-btn" data-icon="search"
+                            onclick="navigation('search')">Search</a></li>
+                    <li><a href="#" data-icon="shop" class="nav-cart navbar-btn" onclick="navigation('cart')">Cart</a>
+                    </li>
+                    <li><a href="#" data-icon="grid" class="nav-order navbar-btn"
+                            onclick="navigation('order')">Order</a></li>
+                    <li><a href="#" data-icon="user" class="nav-profile navbar-btn"
+                            onclick="navigation('profile')">Profile</a></li>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

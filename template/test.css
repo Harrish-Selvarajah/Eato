@@ -1,0 +1,17 @@
+.blur-filter {
+    /* -webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    -o-filter: blur(2px);
+    -ms-filter: blur(2px); */
+    /* filter: blur(2px); */
+    background-color: rgba(0, 0, 0, 0.2)
+}
+
+
+#y .logo-center-container{
+    margin-top: 0px;
+}
+
+.pop{
+    border-radius: 20px;
+}
