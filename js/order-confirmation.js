@@ -27,7 +27,7 @@ var paymentDefault =
   "type": "master"
 }
 
-selectedPayment = {}
+var selectPaymentMethod = {}
 
 function createCardTokenAndMakePayment() {
 
@@ -194,8 +194,9 @@ $(document).ready(function () {
 
   $('#btn-confirm-order').click(function (e) {
     calculateLoyaltyPoints();
-    if (selectPaymentMethod == null || selectPaymentMethod == {}) {
-
+    console.log(selectPaymentMethod)
+    if (Object.keys(selectPaymentMethod).length == 0) {
+        toastr["warning"]("Payment type not selected", "Warning!")
     } else {
       if (selectPaymentMethod.type == 'cash') {
         document.location.href = '../components/order-status.html'
