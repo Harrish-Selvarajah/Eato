@@ -516,43 +516,40 @@ function renderFooditem() {
         if (x.id == Number(vendorID)) {
             x.foodItems.forEach(function (y) {
                 if (foodId == y.id) {
-                    // $('.item-bg').css('background-image', `url(../assets/food_item.jpg)`);
                     renderHtml += `<div class="main-container food-item-page">
-               <div class="item-bg"></div>
-               <div class="d-flex item-details">
-                   <h4 id="food-name">${y.name}</h4>
-                   <div>
-                       <span>Rs</span>
-                       <span id="price">${y.price}</span>
-                   </div>
-               </div>
-               <div class="adjust-quantity food-item-page-quantity">
-                   <button class="quantity-minus" onclick="quantity('minus')">
-                       <i class="material-icons">remove</i>
-                   </button>
-                   <span id="display-quantity" class="subtitle">1</span>
-                   <button class="quantity-plus" onclick="quantity('plus')">
-                       <i class="material-icons">add</i>
-                   </button>
-               </div>
-               <div class="item-description">
-                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum non ante tristique
-                       rutrum.</p>
-               </div>
-               <div>
-                   <div>
-                       <div class="action-btn">
-                           <button type="button" onclick="addToCart('${y.id}')">
-                               <p class="primaryText">Add To Cart</p>
-                           </button>
-                       </div>
-                   </div>
-               </div>
-           </div>`
-                    //    $('.item-bg').css('background-image', `url(../assets/food_item.jpg)`);
-                    document.getElementsByClassName('item-bg').style.backgroundImage = 'url("../assets/food_item.jpg")';
+                                        <div class="item-bg">
+                                            <img src="${y.foodPicture}">
+                                        </div>
+                                        <div class="d-flex item-details">
+                                            <h4 id="food-name">${y.name}</h4>
+                                            <div>
+                                                <span>Rs</span>
+                                                <span id="price">${y.price}</span>
+                                            </div>
+                                        </div>
+                                        <div class="adjust-quantity food-item-page-quantity">
+                                            <button class="quantity-minus" onclick="quantity('minus')">
+                                                <i class="material-icons">remove</i>
+                                            </button>
+                                            <span id="display-quantity" class="subtitle">1</span>
+                                            <button class="quantity-plus" onclick="quantity('plus')">
+                                                <i class="material-icons">add</i>
+                                            </button>
+                                        </div>
+                                        <div class="item-description">
+                                            <p>${y.description}</p>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <div class="action-btn">
+                                                    <button type="button" onclick="addToCart('${y.id}')">
+                                                        <p class="primaryText">Add To Cart</p>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>`
                 }
-
             })
             $('#render-food-item').append(renderHtml);
         }
@@ -581,7 +578,8 @@ function addToCart(id) {
                         foodName: item.name,
                         price: item.price,
                         quantity: foodQuantity,
-                        totalPrice: 0
+                        totalPrice: 0,
+                        image: item.foodPicture
                     }
                     cart.push(items);
                 }
@@ -639,35 +637,46 @@ function renderPopup(foodId) {
     vendor.forEach(function (x) {
         if (x.id == Number(vendorID)) {
             x.foodItems.forEach(function (y) {
+                console
                 if (foodId == y.id) {
-                    renderHtml += `<div class="d-flex fipw-item-details">
-                    <h4>${y.name}</h4>
-                    <div>
-                        <span>Rs</span>
-                        <span>${y.price}</span>
-                    </div>
-                </div>
-                <div class="adjust-quantity fipw-food-item-page-quantity">
-                    <button class="quantity-minus" onclick="quantity('minus')">
-                        <i class="material-icons">remove</i>
-                    </button>
-                    <span id="display-quantity" class="subtitle">1</span>
-                    <button class="quantity-plus" onclick="quantity('plus')">
-                        <i class="material-icons">add</i>
-                    </button>
-                </div>
-                <div class="fipw-item-description">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum non ante
-                        tristique
-                        rutrum.</p>
-                </div>
-                <div>
-                                <div class="action-btn">
-                                    <button type="button"  onclick="addToCart('${y.id}')">
-                                        <p class="primaryText">Add To Cart</p>
-                                    </button>
+                    renderHtml += `<div class="fipw-item-bg">
+                            <img src="${y.foodPicture}">
+                            <div onclick="handleFoodItemPopup('close', 'null');" class="icon-container icon-close">
+                                <i class=" material-icons">close</i>
+                                    </div>
                                 </div>
-                            </div>`
+                                <div>
+                                    <div>
+                                        <div class="d-flex fipw-item-details">
+                                            <h4>${y.name}</h4>
+                                            <div>
+                                                <span>Rs</span>
+                                                <span>${y.price}</span>
+                                            </div>
+                                        </div>
+                                        <div class="adjust-quantity fipw-food-item-page-quantity">
+                                            <button class="quantity-minus" onclick="quantity('minus')">
+                                                <i class="material-icons">remove</i>
+                                            </button>
+                                            <span id="display-quantity">1</span>
+                                            <button class="quantity-plus" onclick="quantity('plus')">
+                                                <i class="material-icons">add</i>
+                                            </button>
+                                        </div>
+                                        <div class="fipw-item-description">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum non ante
+                                                tristique
+                                                rutrum.</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="action-btn">
+                                            <button type="button" onclick="addToCart('${y.id}')">
+                                                <p class="primaryText">Add To Cart</p>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>`
                 }
             })
             $('#render-fooditem-popup').append(renderHtml);

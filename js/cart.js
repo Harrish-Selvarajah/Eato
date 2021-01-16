@@ -49,7 +49,7 @@ function repeat() {
         <!-- Start Item -->
         <div class="cards cart-item">
             <div>
-                <img src="../assets/food_item.jpg">
+                <img src="${item.image}">
             </div>
             <div class="food-item-details">
                 <h4>${item.foodName}</h4>
