@@ -9,32 +9,20 @@
 }
 
 .bookmark {
+    top: -1px;
+    left: 37px;
     color: white;
-    background-color: #FD6921;
+    height: 104px;
+    width: 67px;
     position: absolute;
-    left: 20px;
-    width: 70px;
-    height: 120px;
-    border-top: solid 2px #FD6921;
-    border-left: solid 2px #FD6921;
-    border-right: solid 2px #FD6921;
+    background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.bookmark:before {
-    content: '';
-    background: #FD6921;
-    position: absolute;
-    top: 95px;
-    left: 8px;
-    width: 50px;
-    height: 50px;
-    border-top: solid 2px #FD6921;
-    border-left: solid 2px #FD6921;
-    transform: rotate(45deg);
+    background-image: url("../assets/discount_img.png");  
 }
 
 .vendor-logo {
@@ -251,5 +239,18 @@
     }
     .vendor-highlight-rating {
         justify-content: center;
+    }
+
+    .bookmark{
+        top: -1 !important;
+        left: 14px !important;
+        height: 92px !important;
+        width: 55px !important;
+    }
+    .bookmark h3{
+        font-size: 15px!important;
+    }
+    .bookmark h4{
+        font-size: 15px!important;
     }
 }
