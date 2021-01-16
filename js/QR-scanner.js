@@ -1,4 +1,5 @@
 $(document).on('pageinit', '#qr-scanner', function () {
+  // debugger
   const qrcode = window.qrcode;
 
   var video = document.createElement("video");
@@ -13,10 +14,11 @@ $(document).on('pageinit', '#qr-scanner', function () {
   let scanning = false;
 
   qrcode.callback = res => {
+    // debugger;
     if (res) {
-      outputData.innerText = res;
+      outputData.innerText = 'Hooray!! You have recieved' + ' ' + res + ' ' + 'points.';
       scanning = false;
-
+      console.log( res);
       video.srcObject.getTracks().forEach(track => {
         track.stop();
       });
@@ -24,6 +26,7 @@ $(document).on('pageinit', '#qr-scanner', function () {
       qrResult.hidden = false;
       canvasElement.hidden = true;
       //   btnScanQR.hidden = false;
+      $('#popup-modal').popup('open');
       sessionStorage.setItem('loyaltyPoints', loyaltyPoints);
     }
   };
@@ -33,7 +36,7 @@ $(document).on('pageinit', '#qr-scanner', function () {
     .getUserMedia({ video: { facingMode: "environment" } })
     .then(function (stream) {
       scanning = true;
-      qrResult.hidden = true;
+      // qrResult.hidden = true;
       // btnScanQR.hidden = true;
       canvasElement.hidden = false;
       video.setAttribute("playsinline", true); // required to tell iOS safari we don't want fullscreen
