@@ -9,6 +9,10 @@ $(document).ready(function () {
         $('.logo-center-container').css('margin-top','0px')
         $('.ui-content').css('min-height','0px')
     }
+
+    $("#close-popup").click(function(){
+        $("#popup-modal").popup("close");
+    })
 })
 
 
