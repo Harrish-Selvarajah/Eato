@@ -61,7 +61,7 @@ var vendor = [
     },
     {
         id: 2,
-        rating: 5,
+        rating: 3,
         name: 'Suburban Kitchen',
         foodItems: [
             {
