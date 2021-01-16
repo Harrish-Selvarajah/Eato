@@ -103,3 +103,65 @@
     height: 30px;
 }
 
+/* popup styles start */
+
+.popup {
+    min-height: 425px;
+    width: 561px;
+}
+.popup-body{
+    display: flex;
+    justify-content: center;
+}
+
+.popup-video-iPhone{
+    display: none;
+   
+}
+
+.popup-iPhone5{
+    display: none;
+}
+
+.popup-video-iPad{
+    display: unset;
+}
+
+.popup-details{ 
+    display: flex;
+    justify-content: center;
+}
+@media only screen and (max-width: 700px) {
+    .popup {
+        min-height: 330px;
+        width: 335px;
+        position: relative;
+    }
+    .popup-iPhone5{
+        display: none;
+    }
+
+    .popup-video-iPhone{
+        display: unset !important;       
+    }
+    
+    .popup-video-iPad{
+        display: none !important;
+    }
+}
+
+/* iPhone 5 */
+@media only screen and (max-width: 320px)  {
+    .popup {
+        min-height: 279px !important;
+        width: 283px !important;
+    }
+    .popup-iPhone5{
+        display: flex !important;
+    }
+    .popup-video-iPhone{
+        display: none !important;       
+    }
+}
+
+/* popup styles end */
