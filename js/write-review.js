@@ -44,6 +44,13 @@ $(document).ready(function () {
     ratingValue = parseInt($('#stars li.selected').last().data('value'), 10);
 
   });
+
+  var popup = getUrlParameter('popup')
+
+  if(popup == true || popup == "true"){
+    $('#header-bar').hide()
+    $('#main').css('margin','0px')
+  }
 });
 
 function writeUserData() {
@@ -71,7 +78,18 @@ function writeUserData() {
         toastr.error('Unable To Send Review', 'Error');
       } else {
         toastr.success('Review Sent', 'Success');
-        setTimeout(function () { document.location.href = "./orders.html"; }, 500);
+
+        var popup = getUrlParameter('popup')
+        setTimeout(function () { 
+          if(popup == true || popup == "true"){
+            parent.document.getElementById("close").click()
+           // console.log($(document).parents().find('#close'))
+          }else{
+            document.location.href = "./orders.html";
+          }
+         }, 1000);
+
+        
       }
     });
   }
