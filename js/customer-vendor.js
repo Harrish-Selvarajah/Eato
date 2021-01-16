@@ -9,11 +9,18 @@ $(document).ready(function () {
         addOrRemoveFavourites(vendorID);
     })
 
-
+    $('#close').click(function (e) { 
+        $('#review-popup').popup('close') 
+    });
 });
 
 function goToRatings() {
-    document.location.href = "./customer-review.html";
+    if(!detectMobileWithAgent()){
+        $('#review-popup').popup('open')
+    }else{
+        document.location.href = "./customer-review.html";
+    }
+    
 }
 
 function addOrRemoveFavourites(vendorID) {
@@ -114,4 +121,19 @@ function markVendorFavOrNot(vendorID) {
             $('#fav-icon').text('favorite_border')
         }
     }
+}
+
+function detectMobileWithAgent() {
+    const toMatch = [
+        /Android/i,
+        /webOS/i,
+        /iPhone/i,
+        /iPod/i,
+        /BlackBerry/i,
+        /Windows Phone/i
+    ];
+
+    return toMatch.some((toMatchItem) => {
+        return navigator.userAgent.match(toMatchItem) 
+    });
 }
