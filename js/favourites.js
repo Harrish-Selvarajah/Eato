@@ -460,7 +460,8 @@ function contentEmptyoperations(){
     $content = $content.filter(function(){
         return $(this).css('display') != 'none';
     })
-    console.log($content.length)
+    
+    $('#share-btn').show()
 
     if ($content.length > 0){
             $('#fav-checkbox').css("display","block")
@@ -471,6 +472,7 @@ function contentEmptyoperations(){
           <span class="iconify" data-icon="mdi:heart-broken" data-inline="false" style="margin-bottom:20px; margin-left:auto; margin-right:auto;"></span>                         
                                     <h4 style="text-align:center;">No favourites found</h4>
                           </div>`
+        $('#share-btn').hide()            
         $('#favourites').append(emptyContent)
     }
 }
