@@ -105,7 +105,7 @@ var vendor = [
                 id: 'i1',
                 name: 'Cheese Pasta',
                 price: 650,
-                foodPicture: '',
+                foodPicture: '../assets/food_item.jpg',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.',
                 quantity: 1
             },
@@ -113,7 +113,7 @@ var vendor = [
                 id: 'i2',
                 name: 'Chico Fruit Salad',
                 price: 650,
-                foodPicture: '',
+                foodPicture: '../assets/food_item.jpg',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.',
                 quantity: 1
             },
@@ -121,7 +121,7 @@ var vendor = [
                 id: 'i3',
                 name: 'Squash Risotto',
                 price: 650,
-                foodPicture: '',
+                foodPicture: '../assets/food_item.jpg',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.',
                 quantity: 1
             }
@@ -138,7 +138,7 @@ var vendor = [
                 id: 'd1',
                 name: 'Cheese Pasta',
                 price: 650,
-                foodPicture: '',
+                foodPicture: '../assets/food_item.jpg',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.',
                 quantity: 1
             },
@@ -146,7 +146,7 @@ var vendor = [
                 id: 'd2',
                 name: 'Chico Fruit Salad',
                 price: 650,
-                foodPicture: '',
+                foodPicture: '../assets/food_item.jpg',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.',
                 quantity: 1
             },
@@ -154,7 +154,7 @@ var vendor = [
                 id: 'd3',
                 name: 'Squash Risotto',
                 price: 650,
-                foodPicture: '',
+                foodPicture: '../assets/food_item.jpg',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.',
                 quantity: 1
             }
@@ -171,7 +171,7 @@ var vendor = [
                 id: 'a1',
                 name: 'Cheese Pasta',
                 price: 650,
-                foodPicture: '',
+                foodPicture: '../assets/food_item.jpg',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.',
                 quantity: 1
             },
@@ -179,7 +179,7 @@ var vendor = [
                 id: 'a2',
                 name: 'Chico Fruit Salad',
                 price: 650,
-                foodPicture: '',
+                foodPicture: '../assets/food_item.jpg',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.',
                 quantity: 1
             },
@@ -187,7 +187,7 @@ var vendor = [
                 id: 'a3',
                 name: 'Squash Risotto',
                 price: 650,
-                foodPicture: '',
+                foodPicture: '../assets/food_item.jpg',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.',
                 quantity: 1
             }
@@ -204,7 +204,7 @@ var vendor = [
                 id: 'h1',
                 name: 'Cheese Pasta',
                 price: 650,
-                foodPicture: '',
+                foodPicture: '../assets/food_item.jpg',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.',
                 quantity: 1
             },
@@ -212,7 +212,7 @@ var vendor = [
                 id: 'h2',
                 name: 'Chico Fruit Salad',
                 price: 650,
-                foodPicture: '',
+                foodPicture: '../assets/food_item.jpg',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.',
                 quantity: 1
             },
@@ -220,7 +220,7 @@ var vendor = [
                 id: 'h3',
                 name: 'Squash Risotto',
                 price: 650,
-                foodPicture: '',
+                foodPicture: '../assets/food_item.jpg',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.',
                 quantity: 1
             }
@@ -237,7 +237,7 @@ var vendor = [
                 id: 'v1',
                 name: 'Cheese Pasta',
                 price: 650,
-                foodPicture: '',
+                foodPicture: '../assets/food_item.jpg',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.',
                 quantity: 1
             },
@@ -245,7 +245,7 @@ var vendor = [
                 id: 'v2',
                 name: 'Chico Fruit Salad',
                 price: 650,
-                foodPicture: '',
+                foodPicture: '../assets/food_item.jpg',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.',
                 quantity: 1
             },
@@ -253,7 +253,7 @@ var vendor = [
                 id: 'v3',
                 name: 'Squash Risotto',
                 price: 650,
-                foodPicture: '',
+                foodPicture: '../assets/food_item.jpg',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.',
                 quantity: 1
             }
@@ -270,7 +270,7 @@ var vendor = [
                 id: 'mc1',
                 name: 'Cheese Pasta',
                 price: 650,
-                foodPicture: '',
+                foodPicture: '../assets/food_item.jpg',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.',
                 quantity: 1
             },
@@ -278,7 +278,7 @@ var vendor = [
                 id: 'mc2',
                 name: 'Chico Fruit Salad',
                 price: 650,
-                foodPicture: '',
+                foodPicture: '../assets/food_item.jpg',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.',
                 quantity: 1
             },
@@ -286,7 +286,7 @@ var vendor = [
                 id: 'mc3',
                 name: 'Squash Risotto',
                 price: 650,
-                foodPicture: '',
+                foodPicture: '../assets/food_item.jpg',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.',
                 quantity: 1
             }
@@ -303,7 +303,7 @@ var vendor = [
                 id: 'c1',
                 name: 'Cheese Pasta',
                 price: 650,
-                foodPicture: '',
+                foodPicture: '../assets/food_item.jpg',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.',
                 quantity: 1
             },
@@ -311,7 +311,7 @@ var vendor = [
                 id: 'c2',
                 name: 'Chico Fruit Salad',
                 price: 650,
-                foodPicture: '',
+                foodPicture: '../assets/food_item.jpg',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.',
                 quantity: 1
             },
@@ -319,7 +319,7 @@ var vendor = [
                 id: 'c3',
                 name: 'Squash Risotto',
                 price: 650,
-                foodPicture: '',
+                foodPicture: '../assets/food_item.jpg',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.',
                 quantity: 1
             }
@@ -336,7 +336,7 @@ var vendor = [
                 id: 'g1',
                 name: 'Cheese Pasta',
                 price: 650,
-                foodPicture: '',
+                foodPicture: '../assets/food_item.jpg',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.',
                 quantity: 1
             },
@@ -344,7 +344,7 @@ var vendor = [
                 id: 'g2',
                 name: 'Chico Fruit Salad',
                 price: 650,
-                foodPicture: '',
+                foodPicture: '../assets/food_item.jpg',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.',
                 quantity: 1
             },
@@ -352,7 +352,7 @@ var vendor = [
                 id: 'g3',
                 name: 'Squash Risotto',
                 price: 650,
-                foodPicture: '',
+                foodPicture: '../assets/food_item.jpg',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.',
                 quantity: 1
             }
@@ -369,7 +369,7 @@ var vendor = [
                 id: 'n1',
                 name: 'Cheese Pasta',
                 price: 650,
-                foodPicture: '',
+                foodPicture: '../assets/food_item.jpg',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.',
                 quantity: 1
             },
@@ -377,7 +377,7 @@ var vendor = [
                 id: 'n2',
                 name: 'Chico Fruit Salad',
                 price: 650,
-                foodPicture: '',
+                foodPicture: '../assets/food_item.jpg',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.',
                 quantity: 1
             },
@@ -385,7 +385,7 @@ var vendor = [
                 id: 'n3',
                 name: 'Squash Risotto',
                 price: 650,
-                foodPicture: '',
+                foodPicture: '../assets/food_item.jpg',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.',
                 quantity: 1
             }
@@ -402,7 +402,7 @@ var vendor = [
                 id: 'a1',
                 name: 'Cheese Pasta',
                 price: 650,
-                foodPicture: '',
+                foodPicture: '../assets/food_item.jpg',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.',
                 quantity: 1
             },
@@ -410,7 +410,7 @@ var vendor = [
                 id: 'a2',
                 name: 'Chico Fruit Salad',
                 price: 650,
-                foodPicture: '',
+                foodPicture: '../assets/food_item.jpg',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.',
                 quantity: 1
             },
@@ -418,7 +418,7 @@ var vendor = [
                 id: 'a3',
                 name: 'Squash Risotto',
                 price: 650,
-                foodPicture: '',
+                foodPicture: '../assets/food_item.jpg',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.',
                 quantity: 1
             }
