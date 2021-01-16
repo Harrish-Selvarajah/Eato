@@ -18,8 +18,9 @@ $(document).ready(function () {
     //   const data = snapshot.val();
     //   reviews.push(data);
     // });
-
-    firebase.database().ref('Vendors/' + 1).child('reviews').once('value', function (snapshot) {
+    console.log(sessionStorage)
+    var vendorID = JSON.parse(sessionStorage.getItem('vendorID'));
+    firebase.database().ref('Vendors/' + vendorID).child('reviews').once('value', function (snapshot) {
         snapshot.forEach(function (childSnapshot) {
             var childData = childSnapshot.val();
             //   var childData = childSnapshot.val();

@@ -111,6 +111,10 @@ $(document).ready(function () {
     renderVendorDetails();
     renderFooditemsInVendor();
     renderFooditem();
+
+    $('#close-button').click(function (e) {
+        $('#food-item-popup').popup('close')
+    });
 });
 
 function renderVendorDetails() {
@@ -250,7 +254,7 @@ function addToCart(id) {
 
 function handleFoodItemPopup(action, id) {
     // debugger;
-    if ($(window).width() < 768) {
+    if (detectMobileWithAgent()) {
         $("#food-item-popup").popup("close");
         $('body').css('overflow', 'auto');
         window.location.href = '../components/food-item.html?fooditemID=' + id;
@@ -274,7 +278,8 @@ function handleFoodItemPopup(action, id) {
 
 function renderPopup(foodId) {
     var renderHtml = "";
-    $(".d-flex").remove();
+   // $(".d-flex").remove();
+   $('#render-fooditem-popup').empty()
     vendorID = JSON.parse(sessionStorage.getItem('vendorID'));
     vendor.forEach(function (x) {
         if (x.id == Number(vendorID)) {
@@ -351,4 +356,20 @@ var getUrlParameter = function getUrlParameter(sParam) {
 
 function navigateToHome() {
     document.location.href = './home.html'
+}
+
+
+function detectMobileWithAgent() {
+    const toMatch = [
+        /Android/i,
+        /webOS/i,
+        /iPhone/i,
+        /iPod/i,
+        /BlackBerry/i,
+        /Windows Phone/i
+    ];
+
+    return toMatch.some((toMatchItem) => {
+        return navigator.userAgent.match(toMatchItem) 
+    });
 }
