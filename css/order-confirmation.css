@@ -1,0 +1,228 @@
+body {
+    background-color: white !important;
+}
+
+.payment-container {
+    margin-top: 10px;
+}
+
+.input-container {
+    margin-top: 15px;
+}
+
+form .input-container:first-child {
+    margin-top: 0px;
+}
+
+.input-container .field {
+    width: 80%;
+    height: 40px;
+    border-radius: 20px;
+    padding-left: 18px;
+    margin-top: 5px;
+    background: inherit !important;
+    border: 1px solid #707077;
+}
+
+.input-flex-container .input-container {
+    margin-top: 15px !important;
+    margin-right: 1px;
+}
+
+.input-container .field-small {
+    width: 70%;
+    height: 40px;
+    border-radius: 25px;
+    padding-left: 18px;
+    margin-top: 5px !important;
+    border: 1px solid #707077;
+    background: inherit !important;
+}
+
+.input-container .field-smaller {
+    width: 60%;
+    height: 40px;
+    border-radius: 25px;
+    padding-left: 18px;
+    margin-top: 5px !important;
+    border: 1px solid #707077;
+    background: inherit !important;
+}
+
+#all-error-msg {
+    color: red;
+    margin-top: 15px;
+}
+
+#btn-confirm-order {
+    width: 80%;
+    background-color: #FD6921;
+    color: white;
+    border-radius: 20px;
+    border: 1px solid #FD6921;
+}
+
+.btn-footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
+
+/* #loyalty-points-checkbox{
+    width: 100%;
+}
+*/
+
+#add-loyalty-label {
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+#add-loyalty {
+    position: unset !important;
+}
+
+.delivery-address {
+    border-top: 1px solid #707070;
+    padding: 10px;
+}
+
+.pricing-and-time-info-container {
+    padding: 10px;
+}
+
+.info-value {
+    justify-content: flex-end;
+    flex: 1;
+    width: 100%;
+}
+
+.price-info-container {
+    justify-content: space-between;
+    align-items: center;
+    display: inline-flex;
+    width: 100%;
+}
+
+.location-info-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.ovrd-icon-container {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 18px -2px rgba(0, 0, 0, 0.36);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 5px;
+}
+
+.location-title-container {
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.location-title {
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.btn-footer {
+    background-color: white !important;
+}
+
+.other-info-container {
+    padding: 20px;
+}
+
+/* slider Styles */
+
+.slider-container {
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.items {
+    display: flex;
+    overflow: auto;
+    margin: 0px 20px 0px 10px;
+}
+
+.items::-webkit-scrollbar {
+    display: none;
+}
+
+.item {
+    min-width: 145px;
+    height: 140px;
+    background-color: #fff;
+    margin: 10px;
+    border-radius: 35px;
+    -webkit-box-shadow: 1px 3px 9px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 3px 9px 2px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.item>img {
+    width: 50px;
+}
+
+.item>div {
+    margin-bottom: 15px;
+}
+
+.active-state {
+    background-color: #FD6921;
+}
+
+.loyalty-points {
+    align-items: center;
+    padding: 10px;
+    display: inline-flex;
+    justify-content: flex-start;
+}
+
+.ui-checkbox input {
+    left: unset !important;
+    width: 19px !important;
+}
+
+.time-info-container {
+    align-items: center;
+    justify-content: space-between;
+    display: inline-flex;
+    width: 100%;
+}
+
+.balance-poyalty-points {
+    color: #FD6921;
+    font-size: 20px;
+}
+
+.submit-btn {
+    width: 100%;
+    height: 41px;
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translate(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.active-selected {
+    border: 2px solid #FD6921 !important;
+}

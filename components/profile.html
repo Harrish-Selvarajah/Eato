@@ -1,47 +1,171 @@
 <html>
 
 <head>
-    <title>Reviews</title>
+    <title>Profile</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" /> -->
-    <link rel="stylesheet" href="../css/card-css.css" />
-    <link rel="stylesheet" href="../css/customer-review.css" />
-    <link rel="stylesheet" href="../css/site.css" />
-    <link rel="stylesheet" href="../lib/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="../lib/jquery-1.12.4.min.js"></script>
-    <script src="../lib/jquery.mobile-1.4.5.min.js"></script>
-    <script src="../js/customer-review.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+
+    <link rel="stylesheet" href="../css/site.css" />
+    <link rel="stylesheet" href="../css/profile.css" />
+    <link rel="stylesheet" href="../css/card-css.css" />
+
     <script src="../js/profile.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/loyalty-points.js"></script>
 </head>
 
 <body>
-    <div data-role="page" id="review">
-        <!-- <div data-role="header" data-position="fullscreen"> -->
-        <div class="card">
-            <div class="ui-grid-b">
-                <div class="ui-block-a">
-                    <div class="ui-bar ui-bar" style="height: 30px;">
-                        <div class="ui-bar ui-bar">
-                            <!-- <img src="../assets/leftarrow.png" style="height: 15px;"> -->
+    <div data-role="page">
+        <div data-role="header" data-postion="fixed" data-fullscreen="true" class="header-bar">
+            <img src="../assets/logo new.svg">
+            <!-- <i class="arrow arrow-left"></i> -->
+            <h4>Profile</h4>
+        </div>
+        <div role="main" class="ui-content ui-content-header">
+            <div class="profile-body-container d-flex">
+                <div class="profile-right">
+                    <div class="card loyalty-balance d-flex">
+                        <div class="balance_left">
+                            <div>Loyalty Balance</div>
+                            <img src="../assets/trophy.png">
+                            <h4 id="loyaltyPoints"></h4>
+                            <p class="subtitle" style="text-align: center;">
+                                1500 points till your next reward</p>
+                        </div>
+                        <div class="balance_right">
+                            <h4 style="text-align: center; padding: 5px;">Share and get 200 points</h4>
+                            <p class="primaryText" style="text-align: center;">
+                                Refer your friends and get 200 loyalty points each on their first transactions</h5>
+                            <div class="action-btn">
+                                <button type="button">
+                                    <p class="primaryText">Share Invite Code</p>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="acitivity_order card">
+                        <div style="padding-left: 20px; padding-top: 20px;" id="render-activity"> Recent Activity</div>
+                        <!-- <div class="acitivity card">
+                            <div class="acitivity_circle">
+                                <img src="../assets/food/indian.jpg" alt="vendor">
+                            </div>
+                            <div style="text-align: center;"> <b>You earned 70 points</b> <br> LKR700 at Melt House
+                            </div>
+                            <div class="acitivity_circle" style="border: 1px solid  black;">+70</div>
+                        </div>
+
+                        <div class="acitivity card">
+                            <div class="acitivity_circle">
+                                <img src="../assets/food/indian.jpg" alt="vendor">
+                            </div>
+                            <div style="text-align: center;"> <b>You earned 70 points</b> <br> LKR700 at Melt House
+                            </div>
+                            <div class="acitivity_circle" style="border: 1px solid  black;">+70</div>
+                        </div>
+                        <div class="acitivity card">
+                            <div class="acitivity_circle">
+                                <img src="../assets/food/indian.jpg" alt="vendor">
+                            </div>
+                            <div style="text-align: center;"> <b>You earned 70 points</b> <br> LKR700 at Melt House
+                            </div>
+                            <div class="acitivity_circle" style="border: 1px solid  black;">+70</div>
+                        </div>   -->
+
+                    </div>
+
+                </div>
+                <div class="profile-left card">
+                    <div class="user-profile">
+                        <div class="user-picture">
+                            <img src="../assets/harrish.jpg">
+                            <div class="change-pic">
+                                <i class="material-icons ">camera_alt</i>
+                            </div>
+                        </div>
+                        <div class="user-details">
+                            <div class="user-name">
+                                <h3>Hello,</h3>
+                                <h2 id="name">Harrish</h2>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="tabs">
+                        <div class="tab" onclick="navigation('payment-method')">
+                            <i class="material-icons ">payment</i>
+                            <div class="tab-name subtitle">Payment Method</div>
+                        </div>
+                        <div class="tab" onclick="navigation('favourites')">
+                            <i class="material-icons ">favorite_border</i>
+                            <div class="tab-name subtitle">Favourites</div>
+                        </div>
+                        <div class="tab loyalty-tab" onclick="navigation('loyaltyPoints')">
+                            <i class="material-icons ">loyalty</i>
+                            <div class="tab-name subtitle">Loyalty Points</div>
+                        </div>
+                        <div class="tab" onclick="navigation('qr-cam')">
+                            <i class="material-icons ">crop_free</i>
+                            <div class="tab-name subtitle">QR Cam</div>
+                        </div>
+                        <div class="tab" onclick="navigation('feedback')">
+                            <i class="material-icons ">chat_bubble_outline</i>
+                            <div class="tab-name subtitle">Feedback</div>
+                        </div>
+                        <div class="tab" onclick="navigation('about-us')">
+                            <i class="material-icons ">error_outline</i>
+                            <div class="tab-name subtitle">About Us</div>
+                        </div>
+                        <div class="tab" onclick="navigation('logout')">
+                            <i class="material-icons ">logout</i>
+                            <div class="tab-name subtitle">Logout</div>
                         </div>
                     </div>
                 </div>
-                <div class="ui-block-b">
-                    <div class="ui-bar ui-bar" style="height: 30px; text-align: center;   display: flex;
-                    justify-content: center;
-                    align-items: center;">Profile</div>
+            </div>
+            <!-- <a onclick="goToQRCamera()" data-role="button">QR camera</a> -->
+        </div>
+        <div data-role="footer" class="footer">
+            <div class="footer-top">
+                <div class="footer-left">
+                    <h4>Contact</h4>
+                    <p class="secondaryText"><a href="mailto:info@eato.eat">info@eato.eat</a></p>
+                    <br>
+                    <h4>Address</h4>
+                    <p class="secondaryText">50, Chez Road, Panisse</p>
                 </div>
-                <div class="ui-block-c">
-                    <div class="ui-bar ui-bar" style="height: 30px;"></div>
+                <div class="footer-right">
+                    <img src="../assets/logo/eoto_logo_light.png">
                 </div>
             </div>
+            <div class="footer-bottom">
+                <i class="material-icons">account_circle</i>
+                <i class="material-icons">account_circle</i>
+                <i class="material-icons">account_circle</i>
+                <p class="footer-copyrights infoText">© 2021 Eato. All Rights Reserved.</p>
+            </div>
         </div>
-        <!-- </div> -->
-        <div role="main" class="ui-content">
-            <a onclick="goToQRCamera()" data-role="button">QR camera</a>
+        <!-- Navbar  -->
+        <div data-role="footer" class="nav-glyphish-example bottom-nav" data-position="fixed" data-tap-toggle="false">
+            <div data-role="navbar" data-grid="d" data-theme="a">
+                <ul>
+                    <li><a href="#" data-icon="home" class="nav-home navbar-btn" onclick="navigation('home')">Home</a>
+                    </li>
+                    <li><a href="#" class="nav-search navbar-btn" data-icon="search"
+                            onclick="navigation('search')">Search</a></li>
+                    <li><a href="#" data-icon="shop" class="nav-cart navbar-btn" onclick="navigation('cart')">Cart</a>
+                    </li>
+                    <li><a href="#" data-icon="grid" class="nav-order navbar-btn"
+                            onclick="navigation('order')">Order</a></li>
+                    <li><a href="#" data-icon="user" class="ui-btn-active nav-profile navbar-btn"
+                            onclick="navigation('profile')">Profile</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </body>

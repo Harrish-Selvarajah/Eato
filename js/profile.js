@@ -1,3 +1,5 @@
-function goToQRCamera() {
-    document.location.href = "./QR-Scanner.html";
-}
+$(document).ready(function () { 
+    console.log(sessionStorage);
+    var name = JSON.parse(sessionStorage.getItem('userobj')).name;
+    $('#name').text(name);
+});

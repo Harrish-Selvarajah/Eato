@@ -17,6 +17,7 @@
     <!-- <script src="https://raw.githubusercontent.com/mebjas/html5-qrcode/master/minified/html5-qrcode.min.js"></script> -->
     <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="../js/common.js"></script>
 
 </head>
 
@@ -28,7 +29,7 @@
                 <div class="ui-block-a">
                     <div class="ui-bar ui-bar" style="height: 30px;">
                         <div class="ui-bar ui-bar">
-                            <img src="../assets/leftarrow.png" style="height: 15px;">
+                            <img src="../assets/leftarrow.png" style="height: 15px;" onclick="goBack()">
                         </div>
                     </div>
                 </div>
@@ -59,6 +60,25 @@
                             <h6><span id="outputData"></span></h6>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div data-role="popup" class="popup" id="popup-modal" data-theme="a" style="border-radius: 20px;">
+                <div class="popup-header">
+                    <i class=" material-icons">close</i>
+                    <h4>Success</h4>
+                </div>
+                <div class="popup-body">
+                    <div class="details">
+                        <div class="message">
+                            You have received 500 loyalty points. 
+                            Check the loyalty section under Profile to see the gift you received
+                        </div>
+                        <div class="action-btn">
+                            <button type="button">
+                                <p class="primaryText">OK</p>
+                            </button>
+                        </div> 
+                    </div>                   
                 </div>
             </div>
         </div>

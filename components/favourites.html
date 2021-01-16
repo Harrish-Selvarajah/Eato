@@ -1,0 +1,155 @@
+<html>
+
+<head>
+    <title>Favourites | Eato</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <link rel="stylesheet" href="../css/site.css" />
+    <!-- <link rel="stylesheet" href="../css/search.css"> -->
+    <link rel="stylesheet" href="../css/favourites.css" />
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <script src="../js/favourites.js"></script>
+    <script src="../js/common.js"></script>
+</head>
+
+<body>
+    <div data-role="page">
+        <div data-role="header" data-postion="fixed" data-fullscreen="true" class="header-bar">
+            <i class="arrow arrow-left" onclick="goBack()"></i>
+            <h4>Favourites</h4>
+        </div>
+        <div role="main" class="ui-content ui-content-header">
+            <div class="main-container">
+                <div class="search-container">
+                    <div class="input-field-container search-bar">
+                        <i class=" material-icons input-field-icon">search</i>
+                        <input type="text" placeholder="Search..." name="search" id="search">
+                    </div>
+                    <div class="search-filter" id="search-filter">
+                        <i class=" material-icons">sort</i>
+                    </div>
+                </div>
+                <div class="fav-checkbox">
+                    <div>
+                        <h4>Select All</h4>
+                        <input class="checkbox" id="select-all" type="checkbox" />
+                    </div>
+                </div>
+                <div class="favourites">
+                    <ul id="fav-list">
+                    </ul>
+                </div>
+                <div data-role="popup" class="popup" id="popup-modal" data-theme="a"
+                    style="border-radius: 20px; min-height: 265px;">
+                    <div class="popup-header">
+                        <i class=" material-icons" id="close-btn">close</i>
+                        <h4>Share Favourites</h4>
+                    </div>
+                    <div class="popup-body">
+                        <div class="popup-input">
+                            <span class="subtitle" style="margin-left: 5px !important;">Email to</span>
+                            <input type="email" id="input-email" placeholder="Email" />
+                            <p id="error-msg">Invalid email address</p>
+                        </div>
+                    </div>
+                    <div class="popup-footer">
+                        <div class="action-btn">
+                            <button type="button" id="last-share-btn">
+                                <p class="primaryText">Share</p>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filter Popup -->
+                <div data-role="popup" id="filter-popup" data-theme="a" class="filter-popup">
+                    <div class="popup-top">
+                        <div class="sort-title">
+                            <i class="material-icons start-icon">sort</i>
+                            <div>Sort</div>
+                        </div>
+                        <div class="sort-catagory" id="sort-catagory-sorting">
+                            <div class="sort-item" id="a-z">A>Z</div>
+                            <div class="sort-item" id="z-a">Z>A</div>
+                            <div class="sort-item" id="rate">Rating</div>
+                        </div>
+                        <div class="sort-title">
+                            <i class="material-icons start-icon">filter_alt</i>
+                            <div>Sort</div>
+                        </div>
+                        <div class="sort-catagory" id="star-container">
+                            <i class="material-icons start-icon unselected" id="star-1">star</i>
+                            <i class="material-icons start-icon unselected" id="star-2">star</i>
+                            <i class="material-icons start-icon unselected" id="star-3">star</i>
+                            <i class="material-icons start-icon unselected" id="star-4">star</i>
+                            <i class="material-icons start-icon unselected" id="star-5">star</i>
+                        </div>
+
+                    </div>
+                    <div class="popup-bottom">
+                        <div class="action-btn filter-btn">
+                            <button type="button" id="confirm-filter" data-role="button">
+                                <p class="primaryText">Filter</p>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-position="fixed" class="share-button" id="share-btn">
+                    <a>
+                        <i class="material-icons icon-share">share</i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div data-role="footer" class="footer">
+            <div class="footer-top">
+                <div class="footer-left">
+                    <h4>Contact</h4>
+                    <p class="secondaryText"><a href="mailto:info@eato.eat">info@eato.eat</a></p>
+                    <br>
+                    <h4>Address</h4>
+                    <p class="secondaryText">50, Chez Road, Panisse</p>
+                </div>
+                <div class="footer-right">
+                    <img src="../assets/logo/eoto_logo_light.png">
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <i class="material-icons">account_circle</i>
+                <i class="material-icons">account_circle</i>
+                <i class="material-icons">account_circle</i>
+                <p class="footer-copyrights infoText">© 2021 Eato. All Rights Reserved.</p>
+            </div>
+        </div>
+
+        <div data-role="footer" class="nav-glyphish-example bottom-nav" data-position="fixed" data-tap-toggle="false">
+            <div data-role="navbar" data-grid="d" data-theme="a">
+                <ul>
+                    <li><a href="#" data-icon="home" class="nav-home navbar-btn" onclick="navigation('home')">Home</a>
+                    </li>
+                    <li><a href="#" class="nav-search navbar-btn" data-icon="search"
+                            onclick="navigation('search')">Search</a></li>
+                    <li><a href="#" data-icon="shop" class="nav-cart navbar-btn" onclick="navigation('cart')">Cart</a>
+                    </li>
+                    <li><a href="#" data-icon="grid" class="nav-order navbar-btn"
+                            onclick="navigation('order')">Order</a></li>
+                    <li><a href="#" data-icon="user" class="ui-btn-active nav-profile navbar-btn"
+                            onclick="navigation('profile')">Profile</a></li>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

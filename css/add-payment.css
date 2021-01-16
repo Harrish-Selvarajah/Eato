@@ -1,0 +1,8 @@
+@media(max-width: 767px) {
+    .footer-addP {
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        transform: translate(-50%);
+    }
+}

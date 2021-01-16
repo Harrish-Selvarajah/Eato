@@ -1,0 +1,83 @@
+.card-items {
+    display: grid;
+    place-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(425px, 1fr));
+    grid-gap: 2rem;
+}
+
+.card-item {
+    background-color: #707070;
+    box-shadow: 0px 2px 3px 0px #AAA;
+    border-radius: 20px;
+    width: 425px;
+    height: 245px;
+    padding: 10px;
+    color: white;
+}
+
+.card-item>div {
+    margin: 10px 10px 0px 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-item>div>div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-item>div>div>img {
+    width: 70px;
+}
+
+.add-button-container {
+    background-color: #FD6921 !important;
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    bottom: 70px;
+    right: 15px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-button-container>a>i {
+    color: white;
+    font-size: 40px;
+    text-shadow: none;
+}
+
+/* Button Emphasis styles start */
+.add-button-container:active{
+    background-color: #ff2400 !important;
+}
+
+.add-button-container:hover{
+    background-color: #ff4500 !important;
+}
+/* Button Emphasis styles end */
+
+@media (max-width: 767px) {
+    .card-item {
+        width: 350px;
+        height: 190px;
+    }
+}
+
+@media (max-width: 376px) {
+    .card-item {
+        width: 310px;
+    }
+}
+
+@media (max-width: 320px) {
+    .card-item {
+        width: 260px;
+    }
+}

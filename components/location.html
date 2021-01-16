@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Location | Eato</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <!-- <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
+
+  <link rel="stylesheet" href="../css/site.css" />
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6ntfzBqz7Et-JBirqWHo0dv7Ky3C3wvM&callback=initAutocomplete&libraries=places&v=weekly">
+    </script>
+  <script src="../js/location.js"></script>
+  <script src="../js/common.js"></script>
+  <link rel="stylesheet" href="../css/location.css" />
+</head>
+
+<body>
+  <!-- <div class="se-pre-con"></div> -->
+  <div data-role="page" class="location-page">
+    <div data-role="header" data-postion="fixed" data-fullscreen="true" class="header-bar">
+      <i class="arrow arrow-left" onclick="goBack()"></i>
+      <h4>Location</h4>
+    </div>
+    <div role="main" class="map-container" style="height: 100%;">
+      <div class="main-container" style="height: 100%;">
+        <div class="map" style="width: 100%;">
+          <input id="pac-input" class="controls" type="text" placeholder="Search..." />
+          <div id="map"></div>
+        </div>
+        <div class="saved-location">
+          <h4>Saved Location</h4>
+          <hr style="width: 100%; margin-bottom: 15px;">
+          <div style="width: 100%;" id="list">
+            <div style="margin-bottom: 15px;" id="render-radio-button">
+              <!-- <label class="selected-location">Address
+                <input type="radio" name="radio">
+                <span class="checkmark"></span>
+              </label>
+              <hr style="margin-top: 20px;"> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
