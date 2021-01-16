@@ -63,6 +63,7 @@ function login() {
       document.location.href = "./home.html";
       } else {
         console.log("Login error");
+        toastr.error('Login Error');
       }
     })
 
