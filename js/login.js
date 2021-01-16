@@ -56,7 +56,7 @@ function login() {
       userObj['favourites'] = user.favourites
       sessionStorage.setItem('userobj', JSON.stringify(userObj));
       sessionStorage.setItem('cart', JSON.stringify(cart));
-      sessionStorage.setItem('chats', JSON.stringify(chats));
+      // sessionStorage.setItem('chats', JSON.stringify(chats));
       sessionStorage.setItem('loyaltyPoints', JSON.stringify(loyaltyPoints));
       sessionStorage.setItem('loyaltyPointsArray', JSON.stringify(loyaltyPointsArray));
       console.log(sessionStorage.getItem('userobj')); 

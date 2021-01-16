@@ -111,6 +111,10 @@ $(document).ready(function () {
     renderVendorDetails();
     renderFooditemsInVendor();
     renderFooditem();
+
+    $('#close-button').click(function (e) {
+        $('#food-item-popup').popup('close')
+    });
 });
 
 function renderVendorDetails() {
@@ -274,7 +278,7 @@ function handleFoodItemPopup(action, id) {
 
 function renderPopup(foodId) {
     var renderHtml = "";
-    $(".d-flex").remove();
+    $(".d-flex").empty();
     vendorID = JSON.parse(sessionStorage.getItem('vendorID'));
     vendor.forEach(function (x) {
         if (x.id == Number(vendorID)) {
