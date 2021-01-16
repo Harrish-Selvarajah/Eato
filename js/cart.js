@@ -84,6 +84,7 @@ function removeItem(id) {
     console.log('removeItem')
     cart = cart.filter(function (item) { return item.foodID !== id });
     repeat();
+    toastr.success('Item Removed', 'Success');
     // sessionStorage.setItem('cart', JSON.stringify(cart));
 }
 

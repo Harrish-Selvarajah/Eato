@@ -9,6 +9,10 @@
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
+    <!-- toast Links -->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
     <link rel="stylesheet" href="../css/site.css" />
     <link rel="stylesheet" href="../css/feedback.css" />
     <script src="../js/feedback.js"></script>
@@ -33,7 +37,7 @@
                 <textarea class="text-area" placeholder="Your message here..." id="feedbackComment"></textarea>
                 <div class="submit-button">
                     <div class="action-btn submit-btn">
-                        <button type="button" data-role="button">
+                        <button type="button" data-role="button" onclick="sendFeedback()">
                             <p class="primaryText">Submit</p>
                         </button>
                     </div>
@@ -64,8 +68,8 @@
         <div data-role="footer" class="nav-glyphish-example bottom-nav" data-position="fixed" data-tap-toggle="false">
             <div data-role="navbar" data-grid="d" data-theme="a">
                 <ul>
-                    <li><a href="#" data-icon="home" class="nav-home navbar-btn"
-                            onclick="navigation('home')">Home</a></li>
+                    <li><a href="#" data-icon="home" class="nav-home navbar-btn" onclick="navigation('home')">Home</a>
+                    </li>
                     <li><a href="#" class="nav-search navbar-btn" data-icon="search"
                             onclick="navigation('search')">Search</a></li>
                     <li><a href="#" data-icon="shop" class="nav-cart navbar-btn" onclick="navigation('cart')">Cart</a>

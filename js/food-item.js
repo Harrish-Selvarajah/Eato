@@ -63,7 +63,7 @@ var vendor = [
     },
     {
         id: 2,
-        rating: 4.5,
+        rating: 3,
         name: 'Suburban Kitchen',
         type: 'Pizza',
         img: '../assets/food/bakery.jpg',
@@ -549,10 +549,10 @@ function renderFooditem() {
                    </div>
                </div>
            </div>`
-        //    $('.item-bg').css('background-image', `url(../assets/food_item.jpg)`);
-           document.getElementsByClassName('item-bg').style.backgroundImage = 'url("../assets/food_item.jpg")';
+                    //    $('.item-bg').css('background-image', `url(../assets/food_item.jpg)`);
+                    document.getElementsByClassName('item-bg').style.backgroundImage = 'url("../assets/food_item.jpg")';
                 }
-               
+
             })
             $('#render-food-item').append(renderHtml);
         }
@@ -567,7 +567,7 @@ function addToCart(id) {
     vendorID = JSON.parse(sessionStorage.getItem('vendorID'));
     vendor.forEach(function (vendor) {
         if (vendor.id === vendorID) {
-            vendor.foodItems.forEach(function(item) {
+            vendor.foodItems.forEach(function (item) {
                 if (item.id == id) {
                     // item.quantity = foodQuantity;
                     var vendorName = "";
@@ -592,6 +592,19 @@ function addToCart(id) {
             document.location.href = "./customer-vendor.html";
         }
     })
+
+    toastr.success('Added To Cart', 'Success');
+    console.log(cart);
+    sessionStorage.setItem('cart', JSON.stringify(cart));
+    console.log(sessionStorage);
+
+    if (!detectMobileWithAgent()) {
+        $("#food-item-popup").popup("close");
+        $('body').css('overflow', 'auto');
+    }
+    else {
+        setTimeout(function () { document.location.href = "./customer-vendor.html"; }, 500);
+    }
 }
 
 function handleFoodItemPopup(action, id) {
@@ -620,8 +633,8 @@ function handleFoodItemPopup(action, id) {
 
 function renderPopup(foodId) {
     var renderHtml = "";
-   // $(".d-flex").remove();
-   $('#render-fooditem-popup').empty()
+    // $(".d-flex").remove();
+    $('#render-fooditem-popup').empty()
     vendorID = JSON.parse(sessionStorage.getItem('vendorID'));
     vendor.forEach(function (x) {
         if (x.id == Number(vendorID)) {
@@ -712,6 +725,6 @@ function detectMobileWithAgent() {
     ];
 
     return toMatch.some((toMatchItem) => {
-        return navigator.userAgent.match(toMatchItem) 
+        return navigator.userAgent.match(toMatchItem)
     });
 }
