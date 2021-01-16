@@ -186,14 +186,21 @@
     transform: translate(-50%);
 }
 
-.fipw-item-bg {
-    /* background-image: ; */
+/* .fipw-item-bg {
+    background-image: url(../assets/food_item.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     height: 255px;
     border-radius: 20px;
     position: relative;
+} */
+
+.fipw-item-bg>img {
+    width: 100%;
+    height: 255px;
+    object-fit: cover;
+    border-radius: 17px;
 }
 
 .fipw-item-details {
@@ -203,11 +210,13 @@
 
 .fipw-item-details>div>span:first-child {
     color: #FD6921;
+    font-family: "Gilroy-Medium";
 }
 
 .fipw-item-details>div>span:last-child {
     font-size: 19px;
     font-weight: 600;
+    font-family: "Gilroy-Medium";
 }
 
 .fipw-food-item-page-quantity {
@@ -219,6 +228,7 @@
     margin-top: 30px;
     color: #707070;
     text-align: justify;
+    font-family: "Gilroy-Medium";
 }
 
 @media (max-width: 767px) {

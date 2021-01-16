@@ -17,6 +17,25 @@ var firebaseConfig = {
     appId: "1:274943061802:web:9916cf1cb84f515bdab853"
 };
 
+// toaster options
+toastr.options = {
+    "closeButton": false,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": false,
+    "positionClass": "toast-top-right",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+  }
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 // var rootRef = new Firebase("https://eato-69-default-rtdb.firebaseio.com/").ref();
@@ -64,7 +83,7 @@ function loadDisplayData() {
         loadFavListFromFirebase();
     }
 
-    
+
 }
 
 function loadFavVendorList(favList) {
@@ -98,6 +117,10 @@ function loadFavVendorList(favList) {
         )
     })
 
+    if(favList.length < 3){
+         poiContent = poiContent.concat(addEmptyComponentIfNotThree());
+    }
+
     $favUiList.append(poiContent)
     favVendorList = favList;
 }
@@ -108,6 +131,7 @@ $(document).ready(function () {
     $('#error-msg').hide();
 
     loadDisplayData();
+    contentEmptyoperations();
 
     $("#select-all").click(function () {
 
@@ -119,22 +143,20 @@ $(document).ready(function () {
 
             // Add all favourites in the screen to selected favourites
             selectedFavList = favVendorList;
-            activeShareButton();
-        } else {
 
+            activeShareButton();
+            
+        } else {
+            //console.log($('#fav-list').children())
             $('#fav-list').find(':checkbox').each(function (element) {
                 $(this).prop('checked', false);
             });
 
-            // Unselected all 
-            //   selectedFavList = favVendorList.filter(function(element){
-            //       return !selectedFavList.includes(element)
-            //   })
+            
             selectedFavList = []
 
             disableSharebutton();
         }
-
 
     });
 
@@ -169,11 +191,13 @@ $(document).ready(function () {
 
         if (!validateEmail(email)) {
             $('#error-msg').show();
-        } else {
             console.log("Invalid email format")
+        } else {
             $('#error-msg').hide();
             SendEmail(email, content)
+            $('#popup-modal').popup('close')
         }
+       
     });
 
     $(document).on('input', '#search', function (e) {
@@ -250,13 +274,13 @@ function disableSharebutton() {
 function addCheckBoxClick(id) {
 
     if ($(`#select-${id}`).is(":checked") == true) {
-        console.log(favVendorList   )
+        console.log(favVendorList)
         var selectedItem = favVendorList.find(function (element) {
             return element.vendorID == id;
         })
         console.log(selectedItem)
         selectedFavList = selectedFavList.concat(selectedItem)
-        
+
         // Make Share Actives
         activeShareButton();
 
@@ -292,8 +316,10 @@ function SendEmail(email, message) {
         Subject: "List of Favourites",
         Body: content
     }).then(
-        message => console.log(message)
-    );
+        message => toastr["success"]("Email Successfully Sent", "Success!")
+    ).catch(
+        error =>  toastr["error"]("Email not Sent", "Error!")
+    )
 }
 
 function removeFavourite(vendorID) {
@@ -304,7 +330,7 @@ function removeFavourite(vendorID) {
     sessionStorage.setItem('userobj', JSON.stringify(userobj));
 
     selectedFavList = filterArrayById(selectedFavList, vendorID)
-    console.log("Successfully deleted")
+    toastr.success('Removed From Favourites', 'Success');
 
 
     loadFavVendorList();
@@ -332,7 +358,7 @@ function filterPOI() {
     });
 
     // Sort
-    var favChildElements = $('#fav-list').children()
+    var favChildElements = $('#fav-list').find('.item')
     if (sort == "a-z") {
         favChildElements = sortFromAtoZ(favChildElements);
     } else if (sort == "z-a") {
@@ -342,11 +368,21 @@ function filterPOI() {
     }
 
     $('#fav-list').empty();
+
+   
     $('#fav-list').append(favChildElements)
+
+    if(favChildElements.length < 3){
+        var poiContent = addEmptyComponentIfNotThree();
+    }
+    
+    $('#fav-list').append(poiContent)
+
 
     // finally clear search
 
     document.getElementById("search").value = ""
+    contentEmptyoperations();
 }
 
 function sortFromAtoZ(favList) {
@@ -414,4 +450,41 @@ function search(input) {
             $(`#li-${idx}`).css('display', 'block')
         }
     });
+    contentEmptyoperations();
+}
+
+function contentEmptyoperations(){
+    console.log('in')
+    $content = $('#fav-list').find('.item')
+    $('#favourites').find('#fav-empty').remove()
+    $content = $content.filter(function(){
+        return $(this).css('display') != 'none';
+    })
+    
+    $('#share-btn').show()
+
+    if ($content.length > 0){
+            $('#fav-checkbox').css("display","block")
+    }else{
+          $('#fav-checkbox').css("display","none")
+
+          emptyContent = `<div id="fav-empty" style="display:flex; margin-top:10%; align-content:center; justify-content:center; flex-direction:column">
+          <span class="iconify" data-icon="mdi:heart-broken" data-inline="false" style="margin-bottom:20px; margin-left:auto; margin-right:auto;"></span>                         
+                                    <h4 style="text-align:center;">No favourites found</h4>
+                          </div>`
+        $('#share-btn').hide()            
+        $('#favourites').append(emptyContent)
+    }
+}
+
+function addEmptyComponentIfNotThree() {  
+
+    var poiContent = ""
+    
+    for(var i=0; i < 2; i++){
+        poiContent = poiContent.concat(`<li class="item-none" style="border: 0px none white !important"></li>`)
+    }
+    
+
+    return poiContent
 }

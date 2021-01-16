@@ -63,7 +63,7 @@ var vendor = [
     },
     {
         id: 2,
-        rating: 4.5,
+        rating: 3,
         name: 'Suburban Kitchen',
         type: 'Pizza',
         img: '../assets/food/bakery.jpg',
@@ -431,7 +431,6 @@ var foodQuantity = 1;
 var vendorID = 0;
 
 $(document).ready(function () {
-    console.log('food-item');
     $('#display-quantity').text(foodQuantity);
     $(window).on('resize', function () {
         var win = $(this);
@@ -516,43 +515,40 @@ function renderFooditem() {
         if (x.id == Number(vendorID)) {
             x.foodItems.forEach(function (y) {
                 if (foodId == y.id) {
-                    // $('.item-bg').css('background-image', `url(../assets/food_item.jpg)`);
                     renderHtml += `<div class="main-container food-item-page">
-               <div class="item-bg"></div>
-               <div class="d-flex item-details">
-                   <h4 id="food-name">${y.name}</h4>
-                   <div>
-                       <span>Rs</span>
-                       <span id="price">${y.price}</span>
-                   </div>
-               </div>
-               <div class="adjust-quantity food-item-page-quantity">
-                   <button class="quantity-minus" onclick="quantity('minus')">
-                       <i class="material-icons">remove</i>
-                   </button>
-                   <span id="display-quantity" class="subtitle">1</span>
-                   <button class="quantity-plus" onclick="quantity('plus')">
-                       <i class="material-icons">add</i>
-                   </button>
-               </div>
-               <div class="item-description">
-                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum non ante tristique
-                       rutrum.</p>
-               </div>
-               <div>
-                   <div>
-                       <div class="action-btn">
-                           <button type="button" onclick="addToCart('${y.id}')">
-                               <p class="primaryText">Add To Cart</p>
-                           </button>
-                       </div>
-                   </div>
-               </div>
-           </div>`
-        //    $('.item-bg').css('background-image', `url(../assets/food_item.jpg)`);
-           document.getElementsByClassName('item-bg').style.backgroundImage = 'url("../assets/food_item.jpg")';
+                                        <div class="item-bg">
+                                            <img src="${y.foodPicture}">
+                                        </div>
+                                        <div class="d-flex item-details">
+                                            <h4 id="food-name">${y.name}</h4>
+                                            <div>
+                                                <span>Rs</span>
+                                                <span id="price">${y.price}</span>
+                                            </div>
+                                        </div>
+                                        <div class="adjust-quantity food-item-page-quantity">
+                                            <button class="quantity-minus" onclick="quantity('minus')">
+                                                <i class="material-icons">remove</i>
+                                            </button>
+                                            <span id="display-quantity" class="subtitle">1</span>
+                                            <button class="quantity-plus" onclick="quantity('plus')">
+                                                <i class="material-icons">add</i>
+                                            </button>
+                                        </div>
+                                        <div class="item-description">
+                                            <p>${y.description}</p>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <div class="action-btn">
+                                                    <button type="button" onclick="addToCart('${y.id}')">
+                                                        <p class="primaryText">Add To Cart</p>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>`
                 }
-               
             })
             $('#render-food-item').append(renderHtml);
         }
@@ -567,7 +563,7 @@ function addToCart(id) {
     vendorID = JSON.parse(sessionStorage.getItem('vendorID'));
     vendor.forEach(function (vendor) {
         if (vendor.id === vendorID) {
-            vendor.foodItems.forEach(function(item) {
+            vendor.foodItems.forEach(function (item) {
                 if (item.id == id) {
                     // item.quantity = foodQuantity;
                     var vendorName = "";
@@ -581,17 +577,26 @@ function addToCart(id) {
                         foodName: item.name,
                         price: item.price,
                         quantity: foodQuantity,
-                        totalPrice: 0
+                        totalPrice: 0,
+                        image: item.foodPicture
                     }
                     cart.push(items);
                 }
             })
-            console.log(cart);
             sessionStorage.setItem('cart', JSON.stringify(cart));
-            console.log(sessionStorage);
-            document.location.href = "./customer-vendor.html";
         }
     })
+
+    toastr.success('Added To Cart', 'Success');
+    sessionStorage.setItem('cart', JSON.stringify(cart));
+
+    if (!detectMobileWithAgent()) {
+        $("#food-item-popup").popup("close");
+        $('body').css('overflow', 'auto');
+    }
+    else {
+        setTimeout(function () { document.location.href = "./customer-vendor.html"; }, 500);
+    }
 }
 
 function handleFoodItemPopup(action, id) {
@@ -620,41 +625,51 @@ function handleFoodItemPopup(action, id) {
 
 function renderPopup(foodId) {
     var renderHtml = "";
-   // $(".d-flex").remove();
-   $('#render-fooditem-popup').empty()
+    // $(".d-flex").remove();
+    $('#render-fooditem-popup').empty()
     vendorID = JSON.parse(sessionStorage.getItem('vendorID'));
     vendor.forEach(function (x) {
         if (x.id == Number(vendorID)) {
             x.foodItems.forEach(function (y) {
                 if (foodId == y.id) {
-                    renderHtml += `<div class="d-flex fipw-item-details">
-                    <h4>${y.name}</h4>
-                    <div>
-                        <span>Rs</span>
-                        <span>${y.price}</span>
-                    </div>
-                </div>
-                <div class="adjust-quantity fipw-food-item-page-quantity">
-                    <button class="quantity-minus" onclick="quantity('minus')">
-                        <i class="material-icons">remove</i>
-                    </button>
-                    <span id="display-quantity" class="subtitle">1</span>
-                    <button class="quantity-plus" onclick="quantity('plus')">
-                        <i class="material-icons">add</i>
-                    </button>
-                </div>
-                <div class="fipw-item-description">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum non ante
-                        tristique
-                        rutrum.</p>
-                </div>
-                <div>
-                                <div class="action-btn">
-                                    <button type="button"  onclick="addToCart('${y.id}')">
-                                        <p class="primaryText">Add To Cart</p>
-                                    </button>
+                    renderHtml += `<div class="fipw-item-bg">
+                            <img src="${y.foodPicture}">
+                            <div onclick="handleFoodItemPopup('close', 'null');" class="icon-container icon-close">
+                                <i class=" material-icons">close</i>
+                                    </div>
                                 </div>
-                            </div>`
+                                <div>
+                                    <div>
+                                        <div class="d-flex fipw-item-details">
+                                            <h4>${y.name}</h4>
+                                            <div>
+                                                <span>Rs</span>
+                                                <span>${y.price}</span>
+                                            </div>
+                                        </div>
+                                        <div class="adjust-quantity fipw-food-item-page-quantity">
+                                            <button class="quantity-minus" onclick="quantity('minus')">
+                                                <i class="material-icons">remove</i>
+                                            </button>
+                                            <span id="display-quantity">1</span>
+                                            <button class="quantity-plus" onclick="quantity('plus')">
+                                                <i class="material-icons">add</i>
+                                            </button>
+                                        </div>
+                                        <div class="fipw-item-description">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum non ante
+                                                tristique
+                                                rutrum.</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="action-btn">
+                                            <button type="button" onclick="addToCart('${y.id}')">
+                                                <p class="primaryText">Add To Cart</p>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>`
                 }
             })
             $('#render-fooditem-popup').append(renderHtml);
@@ -667,15 +682,12 @@ function quantity(operation) {
     var oriQuantity = $('#display-quantity').value;
     var oriQuantity = document.getElementById('display-quantity').value;
     var vallue = $('#display-quantity').html();
-    console.log(vallue, 'val');
     var x;
     if (operation == 'plus') {
-        console.log('plus');
         x = foodQuantity = foodQuantity + 1;
         $('#display-quantity').text(x);
     } else
         if (operation == 'minus') {
-            console.log('minus');
             x = foodQuantity = foodQuantity - 1;
             $('#display-quantity').text(x);
         }
@@ -712,6 +724,6 @@ function detectMobileWithAgent() {
     ];
 
     return toMatch.some((toMatchItem) => {
-        return navigator.userAgent.match(toMatchItem) 
+        return navigator.userAgent.match(toMatchItem)
     });
 }

@@ -2,7 +2,6 @@ $(document).ready(function () {
 
     // get vendor Id of the relavant page 
     var vendorID = getUrlParameter('vendorID')
-    console.log(vendorID)
     markVendorFavOrNot(vendorID)
     // favourite selected or unselected
     $('#fav-icon-container').click(function () {
@@ -46,13 +45,14 @@ function addOrRemoveFavourites(vendorID) {
                 })
             }
         }
-
+        toastr.success('Added To Favourites', 'Success');
     } else {
+
         $('#fav-icon').text('favorite_border')
         var favVendorList = removeVendor(userobj.favourites, vendorID)
         userobj.favourites = favVendorList
+        toastr.success('Removed From Favourites', 'Success');
     }
-    //console.log(userobj)
     sessionStorage.setItem('userobj', JSON.stringify(userobj));
 }
 
@@ -62,7 +62,6 @@ function filterVendors(vendors, vendorID) {
     vendorArr = vendors.filter(function (element) {
         return element.id == vendorID
     })
-    console.log(vendorArr[0])
     return vendorArr[0]
 }
 
@@ -71,7 +70,6 @@ function filterFavList(vendors, vendorID) {
     vendorArr = vendors.filter(function (element) {
         return element.vendorID == vendorID
     })
-    console.log(vendorArr[0])
     return vendorArr[0]
 }
 
@@ -80,7 +78,6 @@ function removeVendor(vendors, vendorID) {
     vendorArr = vendors.filter(function (element) {
         return element.vendorID != vendorID
     })
-    console.log(vendorArr)
     return vendorArr
 }
 
@@ -103,9 +100,8 @@ function getUrlParameter(sParam) {
 function markVendorFavOrNot(vendorID) {
     var userobj = JSON.parse(sessionStorage.getItem('userobj'));
 
-    if (userobj.favourites != null) {
+    if (userobj != null && userobj.favourites != null) {
         var currentVendor = filterFavList(userobj.favourites, vendorID)
-        //   console.log(currentVendor)
         if (currentVendor != null && currentVendor != undefined) {
             $('#fav-icon').text('favorite')
         } else {
