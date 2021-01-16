@@ -24,61 +24,39 @@
 <body>
     <div data-role="page" id="qr-scanner">
         <!-- <div data-role="header" data-position="fullscreen"> -->
-        <div class="card">
-            <div class="ui-grid-b">
-                <div class="ui-block-a">
-                    <div class="ui-bar ui-bar" style="height: 30px;">
-                        <div class="ui-bar ui-bar">
-                            <img src="../assets/leftarrow.png" style="height: 15px;" onclick="goBack()">
-                        </div>
-                    </div>
-                </div>
-                <div class="ui-block-b">
-                    <div class="ui-bar ui-bar" style="height: 30px; text-align: center;   display: flex;
-                    justify-content: center;
-                    align-items: center;">QR Scanner</div>
-                </div>
-                <div class="ui-block-c">
-                    <div class="ui-bar ui-bar" style="height: 30px;"></div>
-                </div>
+            <div data-role="header" data-postion="fixed" data-fullscreen="true" class="header-bar">
+                <i class="arrow arrow-left" onclick="goBack()"></i>
+                <h4>QR Scanner</h4>
             </div>
-        </div>
         <!-- </div> -->
-        <div role="main" class="ui-content">
+        <div role="main">
             <!-- <a id='btn-scan-qr' href="#" data-shadow="false" data-theme="none"
             onclick="qrScanner();">here first</a> -->
             <!-- <a id='btn-scan-qr' href="#" data-shadow="false" data-theme="none"
             onclick="scanClick();">True</a> -->
-            <div>
+            <div class="camera-bg">
                 <canvas hidden="" id="qr-canvas"></canvas>
             </div>
             <div id="qr-result" hidden="">
                 <!-- <b>Data:</b> <span id="outputData"></span> -->
-                <div class="card">
-                    <div class="pop-up">
+                <div class="popup-screen">
+                    <div class="popup">
+                        <div class="popup-header">
+                            <i onclick="navigation('qr-cam')"  id="close-popup" class=" material-icons">close</i>
+                            <h4>Success</h4>
+                        </div>
                         <div class="pop-up-content">
-                            <h6><span id="outputData"></span></h6>
+                            <h5>You have received</h4><h3 class="points" id="outputData"></h3>
+                            <h5>loyalty points. Check the loyalty section under Profile to see the gift you received.</h5>
+                        </div>
+                        <div class="">
+                            <div class="action-btn">
+                                <button type="button" onclick="navigation('profile')">
+                                    <p class="primaryText">OK</p>
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div data-role="popup" class="popup" id="popup-modal" data-theme="a" style="border-radius: 20px;">
-                <div class="popup-header">
-                    <i class=" material-icons">close</i>
-                    <h4>Success</h4>
-                </div>
-                <div class="popup-body">
-                    <div class="details">
-                        <div class="message">
-                            You have received 500 loyalty points. 
-                            Check the loyalty section under Profile to see the gift you received
-                        </div>
-                        <div class="action-btn">
-                            <button type="button">
-                                <p class="primaryText">OK</p>
-                            </button>
-                        </div> 
-                    </div>                   
                 </div>
             </div>
         </div>
