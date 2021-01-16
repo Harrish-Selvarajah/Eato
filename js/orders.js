@@ -1,3 +1,4 @@
+var iframeSrc = '../components/write-review.html?popup=true&vendorID='
 var pastOrders = [
     {
         id: 1,
@@ -61,6 +62,12 @@ $(document).ready(function () {
     // repeatOngoingOrder();
     // repeatPastOrders();
     // an();
+
+    $('#close').click(function (e) { 
+        $('#popup').popup('close')
+    });
+
+  
 });
 
 
@@ -204,7 +211,16 @@ function an() {
 }
 
 function rateVendor(id) {
-    window.location.href = '../components/write-review.html?vendorID=' + id;
+
+    if(!detectMobileWithAgent()){
+        var src = iframeSrc + id
+        $('#iframe').attr('src',src)
+        console.log($('#iframe').attr('src'))
+        $('#popup').popup('open')
+    }else{
+        window.location.href = '../components/write-review.html?vendorID=' + id;
+    }
+    
 }
 
 function orderAgain(id) {
@@ -265,4 +281,19 @@ function orderAgain(id) {
             document.location.href = "./cart.html";
         }
     }
+}
+
+function detectMobileWithAgent() {
+    const toMatch = [
+        /Android/i,
+        /webOS/i,
+        /iPhone/i,
+        /iPod/i,
+        /BlackBerry/i,
+        /Windows Phone/i
+    ];
+
+    return toMatch.some((toMatchItem) => {
+        return navigator.userAgent.match(toMatchItem)
+    });
 }

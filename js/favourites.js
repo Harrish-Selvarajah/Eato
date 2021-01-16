@@ -334,7 +334,7 @@ function removeFavourite(vendorID) {
 
 
     loadFavVendorList();
-
+    contentEmptyoperations()
 }
 
 function filterArrayById(array, id) {
