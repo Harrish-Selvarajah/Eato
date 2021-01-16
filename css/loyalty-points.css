@@ -78,3 +78,24 @@
     border-radius: 50%;
     object-fit: cover;
 }
+
+.primaryText{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.popup-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popup{
+    min-height: 216px !important;
+    width: 270px !important;
+
+}
+
+.popup-header{
+    justify-content: space-around !important;
+}

@@ -40,11 +40,16 @@
                             <h4 style="text-align: center; padding: 5px;">Share and get 200 points</h4>
                             <p class="primaryText" style="text-align: center;">
                                 Refer your friends and get 200 loyalty points each on their first transactions</h5>
-                            <div class="action-btn">
-                                <button type="button">
-                                    <p class="primaryText">Share Invite Code</p>
-                                </button>
-                            </div>
+                                <a href="#popup-modal" data-rel="popup" data-position-to="window" id=" popup"
+                                data-transition="pop">
+                                <div>
+                                    <div class="action-btn">
+                                        <button type="button">
+                                            <p class="primaryText">Share Invite Code</p>
+                                        </button>
+                                    </div> 
+                                </div>
+                            </a>
                         </div>
                     </div>
 
@@ -129,6 +134,28 @@
             </div>
             <!-- <a onclick="goToQRCamera()" data-role="button">QR camera</a> -->
         </div>
+        <!-- popup -->
+        <div data-role="popup" class="popup" id="popup-modal" data-theme="a" style="border-radius: 20px;">
+            <div class="popup-header">
+                <div></div>
+                <h4>Share Code</h4>
+                <a style="color: #FD6921 !important;"  data-rel="back"> <i id="close-popup" class=" material-icons">close</i></a>
+            </div>
+            <div class="popup-body">
+                <h2 style="color: #FD6921;">HVE234t1</h2>
+            </div>
+            <div>
+                <a  data-rel="back">
+                    <div class="action-btn">
+                        <button type="button" style="width: 130px !important;">
+                            <p class="primaryText"> <i class=" material-icons">content_copy</i> Copy</p>
+                        </button>
+                    </div>
+                </a>
+                
+            </div>
+        </div>
+        <!-- popup -->
         <!-- Footer -->
         <div data-role="footer" class="footer">
             <div class="footer-top">
