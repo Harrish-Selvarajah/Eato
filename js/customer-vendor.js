@@ -48,6 +48,7 @@ function addOrRemoveFavourites(vendorID) {
         }
 
     } else {
+        
         $('#fav-icon').text('favorite_border')
         var favVendorList = removeVendor(userobj.favourites, vendorID)
         userobj.favourites = favVendorList
@@ -103,7 +104,7 @@ function getUrlParameter(sParam) {
 function markVendorFavOrNot(vendorID) {
     var userobj = JSON.parse(sessionStorage.getItem('userobj'));
 
-    if (userobj.favourites != null) {
+    if (userobj !=null && userobj.favourites != null) {
         var currentVendor = filterFavList(userobj.favourites, vendorID)
         //   console.log(currentVendor)
         if (currentVendor != null && currentVendor != undefined) {
