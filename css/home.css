@@ -115,7 +115,7 @@ a {
     height: 50px;
     width: 50px;
     border-radius: 50%;
-    background-color: #FD6921;
+    background-color: #fff;
 }
 
 .circle img {
@@ -200,6 +200,10 @@ a {
     width: 323px;
     justify-content: center;
     align-items: center;
+}
+
+.box a{
+    display: contents;
 }
 
 /* Home section style end */

@@ -12,13 +12,14 @@
     <link rel="stylesheet" href="../css/site.css" />
     <link rel="stylesheet" href="../css/chat-customer.css" />
     <script src="../js/customer-chat.js"></script>
+    <script src="../js/common.js"></script>
 </head>
 
 <body>
     <div data-role="page">
         <div data-role="header" data-postion="fixed" data-fullscreen="true" class="header-bar">
             <!-- <img src="../assets/logo new.svg"> -->
-            <i class="arrow arrow-left"></i>
+            <i class="arrow arrow-left" onclick="goBack()"></i>
             <h4>Message</h4>
         </div>
         <div role="main" class="ui-content ui-content-header">
@@ -27,7 +28,7 @@
                     <div class="profile-pic-container">
                         <div class="profile-pic"></div>
                     </div>
-                    <h2>Melt House</h2>
+                    <h2 id="vendor-name"></h2>
                     <div class="rating d-flex">
                         <p class="subtitle">4.9</p>
                         <i class="material-icons">grade</i>

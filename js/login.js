@@ -1,3 +1,4 @@
+var userExists = false;
 var firebaseConfig = {
   apiKey: "AIzaSyBDwiPGqXFeormDpnISyavzwju3BnCUPTo",
   authDomain: "eato-69.firebaseapp.com",
@@ -41,7 +42,7 @@ function login() {
   var loyaltyPointsArray = [];
 
   if (!firstName || firstName.trim() === '') {
-    toastr.warning('Please Enter First Name', 'Warning');
+    toastr.warning('Please Enter User Name', 'Warning');
   }
   else if (!password || password === '') {
     toastr.warning('Please Enter Password', 'Warning');
@@ -61,13 +62,20 @@ function login() {
         userObj['favourites'] = user.favourites
         sessionStorage.setItem('userobj', JSON.stringify(userObj));
         sessionStorage.setItem('cart', JSON.stringify(cart));
-        sessionStorage.setItem('chats', JSON.stringify(chats));
+        // sessionStorage.setItem('chats', JSON.stringify(chats));
         sessionStorage.setItem('loyaltyPoints', JSON.stringify(loyaltyPoints));
         sessionStorage.setItem('loyaltyPointsArray', JSON.stringify(loyaltyPointsArray));
         console.log(sessionStorage.getItem('userobj'));
         document.location.href = "./home.html";
       }
-    })
+      else {
+        userExists = true
+      }
+    });
+    if (userExists == true) {
+      toastr.error('User Does Not Exist', 'Error');
+      userExists = false;
+    }
   }
 }
 

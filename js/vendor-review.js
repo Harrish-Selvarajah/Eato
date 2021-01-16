@@ -17,6 +17,7 @@ function openPopup() {
 }
 
 $(document).ready(function () {
+	console.log(sessionStorage);
 	var showChar = 100;
 	var ellipsestext = "...";
 	var moretext = "more";
@@ -61,7 +62,8 @@ $('#close-btn').click(function (e) {
 function getReviews() {
 	reviews = [];
 	// debugger
-	firebase.database().ref('Vendors/' + 1).child('reviews').once('value', function (snapshot) {
+	var vendorID = JSON.parse(sessionStorage.getItem('vendorObj')).id;
+	firebase.database().ref('Vendors/' + vendorID).child('reviews').once('value', function (snapshot) {
 		snapshot.forEach(function (childSnapshot) {
 			var childData = childSnapshot.val();
 			//   reviews.push(childData);
@@ -155,7 +157,8 @@ function reply(id) {
 
 function submitResponse() {
 	var response = $('#reviewReply').val();
-	firebase.database().ref('Vendors/' + 1).child('reviews/' + currentID).update({
+	var vendorID = JSON.parse(sessionStorage.getItem('vendorObj')).id;
+	firebase.database().ref('Vendors/' + vendorID).child('reviews/' + currentID).update({
 		// name: 'Melt House',
 		reviewResponse: response,
 	}

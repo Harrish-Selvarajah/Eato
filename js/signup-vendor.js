@@ -12,7 +12,7 @@ function signUp() {
         toastr.warning('Please Enter Email', 'Warning');
     }
     else if (!firstName || firstName === '') {
-        toastr.warning('Please Enter First Name', 'Warning');
+        toastr.warning('Please Enter Full Name', 'Warning');
     }
     else if (!password || password === '') {
         toastr.warning('Please Enter Password', 'Warning');

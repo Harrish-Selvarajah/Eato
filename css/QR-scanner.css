@@ -1,4 +1,7 @@
 .ui-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
     background-color: black;
 }
 
@@ -12,9 +15,7 @@
     left: 0;
     margin: auto;
     overflow: auto;
-    position: fixed;
-    right: 0;
-    top: 0;
+    
     -o-object-fit: contain;
     object-fit: contain;
   }
@@ -31,4 +32,29 @@
     top: 0;
     -o-object-fit: contain;
     object-fit: contain; */
+  }
+
+  .card{
+    margin-bottom: 1px !important;
+  }
+
+  .action-btn>button{
+    width: 180px !important;
+  }
+
+  .popup-body{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 190px;
+    text-align: center;
+  }
+
+  .action-btn{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+  }
+  .popup {
+    min-height: 280px !important;
   }

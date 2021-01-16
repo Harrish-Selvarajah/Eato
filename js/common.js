@@ -47,11 +47,32 @@ function navigation(page) {
             document.location.href = "./signup.html";
             break;
         case 'vend-signup':
-            document.location.href = "signup-vendor.html";
+            document.location.href = "./signup-vendor.html";
             break;
         case 'about-us':
-            document.location.href = "about-us.html";
-            break
+            document.location.href = "./about-us.html";
+            break;
+        case 'vendor-home':
+            document.location.href = "./vendor-home.html";
+            break;
+        case 'vendor-menu':
+            document.location.href = "./vendor-menu.html";
+            break;
+        case 'chat-vendor':
+            document.location.href = "./chat-vendor.html";
+            break;
+        case 'vendor-review':
+            document.location.href = './vendor-review.html';
+            break;
+        case 'customer-chat':
+            document.location.href = './chat-customer.html';
+            break;
+        case 'order-status':
+            document.location.href = './order-status.html';
+            break;
+        case 'user-selection':
+            document.location.href = './user-selection.html';
+            break;
     }
    
 }

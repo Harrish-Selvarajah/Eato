@@ -8,6 +8,7 @@ $(document).on('pageinit', '#qr-scanner', function () {
   const qrResult = document.getElementById("qr-result");
   var outputData = document.getElementById("outputData");
   //   var btnScanQR = document.getElementById("btn-scan-qr");
+  var loyaltyPoints = JSON.parse(sessionStorage.getItem('loyaltyPoints'));
 
   let scanning = false;
 
@@ -19,10 +20,11 @@ $(document).on('pageinit', '#qr-scanner', function () {
       video.srcObject.getTracks().forEach(track => {
         track.stop();
       });
-
+      loyaltyPoints = loyaltyPoints + Number(res);
       qrResult.hidden = false;
       canvasElement.hidden = true;
       //   btnScanQR.hidden = false;
+      sessionStorage.setItem('loyaltyPoints', loyaltyPoints);
     }
   };
 
