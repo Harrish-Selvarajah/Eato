@@ -1,26 +1,3 @@
-var fooditem = [
-    {
-        id: 'm1',
-        name: 'Cheese Pasta',
-        price: 650,
-        foodPicture: '',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.'
-    },
-    {
-        id: 'm2',
-        name: 'Chico Fruit Salad',
-        price: 650,
-        foodPicture: '',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.'
-    },
-    {
-        id: 'm3',
-        name: 'Squash Risotto',
-        price: 650,
-        foodPicture: '',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit. Maecenas blandit neque ut eros cons ectetur, vel porta sem sodales. Maecenas mollis feugiat maximus. Donec vehicula tincidu nt he ndrerit. Proin pellentesque lectus ac ex ia culis, nec cursus tortor accumsan. Sed ante dui, dignissim vitae laoreet in, cursus id magna.'
-    }
-];
 var cart = [];
 var totalPrice = 0;
 var subTotal = 0;
@@ -40,15 +17,17 @@ $(document).ready(function () {
     cart = JSON.parse(sessionStorage.getItem('cart'));
     console.log(cart);
     if (cart.length == 0) {
+        status.style.display = "none !important";
+        status1.style.display = "block !important";
         status.style.display = "none";
         status1.style.display = "block";
     } else {
-        status1.style.display = "none";
+        status1.style.display = "none !important";
         if ($(window).width() < 768) {
-            status.style.display = "block";
+            status.style.display = "block !important";
         }
         else {
-            status.style.display = "grid";
+            status.style.display = "grid !important";
         }
     }
     repeat();
@@ -70,7 +49,7 @@ function repeat() {
         <!-- Start Item -->
         <div class="cards cart-item">
             <div>
-                <img src="../assets/food_item.jpg">
+                <img src="${item.image}">
             </div>
             <div class="food-item-details">
                 <h4>${item.foodName}</h4>
