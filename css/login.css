@@ -68,6 +68,13 @@
     color: #FD6921;
 }
 
+.to-signup-text>a:active {
+    color: #ff2400 !important;
+}
+.to-signup-text>a:hover {
+    color: #ff4500 !important;
+}
+
 .login-img-iPad {
     display: flex;
 }
@@ -96,6 +103,7 @@
     top: 0px;
     left: 4px;
 }
+
 
 @media only screen and (max-width: 700px) {
     .login-body-container {

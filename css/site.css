@@ -1,3 +1,28 @@
+@font-face {
+    font-family: "Gilroy-Bold";
+    src: url(../fonts/Gilroy-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Gilroy-Heavy";
+    src: url(../fonts/Gilroy-Heavy.ttf);
+}
+
+@font-face {
+    font-family: "Gilroy-Light";
+    src: url(../fonts/Gilroy-Light.ttf);
+}
+
+@font-face {
+    font-family: "Gilroy-Medium";
+    src: url(../fonts/Gilroy-Medium.ttf);
+}
+
+@font-face {
+    font-family: "Gilroy-Regular";
+    src: url(../fonts/Gilroy-Regular.ttf);
+}
+
 body {
     margin: 0;
     height: 100%;
@@ -5,26 +30,31 @@ body {
 
 h1 {
     margin: 0!important;
+    font-family: "Gilroy-Bold";
     font-size: 28px!important;
 }
 
 h2 {
     margin: 0!important;
+    font-family: "Gilroy-Medium";
     font-size: 24px!important;
 }
 
 h3 {
     margin: 0!important;
+    font-family: "Gilroy-Medium";
     font-size: 21px!important;
 }
 
 h4 {
     margin: 0!important;
+    font-family: "Gilroy-Medium";
     font-size: 18px!important;
 }
 
 h5 {
     margin: 0!important;
+    font-family: "Gilroy-Medium";
     font-size: 14px!important;
 }
 
@@ -34,28 +64,26 @@ p {
 
 .subtitle {
     margin: 0!important;
+    font-family: "Gilroy-Medium";
     font-size: 16px!important;
 }
 
 .primaryText {
     margin: 0!important;
+    font-family: "Gilroy-Medium";
     font-size: 14px!important;
 }
 
 .secondaryText {
     margin: 0!important;
+    font-family: "Gilroy-Medium";
     font-size: 12px!important;
 }
 
 .infoText {
     margin: 0!important;
+    font-family: "Gilroy-Medium";
     font-size: 10px!important;
-    /* text-overflow:ellipsis; 
-    white-space:nowrap */
-    /* white-space: nowrap; */
-    /* width: 50px; */
-    /* overflow: hidden;
-text-overflow: clip; */
 }
 
 /* div.infoText:hover {
@@ -73,6 +101,7 @@ text-overflow: clip; */
 .date {
     margin: 0;
     font-size: 10px;
+    font-family: "Gilroy-Bold";
 }
 
 .ui-content {
@@ -109,6 +138,11 @@ text-overflow: clip; */
 
 .d-flex {
     display: flex !important;
+}
+
+.ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper {
+    color: #1A1C1F;
+    text-shadow: none!important;
 }
 
 .header-bar {
@@ -241,6 +275,7 @@ text-overflow: clip; */
     color: #ffffff!important;
     text-shadow: none!important;
     border-width: 0px!important;
+    font-weight: 100!important;
 }
 
 .footer-top {
@@ -259,6 +294,7 @@ text-overflow: clip; */
 .footer-left>p>a {
     color: inherit;
     text-decoration: none;
+    font-weight: 100;
 }
 
 .footer-right {
@@ -318,6 +354,7 @@ text-overflow: clip; */
     color: #787878;
 }
 
+/* Button Emphasis styles start */
 .action-btn>button {
     width: 290px;
     height: 42px;
@@ -330,9 +367,27 @@ text-overflow: clip; */
     text-shadow: none!important;
 }
 
+.action-btn>button:hover {
+    background-color: #ff4500!important;
+    border-color: #ff4500!important;
+}
+
+.action-btn>button:active {  
+    background-color: #ff2400!important;
+    border-color: #ff2400!important;
+}
+
 .action-btn>button>p {
     color: white;
 }
+
+
+/* Button Emphasis styles end */
+
+a{
+    text-decoration: none;
+}
+
 
 .adjust-quantity {
     display: flex;
@@ -423,6 +478,10 @@ text-overflow: clip; */
     padding: 20px;
 }
 
+.popup-input {
+    margin-top: 15px;
+}
+
 .popup-input>div {
     border-radius: 25px;
 }
@@ -448,6 +507,11 @@ text-overflow: clip; */
     margin: 0px!important;
 }
 
+.ui-popup-screen {
+    background-color: #000 !important;
+    opacity: 0.75 !important;
+}
+
 /*Navbar UI changes start*/
 
 .bottom-nav {
@@ -464,6 +528,7 @@ text-overflow: clip; */
 .ui-icon-user {
     border-top-right-radius: 20px !important;
 }
+
 .ui-icon-star {
     border-top-right-radius: 20px !important;
 }
@@ -490,6 +555,10 @@ text-overflow: clip; */
 .ui-btn.ui-btn-active.nav-search:after {
     background: url('../assets/navbar-icons/search-filled.png') no-repeat !important;
     background-size: 20px 20px !important;
+}
+
+.ui-btn, label.ui-btn {
+    font-weight: 100!important;
 }
 
 /* cart icon chanegs */
@@ -557,6 +626,8 @@ text-overflow: clip; */
     border-color: #fff !important;
     color: #333;
     text-shadow: 0 1px 0 #f3f3f3;
+    font-family: "Gilroy-Medium";
+    font-size: 12px!important;
 }
 
 .navbar-btn.ui-btn-icon-left:after, .navbar-btn.ui-btn-icon-right:after, .navbar-btn.ui-btn-icon-top:after, .navbar-btn.ui-btn-icon-bottom:after, .navbar-btn.ui-btn-icon-notext:after {
@@ -568,6 +639,8 @@ text-overflow: clip; */
     border-color: #fff !important;
     color: #FD6921 !important;
     text-shadow: unset !important;
+    font-family: "Gilroy-Medium";
+    font-size: 12px!important;
 }
 
 .ui-page-theme-a .navbar-btn.ui-btn:focus {
@@ -582,18 +655,27 @@ text-overflow: clip; */
 
 /*Navbar UI changes end*/
 
-
 /*LOADER CSS*/
-.no-js #loader { display: none;  }
-.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+
+.no-js #loader {
+    display: none;
+}
+
+.js #loader {
+    display: block;
+    position: absolute;
+    left: 100px;
+    top: 0;
+}
+
 .se-pre-con {
-	position: fixed;
-	left: 0px;
-	top: 0px;
-	width: 100%;
-	height: 100%;
-	z-index: 9999;
-	background: url(../assets/loader/25.svg) center no-repeat #fff;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url(../assets/loader/25.svg) center no-repeat #fff;
 }
 
 @media (max-width: 767px) {

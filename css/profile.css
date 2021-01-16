@@ -2,6 +2,17 @@
     height: 80vh;
     padding: 20px;
 }
+
+.user-name>h2 {
+    font-size: 36px!important;
+    font-family: "Gilroy-Medium";
+}
+
+.user-name>h3 {
+    font-size: 21px!important;
+    font-family: "Gilroy-Medium";
+}
+
 /* .profile-body-container>div:first-child {
     flex: 2;
     display: flex;
@@ -11,9 +22,11 @@
 .profile-body-container>div:last-child {
     flex: 1;
 } */
-.loyalty-balance{
+
+.loyalty-balance {
     height: 40%;
 }
+
 .loyalty-balance>div:first-child, .loyalty-balance>div:last-child {
     flex: 3;
     display: flex;
@@ -48,29 +61,29 @@
     height: 100px;
 }
 
-.card{
+.card {
     border-radius: 20px !important;
 }
 
-.profile-right{
+.profile-right {
     width: 70%;
     height: 600px;
     margin: 10px;
 }
 
-.profile-left{
+.profile-left {
     width: 30%;
     height: 600px;
     margin: 10px;
 }
 
-.user-profile{
+.user-profile {
     padding: 10px;
     height: 210px;
 }
 
-.user-picture{
-    justify-content:center;
+.user-picture {
+    justify-content: center;
     width: 100%;
     display: flex;
     align-items: center;
@@ -78,15 +91,16 @@
     height: 150px;
     border-radius: 50%;
 }
-.user-picture img{
+
+.user-picture img {
     padding: 5px;
     border: 3.5px #FD6921 solid;
     width: 125px;
     height: 125px;
-     border-radius: 50%;
+    border-radius: 50%;
 }
 
-.change-pic{
+.change-pic {
     cursor: default;
     align-items: center;
     justify-content: center;
@@ -102,54 +116,66 @@
     color: #FD6921;
 }
 
+.change-pic:active{
+    color:  #ff4500!important;
+}
+
+.change-pic:hover{
+    color:  #ff2400!important;
+}
+
 .user-details{
     padding: 10px;
 }
-.tabs{
+
+.tabs {
     padding: 10px;
     height: 100%;
 }
 
-.tab{
+.tab {
     display: flex;
     align-items: center;
     padding: 10px;
     height: 30px;
 }
-.tab:hover{
+
+.tab:hover {
     cursor: default;
-    color: #FD6921;   
+    color: #ff4500;   
 }
 
-.tab:active{
+.tab:active {
     cursor: default;
-    color: white;
-    background-color: #FD6921;
+    color: #ff2400;
 }
-.tab-name{
+
+.tab-name {
     padding-left: 20px;
 }
 
-.loyalty-tab{
+.loyalty-tab {
     display: none;
 }
-.action-btn>button{
+
+.action-btn>button {
     width: 100% !important;
 }
 
-.balance_left{
+.balance_left {
     border-right: 3px solid #ADADAD;
     margin: 13px;
-
 }
 
-.balance_right{
+.balance_right {
     margin: 13px;
 }
-.acitivity_order{
+
+.acitivity_order {
     height: 58%;
 }
-.acitivity{
+
+.acitivity {
     justify-content: space-between;
     padding: 10px !important;
     display: flex;
@@ -160,7 +186,7 @@
     height: 60px;
 }
 
-.acitivity_circle{
+.acitivity_circle {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -169,41 +195,38 @@
     border-radius: 50%;
 }
 
-.acitivity_circle img{
+.acitivity_circle img {
     height: 45px;
     width: 45px;
     border-radius: 50%;
     object-fit: cover;
 }
+
 @media only screen and (max-width: 700px) {
-    .profile-body-container{
+    .profile-body-container {
         height: 100% !important;
         padding: 0px;
     }
-
-    .user-profile{
+    .user-profile {
         width: 50% !important;
         align-items: center !important;
-    display: flex !important;
-
+        display: flex !important;
     }
-    .user-picture{
-        justify-content:flex-start !important;
+    .user-picture {
+        justify-content: flex-start !important;
     }
-    .profile-left{
+    .profile-left {
         width: 100% !important;
         margin: 0px !important;
         height: 100%;
-    } 
-    .profile-right{
+    }
+    .profile-right {
         display: none !important;
     }
-
-    .card{
+    .card {
         box-shadow: unset !important;
     }
-
-    .loyalty-tab{
+    .loyalty-tab {
         display: flex !important;
     }
 }

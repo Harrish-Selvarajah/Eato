@@ -40,6 +40,7 @@
 .store-details>div:last-child>* {
     color: white;
     padding: 5px;
+    text-shadow: none!important;
 }
 
 .store-details>div:last-child>a {
@@ -89,8 +90,28 @@
     background-color: unset!important;
 }
 
+.action-btn>button:hover {
+    color: #ff4500 !important ;
+    background-color: unset!important;
+    border-color: #ff4500!important;
+}
+
+.action-btn>button:active {  
+    background-color: unset!important;
+    border-color: #ff2400!important;
+    color: #ff2400 !important ;
+}
+
 .action-btn>button>p {
     color: #FD6921!important;
+}
+
+.action-btn>button>p:hover {
+    color: #ff4500!important;
+}
+
+.action-btn>button>p:active {
+    color: #ff2400!important;
 }
 
 .item-details {

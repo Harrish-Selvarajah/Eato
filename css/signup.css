@@ -57,6 +57,12 @@
 .to-login-text>a {
     color: #FD6921;
 }
+.to-login-text>a:active {
+    color: #ff2400 !important;
+}
+.to-login-text>a:hover {
+    color: #ff4500 !important;
+}
 
 .img-curve {
     display: none;

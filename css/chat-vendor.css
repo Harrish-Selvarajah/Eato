@@ -96,6 +96,15 @@
     transform: rotate(-25deg);
 }
 
+/* Button Emphasis styles start */
+.send-btn:hover{
+    background-color: #ff4500!important;
+}
+
+.send-btn:active{
+    background-color: #ff2400!important;
+}
+/* Button Emphasis styles end */
 
 .chat-profile{
     margin-bottom: 8px;

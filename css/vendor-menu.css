@@ -8,7 +8,6 @@
 }
 
 .vendor-menu>h1 {
-    font-weight: 500;
     color: black;
     margin-bottom: 18px!important;
 }
@@ -34,7 +33,7 @@
 
 .food-item-details>div>span:last-child {
     font-size: 19px;
-    font-weight: 600;
+    font-family: "Gilroy-Medium";
 }
 
 .menu-items>ul {
@@ -84,3 +83,13 @@
     font-size: 40px;
     text-shadow: none;
 }
+
+/* Button Emphasis styles start */
+.add-button-container:hover{
+    background-color: #ff4500 !important;
+}
+
+.add-button-container:active{
+    background-color: #ff2400 !important;
+}
+/* Button Emphasis styles end */
