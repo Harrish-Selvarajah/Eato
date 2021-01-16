@@ -45,20 +45,19 @@ $(document).ready(function () {
 
     // Device Setup 
     var popup = getUrlParameter('popup')
-    
-    if (popup == true || popup == "true"){
+
+    if (popup == true || popup == "true") {
         // pop up adjustments
         $('#header-bar').hide()
-        $('body').css('overflow-x','hidden')
-        
-       $('#main').css('margin','0px')
-       $('#main').css('width','100%')
-       $('#main').css('overflow','hidden')
+        $('body').css('overflow-x', 'hidden')
 
-       $('#reviews').css('width','360px')
-       $('#reviews').css('padding','0px')
-       $('#reviews').css('margin','0px')
-       $('#reviews').css('margin-left','4px')
+        $('#main').css('margin', '0px')
+        $('#main').css('width', '100%')
+        $('#main').css('overflow', 'hidden')
+
+        $('#reviews').css('width', '325px')
+        $('#reviews').css('padding', '0px')
+        $('#reviews').css('margin', '20px 20px 20px 20px')
     }
 
 
