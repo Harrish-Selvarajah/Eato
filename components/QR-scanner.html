@@ -23,35 +23,13 @@
 
 <body>
     <div data-role="page" id="qr-scanner">
-        <!-- <div data-role="header" data-position="fullscreen"> -->
-        <div class="card">
-            <div class="ui-grid-b">
-                <div class="ui-block-a">
-                    <div class="ui-bar ui-bar" style="height: 30px;">
-                        <div class="ui-bar ui-bar">
-                            <img src="../assets/leftarrow.png" style="height: 15px;" onclick="goBack()">
-                        </div>
-                    </div>
-                </div>
-                <div class="ui-block-b">
-                    <div class="ui-bar ui-bar" style="height: 30px; text-align: center;   display: flex;
-                    justify-content: center;
-                    align-items: center;">QR Scanner</div>
-                </div>
-                <div class="ui-block-c">
-                    <div class="ui-bar ui-bar" style="height: 30px;"></div>
-                </div>
-            </div>
+        <div data-role="header" data-postion="fixed" data-fullscreen="true" class="header-bar">
+            <i class="arrow arrow-left" onclick="goBack()"></i>
+            <h4>QR Scanner</h4>
         </div>
         <!-- </div> -->
-        <div role="main" class="ui-content">
-            <!-- <a id='btn-scan-qr' href="#" data-shadow="false" data-theme="none"
-            onclick="qrScanner();">here first</a> -->
-            <!-- <a id='btn-scan-qr' href="#" data-shadow="false" data-theme="none"
-            onclick="scanClick();">True</a> -->
-            <div>
-                <canvas hidden="" id="qr-canvas"></canvas>
-            </div>
+        <div role="main">
+            <canvas hidden="" id="qr-canvas"></canvas>
             <div id="qr-result" hidden="">
                 <!-- <b>Data:</b> <span id="outputData"></span> -->
                 <div class="card">
@@ -69,16 +47,13 @@
                 </div>
                 <div class="popup-body">
                     <div class="details">
-                        <div class="message">
-                            You have received 500 loyalty points. 
-                            Check the loyalty section under Profile to see the gift you received
-                        </div>
+                        <div id="final-message" class="message"></div>
                         <div class="action-btn">
                             <button type="button">
                                 <p class="primaryText">OK</p>
                             </button>
-                        </div> 
-                    </div>                   
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
