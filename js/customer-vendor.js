@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
 
     // get vendor Id of the relavant page 
@@ -10,12 +11,15 @@ $(document).ready(function () {
     })
 
     $('#close').click(function (e) { 
+        $('body').css('overflow', 'auto');
         $('#review-popup').popup('close') 
     });
+
 });
 
 function goToRatings() {
     if(!detectMobileWithAgent()){
+        $('body').css('overflow', 'hidden');
         $('#review-popup').popup('open')
     }else{
         document.location.href = "./customer-review.html";

@@ -58,13 +58,11 @@ $(document).ready(function () {
        $('#reviews').css('width','360px')
        $('#reviews').css('padding','0px')
        $('#reviews').css('margin','0px')
-
-    } else{
-        
+       $('#reviews').css('margin-left','4px')
     }
 
 
-    
+
 });
 
 function ShowVendorReply(id) {
