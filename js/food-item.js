@@ -246,10 +246,19 @@ function addToCart(id) {
             cart.push(items);
         }
     })
+
+    toastr.success('Added To Cart', 'Success');
     console.log(cart);
     sessionStorage.setItem('cart', JSON.stringify(cart));
     console.log(sessionStorage);
-    document.location.href = "./customer-vendor.html";
+
+    if (!detectMobileWithAgent()) {
+        $("#food-item-popup").popup("close");
+        $('body').css('overflow', 'auto');
+    }
+    else {
+        setTimeout(function () { document.location.href = "./customer-vendor.html"; }, 500);
+    }
 }
 
 function handleFoodItemPopup(action, id) {
@@ -278,8 +287,8 @@ function handleFoodItemPopup(action, id) {
 
 function renderPopup(foodId) {
     var renderHtml = "";
-   // $(".d-flex").remove();
-   $('#render-fooditem-popup').empty()
+    // $(".d-flex").remove();
+    $('#render-fooditem-popup').empty()
     vendorID = JSON.parse(sessionStorage.getItem('vendorID'));
     vendor.forEach(function (x) {
         if (x.id == Number(vendorID)) {
@@ -370,6 +379,6 @@ function detectMobileWithAgent() {
     ];
 
     return toMatch.some((toMatchItem) => {
-        return navigator.userAgent.match(toMatchItem) 
+        return navigator.userAgent.match(toMatchItem)
     });
 }
