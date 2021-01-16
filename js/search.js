@@ -453,7 +453,7 @@ function populateVendors(){
 
         sectionCard = sectionCard.concat(
                `
-               <div class="section-card" id ="vendor-${idx}">
+               <div class="section-card" id ="vendor-${idx}" onclick=goToVendor('${vendor.id}')>
                     <div class="vendor-img">
                         <img src = ${vendor.img}>
                     </div>
@@ -642,4 +642,9 @@ function  filterWithType(e){
          }
      })
     
+}
+
+function goToVendor(vendorID) {
+    sessionStorage.setItem('vendorID', vendorID);
+    document.location.href = '../components/customer-vendor.html?vendorID=' + vendorID;
 }
