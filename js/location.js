@@ -32,6 +32,7 @@ function initAutocomplete() {
     mapTypeId: "roadmap",
     disableDefaultUI: true,
   });
+  // $(".se-pre-con").fadeOut("fast");
   // Create the search box and link it to the UI element.
   const input = document.getElementById("pac-input");
   const searchBox = new google.maps.places.SearchBox(input);
@@ -103,6 +104,7 @@ function initAutocomplete() {
   locationButton.textContent = "Current Location";
   locationButton.classList.add("custom-map-control-button");
   map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+  // $(".se-pre-con").fadeOut("fast");
   locationButton.addEventListener("click", () => {
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
