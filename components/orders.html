@@ -4,15 +4,17 @@
     <title>Orders | Eato</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+   
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
     <link rel="stylesheet" href="../css/site.css" />
     <link rel="stylesheet" href="../css/orders.css" />
-    <script src="../js/orders.js"></script>
+   
     <script src="../js/common.js"></script>
+    <script src="../js/orders.js"></script>
 </head>
 
 <body>
@@ -229,6 +231,15 @@
                             onclick="navigation('profile')">Profile</a></li>
             </div>
         </div>
+
+        <div data-role="popup" class="pop" id="popup" style="overflow-y: hidden; height:700px; width:368px; border-radius:20px; overflow-x: hidden;">
+            <div class="popup-header">
+                <i class=" material-icons" id="close">close</i>
+                <h4>Write a Review</h4>
+            </div>
+        <iframe id= "iframe" src="" style="width:390px; overflow: hidden !important;height:646px;border-radius:0px 0px 20px 20px;border: none !important;"></iframe>
+       </div>
+
     </div>
 </body>
 

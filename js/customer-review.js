@@ -41,6 +41,28 @@ $(document).ready(function () {
         })
         renderReviews();
     })
+
+
+    // Device Setup 
+    var popup = getUrlParameter('popup')
+    
+    if (popup == true || popup == "true"){
+        // pop up adjustments
+        $('#header-bar').hide()
+        $('body').css('overflow-x','hidden')
+        
+       $('#main').css('margin','0px')
+       $('#main').css('width','100%')
+       $('#main').css('overflow','hidden')
+
+       $('#reviews').css('width','360px')
+       $('#reviews').css('padding','0px')
+       $('#reviews').css('margin','0px')
+       $('#reviews').css('margin-left','4px')
+    }
+
+
+
 });
 
 function ShowVendorReply(id) {
@@ -97,3 +119,18 @@ function renderReviews() {
         $('#reviews').append(renderHtml);
     }
 }
+
+function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+    }
+};
