@@ -46,11 +46,12 @@ function addOrRemoveFavourites(vendorID) {
                 })
             }
         }
-
+        toastr.success('Added To Favourites', 'Success');
     } else {
         $('#fav-icon').text('favorite_border')
         var favVendorList = removeVendor(userobj.favourites, vendorID)
         userobj.favourites = favVendorList
+        toastr.success('Removed From Favourites', 'Success');
     }
     //console.log(userobj)
     sessionStorage.setItem('userobj', JSON.stringify(userobj));
