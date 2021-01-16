@@ -67,7 +67,24 @@ $(document).ready(function () {
         $('#popup').popup('close')
     });
 
-  
+    $('#close-after-success').click(function (e) { 
+        $('#popup').popup('close')
+        toastr.success('Review Sent', 'Success');
+    });
+
+    $('#stay-with-star-warn').click(function (e) { 
+        toastr.warning('Please Select Rating', 'Warning');
+    });
+
+    $('#stay-with-review-warn').click(function (e) { 
+        toastr.warning('Please Write A Review', 'Warning');
+    });
+
+    $('#error-close').click(function (e) { 
+        toastr.error('Unable To Send Review', 'Error');
+        $('#popup').popup('close')
+    });
+
 });
 
 
@@ -297,3 +314,4 @@ function detectMobileWithAgent() {
         return navigator.userAgent.match(toMatchItem)
     });
 }
+

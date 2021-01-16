@@ -202,6 +202,32 @@
     object-fit: cover;
 }
 
+.primaryText{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.popup-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popup{
+    min-height: 216px !important;
+    width: 270px !important;
+
+}
+
+.popup-header{
+    justify-content: space-around !important;
+}
+
+.action-btn {
+    display: flex;
+    justify-content: center;
+}
+
 @media only screen and (max-width: 700px) {
     .profile-body-container {
         height: 100% !important;
