@@ -315,6 +315,7 @@ function calculateLoyaltyPoints() {
   loyaltyPointsArray.push({points: x, via: vendorName, method: 'purchase', price: totalPrice});
   sessionStorage.setItem('loyaltyPoints', JSON.stringify(totalLoyaltyPoints));
   sessionStorage.setItem('loyaltyPointsArray', JSON.stringify(loyaltyPointsArray));
+  sessionStorage.setItem('vendorID', vendorId);
 }
 
 function selectPaymentMethodNow(idx) {
