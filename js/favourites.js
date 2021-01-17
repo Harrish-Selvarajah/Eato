@@ -308,13 +308,17 @@ function validateEmail(email) {
 
 function SendEmail(email, message) {
 
+    var user = JSON.parse(sessionStorage.getItem('userobj'))
+    var name = user !=undefined ? user.name : ""
+    name = name !=undefined ? name : "Unkown" 
+
     Email.send({
         Host: "smtp.gmail.com",
         Username: "eato.corp@gmail.com",
         Password: "Qwerty@12345$",
         To: email,
         From: "eato.corp@gmail.com",
-        Subject: "List of Favourites",
+        Subject: `List of Favourites: from ${name}`,
         Body: content
     }).then(
         message => toastr["success"]("Email Successfully Sent", "Success!")
