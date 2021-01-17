@@ -292,6 +292,7 @@ function calculateLoyaltyPoints() {
   var loyaltyPointsArray = [];
   var dedLoyalty = 0;
   var totalLoyaltyPoints = 0;
+  // sessionStorage.setItem('loyaltyPointsArray', JSON.stringify(loyaltyPointsArray));
   loyaltyPoints = JSON.parse(sessionStorage.getItem('loyaltyPoints'));
   loyaltyPointsArray = JSON.parse(sessionStorage.getItem('loyaltyPointsArray'));
   x = 0.1 * totalPrice;
@@ -301,8 +302,17 @@ function calculateLoyaltyPoints() {
   } else {
     totalLoyaltyPoints = loyaltyPoints + x;
   }
-  // sessionStorage.setItem('loyaltyPoints', JSON.stringify(loyaltyPoints));
-  loyaltyPointsArray.push(x);
+  var vendorId = JSON.parse(sessionStorage.getItem('vendorID'));
+  var vendorName = "";
+  if (vendorId === 1) {
+    vendorName = 'Melt House';
+  } else {
+    if (vendorId === 2) {
+      vendorName = 'Suburban Kithcen'
+    }
+  };
+  
+  loyaltyPointsArray.push({points: x, via: vendorName, method: 'purchase', price: totalPrice});
   sessionStorage.setItem('loyaltyPoints', JSON.stringify(totalLoyaltyPoints));
   sessionStorage.setItem('loyaltyPointsArray', JSON.stringify(loyaltyPointsArray));
 }
