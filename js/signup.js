@@ -15,7 +15,7 @@ var cart = [];
 
 $(document).ready(function () {
 
-
+console.log(sessionStorage);
 
 });
 
@@ -24,13 +24,13 @@ function signUp() {
   var email = $('#email').val();
   var firstName = $('#fnam').val();
   var password = $('#pswrd').val();
-  var spsrwd = $('cpswrd').val();
+  var spsrwd = $('#cpswrd').val();
   var userId;
   var userObj = {};
   var locations = [];
   var loyaltyPoints = 0;
   var loyaltyPointsArray = [];
-
+  var chats = [];
   if (!mobileNumber || mobileNumber.trim() === '') {
     toastr.warning('Please Enter Mobile Number', 'Warning');
   }
