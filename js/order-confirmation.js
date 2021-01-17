@@ -155,7 +155,7 @@ function startCardPayment() {
 }
 
 function makePayment(token, name) {
-  
+  var price = totalPrice * 100
   var settings = {
     "url": "https://api.stripe.com/v1/charges",
     "method": "POST",
@@ -164,7 +164,7 @@ function makePayment(token, name) {
       "Content-Type": "application/x-www-form-urlencoded"
     },
     "data": {
-      "amount": totalPrice,
+      "amount": price,
       "currency": "lkr",
       "description": `Eato Food Purchase by ${name}`,
       "source": token.id
