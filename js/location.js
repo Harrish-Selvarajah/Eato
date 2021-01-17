@@ -1,7 +1,7 @@
 // var savedLocation = [];
 
 $(document).ready(function () {
-  // debugger;
+  console.log(sessionStorage);
   // currentLocation = sessionStorage.getItem('location');
   savedLocation = JSON.parse(sessionStorage.getItem('savedLocation'));
 

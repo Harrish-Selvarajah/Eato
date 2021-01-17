@@ -14,7 +14,7 @@ var users = [];
 var chats = [];
 
 $(document).ready(function () {
-  console.log("im here");
+console.log(sessionStorage);
   firebase.database().ref('users/').once('value', function (snapshot) {
     snapshot.forEach(function (childSnapshot) {
       var childData = childSnapshot.val();
@@ -61,10 +61,10 @@ function login() {
 
         userObj['favourites'] = user.favourites
         sessionStorage.setItem('userobj', JSON.stringify(userObj));
-        sessionStorage.setItem('cart', JSON.stringify(cart));
+        // sessionStorage.setItem('cart', JSON.stringify(cart));
         // sessionStorage.setItem('chats', JSON.stringify(chats));
-        sessionStorage.setItem('loyaltyPoints', JSON.stringify(loyaltyPoints));
-        sessionStorage.setItem('loyaltyPointsArray', JSON.stringify(loyaltyPointsArray));
+        // sessionStorage.setItem('loyaltyPoints', JSON.stringify(loyaltyPoints));
+        // sessionStorage.setItem('loyaltyPointsArray', JSON.stringify(loyaltyPointsArray));
         console.log(sessionStorage.getItem('userobj'));
         document.location.href = "./home.html";
       }

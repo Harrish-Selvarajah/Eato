@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    console.log(sessionStorage)
     $(".item").click(function () {
         $(".item.active-state").removeClass("active-state");
         $(this).addClass("active-state");

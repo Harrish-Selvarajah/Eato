@@ -1,6 +1,6 @@
 $(document).ready(function () {
     
-    var popup = getUrlParameter('popup')
+    var popup = getUrlParameter('popup');
     console.log(popup)
     if(popup == true || popup == "true"){
         console.log("yooo")
@@ -13,6 +13,12 @@ $(document).ready(function () {
     $("#close-popup").click(function(){
         $("#popup-modal").popup("close");
     })
+
+    if (sessionStorage.length > 1) {
+        $('#navBar').show();
+    } else {
+        $('#navBar').hide();
+    }
 })
 
 
