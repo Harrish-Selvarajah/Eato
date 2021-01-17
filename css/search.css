@@ -122,7 +122,7 @@ a {
 }
 
 .section-card {
-    width: 320px;
+    width: 300px;
     height: 210px;
     background-color: #fff;
     border-radius: 10px;
@@ -131,13 +131,17 @@ a {
     margin-bottom: 20px;
 }
 
+.section {
+    justify-content: center;
+}
+
 .vendor-img {
-    width: 320px;
+    width: 300px;
     height: 150px;
 }
 
 .vendor-img img {
-    width: 320px;
+    width: 300px;
     height: 150px;
     border-radius: 10px;
     object-fit: cover;
@@ -166,6 +170,10 @@ a {
 
 .start-icon {
     color: #FD6921;
+}
+
+.fa-fw{
+    color: #ccc !important;
 }
 
 /* popup styles start */

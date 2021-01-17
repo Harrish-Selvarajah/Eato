@@ -1,5 +1,5 @@
 .profile-body-container {
-    height: 80vh;
+    /* height: 80vh; */
     padding: 20px;
 }
 
@@ -227,6 +227,13 @@
     display: flex;
     justify-content: center;
 }
+
+@media only screen and (min-width: 768px) and (max-width: 768px) {
+    .ui-content-header {
+        min-height: 68vh !important;
+    }
+}
+
 
 @media only screen and (max-width: 700px) {
     .profile-body-container {
