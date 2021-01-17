@@ -1,3 +1,7 @@
+$(document).ready(function () {
+    $(".bottom-nav").removeClass("slideup")
+});
+
 function sendFeedback() {
     var feedback = $('#feedbackComment').val();
 

@@ -21,12 +21,13 @@
 
     <!--    <script src="../js/order-confirmation.js" defer></script> -->
     <script src="../js/add-payment.js"></script>
+    <script src="../js/common.js"></script>
 </head>
 
 <body>
     <div data-role="page">
         <div data-role="header" data-postion="fixed" data-fullscreen="true" class="header-bar" id="header-bar">
-            <i class="arrow arrow-left"></i>
+            <i class="arrow arrow-left" onclick="goBack()"></i>
             <h4>Add Payment</h4>
         </div>
         <div data-role="main" class="ui-content ui-content-header">
@@ -43,7 +44,7 @@
                         </div>
                         <div class="popup-input">
                             <span class="subtitle" style="margin-left: 5px !important;">Expiry Date</span>
-                            <input type="text" id="expdt" placeholder="MM/YY" />
+                            <input type="text" id="expdt" placeholder="MM/YYYY" />
                         </div>
                         <div class="popup-input">
                             <span class="subtitle" style="margin-left: 5px !important;">CVC</span>
@@ -53,7 +54,7 @@
                             <span class="subtitle" style="margin-left: 5px !important;">Postal Code</span>
                             <input type="text" id="pc" placeholder="Postal Code" />
                         </div>
-                        <p id="all-error-msg" style="color:red;"></p>
+                        <p id="all-error-msg" style="color:#FD6921;"></p>
                     </form>
                 </div>
             </div>

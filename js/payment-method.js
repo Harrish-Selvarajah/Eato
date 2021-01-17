@@ -73,10 +73,12 @@ $(document).ready(function () {
     })
 
     $('#i #btn-footer #btn-confirm').click(function () {
-        console.log('sniff')
         $('#add-payment-pop').popup("close")
     })
-
+    
+    $('#close-with-success').click(function(){
+        toastr.success('Successfully Added To the Wallet', 'Success');
+    })
 })
 
 
