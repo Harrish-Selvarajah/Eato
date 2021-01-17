@@ -1,7 +1,7 @@
 var favVendorList = []
 var selectedFavList = []
 var userID = "-MQN7UYipYUXF5l7caW6" // This should change to local storage
-const emailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
+const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
 sortFilterQuery = {
     sort: "none",
     filter: 0
