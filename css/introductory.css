@@ -77,34 +77,8 @@ a {
 
 /*Carousel UI style end */
 
-/* mobile style start */
-
-@media only screen and (max-width: 700px) {
-
+.action-btn{
+    display: flex;
+    justify-content: center;
 }
 
-/* mobile style end */
-
-/*Targets the Ipad - Landscape*/
-
-@media only screen and (min-width: 850px) and (max-width: 1024px) {
-
-}
-
-/*Targets the Iphone - LandScape*/
-
-@media only screen and (min-width: 769px) and (max-width: 849px) {
-
-}
-
-/* iPhone 5 */
-@media only screen and (max-width: 320px)  {
-
-}
-/* iPhone 5 */
-
-/*Targets the Ipad Pro - LandScape*/
-
-@media only screen and (min-width: 1025px) {
-
-}
