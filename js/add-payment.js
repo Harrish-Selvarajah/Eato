@@ -24,24 +24,30 @@ $(document).ready(function () {
 
     $('#btn-confirm').click(function (e) {
         if (validateFields()) {
-            addPaymentToWallet()
-
-            if (popup == false || popup == undefined) { 
-                toastr.success('Successfully Added To the Wallet', 'Success'); 
-                setTimeout(function(){
-                    document.location.href = '../components/payment-method.html'
-                },1000)           
-               
-            } else {
-                parent.document.getElementById("close-with-success").click()
-                parent.document.getElementById("close").click()
-            }
+           // addPaymentToWallet()
+           createCardTokenAndMakePayment()
+           
         } else {
             console.log("ERROR")
         }
     });
 
 })
+
+
+function navigateToNext(){
+    var popup = getUrlParameter('popup')
+    if (popup == false || popup == undefined) { 
+        toastr.success('Successfully Added To the Wallet', 'Success'); 
+        setTimeout(function(){
+            document.location.href = '../components/payment-method.html'
+        },1000)           
+       
+    } else {
+        parent.document.getElementById("close-with-success").click()
+        parent.document.getElementById("close").click()
+    }
+}
 
 
 function validateFields() {
@@ -153,6 +159,8 @@ function addPaymentToWallet() {
     })
 
     sessionStorage.setItem('paymentOpts', JSON.stringify(paymentOptions));
+
+    navigateToNext();
    
 }
 
@@ -175,4 +183,51 @@ var getUrlParameter = function getUrlParameter(sParam) {
 function isEmpty(str){
     return str == null || str == undefined || str == "" || str.length == 0
 }
+
+
+function createCardTokenAndMakePayment() {
+    var message = "";
+    var cardnum = $('#cardnum').val()
+    var cardname = $('#cardname').val()
+    var expdt = $('#expdt').val()
+    var cvc = $('#cvc').val()
+    var pc = $('#pc').val()
+    var res = true;
+    console.log(cardnum, cardname, expdt, cvc, pc)
+    cardnum = cardnum.replaceAll(" ", "")
+
+    var nameInDesc = cardname != null ? cardname : "Eato"
+
+  
+    var yyyy = expdt.split('/')[1]
+    var mm = expdt.split('/')[0].replace(/0(\d+)/, "")
+    cardnum = cardnum.replaceAll(" ", "")
+    var settings = {
+      "url": "https://api.stripe.com/v1/tokens",
+      "method": "POST",
+      "timeout": 0,
+      "headers": {
+        "Authorization": `bearer ${sk_token}`,
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      "data": {
+        "card[number]": `${cardnum}`,
+        "card[exp_month]": `${mm}`,
+        "card[exp_year]": `${yyyy}`,
+        "card[cvc]": `${cvc}`
+      }
+    };
+  
+    console.log(settings)
+    console.log("MAKING SERVER REQEST FOR TOKEN")
+    $.ajax(settings).done(function (response) {
+      console.log(response);
+      addPaymentToWallet();
+    }).fail(function (data) {
+      toastr["error"]("Please Attempt With Another Payment Method", "Payment Failed")
+    })
+  
+  
+  
+  }
 
