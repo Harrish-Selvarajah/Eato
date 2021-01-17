@@ -92,7 +92,7 @@ function signUp() {
       sessionStorage.setItem('loyaltyPoints', JSON.stringify(loyaltyPoints));
       sessionStorage.setItem('loyaltyPointsArray', JSON.stringify(loyaltyPointsArray));
       console.log(JSON.parse(sessionStorage.getItem('userobj')));
-      document.location.href = "./home.html";
+      document.location.href = "./introductory.html";
     });
   }
 }
