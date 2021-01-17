@@ -94,6 +94,7 @@ function repeatOngoingOrder() {
     if (cart.length > 0) {
         // debugger;
         cart.forEach(function (item) {
+            sessionStorage.setItem('vendorID', item.vendorID)
             renderHtml += `  <div class="d-flex">
             <div class="quantity infoText">${item.quantity}</div>
             <span class="primaryText">${item.foodName}</span>
