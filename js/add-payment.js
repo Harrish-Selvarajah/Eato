@@ -24,11 +24,7 @@ $(document).ready(function () {
 
     $('#btn-confirm').click(function (e) {
         if (validateFields()) {
-           // addPaymentToWallet()
-           createCardTokenAndMakePayment()
-           
-        } else {
-            console.log("ERROR")
+            createCardTokenAndMakePayment()    
         }
     });
 
