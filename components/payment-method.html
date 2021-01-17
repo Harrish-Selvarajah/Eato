@@ -8,9 +8,11 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
     <link rel="stylesheet" href="../css/site.css" />
     <link rel="stylesheet" href="../css/payment-method.css" />
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script src="../js/common.js"></script>
     <script src="../js/payment-method.js"></script>
 
@@ -36,6 +38,7 @@
                 </div>
             </div>
         </div>
+        <!-- Footer -->
         <div data-role="footer" class="footer">
             <div class="footer-top">
                 <div class="footer-left">
@@ -44,23 +47,30 @@
                     <br>
                     <h4>Address</h4>
                     <p class="secondaryText">50, Chez Road, Panisse</p>
+                    <br>
+                    <a style="color: white;" onclick="navigation('about-us')"><h4>About Us</h4></a>
                 </div>
                 <div class="footer-right">
                     <img src="../assets/logo/eoto_logo_light.png">
                 </div>
             </div>
             <div class="footer-bottom">
-                <i class="material-icons">account_circle</i>
-                <i class="material-icons">account_circle</i>
-                <i class="material-icons">account_circle</i>
+                <i class="iconify" style="color: white; width: 20px;"
+                 data-icon="bx:bxl-facebook-circle" data-inline="false"></i>
+                 <i class="iconify" style="color: white; width: 20px;"  
+                 data-icon="ant-design:instagram-outlined" data-inline="false"></i>
+                 <i class="iconify" style="color: white; width: 20px;"
+                 data-icon="mdi-twitter" data-inline="false"></i>
                 <p class="footer-copyrights infoText">© 2021 Eato. All Rights Reserved.</p>
             </div>
         </div>
+        <!-- Footer -->
 
         <div data-role="popup" class="pop" id="add-payment-pop"
-            style="overflow-y: hidden; height: 646px; width:390px  ">
+            style="overflow-y: hidden; height: 646px; width:390px; border-radius: 20px;">
             <div class="popup-header">
                 <i class=" material-icons" id="close">close</i>
+                <i style="display: none;" id="close-with-success">close</i>
                 <h4>Add Payment</h4>
             </div>
             <iframe src="../components/add-payment.html?popup=true" id="y"

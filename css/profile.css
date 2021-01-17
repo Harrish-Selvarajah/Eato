@@ -1,5 +1,5 @@
 .profile-body-container {
-    height: 80vh;
+    /* height: 80vh; */
     padding: 20px;
 }
 
@@ -129,6 +129,7 @@
 }
 
 .tabs {
+    margin-top: 10px;
     padding: 10px;
     height: 100%;
 }
@@ -202,6 +203,39 @@
     object-fit: cover;
 }
 
+.primaryText{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.popup-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popup{
+    min-height: 216px !important;
+    width: 270px !important;
+
+}
+
+.popup-header{
+    justify-content: space-around !important;
+}
+
+.action-btn {
+    display: flex;
+    justify-content: center;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 768px) {
+    .ui-content-header {
+        min-height: 68vh !important;
+    }
+}
+
+
 @media only screen and (max-width: 700px) {
     .profile-body-container {
         height: 100% !important;
@@ -228,5 +262,8 @@
     }
     .loyalty-tab {
         display: flex !important;
+    }
+    .tabs {
+        margin-top: 0px !important;
     }
 }

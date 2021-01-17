@@ -122,7 +122,7 @@ a {
 }
 
 .section-card {
-    width: 320px;
+    width: 300px;
     height: 210px;
     background-color: #fff;
     border-radius: 10px;
@@ -131,13 +131,17 @@ a {
     margin-bottom: 20px;
 }
 
+.section {
+    justify-content: center;
+}
+
 .vendor-img {
-    width: 320px;
+    width: 300px;
     height: 150px;
 }
 
 .vendor-img img {
-    width: 320px;
+    width: 300px;
     height: 150px;
     border-radius: 10px;
     object-fit: cover;
@@ -168,6 +172,10 @@ a {
     color: #FD6921;
 }
 
+.fa-fw{
+    color: #ccc !important;
+}
+
 /* popup styles start */
 
 .filter-popup {
@@ -188,7 +196,6 @@ a {
 }
 
 .popup-bottom {
-    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -203,6 +210,7 @@ a {
 }
 
 .sort-catagory {
+    font-size: 35px;
     padding: 10px;
     display: flex;
     justify-content: center;
@@ -226,6 +234,45 @@ a {
 
 .filter-btn {
     width: 300px;
+}
+
+/* Rating Star Widgets Style */
+
+.rating-stars ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 30px 0px 30px 0px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+.rating-stars ul>li.star {
+    display: inline-block;
+}
+
+/* Idle State of the stars */
+
+.rating-stars ul>li.star>i.fa {
+    font-size: 2.5em;
+    /* Change the size of the stars */
+    color: #ccc;
+    /* Color on idle state */
+}
+
+/* Hover state of the stars */
+
+.rating-stars ul>li.star.hover>i.fa {
+    color: #FFCC36;
+}
+
+/* Selected state of the stars */
+
+.rating-stars ul>li.star.selected>i.fa {
+    color: #FF912C;
+}
+
+.text-center {
+    text-align: center;
 }
 
 /* popup styles end */

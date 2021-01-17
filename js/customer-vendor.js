@@ -1,19 +1,29 @@
+
 $(document).ready(function () {
 
     // get vendor Id of the relavant page 
     var vendorID = getUrlParameter('vendorID')
-    console.log(vendorID)
     markVendorFavOrNot(vendorID)
     // favourite selected or unselected
     $('#fav-icon-container').click(function () {
         addOrRemoveFavourites(vendorID);
     })
 
+    $('#close').click(function (e) { 
+        $('body').css('overflow', 'auto');
+        $('#review-popup').popup('close') 
+    });
 
 });
 
 function goToRatings() {
-    document.location.href = "./customer-review.html";
+    if(!detectMobileWithAgent()){
+        $('body').css('overflow', 'hidden');
+        $('#review-popup').popup('open')
+    }else{
+        document.location.href = "./customer-review.html";
+    }
+    
 }
 
 function addOrRemoveFavourites(vendorID) {
@@ -32,7 +42,8 @@ function addOrRemoveFavourites(vendorID) {
                 userobj.favourites.push({
                     vendorID: `${vendorID}`,
                     vendorName: currentVendor.name,
-                    rating: currentVendor.rating
+                    rating: currentVendor.rating,
+                    img : currentVendor.img
                 })
             }
         } else if (userobj != null) {
@@ -42,17 +53,19 @@ function addOrRemoveFavourites(vendorID) {
                 userobj.favourites.push({
                     vendorID: `${vendorID}`,
                     vendorName: currentVendor.name,
-                    rating: currentVendor.rating
+                    rating: currentVendor.rating,
+                    img: currentVendor.img
                 })
             }
         }
-
+        toastr.success('Added To Favourites', 'Success');
     } else {
+
         $('#fav-icon').text('favorite_border')
         var favVendorList = removeVendor(userobj.favourites, vendorID)
         userobj.favourites = favVendorList
+        toastr.success('Removed From Favourites', 'Success');
     }
-    //console.log(userobj)
     sessionStorage.setItem('userobj', JSON.stringify(userobj));
 }
 
@@ -62,7 +75,6 @@ function filterVendors(vendors, vendorID) {
     vendorArr = vendors.filter(function (element) {
         return element.id == vendorID
     })
-    console.log(vendorArr[0])
     return vendorArr[0]
 }
 
@@ -71,7 +83,6 @@ function filterFavList(vendors, vendorID) {
     vendorArr = vendors.filter(function (element) {
         return element.vendorID == vendorID
     })
-    console.log(vendorArr[0])
     return vendorArr[0]
 }
 
@@ -80,7 +91,6 @@ function removeVendor(vendors, vendorID) {
     vendorArr = vendors.filter(function (element) {
         return element.vendorID != vendorID
     })
-    console.log(vendorArr)
     return vendorArr
 }
 
@@ -103,13 +113,27 @@ function getUrlParameter(sParam) {
 function markVendorFavOrNot(vendorID) {
     var userobj = JSON.parse(sessionStorage.getItem('userobj'));
 
-    if (userobj.favourites != null) {
+    if (userobj != null && userobj.favourites != null) {
         var currentVendor = filterFavList(userobj.favourites, vendorID)
-        //   console.log(currentVendor)
         if (currentVendor != null && currentVendor != undefined) {
             $('#fav-icon').text('favorite')
         } else {
             $('#fav-icon').text('favorite_border')
         }
     }
+}
+
+function detectMobileWithAgent() {
+    const toMatch = [
+        /Android/i,
+        /webOS/i,
+        /iPhone/i,
+        /iPod/i,
+        /BlackBerry/i,
+        /Windows Phone/i
+    ];
+
+    return toMatch.some((toMatchItem) => {
+        return navigator.userAgent.match(toMatchItem) 
+    });
 }

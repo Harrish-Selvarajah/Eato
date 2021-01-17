@@ -12,6 +12,7 @@ var style = {
   },
 };
 var totalPrice = 0;
+var checked = false;
 
 // $(document).ready(function () {
 
@@ -27,7 +28,7 @@ var paymentDefault =
   "type": "master"
 }
 
-selectedPayment = {}
+var selectPaymentMethod = {}
 
 function createCardTokenAndMakePayment() {
 
@@ -62,7 +63,7 @@ function createCardTokenAndMakePayment() {
     console.log(response);
     makePayment(response, nameInDesc)
   }).fail(function (data) {
-    console.log(data)
+    toastr["error"]("Please Attempt With Another Payment Method", "Payment Failed")
   })
 
 
@@ -154,7 +155,7 @@ function startCardPayment() {
 }
 
 function makePayment(token, name) {
-  var usPrice = totalPrice / 200 * 100
+  var price = totalPrice * 100
   var settings = {
     "url": "https://api.stripe.com/v1/charges",
     "method": "POST",
@@ -163,8 +164,8 @@ function makePayment(token, name) {
       "Content-Type": "application/x-www-form-urlencoded"
     },
     "data": {
-      "amount": usPrice,
-      "currency": "usd",
+      "amount": price,
+      "currency": "lkr",
       "description": `Eato Food Purchase by ${name}`,
       "source": token.id
     }
@@ -174,19 +175,21 @@ function makePayment(token, name) {
     console.log(response);
     document.location.href = '../components/order-status.html'
   }).fail(function (data) {
-
+    toastr["error"]("Eroor Occurred in Payment", "Error!")
   })
 }
 
 
 $(document).ready(function () {
   console.log(sessionStorage, 'session');
-  totalPrice = JSON.parse(sessionStorage.getItem('totalPrice')) + 250;
+  totalPrice = JSON.parse(sessionStorage.getItem('totalPrice'));
   loyaltyPoints = JSON.parse(sessionStorage.getItem('loyaltyPoints'));
-  x = Number(totalPrice) + 250
+  var location = sessionStorage.getItem('location');
+  x = Number(totalPrice)
   $('#sub-price-tag').text('Rs' + x);
   $('#discount-tag').text('Rs 0');
   $('#price-tag').text('Rs' + x);
+  $('#location').text(location)
 
 
   loadPaymentData();
@@ -194,8 +197,9 @@ $(document).ready(function () {
 
   $('#btn-confirm-order').click(function (e) {
     calculateLoyaltyPoints();
-    if (selectPaymentMethod == null || selectPaymentMethod == {}) {
-
+    console.log(selectPaymentMethod)
+    if (Object.keys(selectPaymentMethod).length == 0) {
+        toastr["warning"]("Payment Type Not Selected", "Warning!")
     } else {
       if (selectPaymentMethod.type == 'cash') {
         document.location.href = '../components/order-status.html'
@@ -207,17 +211,38 @@ $(document).ready(function () {
   });
 
   $("#add-loyalty").click(function () {
-    if ($('#add-loyalty').is(":checked")) {
-      discount = loyaltyPoints / 0.1;
-      totalPrice = totalPrice - discount;
-      $('#discount-tag').text('Rs' + discount);
-      $('#price-tag').text('Rs' + totalPrice);
+    if (loyaltyPoints !== 0) {
+      if ($('#add-loyalty').is(":checked")) {
+        checked = true;
+        discount = loyaltyPoints * 0.1;
+        totalPrice = totalPrice - discount;
+        $('#discount-tag').text('Rs' + '' + discount);
+        $('#price-tag').text('Rs' + '' + totalPrice);
+      } else {
+        checked = false;
+        discount = loyaltyPoints * 0.1;
+        totalPrice = totalPrice + discount;
+        $('#discount-tag').text('Rs' + '' + 0);
+        $('#price-tag').text('Rs' + '' + totalPrice);
+      }
     } else {
-      discount = loyaltyPoints / 0.1;
-      totalPrice = totalPrice + discount + 250;
-      $('#discount-tag').text('Rs' + 0);
-      $('#price-tag').text('Rs' + totalPrice);
+      if (loyaltyPoints === 0) {
+        if ($('#add-loyalty').is(":checked")) {
+          checked = true;
+          discount = 0;
+          totalPrice = totalPrice - discount;
+          $('#discount-tag').text('Rs' +  '' + discount);
+          $('#price-tag').text('Rs' + '' + totalPrice);
+        } else {
+          checked = false;
+          discount = 0;
+          totalPrice = totalPrice + discount;
+          $('#discount-tag').text('Rs' +  '' + 0);
+          $('#price-tag').text('Rs' + '' + totalPrice);
+        }
+      }
     }
+   
 
 
   });
@@ -263,15 +288,31 @@ function isEmpty(str) {
 }
 
 function calculateLoyaltyPoints() {
-  //  debugger;
   // 10 loyalty points == Rs 1
   var loyaltyPointsArray = [];
-  x = 0.1 * totalPrice;
+  var dedLoyalty = 0;
+  var totalLoyaltyPoints = 0;
+  // sessionStorage.setItem('loyaltyPointsArray', JSON.stringify(loyaltyPointsArray));
   loyaltyPoints = JSON.parse(sessionStorage.getItem('loyaltyPoints'));
-  totalLoyaltyPoints = loyaltyPoints + x;
-  // sessionStorage.setItem('loyaltyPoints', JSON.stringify(loyaltyPoints));
-  loyaltyPointsArray = JSON.parse(sessionStorage.getItem('loyaltyPointsArray'))
-  loyaltyPointsArray.push(x);
+  loyaltyPointsArray = JSON.parse(sessionStorage.getItem('loyaltyPointsArray'));
+  x = 0.1 * totalPrice;
+  if (checked === true) {
+    dedLoyalty = loyaltyPoints - loyaltyPoints;
+    totalLoyaltyPoints = dedLoyalty + x;
+  } else {
+    totalLoyaltyPoints = loyaltyPoints + x;
+  }
+  var vendorId = JSON.parse(sessionStorage.getItem('vendorID'));
+  var vendorName = "";
+  if (vendorId === 1) {
+    vendorName = 'Melt House';
+  } else {
+    if (vendorId === 2) {
+      vendorName = 'Suburban Kithcen'
+    }
+  };
+  
+  loyaltyPointsArray.push({points: x, via: vendorName, method: 'purchase', price: totalPrice});
   sessionStorage.setItem('loyaltyPoints', JSON.stringify(totalLoyaltyPoints));
   sessionStorage.setItem('loyaltyPointsArray', JSON.stringify(loyaltyPointsArray));
 }

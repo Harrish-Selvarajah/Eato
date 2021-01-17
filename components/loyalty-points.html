@@ -1,13 +1,14 @@
 <html>
 
 <head>
-    <title>Loyal Points</title>
+    <title>Loyal Points | Eato</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
     <link rel="stylesheet" href="../css/site.css" />
     <link rel="stylesheet" href="../css/loyalty-points.css" />
     <link rel="stylesheet" href="../css/card-css.css" />
@@ -19,7 +20,7 @@
     <div data-role="page">
         <div data-role="header" data-postion="fixed" data-fullscreen="true" class="header-bar">
             <!-- <img src="../assets/logo new.svg"> -->
-            <i class="arrow arrow-left"></i>
+            <i class="arrow arrow-left" onclick="navigation('profile')"></i>
             <h4>Loyal Points</h4>
         </div>
         <div role="main" class="ui-content ui-content-header">
@@ -42,11 +43,16 @@
                     <h4 style="text-align: center; padding: 5px; ">Share and get 200 points</h4>
                     <p class="primaryText" style="text-align: center;">
                         Refer your friends and get 200 loyalty points each on their first transactions</h5>
-                    <div class="action-btn">
-                        <button type="button">
-                            <p class="primaryText">Share Invite Code</p>
-                        </button>
-                    </div>
+                        <a href="#popup-modal" data-rel="popup" data-position-to="window" id=" popup"
+                            data-transition="pop">
+                            <div>
+                                <div class="action-btn">
+                                    <button type="button">
+                                        <p class="primaryText">Share Invite Code</p>
+                                    </button>
+                                </div> 
+                            </div>
+                        </a>       
                 </div>
                 <div class="acitivity_order">
                     <div style="margin-top: 20px;" id="render-activity">
@@ -78,6 +84,30 @@
             </div>
 
         </div>
+        <!-- popup -->
+        <div data-role="popup" class="popup" id="popup-modal" data-theme="a" style="border-radius: 20px;">
+            <div class="popup-header">
+                <div></div>
+                <h4>Share Code</h4>
+                <a style="color: #FD6921 !important;"  data-rel="back"> <i id="close-popup" class=" material-icons">close</i></a>
+            </div>
+            <div class="popup-body">
+                <h2 style="color: #FD6921;">HVE234t1</h2>
+            </div>
+            <div>
+                <a  data-rel="back">
+                    <div class="action-btn">
+                        <button type="button" style="width: 130px !important;">
+                            <p class="primaryText"> <i class=" material-icons">content_copy</i> Copy</p>
+                        </button>
+                    </div>
+                </a>
+                
+            </div>
+        </div>
+        <!-- popup -->
+
+        <!-- Footer -->
         <div data-role="footer" class="footer">
             <div class="footer-top">
                 <div class="footer-left">
@@ -86,18 +116,25 @@
                     <br>
                     <h4>Address</h4>
                     <p class="secondaryText">50, Chez Road, Panisse</p>
+                    <br>
+                    <a style="color: white;" onclick="navigation('about-us')">
+                        <h4>About Us</h4>
+                    </a>
                 </div>
                 <div class="footer-right">
                     <img src="../assets/logo/eoto_logo_light.png">
                 </div>
             </div>
             <div class="footer-bottom">
-                <i class="material-icons">account_circle</i>
-                <i class="material-icons">account_circle</i>
-                <i class="material-icons">account_circle</i>
+                <i class="iconify" style="color: white; width: 20px;" data-icon="bx:bxl-facebook-circle"
+                    data-inline="false"></i>
+                <i class="iconify" style="color: white; width: 20px;" data-icon="ant-design:instagram-outlined"
+                    data-inline="false"></i>
+                <i class="iconify" style="color: white; width: 20px;" data-icon="mdi-twitter" data-inline="false"></i>
                 <p class="footer-copyrights infoText">© 2021 Eato. All Rights Reserved.</p>
             </div>
         </div>
+        <!-- Footer -->
         <!-- Navbar  -->
         <div data-role="footer" class="nav-glyphish-example bottom-nav" data-position="fixed" data-tap-toggle="false">
             <div data-role="navbar" data-grid="d" data-theme="a">

@@ -12,6 +12,11 @@
     <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+    <!-- toast Links -->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
     <link rel="stylesheet" href="../css/site.css" />
     <link rel="stylesheet" href="../css/login.css" />
@@ -22,7 +27,7 @@
 <body>
     <div data-role="page">
         <div role="main" class="ui-content">
-            <div class="icon-container" onclick="goBack()">
+            <div class="icon-container" onclick="navigation('user-selection')">
                 <i class="material-icons">arrow_back_ios</i>
             </div>
             <div class="login-body-container d-flex">
@@ -66,7 +71,8 @@
                 </div>
             </div>
         </div>
-        <div data-role="footer" class="footer">
+         <!-- Footer -->
+         <div data-role="footer" class="footer">
             <div class="footer-top">
                 <div class="footer-left">
                     <h4>Contact</h4>
@@ -74,18 +80,24 @@
                     <br>
                     <h4>Address</h4>
                     <p class="secondaryText">50, Chez Road, Panisse</p>
+                    <br>
+                    <a style="color: white;" onclick="navigation('about-us')"><h4>About Us</h4></a>
                 </div>
                 <div class="footer-right">
                     <img src="../assets/logo/eoto_logo_light.png">
                 </div>
             </div>
             <div class="footer-bottom">
-                <i class="material-icons">account_circle</i>
-                <i class="material-icons">account_circle</i>
-                <i class="material-icons">account_circle</i>
+                <i class="iconify" style="color: white; width: 20px;"
+                 data-icon="bx:bxl-facebook-circle" data-inline="false"></i>
+                 <i class="iconify" style="color: white; width: 20px;"  
+                 data-icon="ant-design:instagram-outlined" data-inline="false"></i>
+                 <i class="iconify" style="color: white; width: 20px;"
+                 data-icon="mdi-twitter" data-inline="false"></i>
                 <p class="footer-copyrights infoText">© 2021 Eato. All Rights Reserved.</p>
             </div>
         </div>
+        <!-- Footer -->
     </div>
 </body>
 

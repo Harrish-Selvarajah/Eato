@@ -1,24 +1,28 @@
 <html>
 
 <head>
-    <title>Vendor</title>
+    <title>Vendor | Eato</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
     <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
-    
+
+    <!-- toast Links -->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
     <script src="/js/food-item.js"></script>
     <link rel="stylesheet" href="../css/site.css" />
     <link rel="stylesheet" href="../css/customer-vendor.css" />
     <link rel="stylesheet" href="../css/card-css.css" />
-    <link rel="stylesheet" href="../css/food-item.css"/>
+    <link rel="stylesheet" href="../css/food-item.css" />
     <script src="../js/customer-vendor.js"></script>
     <script src="../js/common.js"></script>
 
@@ -39,9 +43,10 @@
                     <div class="bookmark">
                         <h4>50 %</h4>
                         <h3>OFF</h3>
+                        <br>
                     </div>
-                    <div class="icon-container" id ="fav-icon-container">
-                        <i class=" material-icons icon-fav" id ="fav-icon">favorite_border</i>
+                    <div class="icon-container" id="fav-icon-container">
+                        <i class=" material-icons icon-fav" id="fav-icon">favorite_border</i>
                         <!-- <i class=" material-icons icon-fav">favorite</i> -->
                     </div>
                     <div class="vendor-logo"></div>
@@ -89,15 +94,15 @@
 
                 <div data-role="popup" id="food-item-popup" data-theme="a" class="ui-corner-all"
                     style="border-radius: 20px;">
-                    <div class="food-item-page-web" >
-                        <div class="fipw-item-bg">
+                    <div class="food-item-page-web" id="render-fooditem-popup">
+                        <!-- <div class="fipw-item-bg">
+                            <img src="../assets/food_item.jpg">
                             <div onclick="handleFoodItemPopup('close', 'null');" class="icon-container icon-close">
                                 <i class=" material-icons">close</i>
                             </div>
                         </div>
-                        <div id="render-fooditem-popup">
-                        
-                            <!-- <div>
+                        <div>
+                            <div>
                                 <div class="d-flex fipw-item-details">
                                     <h4>Cheese Pizza</h4>
                                     <div>
@@ -126,13 +131,14 @@
                                         <p class="primaryText">Add To Cart</p>
                                     </button>
                                 </div>
-                            </div> -->
-                        </div>
+                            </div>
+                        </div> -->
                     </div>
                 </div>
 
             </div>
         </div>
+        <!-- Footer -->
         <div data-role="footer" class="footer">
             <div class="footer-top">
                 <div class="footer-left">
@@ -141,18 +147,25 @@
                     <br>
                     <h4>Address</h4>
                     <p class="secondaryText">50, Chez Road, Panisse</p>
+                    <br>
+                    <a style="color: white;" onclick="navigation('about-us')">
+                        <h4>About Us</h4>
+                    </a>
                 </div>
                 <div class="footer-right">
                     <img src="../assets/logo/eoto_logo_light.png">
                 </div>
             </div>
             <div class="footer-bottom">
-                <i class="material-icons">account_circle</i>
-                <i class="material-icons">account_circle</i>
-                <i class="material-icons">account_circle</i>
+                <i class="iconify" style="color: white; width: 20px;" data-icon="bx:bxl-facebook-circle"
+                    data-inline="false"></i>
+                <i class="iconify" style="color: white; width: 20px;" data-icon="ant-design:instagram-outlined"
+                    data-inline="false"></i>
+                <i class="iconify" style="color: white; width: 20px;" data-icon="mdi-twitter" data-inline="false"></i>
                 <p class="footer-copyrights infoText">© 2021 Eato. All Rights Reserved.</p>
             </div>
         </div>
+        <!-- Footer -->
 
         <div data-role="footer" class="nav-glyphish-example bottom-nav" data-position="fixed" data-tap-toggle="false">
             <div data-role="navbar" data-grid="d" data-theme="a">
@@ -169,6 +182,17 @@
                             onclick="navigation('profile')">Profile</a></li>
             </div>
         </div>
+
+        <div data-role="popup" class="pop" id="review-popup"
+            style="overflow-y: hidden; height:700px; width:368px; border-radius:20px; overflow-x: hidden;">
+            <div class="popup-header">
+                <i class=" material-icons" id="close">close</i>
+                <h4>Reviews</h4>
+            </div>
+            <iframe src="../components/customer-review.html?popup=true"
+                style="width:368px; overflow: hidden !important;height:646px;border-radius:0px 0px 20px 20px;border: none !important;"></iframe>
+        </div>
+
     </div>
 </body>
 

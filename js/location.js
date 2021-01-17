@@ -1,20 +1,19 @@
 // var savedLocation = [];
 
 $(document).ready(function () {
-  // debugger;
-  
+  console.log(sessionStorage);
+  // currentLocation = sessionStorage.getItem('location');
   savedLocation = JSON.parse(sessionStorage.getItem('savedLocation'));
+
+  
   if (savedLocation == null) {
     savedLocation = [];
-    console.log(savedLocation);
     sessionStorage.setItem('savedLocation', JSON.stringify(savedLocation));
   } else {
     renderRadioButton();
-    $('input:radio[name=radio]').change(function() {
-      console.log(this.value);
+    $('input:radio[name=radio]').change(function () {
       sessionStorage.setItem('location', this.value);
-      console.log(sessionStorage)
-  }); 
+    });
   }
 
 })
@@ -24,7 +23,6 @@ let map, infoWindow, userLocation;
 
 // var location = [];
 // sessionStorage.setItem('savedLocation', JSON.stringify(savedLocation));
-console.log(sessionStorage);
 function initAutocomplete() {
   const map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 6.927079, lng: 79.861244 },
@@ -32,6 +30,7 @@ function initAutocomplete() {
     mapTypeId: "roadmap",
     disableDefaultUI: true,
   });
+  // $(".se-pre-con").fadeOut("fast");
   // Create the search box and link it to the UI element.
   const input = document.getElementById("pac-input");
   const searchBox = new google.maps.places.SearchBox(input);
@@ -78,15 +77,12 @@ function initAutocomplete() {
         })
       );
       userLocation = place.name;
-      console.log(place.name, "place name");
       savedLocation = JSON.parse(sessionStorage.getItem('savedLocation'));
-      
+
       savedLocation.push(userLocation);
       sessionStorage.setItem('location', userLocation);
       sessionStorage.setItem('savedLocation', JSON.stringify(savedLocation));
-      console.log(sessionStorage, 'session');
-        // console.log(location, 'location');
-        renderRadioButton();
+      renderRadioButton();
 
       if (place.geometry.viewport) {
         // Only geocodes have viewport.
@@ -103,12 +99,12 @@ function initAutocomplete() {
   locationButton.textContent = "Current Location";
   locationButton.classList.add("custom-map-control-button");
   map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+  // $(".se-pre-con").fadeOut("fast");
   locationButton.addEventListener("click", () => {
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
-          console.log(position, "position");
           const pos = {
             lat: position.coords.latitude,
             lng: position.coords.longitude,
@@ -152,11 +148,9 @@ function codeLatLng(lat, lng) {
   var latlng = new google.maps.LatLng(lat, lng);
   geocoder.geocode({ 'latLng': latlng }, function (results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
-      console.log(results)
       if (results[1]) {
         //formatted address
         //  alert(results[0].formatted_address)
-        console.log(results[0].formatted_address);
         //find country name
         for (var i = 0; i < results[0].address_components.length; i++) {
           for (var b = 0; b < results[0].address_components[i].types.length; b++) {
@@ -171,16 +165,13 @@ function codeLatLng(lat, lng) {
         }
         //city data
         // alert(city.short_name + " " + city.long_name)
-        console.log(city.short_name + " " + city.long_name)
         savedLocation = JSON.parse(sessionStorage.getItem('savedLocation'));
         savedLocation.push(city.short_name);
         sessionStorage.setItem('location', city.short_name);
         sessionStorage.setItem('savedLocation', JSON.stringify(savedLocation));
         // savedLocation.push(userLocation);
-        console.log(sessionStorage, 'session');
-        // console.log(location, 'location');
         renderRadioButton();
-        
+
       } else {
         alert("No results found");
       }
@@ -191,19 +182,23 @@ function codeLatLng(lat, lng) {
 }
 
 function renderRadioButton() {
+  currentLocation = sessionStorage.getItem('location')
   var renderHtml = "";
-  $(".selected-location").remove();
+  $(".selected-location").empty();
+  $(".divider").remove();
   savedLocation.forEach(function (x) {
     renderHtml += `<label class="selected-location">${x}
-    <input type="radio" name="radio" id="selected-location" value='${x}'>
+    <input type="radio" name="radio" id="selected-location-${x}" value='${x}'>
     <span class="checkmark"></span>
   </label>
-  <hr style="margin-top: 20px;">`
+  <hr class="divider" style="margin-top: 20px;">`
+  // document.getElementById(`selected-location-${x}`).checked = true;
+  // $(`#selected-location-${x}`).prop("checked", true);
   })
   $('#render-radio-button').append(renderHtml);
+  document.getElementById(`selected-location-${currentLocation}`).checked = true;
 }
 
-// console.log(document.getElementById(`#selected-location-${x}`));
 
 // $('#selected-location').on('change', function() {
 //   alert( this.value );

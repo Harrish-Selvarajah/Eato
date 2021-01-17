@@ -11,8 +11,16 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script src="https://js.stripe.com/v3/"></script>
+
+    <!-- toast Links -->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
     <script src="../js/order-confirmation.js" defer></script>
+    <script src="../js/common.js"></script>
 
     <title>Order confirmation</title>
 </head>
@@ -20,7 +28,7 @@
 <body>
     <div data-role="page">
         <div data-role="header" data-postion="fixed" data-fullscreen="true" class="header-bar">
-            <i class="arrow arrow-left"></i>
+            <i class="arrow arrow-left" onclick="goBack()"></i>
             <h4>Order confirmation</h4>
         </div>
         <div data-role="main" class="ui-content ui-content-header">
@@ -73,7 +81,8 @@
                                 </span>
                             </div>
                             <div class="location-title-container">
-                                <p class="location-title primaryText"> 12, Selvarajah Road, Modara, Colombo 15</p>
+                                <p class="location-title primaryText" id="location"> 12, Selvarajah Road, Modara,
+                                    Colombo 15</p>
                             </div>
                         </div>
                     </div>
@@ -95,12 +104,12 @@
                         <div><span class="subtitle">Total Price</span></div>
                         <h2><span id="price-tag"></span></h2>
                     </div>
+                    <div class="action-btn submit-btn">
+                        <button id="btn-confirm-order" type="button" data-role="button">
+                            <p class="primaryText">Confirm Order</p>
+                        </button>
+                    </div>
                 </div>
-            </div>
-            <div class="action-btn submit-btn">
-                <button id="btn-confirm-order" type="button" data-role="button">
-                    <p class="primaryText">Confirm Order</p>
-                </button>
             </div>
         </div>
     </div>
