@@ -220,7 +220,15 @@ function createCardTokenAndMakePayment() {
       console.log(response);
       addPaymentToWallet();
     }).fail(function (data) {
-        toastr["error"]("Card Not Valid: Please Re-Check The Card Info", "Payment Failed")
+
+        var err_msg = "Card Not Valid: Please Re-Check The Card Info"
+        if(data != null && data.responseJSON != null && data.responseJSON.error != null ){
+            var errorObj = data.responseJSON.error
+            if (errorObj.code == "incorrect_number" || errorObj.code == "invalid_number"){
+                err_msg = errorObj.message
+            }
+        }
+        toastr["warning"](err_msg, "Payment Failed")
     })
   
   
