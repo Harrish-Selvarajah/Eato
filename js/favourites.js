@@ -191,10 +191,11 @@ $(document).ready(function () {
         })
 
         if (!validateEmail(email)) {
-            $('#error-msg').show();
+            //$('#error-msg').show();
+            toastr["warning"]("Email is Not Valid", "Warning!")
             console.log("Invalid email format")
         } else {
-            $('#error-msg').hide();
+           // $('#error-msg').hide();
             SendEmail(email, content)
             $('#popup-modal').popup('close')
         }
