@@ -42,7 +42,8 @@ function addOrRemoveFavourites(vendorID) {
                 userobj.favourites.push({
                     vendorID: `${vendorID}`,
                     vendorName: currentVendor.name,
-                    rating: currentVendor.rating
+                    rating: currentVendor.rating,
+                    img : currentVendor.img
                 })
             }
         } else if (userobj != null) {
@@ -52,7 +53,8 @@ function addOrRemoveFavourites(vendorID) {
                 userobj.favourites.push({
                     vendorID: `${vendorID}`,
                     vendorName: currentVendor.name,
-                    rating: currentVendor.rating
+                    rating: currentVendor.rating,
+                    img: currentVendor.img
                 })
             }
         }
