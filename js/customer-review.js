@@ -92,7 +92,7 @@ function renderReviews() {
         reviews.forEach(function (item) {
             renderHtml += `<div class="review-item cards">
                     <div class="review-details d-flex">
-                        <div class="profile-pic"></div>
+                        <img class="profile-pic" src="${item.userObj.profilepicLink}">
                         <div>
                             <p class="secondaryText">${item.userObj.name}</p>
                             <div>
