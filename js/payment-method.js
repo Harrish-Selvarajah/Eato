@@ -13,13 +13,10 @@ var paymentOpts = []
 function loadPaymentData() {
     paymentData = JSON.parse(sessionStorage.getItem('paymentOpts'))
     paymentOpts = []
-    //paymentOpts.push(paymentDefault)
 
     if (paymentData != null && paymentData != undefined) {
         paymentOpts = paymentOpts.concat(paymentData)
     }
-
-    console.log(paymentOpts)
 }
 
 function loadPaymentOptions() {
@@ -52,9 +49,15 @@ function loadPaymentOptions() {
 }
 
 $(document).ready(function () {
+    noteNavigation()
 
     loadPaymentData()
-    loadPaymentOptions()
+
+    if (paymentOpts.length != 0){
+        loadPaymentOptions()
+    } else{
+        showNoPaymentOptionScreen()
+    }
 
     $('#add-payment').click(function (e) {
 
@@ -103,4 +106,48 @@ function detectMobileWithScreen() {
     return ((window.innerWidth <= 400) && (window.innerHeight <= 800));
 }
 
+function navigatePaymentMethod(){
+    var backPage = sessionStorage.getItem('back-from-payment-method')
+    console.log(backPage)
+    if (backPage != null && backPage != ''){
+        document.location.href = `../components/${backPage}`
+    }else{
+        document.location.href = '../components/profile.html'
+    }
+}
+
+function noteNavigation(){
+    
+    var lastScreen = ''
+    var previousURL = document.referrer
+    if (previousURL.includes('order-confirmation.html')){
+        lastScreen = 'order-confirmation.html'
+    }
+
+    if (previousURL.includes('profile.html')){
+        lastScreen = 'profile.html'
+    }
+    
+    if(lastScreen != ''){
+        sessionStorage.setItem('back-from-payment-method', lastScreen);
+    }
+}
+
+function showNoPaymentOptionScreen(){
+    $cardItems = $('#card-items')
+    
+    card = `
+         <div style ="display:flex; flex-direction:column; justify-content:center; position:relative; top:210px;">
+             <span class="iconify" data-icon="mdi:wallet-plus" data-inline="false" style="color: #FD6921; font-size:100px; width:100%"></span>
+         <div>
+                <h4 style="width:100%; text-align:center;">No Payment Maethod </h4>
+                <h5 style="width:100%;" >Click + to add Payment Method </h5>
+         </div>
+            
+         </div>
+    `
+    $cardItems.append(card)
+
+
+}
 

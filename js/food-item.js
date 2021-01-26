@@ -34,6 +34,7 @@ var vendor = [
         name: 'Melt House',
         type: 'Rice',
         img: '../assets/food/indian.jpg',
+        logo: '../assets/vendor_logo.png',
         foodItems: [
             {
                 id: 'm1',
@@ -66,7 +67,8 @@ var vendor = [
         rating: 3,
         name: 'Suburban Kitchen',
         type: 'Pizza',
-        img: '../assets/food/bakery.jpg',
+        img: '../assets/food/suburban.jpeg',
+        logo: '../assets/vendor_logo.png',
         foodItems: [
             {
                 id: 's1',
@@ -99,7 +101,8 @@ var vendor = [
         rating: 4.9,
         name: 'Italian Cuisine',
         type: 'Burger',
-        img: '../assets/food/Desserts.jpg',
+        img: '../assets/food/italian.jpg',
+        logo: '../assets/vendor_logo.png',
         foodItems: [
             {
                 id: 'i1',
@@ -133,6 +136,7 @@ var vendor = [
         name: 'Dessert Dine',
         type: 'Pasta',
         img: '../assets/food/italian.jpg',
+        logo: '',
         foodItems: [
             {
                 id: 'd1',
@@ -452,10 +456,23 @@ $(document).ready(function () {
 
 function renderVendorDetails() {
     var renderHtml = "";
+    var renderHTML = "";
     vendorID = JSON.parse(sessionStorage.getItem('vendorID'));
     if (Number(vendorID) !== 0) {
         vendor.forEach(function (ven) {
             if (ven.id == Number(vendorID)) {
+                renderHTML += `<img class="backdrop" src="${ven.img}">
+                <div class="bookmark">
+                    <h4>50 %</h4>
+                    <h3>OFF</h3>
+                    <br>
+                </div>
+                <div class="icon-container" id="fav-icon-container">
+                    <i class=" material-icons icon-fav" id="fav-icon">favorite_border</i>
+                    <!-- <i class=" material-icons icon-fav">favorite</i> -->
+                </div>
+                <img id="logo" class="vendor-logo" src="${ven.logo}">`
+
                 renderHtml += `<h1 id="vendor-name">${ven.name}</h1>
                 <div class="vendor-highlights">
                     <p class="subtitle">Indian, Dosa, Vada</p>
@@ -477,6 +494,7 @@ function renderVendorDetails() {
                     dapibus, felis metus condimentum purus, iaculis convallis purus arcu at dolor.</p>`
             }
         })
+        $('.vendor-bg').append(renderHTML);
         $('#vendor-details').append(renderHtml);
     }
 }
