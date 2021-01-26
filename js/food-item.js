@@ -505,17 +505,8 @@ function renderVendorDetails() {
     if (Number(vendorID) !== 0) {
         vendor.forEach(function (ven) {
             if (ven.id == Number(vendorID)) {
-                renderHTML += `<img class="backdrop" src="${ven.img}">
-                <div class="bookmark">
-                    <h4>50 %</h4>
-                    <h3>OFF</h3>
-                    <br>
-                </div>
-                <div class="icon-container" id="fav-icon-container">
-                    <i class=" material-icons icon-fav" id="fav-icon">favorite_border</i>
-                    <!-- <i class=" material-icons icon-fav">favorite</i> -->
-                </div>
-                <img id="logo" class="vendor-logo" src="${ven.logo}">`
+                $('.backdrop').attr('src', ven.img);
+                $('#logo').attr('src', ven.logo);
 
                 renderHtml += `<h1 id="vendor-name">${ven.name}</h1>
                 <div class="vendor-highlights">
