@@ -47,9 +47,9 @@ $(document).ready(function () {
 
   var popup = getUrlParameter('popup')
 
-  if(popup == true || popup == "true"){
+  if (popup == true || popup == "true") {
     $('#header-bar').hide()
-    $('#main').css('margin','0px')
+    $('#main').css('margin', '0px')
   }
 });
 
@@ -66,24 +66,23 @@ function writeUserData() {
 
   if (ratingValue === "" || ratingValue === NaN || ratingValue === undefined || ratingValue === null) {
 
-    if(popup == true || popup == "true"){
+    if (popup == true || popup == "true") {
       parent.document.getElementById("stay-with-star-warn").click();
-     // console.log($(document).parents().find('#close'))
-    }else{
+      // console.log($(document).parents().find('#close'))
+    } else {
       toastr.warning('Please Select Rating', 'Warning');
     }
   }
   else if (bla === "") {
 
-    if(popup == true || popup == "true"){
+    if (popup == true || popup == "true") {
       parent.document.getElementById("stay-with-review-warn").click();
-     // console.log($(document).parents().find('#close'))
-    }else{
-        toastr.warning('Please Write A Review', 'Warning');
+      // console.log($(document).parents().find('#close'))
+    } else {
+      toastr.warning('Please Write A Review', 'Warning');
     }
   }
   else {
-    debugger
     firebase.database().ref('Vendors/' + vendorId).child('reviews').push({
       // name: 'Melt House',
       review: bla,
@@ -96,24 +95,24 @@ function writeUserData() {
       }
     }, (error) => {
       if (error) {
-        if(popup == true || popup == "true"){
+        if (popup == true || popup == "true") {
           parent.document.getElementById("error-close").click();
-         // console.log($(document).parents().find('#close'))
-        }else{
-        toastr.error('Unable To Send Review', 'Error');
-      }
+          // console.log($(document).parents().find('#close'))
+        } else {
+          toastr.error('Unable To Send Review', 'Error');
+        }
       } else {
-        
-          if(popup == true || popup == "true"){
-            parent.document.getElementById("close-after-success").click();
-           // console.log($(document).parents().find('#close'))
-          }else{
-               toastr.success('Review Sent', 'Success');
-              setTimeout(function(){
-                document.location.href = "./orders.html";
-              },1000)
-             
-          }
+
+        if (popup == true || popup == "true") {
+          parent.document.getElementById("close-after-success").click();
+          // console.log($(document).parents().find('#close'))
+        } else {
+          toastr.success('Review Sent', 'Success');
+          setTimeout(function () {
+            document.location.href = "./orders.html";
+          }, 1000)
+
+        }
       }
     }).then(pushed_review => {
       // debugger

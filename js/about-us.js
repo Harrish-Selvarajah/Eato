@@ -1,16 +1,14 @@
 $(document).ready(function () {
-    
+
     var popup = getUrlParameter('popup');
-    console.log(popup)
-    if(popup == true || popup == "true"){
-        console.log("yooo")
+    if (popup == true || popup == "true") {
         $('#header-bar').hide();
         $('#footerr').hide();
-        $('.logo-center-container').css('margin-top','0px')
-        $('.ui-content').css('min-height','0px')
+        $('.logo-center-container').css('margin-top', '0px')
+        $('.ui-content').css('min-height', '0px')
     }
 
-    $("#close-popup").click(function(){
+    $("#close-popup").click(function () {
         $("#popup-modal").popup("close");
     })
 
