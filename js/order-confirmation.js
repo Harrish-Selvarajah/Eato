@@ -186,9 +186,9 @@ $(document).ready(function () {
   loyaltyPoints = JSON.parse(sessionStorage.getItem('loyaltyPoints'));
   var location = sessionStorage.getItem('location');
   x = Number(totalPrice)
-  $('#sub-price-tag').text('Rs' + x);
+  $('#sub-price-tag').text('Rs ' + x);
   $('#discount-tag').text('Rs 0');
-  $('#price-tag').text('Rs' + x);
+  $('#price-tag').text('Rs ' + x);
   $('#location').text(location)
 
 
@@ -216,14 +216,14 @@ $(document).ready(function () {
         checked = true;
         discount = loyaltyPoints * 0.1;
         totalPrice = totalPrice - discount;
-        $('#discount-tag').text('Rs' + '' + discount);
-        $('#price-tag').text('Rs' + '' + totalPrice);
+        $('#discount-tag').text('Rs' + ' ' + discount);
+        $('#price-tag').text('Rs' + ' ' + totalPrice);
       } else {
         checked = false;
         discount = loyaltyPoints * 0.1;
         totalPrice = totalPrice + discount;
-        $('#discount-tag').text('Rs' + '' + 0);
-        $('#price-tag').text('Rs' + '' + totalPrice);
+        $('#discount-tag').text('Rs' + ' ' + 0);
+        $('#price-tag').text('Rs' + ' ' + totalPrice);
       }
     } else {
       if (loyaltyPoints === 0) {
@@ -231,14 +231,14 @@ $(document).ready(function () {
           checked = true;
           discount = 0;
           totalPrice = totalPrice - discount;
-          $('#discount-tag').text('Rs' +  '' + discount);
-          $('#price-tag').text('Rs' + '' + totalPrice);
+          $('#discount-tag').text('Rs' +  ' ' + discount);
+          $('#price-tag').text('Rs' + ' ' + totalPrice);
         } else {
           checked = false;
           discount = 0;
           totalPrice = totalPrice + discount;
-          $('#discount-tag').text('Rs' +  '' + 0);
-          $('#price-tag').text('Rs' + '' + totalPrice);
+          $('#discount-tag').text('Rs' +  ' ' + 0);
+          $('#price-tag').text('Rs' + ' ' + totalPrice);
         }
       }
     }
