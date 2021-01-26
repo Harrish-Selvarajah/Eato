@@ -1,6 +1,8 @@
+let globalMap;
+
 $(document).ready(function () {
   savedLocation = JSON.parse(sessionStorage.getItem('savedLocation'));
-
+  savedLocationMap = JSON.parse(sessionStorage.getItem('savedLocationMap'));
   if (savedLocation == null) {
     savedLocation = [];
     sessionStorage.setItem('savedLocation', JSON.stringify(savedLocation));
@@ -9,6 +11,11 @@ $(document).ready(function () {
     $('input:radio[name=radio]').change(function () {
       sessionStorage.setItem('location', this.value);
     });
+  }
+
+  if (savedLocationMap == null) {
+    savedLocationMap = []
+    sessionStorage.setItem('savedLocationMap', JSON.stringify(savedLocationMap));
   }
 });
 
@@ -70,6 +77,10 @@ function initAutocomplete() {
       userLocation = place.name;
       savedLocation = JSON.parse(sessionStorage.getItem('savedLocation'));
 
+      var savedLocationMap = JSON.parse(sessionStorage.getItem('savedLocationMap'));
+      savedLocationMap.push(place)
+      sessionStorage.setItem('savedLocationMap', JSON.stringify(savedLocationMap));
+
       savedLocation.push(userLocation);
       sessionStorage.setItem('location', userLocation);
       sessionStorage.setItem('savedLocation', JSON.stringify(savedLocation));
@@ -113,6 +124,8 @@ function initAutocomplete() {
       handleLocationError(false, infoWindow, map.getCenter());
     }
   });
+
+  globalMap = map
 }
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -173,11 +186,50 @@ function renderRadioButton() {
   $(".divider").remove();
   savedLocation.forEach(function (x) {
     renderHtml += `<label class="selected-location">${x}
-    <input type="radio" name="radio" id="selected-location-${x}" value='${x}'>
+    <input type="radio" name="radio" id="selected-location-${x}" value='${x}' onclick="handleRadioButtonClick(this)">
     <span class="checkmark"></span>
   </label>
   <hr class="divider" style="margin-top: 20px;">`
   })
   $('#render-radio-button').append(renderHtml);
   document.getElementById(`selected-location-${currentLocation}`).checked = true;
+}
+
+function handleRadioButtonClick(element){
+  console.log(element.value)
+  var savedLocationMap = JSON.parse(sessionStorage.getItem('savedLocationMap'));
+ // console.log(savedLocationMap[0])
+
+ var output = savedLocationMap.filter(function(savedLoc){
+  // console.log(savedLoc.name)
+     return savedLoc.name == element.value
+ })
+  let place = output[0]
+  let markers = [];
+
+   // Clear out the old markers.
+  markers.forEach((marker) => {
+    marker.setMap(null);
+  });
+  markers = [];
+  const bounds = new google.maps.LatLngBounds();
+  
+  markers.push(
+    new google.maps.Marker({
+      globalMap,
+      // icon,
+      title: place.name,
+      position: place.geometry.location,
+    })
+  );
+
+  if (place.geometry.viewport) {
+    // Only geocodes have viewport.
+    bounds.union(place.geometry.viewport);
+  } else {
+    bounds.extend(place.geometry.location);
+  }
+
+  globalMap.fitBounds(bounds);
+  
 }
