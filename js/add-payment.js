@@ -196,7 +196,7 @@ function createCardTokenAndMakePayment() {
 
   
     var yyyy = expdt.split('/')[1]
-    var mm = expdt.split('/')[0].replace(/0(\d+)/, "")
+    var mm = expdt.split('/')[0].replaceAll(' ','')
     cardnum = cardnum.replaceAll(" ", "")
     var settings = {
       "url": "https://api.stripe.com/v1/tokens",
