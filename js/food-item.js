@@ -543,7 +543,7 @@ function renderVendorDetails() {
                 })
                 avg = total / count;
                 avg = Math.round(avg)
-                $('#rating').text(avg / 10);
+                $('#rating').text(avg / 20);
                 $('#numOfRating').text(`${count - 1}` + `+ ratings`);
             }
         })
