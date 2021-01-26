@@ -457,7 +457,7 @@ var vendors = [];
 
 $(document).ready(function () {
 
-    
+
     $('#display-quantity').text(foodQuantity);
     $(window).on('resize', function () {
         var win = $(this);
@@ -473,12 +473,11 @@ $(document).ready(function () {
         snapshot.forEach(function (childSnapshot) {
             var childData = childSnapshot.val();
             //   var childData = childSnapshot.val();
-          debugger
             //   reviews.push(childData);
             item = {
-              id: childSnapshot.key,
-              name: childData.name,
-              reviews : childData.reviews
+                id: childSnapshot.key,
+                name: childData.name,
+                reviews: childData.reviews
             }
             vendors.push(item);
         })
@@ -487,20 +486,19 @@ $(document).ready(function () {
         renderVendorDetails();
         renderFooditemsInVendor();
         renderFooditem();
-      })
-  
+    })
+
 
     $('#close-button').click(function (e) {
         $('#food-item-popup').popup('close')
     });
 
-   
+
 
 
 });
 
 function renderVendorDetails() {
-    debugger
     var renderHtml = "";
     var renderHTML = "";
     vendorID = JSON.parse(sessionStorage.getItem('vendorID'));
@@ -544,21 +542,20 @@ function renderVendorDetails() {
         $('#vendor-details').append(renderHtml);
 
         var vendors = [];
-        debugger
-   vendors = JSON.parse(sessionStorage.getItem('vendors'));
-   vendors.forEach(function (item) {
-       if (item.id == Number(vendorID)) {
-        var total = 0,avg = 0,count = 0;
-        Object.values(item.reviews).forEach(function (rev) {
-            total = total + rev.rating;
-            count = count + 1;
+        vendors = JSON.parse(sessionStorage.getItem('vendors'));
+        vendors.forEach(function (item) {
+            if (item.id == Number(vendorID)) {
+                var total = 0, avg = 0, count = 0;
+                Object.values(item.reviews).forEach(function (rev) {
+                    total = total + rev.rating;
+                    count = count + 1;
+                })
+                avg = total / count;
+                avg = Math.round(avg)
+                $('#rating').text(avg / 10);
+                $('#numOfRating').text(`${count - 1}` + `+ ratings`);
+            }
         })
-        avg = total / count;
-        avg = Math.round(avg)
-        $('#rating').text(avg/10);
-        $('#numOfRating').text(`${count-1}` + `+ ratings`);
-       }
-   })
     }
 }
 

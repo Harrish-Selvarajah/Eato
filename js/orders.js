@@ -63,24 +63,24 @@ $(document).ready(function () {
     // repeatPastOrders();
     // an();
 
-    $('#close').click(function (e) { 
+    $('#close').click(function (e) {
         $('#popup').popup('close')
     });
 
-    $('#close-after-success').click(function (e) { 
+    $('#close-after-success').click(function (e) {
         $('#popup').popup('close')
         toastr.success('Review Sent', 'Success');
     });
 
-    $('#stay-with-star-warn').click(function (e) { 
+    $('#stay-with-star-warn').click(function (e) {
         toastr.warning('Please Select Rating', 'Warning');
     });
 
-    $('#stay-with-review-warn').click(function (e) { 
+    $('#stay-with-review-warn').click(function (e) {
         toastr.warning('Please Write A Review', 'Warning');
     });
 
-    $('#error-close').click(function (e) { 
+    $('#error-close').click(function (e) {
         toastr.error('Unable To Send Review', 'Error');
         $('#popup').popup('close')
     });
@@ -216,7 +216,6 @@ function an() {
         </div>
         <div class="order-divider"></div>`
         x.fooditems.forEach(function (y) {
-            debugger;
             renderChildHtml += `<div class="d-flex">
             <div class="quantity infoText">${y.quantity}</div>
             <span class="primaryText">${y.name}</span>
@@ -230,15 +229,15 @@ function an() {
 
 function rateVendor(id) {
 
-    if(!detectMobileWithAgent()){
+    if (!detectMobileWithAgent()) {
         var src = iframeSrc + id
-        $('#iframe').attr('src',src)
+        $('#iframe').attr('src', src)
         console.log($('#iframe').attr('src'))
         $('#popup').popup('open')
-    }else{
+    } else {
         window.location.href = '../components/write-review.html?vendorID=' + id;
     }
-    
+
 }
 
 function orderAgain(id) {
