@@ -186,9 +186,13 @@ $(document).ready(function () {
   loyaltyPoints = JSON.parse(sessionStorage.getItem('loyaltyPoints'));
   var location = sessionStorage.getItem('location');
   x = Number(totalPrice)
-  $('#sub-price-tag').text('Rs' + x);
+  $('#sub-price-tag').text('Rs ' + x);
   $('#discount-tag').text('Rs 0');
-  $('#price-tag').text('Rs' + x);
+  $('#price-tag').text('Rs ' + x);
+
+  if (location == null || location == undefined){
+     location = 'Not Selected'
+  }
   $('#location').text(location)
 
 
@@ -216,14 +220,14 @@ $(document).ready(function () {
         checked = true;
         discount = loyaltyPoints * 0.1;
         totalPrice = totalPrice - discount;
-        $('#discount-tag').text('Rs' + '' + discount);
-        $('#price-tag').text('Rs' + '' + totalPrice);
+        $('#discount-tag').text('Rs' + ' ' + discount);
+        $('#price-tag').text('Rs' + ' ' + totalPrice);
       } else {
         checked = false;
         discount = loyaltyPoints * 0.1;
         totalPrice = totalPrice + discount;
-        $('#discount-tag').text('Rs' + '' + 0);
-        $('#price-tag').text('Rs' + '' + totalPrice);
+        $('#discount-tag').text('Rs' + ' ' + 0);
+        $('#price-tag').text('Rs' + ' ' + totalPrice);
       }
     } else {
       if (loyaltyPoints === 0) {
@@ -231,14 +235,14 @@ $(document).ready(function () {
           checked = true;
           discount = 0;
           totalPrice = totalPrice - discount;
-          $('#discount-tag').text('Rs' +  '' + discount);
-          $('#price-tag').text('Rs' + '' + totalPrice);
+          $('#discount-tag').text('Rs' +  ' ' + discount);
+          $('#price-tag').text('Rs' + ' ' + totalPrice);
         } else {
           checked = false;
           discount = 0;
           totalPrice = totalPrice + discount;
-          $('#discount-tag').text('Rs' +  '' + 0);
-          $('#price-tag').text('Rs' + '' + totalPrice);
+          $('#discount-tag').text('Rs' +  ' ' + 0);
+          $('#price-tag').text('Rs' + ' ' + totalPrice);
         }
       }
     }
@@ -285,8 +289,8 @@ function populateData() {
     `<div class="item" id="add-payment-card" onclick=" navigateToAddPayment()" >
           <span class="iconify" data-icon="mdi:wallet" data-inline="false" style="color: #FD6921; font-size:50px;"></span>
             <div>
-                <p class="primaryText"></p>
-                <p class="primaryText">Mange Payment Options</p>
+                <p class="primaryText">Mange Payment</p>
+                <p class="primaryText">Options</p>
             </div>
         </div>`
   )

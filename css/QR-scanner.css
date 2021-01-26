@@ -91,6 +91,24 @@
   align-items: center;
 }
 
+.qr-border{
+  border: 3px dashed #FD6921; 
+}
+
+.center-align{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-section{
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items:center ;
+  min-height: 80vh;
+
+}
 /* iPhone 5 */
 @media only screen and (max-width: 320px)  {
   .popup {

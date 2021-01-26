@@ -23,6 +23,7 @@ $(document).on('pageinit', '#qr-scanner', function () {
       loyaltyPoints = loyaltyPoints + Number(res);
       qrResult.hidden = false;
       canvasElement.hidden = true;
+      document.getElementById("main-section").style.display = "none";
       //   btnScanQR.hidden = false;
       var vendorId = JSON.parse(sessionStorage.getItem('vendorID'));
       loyaltyPointsArray = JSON.parse(sessionStorage.getItem('loyaltyPointsArray'))
