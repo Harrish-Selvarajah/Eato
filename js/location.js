@@ -223,6 +223,14 @@ function handleRadioButtonClick(element){
     })
   );
 
+  const pos = {
+    lat: place.geometry.location.lat,
+    lng: place.geometry.location.lng,
+  };
+  
+  console.log(pos)
+  
+
   if (place.geometry.viewport) {
     // Only geocodes have viewport.
     bounds.union(place.geometry.viewport);
@@ -231,5 +239,11 @@ function handleRadioButtonClick(element){
   }
 
   globalMap.fitBounds(bounds);
+
+  infoWindow = new google.maps.InfoWindow();
+  infoWindow.setPosition(pos);
+  infoWindow.setContent(place.name);
+  infoWindow.open(globalMap);
+  globalMap.setCenter(pos);
   
 }
