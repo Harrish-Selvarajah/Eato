@@ -119,12 +119,12 @@ function navigatePaymentMethod(){
 function noteNavigation(){
     
     var lastScreen = ''
-
-    if (document.referrer == 'http://127.0.0.1:5500/components/order-confirmation.html'){
+    var previousURL = document.referrer
+    if (previousURL.includes('order-confirmation.html')){
         lastScreen = 'order-confirmation.html'
     }
 
-    if (document.referrer == 'http://127.0.0.1:5500/components/profile.html'){
+    if (previousURL.includes('profile.html')){
         lastScreen = 'profile.html'
     }
     

@@ -189,6 +189,10 @@ $(document).ready(function () {
   $('#sub-price-tag').text('Rs ' + x);
   $('#discount-tag').text('Rs 0');
   $('#price-tag').text('Rs ' + x);
+
+  if (location == null || location == undefined){
+     location = 'Not Selected'
+  }
   $('#location').text(location)
 
 
