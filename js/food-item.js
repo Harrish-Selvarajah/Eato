@@ -68,7 +68,7 @@ var vendor = [
         name: 'Suburban Kitchen',
         type: 'Pizza',
         img: '../assets/food/suburban.jpeg',
-        logo: '../assets/vendor_logo.png',
+        logo: '../assets/vendor-logo/urban_dp.jpg',
         foodItems: [
             {
                 id: 's1',
@@ -102,7 +102,7 @@ var vendor = [
         name: 'Italian Cuisine',
         type: 'Burger',
         img: '../assets/food/italian.jpg',
-        logo: '../assets/vendor_logo.png',
+        logo: '../assets/vendor-logo/italian_cuisine.jpg',
         foodItems: [
             {
                 id: 'i1',
@@ -136,7 +136,7 @@ var vendor = [
         name: 'Dessert Dine',
         type: 'Pasta',
         img: '../assets/food/italian.jpg',
-        logo: '',
+        logo: '../assets/vendor-logo/desserts_dine.jpg',
         foodItems: [
             {
                 id: 'd1',
@@ -170,6 +170,7 @@ var vendor = [
         name: 'Ammas Samayal',
         type: 'Rice',
         img: 'https://images.unsplash.com/photo-1493770348161-369560ae357d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw=&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+        logo: '../assets/vendor-logo/amma_samayal.jpg',
         foodItems: [
             {
                 id: 'a1',
@@ -203,6 +204,7 @@ var vendor = [
         name: 'Home Foods',
         type: 'Rice',
         img: 'https://images.unsplash.com/photo-1545225015-77b095551f9d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw=&ixlib=rb-1.2.1&auto=format&fit=crop&w=1269&q=80',
+        logo: '../assets/vendor-logo/home_foods.jpg',
         foodItems: [
             {
                 id: 'h1',
@@ -236,6 +238,7 @@ var vendor = [
         name: 'Veetu Samayal',
         type: 'Rice',
         img: 'https://images.unsplash.com/photo-1529042410759-befb1204b468?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw=&ixlib=rb-1.2.1&auto=format&fit=crop&w=633&q=80',
+        logo: '../assets/vendor-logo/vettu_samayal.jpg',
         foodItems: [
             {
                 id: 'v1',
@@ -269,6 +272,7 @@ var vendor = [
         name: 'Masala Cafe',
         type: 'Burger',
         img: 'https://images.unsplash.com/photo-1436564989038-18b9958df72b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw=&auto=format&fit=crop&w=1350&q=80',
+        logo: '../assets/vendor-logo/masala_cafe.jpg',
         foodItems: [
             {
                 id: 'mc1',
@@ -302,6 +306,7 @@ var vendor = [
         name: 'Crusty Crabs',
         type: 'Pizza',
         img: 'https://images.unsplash.com/photo-1609834265242-75d58b7db409?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw=&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+        logo: '../assets/vendor-logo/crusty_crabs.jpg',
         foodItems: [
             {
                 id: 'c1',
@@ -335,6 +340,7 @@ var vendor = [
         name: 'Green Curry',
         type: 'Pasta',
         img: 'https://images.unsplash.com/photo-1484980972926-edee96e0960d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw=&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',
+        logo: '../assets/vendor-logo/green_curry.jpg',
         foodItems: [
             {
                 id: 'g1',
@@ -368,6 +374,7 @@ var vendor = [
         name: 'Namaste',
         type: 'Rice',
         img: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw=&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+        logo: '../assets/vendor-logo/namasthe.jpg',
         foodItems: [
             {
                 id: 'n1',
@@ -401,6 +408,7 @@ var vendor = [
         name: 'Island grill',
         type: 'Rice',
         img: 'https://images.unsplash.com/photo-1563310761-f8d8ed164063?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw=&ixlib=rb-1.2.1&auto=format&fit=crop&w=564&q=80',
+        logo: '../assets/vendor-logo/island_grill.jpg',
         foodItems: [
             {
                 id: 'a1',
