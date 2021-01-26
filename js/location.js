@@ -1,11 +1,6 @@
-// var savedLocation = [];
-
 $(document).ready(function () {
-  console.log(sessionStorage);
-  // currentLocation = sessionStorage.getItem('location');
   savedLocation = JSON.parse(sessionStorage.getItem('savedLocation'));
 
-  
   if (savedLocation == null) {
     savedLocation = [];
     sessionStorage.setItem('savedLocation', JSON.stringify(savedLocation));
@@ -15,22 +10,18 @@ $(document).ready(function () {
       sessionStorage.setItem('location', this.value);
     });
   }
-
-})
-
+});
 
 let map, infoWindow, userLocation;
 
-// var location = [];
-// sessionStorage.setItem('savedLocation', JSON.stringify(savedLocation));
 function initAutocomplete() {
   const map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: 6.927079, lng: 79.861244 },
+    center: { lat: 6.904333, lng: 79.867488 },
     zoom: 15,
     mapTypeId: "roadmap",
     disableDefaultUI: true,
   });
-  // $(".se-pre-con").fadeOut("fast");
+
   // Create the search box and link it to the UI element.
   const input = document.getElementById("pac-input");
   const searchBox = new google.maps.places.SearchBox(input);
@@ -60,18 +51,18 @@ function initAutocomplete() {
         console.log("Returned place contains no geometry");
         return;
       }
-      const icon = {
-        url: place.icon,
-        size: new google.maps.Size(71, 71),
-        origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(17, 34),
-        scaledSize: new google.maps.Size(25, 25),
-      };
+      // const icon = {
+      //   url: place.icon,
+      //   size: new google.maps.Size(71, 71),
+      //   origin: new google.maps.Point(0, 0),
+      //   anchor: new google.maps.Point(17, 34),
+      //   scaledSize: new google.maps.Size(25, 25),
+      // };
       // Create a marker for each place.
       markers.push(
         new google.maps.Marker({
           map,
-          icon,
+          // icon,
           title: place.name,
           position: place.geometry.location,
         })
@@ -81,6 +72,7 @@ function initAutocomplete() {
 
       savedLocation.push(userLocation);
       sessionStorage.setItem('location', userLocation);
+      sessionStorage.setItem('selectedAddress', place.formatted_address);
       sessionStorage.setItem('savedLocation', JSON.stringify(savedLocation));
       renderRadioButton();
 
@@ -99,9 +91,7 @@ function initAutocomplete() {
   locationButton.textContent = "Current Location";
   locationButton.classList.add("custom-map-control-button");
   map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
-  // $(".se-pre-con").fadeOut("fast");
   locationButton.addEventListener("click", () => {
-    // Try HTML5 geolocation.
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
@@ -126,7 +116,6 @@ function initAutocomplete() {
   });
 }
 
-
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.setPosition(pos);
   infoWindow.setContent(
@@ -137,24 +126,15 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.open(map);
 }
 
-function saveLocation() {
-  if (userLocation !== "") {
-    savedLocation.push(userLocation);
-  }
-}
-
 function codeLatLng(lat, lng) {
   geocoder = new google.maps.Geocoder();
   var latlng = new google.maps.LatLng(lat, lng);
   geocoder.geocode({ 'latLng': latlng }, function (results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
       if (results[1]) {
-        //formatted address
-        //  alert(results[0].formatted_address)
         //find country name
         for (var i = 0; i < results[0].address_components.length; i++) {
           for (var b = 0; b < results[0].address_components[i].types.length; b++) {
-            // debugger;
             //there are different types that might hold a city admin_area_lvl_1 usually does in come cases looking for sublocality type will be more appropriate
             if (results[0].address_components[i].types[b] == "establishment") {
               //this is the object you are looking for
@@ -168,6 +148,7 @@ function codeLatLng(lat, lng) {
         savedLocation = JSON.parse(sessionStorage.getItem('savedLocation'));
         savedLocation.push(city.short_name);
         sessionStorage.setItem('location', city.short_name);
+        sessionStorage.setItem('selectedAddress', city.formatted_address);
         sessionStorage.setItem('savedLocation', JSON.stringify(savedLocation));
         // savedLocation.push(userLocation);
         renderRadioButton();
@@ -181,6 +162,12 @@ function codeLatLng(lat, lng) {
   });
 }
 
+function saveLocation() {
+  if (userLocation !== "") {
+    savedLocation.push(userLocation);
+  }
+}
+
 function renderRadioButton() {
   currentLocation = sessionStorage.getItem('location')
   var renderHtml = "";
@@ -192,14 +179,7 @@ function renderRadioButton() {
     <span class="checkmark"></span>
   </label>
   <hr class="divider" style="margin-top: 20px;">`
-  // document.getElementById(`selected-location-${x}`).checked = true;
-  // $(`#selected-location-${x}`).prop("checked", true);
   })
   $('#render-radio-button').append(renderHtml);
   document.getElementById(`selected-location-${currentLocation}`).checked = true;
 }
-
-
-// $('#selected-location').on('change', function() {
-//   alert( this.value );
-// });
