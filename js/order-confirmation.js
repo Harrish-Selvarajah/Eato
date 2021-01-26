@@ -285,8 +285,8 @@ function populateData() {
     `<div class="item" id="add-payment-card" onclick=" navigateToAddPayment()" >
           <span class="iconify" data-icon="mdi:wallet" data-inline="false" style="color: #FD6921; font-size:50px;"></span>
             <div>
-                <p class="primaryText"></p>
-                <p class="primaryText">Mange Payment Options</p>
+                <p class="primaryText">Mange Payment</p>
+                <p class="primaryText">Options</p>
             </div>
         </div>`
   )
