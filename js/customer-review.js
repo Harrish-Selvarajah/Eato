@@ -1,6 +1,7 @@
 // var status = document.getElementById("vendor-feedback");
 // status.style.display = "none";
 var reviews = [];
+var vendors = [];
 var firebaseConfig = {
     apiKey: "AIzaSyBDwiPGqXFeormDpnISyavzwju3BnCUPTo",
     authDomain: "eato-69.firebaseapp.com",
