@@ -97,7 +97,7 @@ function renderReview() {
 			renderHtml += `<div class="review-item cards">
                     <div class="review-details">
                         <div class="profile-pic-container">
-                            <div class="profile-pic"></div>
+							<img class="profile-pic" src="${item.userObj.profilepicLink}">
                         </div>
                         <div>
                             <p class="primaryText">${item.userObj.name}</p>
