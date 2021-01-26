@@ -52,6 +52,7 @@ function loadPaymentOptions() {
 }
 
 $(document).ready(function () {
+    noteNavigation()
 
     loadPaymentData()
     loadPaymentOptions()
@@ -103,4 +104,30 @@ function detectMobileWithScreen() {
     return ((window.innerWidth <= 400) && (window.innerHeight <= 800));
 }
 
+function navigatePaymentMethod(){
+    var backPage = sessionStorage.getItem('back-from-payment-method')
+    console.log(backPage)
+    if (backPage != null && backPage != ''){
+        document.location.href = `../components/${backPage}`
+    }else{
+        document.location.href = '../components/profile.html'
+    }
+}
+
+function noteNavigation(){
+    
+    var lastScreen = ''
+
+    if (document.referrer == 'http://127.0.0.1:5500/components/order-confirmation.html'){
+        lastScreen = 'order-confirmation.html'
+    }
+
+    if (document.referrer == 'http://127.0.0.1:5500/components/profile.html'){
+        lastScreen = 'profile.html'
+    }
+    
+    if(lastScreen != ''){
+        sessionStorage.setItem('back-from-payment-method', lastScreen);
+    }
+}
 

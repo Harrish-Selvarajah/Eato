@@ -85,6 +85,7 @@ function goBack() {
     window.history.back();
 }
 
+
 function detectMobileWithAgent() {
     const toMatch = [
         /Android/i,
