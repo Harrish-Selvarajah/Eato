@@ -12,10 +12,27 @@ firebase.initializeApp(firebaseConfig);
 var rootRef = new Firebase("https://eato-69-default-rtdb.firebaseio.com/").ref();
 
 var cart = [];
+var vendors = [];
 
 $(document).ready(function () {
 
 console.log(sessionStorage);
+
+firebase.database().ref('Vendors/').once('value', function (snapshot) {
+  snapshot.forEach(function (childSnapshot) {
+      var childData = childSnapshot.val();
+      //   var childData = childSnapshot.val();
+    debugger
+      //   reviews.push(childData);
+      item = {
+        id: childSnapshot.key,
+        name: childData.name,
+        reviews : childData.reviews
+      }
+      vendors.push(item);
+  })
+  console.log(vendors);
+})
 
 });
 
@@ -31,6 +48,7 @@ function signUp() {
   var loyaltyPoints = 0;
   var loyaltyPointsArray = [];
   var chats = [];
+  
   if (!mobileNumber || mobileNumber.trim() === '') {
     toastr.warning('Please Enter Mobile Number', 'Warning');
   }
@@ -91,6 +109,7 @@ function signUp() {
       sessionStorage.setItem('locations', JSON.stringify(locations))
       sessionStorage.setItem('loyaltyPoints', JSON.stringify(loyaltyPoints));
       sessionStorage.setItem('loyaltyPointsArray', JSON.stringify(loyaltyPointsArray));
+      sessionStorage.setItem('vendors', JSON.stringify(vendors));
       console.log(JSON.parse(sessionStorage.getItem('userobj')));
       document.location.href = "./introductory.html";
     });

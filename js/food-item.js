@@ -430,11 +430,26 @@ var vendor = [
     }
 ];
 
+var firebaseConfig = {
+    apiKey: "AIzaSyBDwiPGqXFeormDpnISyavzwju3BnCUPTo",
+    authDomain: "eato-69.firebaseapp.com",
+    databaseURL: "https://eato-69-default-rtdb.firebaseio.com",
+    projectId: "eato-69",
+    storageBucket: "eato-69.appspot.com",
+    messagingSenderId: "274943061802",
+    appId: "1:274943061802:web:9916cf1cb84f515bdab853"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
 var cart = [];
 var foodQuantity = 1;
 var vendorID = 0;
+var vendors = [];
 
 $(document).ready(function () {
+
+    
     $('#display-quantity').text(foodQuantity);
     $(window).on('resize', function () {
         var win = $(this);
@@ -445,16 +460,39 @@ $(document).ready(function () {
     });
     foodId = getUrlParameter('fooditemID');
     vendorID = getUrlParameter('vendorID');
-    renderVendorDetails();
-    renderFooditemsInVendor();
-    renderFooditem();
+    firebase.database().ref('Vendors/').once('value', function (snapshot) {
+        $(".se-pre-con").fadeOut("fast");
+        snapshot.forEach(function (childSnapshot) {
+            var childData = childSnapshot.val();
+            //   var childData = childSnapshot.val();
+          debugger
+            //   reviews.push(childData);
+            item = {
+              id: childSnapshot.key,
+              name: childData.name,
+              reviews : childData.reviews
+            }
+            vendors.push(item);
+        })
+        console.log(vendors);
+        sessionStorage.setItem('vendors', JSON.stringify(vendors));
+        renderVendorDetails();
+        renderFooditemsInVendor();
+        renderFooditem();
+      })
+  
 
     $('#close-button').click(function (e) {
         $('#food-item-popup').popup('close')
     });
+
+   
+
+
 });
 
 function renderVendorDetails() {
+    debugger
     var renderHtml = "";
     var renderHTML = "";
     vendorID = JSON.parse(sessionStorage.getItem('vendorID'));
@@ -478,10 +516,10 @@ function renderVendorDetails() {
                     <p class="subtitle">Indian, Dosa, Vada</p>
                     <p class="subtitle">•</p>
                     <div class="vendor-highlight-rating">
-                        <p class="subtitle">4.1</p>
+                        <p class="subtitle" id="rating">4.1</p>
                         <i class="material-icons">grade</i>
                         <p class="subtitle">(</p>
-                        <a class="subtitle" onclick="goToRatings(${ven.id});">10+ ratings</a>
+                        <a class="subtitle" onclick="goToRatings(${ven.id});" id="numOfRating">10+ ratings</a>
                         <p class="subtitle">) </p>
                     </div>
                     <p class="subtitle">•</p>
@@ -496,6 +534,23 @@ function renderVendorDetails() {
         })
         $('.vendor-bg').append(renderHTML);
         $('#vendor-details').append(renderHtml);
+
+        var vendors = [];
+        debugger
+   vendors = JSON.parse(sessionStorage.getItem('vendors'));
+   vendors.forEach(function (item) {
+       if (item.id == Number(vendorID)) {
+        var total = 0,avg = 0,count = 0;
+        Object.values(item.reviews).forEach(function (rev) {
+            total = total + rev.rating;
+            count = count + 1;
+        })
+        avg = total / count;
+        avg = Math.round(avg)
+        $('#rating').text(avg/10);
+        $('#numOfRating').text(`${count-1}` + `+ ratings`);
+       }
+   })
     }
 }
 

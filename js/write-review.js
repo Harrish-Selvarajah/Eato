@@ -83,6 +83,7 @@ function writeUserData() {
     }
   }
   else {
+    debugger
     firebase.database().ref('Vendors/' + vendorId).child('reviews').push({
       // name: 'Melt House',
       review: bla,
@@ -114,6 +115,18 @@ function writeUserData() {
              
           }
       }
+    }).then(pushed_review => {
+      // debugger
+      // reviewId = pushed_review.key;
+      // console.log(pushed_review.val());
+      // var vendors = [];
+      // var reviews = [];
+      // vendors = JSON.parse(sessionStorage.getItem('vendors'));
+      // reviews = vendors.filter(function (item) { return item.id === vendorId });
+      // reviews.push({
+      //   reviewId,
+
+      // })
     });
   }
 }
