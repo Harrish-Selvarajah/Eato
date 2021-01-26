@@ -141,7 +141,7 @@ function showNoPaymentOptionScreen(){
              <span class="iconify" data-icon="mdi:wallet-plus" data-inline="false" style="color: #FD6921; font-size:100px; width:100%"></span>
          <div>
                 <h4 style="width:100%; text-align:center;">No Payment Maethod </h4>
-                <h5 style="width:100%;" >Click + to add Payment Method </h5>
+                <h5 style="width:100%; text-align:center;" >Click + to add Payment Method </h5>
          </div>
             
          </div>
