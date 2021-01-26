@@ -34,9 +34,19 @@
             onclick="qrScanner();">here first</a> -->
             <!-- <a id='btn-scan-qr' href="#" data-shadow="false" data-theme="none"
             onclick="scanClick();">True</a> -->
-            <div class="camera-bg">
-                <canvas hidden="" id="qr-canvas"></canvas>
+            <div class="main-section" id="main-section">
+                <div>
+                    <div class="camera-bg">
+                        <canvas hidden="" id="qr-canvas" class="qr-border"></canvas>
+                    </div>
+                    <div style="text-align: center; padding: 10px;">
+                        <h5 class="center-align"><i class=" material-icons" style="font-size: 18px;">info</i>
+                             You can find this on loyalty points card</h5>
+                        <h5 style="color: #FD6921;">Place the QR code inside the area</h5>
+                    </div>
+                </div>
             </div>
+            
             <div id="qr-result" hidden="">
                 <!-- <b>Data:</b> <span id="outputData"></span> -->
                 <div class="popup-screen">
