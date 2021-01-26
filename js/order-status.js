@@ -29,18 +29,18 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer) {
     // var start_icon_path = `file:///../assets/start_location.png`
     var icons = {
         start: new google.maps.MarkerImage(
-            // URL
-            'https://firebasestorage.googleapis.com/v0/b/eato-69.appspot.com/o/location_32.png?alt=media&token=e716fdc4-44ae-49d8-aeb2-737a838c3524',
+            // URL            
+            'https://firebasestorage.googleapis.com/v0/b/eato-69.appspot.com/o/48_location.png?alt=media&token=e1026efd-8709-47da-a9a9-2b38ac8449ea',
             // (width,height)
             new google.maps.Size(48, 48),
             // The origin point (x,y)
             new google.maps.Point(0, 0),
             // The anchor point (x,y)
-            new google.maps.Point(15, 0)
+            new google.maps.Point(15, 20)
         ),
         end: new google.maps.MarkerImage(
             // URL
-            'https://firebasestorage.googleapis.com/v0/b/eato-69.appspot.com/o/location_32.png?alt=media&token=e716fdc4-44ae-49d8-aeb2-737a838c3524',
+            'https://firebasestorage.googleapis.com/v0/b/eato-69.appspot.com/o/48_bike.png?alt=media&token=11ffa662-93a7-4de4-8c28-0fc5447e2ded',
             // (width,height)
             new google.maps.Size(48, 48),
             // The origin point (x,y)
@@ -52,10 +52,10 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer) {
     directionsService.route(
         {
             origin: {
-                query: "302 Galle Rd, Colombo 00400, Sri Lanka",
+                query: "124 Bauddhaloka Mawatha, Colombo 00400",
             },
             destination: {
-                query: "57 Ramakrishna Rd, Colombo 00600, Sri Lanka",
+                query: "28 R.G. Senanayake Mawatha, Colombo 00700",
             },
             travelMode: google.maps.TravelMode.DRIVING,
         },
