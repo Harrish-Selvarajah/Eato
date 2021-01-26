@@ -16,7 +16,7 @@ let map, infoWindow, userLocation;
 
 function initAutocomplete() {
   const map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: 6.927079, lng: 79.861244 },
+    center: { lat: 6.904333, lng: 79.867488 },
     zoom: 15,
     mapTypeId: "roadmap",
     disableDefaultUI: true,

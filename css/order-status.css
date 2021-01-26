@@ -1,41 +1,13 @@
-#background-map{
-    background-image: url('../assets/img/gmaps.jpg');
-    position: relative;
-    z-index: 0;
+#map {
+    height: 94vh;
+    margin-top: 26px;
 }
 
-.map-pin{
-   width: 30px;
-   height:30px;
-   background-color:#FD6921;
-   border: 3px solid white;
-   border-radius: 20px;
-   z-index: 1;
-   position: relative;
-   display: inline-flex;
-   justify-content: center;
-   align-items: center;
-}
-
-.icons{
-    color: white;
-    font-size: 25px !important;
-}
-
-#pin-customer-container {
-    top: 245px;
-    left: 475px;
-}
-
-#pin-vendor-container {
-    top: 50px;
-    left: 115px;
-}
-
-.footer-order-status{
+.footer-order-status {
     width: 326px;
     border: 1px solid white;
-    border-radius: 30px;;
+    border-radius: 30px;
+    ;
     background-color: white !important;
     position: fixed;
     height: 70px;
@@ -46,57 +18,53 @@
     padding-left: 10px;
     padding-right: 10px;
     gap: 118px;
-    box-shadow: 4px 4px 18px -2px rgba(0,0,0,0.36);
+    box-shadow: 4px 4px 18px -2px rgba(0, 0, 0, 0.36);
 }
 
-.vendor-img-container{
+.vendor-img {
     background-color: white !important;
-    box-shadow: 4px 4px 18px -2px rgba(0,0,0,0.36);
+    box-shadow: 4px 4px 18px -2px rgba(0, 0, 0, 0.36);
     border: 1px solid white;
     border-radius: 30px;
     height: 50px;
     width: 50px;
-    background-image: url('../assets/vendor_logo.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+    object-fit: cover;
 }
 
 .vendor-name-container {
-   margin-top: 12px;
-   margin-left: 10px;
+    margin-top: 12px;
+    margin-left: 10px;
 }
 
-.vendor-info-container{
+.vendor-info-container {
     display: inline-flex;
-
 }
 
-.chat-container{
-   
+.chat-container {
+    position: absolute;
+    right: 15px;
     background-color: white !important;
     border: 1px solid white;
-    box-shadow: 4px 4px 18px -2px rgba(0,0,0,0.36);
+    box-shadow: 4px 4px 18px -2px rgba(0, 0, 0, 0.36);
     border-radius: 30px;
     height: 50px;
-    width: 50px !important; 
+    width: 50px !important;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .chat-container .material-icons {
-   color: #FD6921;
-   font-size: 30px;
-   margin-left: 29px;
-   margin-top: 3px;
+    color: #FD6921;
+    font-size: 30px;
+    margin-left: 29px;
+    margin-top: 3px;
 }
 
-
-@media(max-width :320px){
-    .footer-order-status{
+@media(max-width :320px) {
+    .footer-order-status {
         width: 280px;
-        gap : 72px;
+        gap: 72px;
         left: calc(50% - 150px);
     }
 }

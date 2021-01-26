@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,51 +9,46 @@
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <link rel="stylesheet" href="../css/site.css" /> -->
     <link rel="stylesheet" href="../css/order-status.css" />
-    
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <!-- <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6ntfzBqz7Et-JBirqWHo0dv7Ky3C3wvM&callback=initMap&libraries=&v=weekly">
+        </script>
+
     <script src="../js/order-status.js"></script>
     <script src="../js/common.js"></script>
     <title>Order Status</title>
 </head>
+
 <body>
     <div data-role="page">
         <div class="se-pre-con">
             <p class="order-processing-msg"></p>
         </div>
         <div data-role="header" data-postion="fixed" data-fullscreen="true" class="header-bar">
-            <!-- <img src="../assets/logo new.svg"> -->
             <i class="arrow arrow-left" onclick="navigation('order')"></i>
             <h4>Order Status</h4>
         </div>
 
         <div data-role="main" class="ui-content" id="background-map">
-
-                <div class="map-pin" id="pin-customer-container">
-                    <i class=" material-icons icons">place</i>
+            <div id="map"></div>
+            <div class="footer-order-status">
+                <div class="vendor-info-container">
+                    <img class="vendor-img" src="../assets/vendor_logo.png">
+                    <div class="vendor-name-container">
+                        <h3 id="name"></h3>
+                    </div>
                 </div>
-                <div class="map-pin" id="pin-vendor-container"> 
-                    <i class=" material-icons icons">two_wheeler</i>
+                <div class="chat-container">
+                    <i class=" material-icons" onclick="navigation('customer-chat')">chats</i>
                 </div>
-
-                <div class="footer-order-status" > 
-                   <div class="vendor-info-container">
-                        <div class="vendor-img-container">
-                            
-                        </div>
-                        <div class="vendor-name-container">
-                              <h3 id="name"> S.Harrish</h3>
-                        </div>
-                   </div>
-
-                   <div class="chat-container">
-                           <i class=" material-icons" onclick="navigation('customer-chat')">chats</i>
-                   </div>
-                </div>
+            </div>
         </div>
-
-        
     </div>
 </body>
+
 </html>
