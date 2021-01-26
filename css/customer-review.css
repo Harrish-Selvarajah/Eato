@@ -33,10 +33,7 @@
 }
 
 .profile-pic {
-  background-image: url(../assets/harrish.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+  object-fit: cover;
   width: 65px;
   height: 65px;
   border-radius: 50px;
