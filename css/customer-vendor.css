@@ -1,11 +1,12 @@
 .vendor-bg {
-    background-image: url(../assets/food/indian.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    height: 305px;
-    border-radius: 17px;
     position: relative;
+}
+
+.backdrop {
+    width: 100%;
+    height: 305px;
+    object-fit: cover;
+    border-radius: 17px;
 }
 
 .bookmark {
@@ -16,21 +17,17 @@
     width: 67px;
     position: absolute;
     background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url("../assets/discount_img.png");  
+    background-image: url("../assets/discount_img.png");
 }
 
 .vendor-logo {
     position: absolute;
-    background-image: url(../assets/vendor_logo.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
     border-radius: 110px;
     border: 4px solid white;
     margin-bottom: 12px;
@@ -220,7 +217,7 @@
 }
 
 @media (max-width: 767px) {
-    .vendor-bg {
+    .backdrop {
         height: 160px;
     }
     .vendor-logo {
@@ -228,8 +225,8 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 110px;
-        height: 110px;
+        width: 90px;
+        height: 90px;
     }
     .vendor-details {
         margin: 25px 0px 0px 0px;
@@ -250,17 +247,16 @@
     .vendor-highlight-rating {
         justify-content: center;
     }
-
-    .bookmark{
+    .bookmark {
         top: -1 !important;
         left: 14px !important;
         height: 92px !important;
         width: 55px !important;
     }
-    .bookmark h3{
+    .bookmark h3 {
         font-size: 15px!important;
     }
-    .bookmark h4{
+    .bookmark h4 {
         font-size: 15px!important;
     }
 }
