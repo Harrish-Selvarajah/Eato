@@ -219,13 +219,17 @@ $(document).ready(function () {
       if ($('#add-loyalty').is(":checked")) {
         checked = true;
         discount = loyaltyPoints * 0.1;
+        discount =  Math.round(discount * 100) / 100
         totalPrice = totalPrice - discount;
+        totalPrice =  Math.round(totalPrice * 100) / 100
         $('#discount-tag').text('Rs' + ' ' + discount);
         $('#price-tag').text('Rs' + ' ' + totalPrice);
       } else {
         checked = false;
         discount = loyaltyPoints * 0.1;
+        discount =  Math.round(discount * 100) / 100
         totalPrice = totalPrice + discount;
+        totalPrice =  Math.round(totalPrice * 100) / 100
         $('#discount-tag').text('Rs' + ' ' + 0);
         $('#price-tag').text('Rs' + ' ' + totalPrice);
       }
@@ -235,12 +239,14 @@ $(document).ready(function () {
           checked = true;
           discount = 0;
           totalPrice = totalPrice - discount;
+          totalPrice =  Math.round(totalPrice * 100) / 100
           $('#discount-tag').text('Rs' +  ' ' + discount);
           $('#price-tag').text('Rs' + ' ' + totalPrice);
         } else {
           checked = false;
           discount = 0;
           totalPrice = totalPrice + discount;
+          totalPrice =  Math.round(totalPrice * 100) / 100
           $('#discount-tag').text('Rs' +  ' ' + 0);
           $('#price-tag').text('Rs' + ' ' + totalPrice);
         }
