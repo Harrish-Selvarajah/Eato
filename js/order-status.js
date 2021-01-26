@@ -27,9 +27,13 @@ function initMap() {
 
 function calculateAndDisplayRoute(directionsService, directionsRenderer) {
     // var start_icon_path = `file:///../assets/start_location.png`
+    var currentLocation = sessionStorage.getItem('selectedAddress')
+    if (currentLocation === "undefined" || currentLocation === undefined || currentLocation === "" || currentLocation === null) {
+        currentLocation = "57 Ramakrishna Rd, Colombo 00600";
+    }
     var icons = {
         start: new google.maps.MarkerImage(
-            // URL            
+            // URL
             'https://firebasestorage.googleapis.com/v0/b/eato-69.appspot.com/o/48_location.png?alt=media&token=e1026efd-8709-47da-a9a9-2b38ac8449ea',
             // (width,height)
             new google.maps.Size(48, 48),
@@ -55,7 +59,7 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer) {
                 query: "124 Bauddhaloka Mawatha, Colombo 00400",
             },
             destination: {
-                query: "28 R.G. Senanayake Mawatha, Colombo 00700",
+                query: currentLocation,
             },
             travelMode: google.maps.TravelMode.DRIVING,
         },

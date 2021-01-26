@@ -72,6 +72,7 @@ function initAutocomplete() {
 
       savedLocation.push(userLocation);
       sessionStorage.setItem('location', userLocation);
+      sessionStorage.setItem('selectedAddress', place.formatted_address);
       sessionStorage.setItem('savedLocation', JSON.stringify(savedLocation));
       renderRadioButton();
 
@@ -147,6 +148,7 @@ function codeLatLng(lat, lng) {
         savedLocation = JSON.parse(sessionStorage.getItem('savedLocation'));
         savedLocation.push(city.short_name);
         sessionStorage.setItem('location', city.short_name);
+        sessionStorage.setItem('selectedAddress', city.formatted_address);
         sessionStorage.setItem('savedLocation', JSON.stringify(savedLocation));
         // savedLocation.push(userLocation);
         renderRadioButton();
