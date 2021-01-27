@@ -91,7 +91,7 @@ function writeUserData() {
       date: today,
       userobj: {
         name: JSON.parse(userObj).name,
-        profilepicLink: '../assets/nasif.jpg'
+        profilepicLink: '../assets/harrish.jpg'
       }
     }, (error) => {
       if (error) {

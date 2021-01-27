@@ -16,7 +16,7 @@ var pastOrders = [
     },
     {
         id: 2,
-        vendorName: 'Melt House',
+        vendorName: 'Suburban Kitchen',
         orderStatus: 'delivered',
         fooditems: [
             {
@@ -244,6 +244,7 @@ function orderAgain(id) {
     if (id == 1) {
         var cart = []
         sessionStorage.setItem('cart', JSON.stringify(cart));
+        sessionStorage.setItem('vendorID', JSON.stringify(1));
         item = {
             foodID: 'm1',
             foodName: 'Cheese Pasta',
@@ -272,6 +273,7 @@ function orderAgain(id) {
         if (id == 2) {
             var cart = []
             sessionStorage.setItem('cart', JSON.stringify(cart));
+            sessionStorage.setItem('vendorID', JSON.stringify(2));
             item = {
                 foodID: 'm1',
                 foodName: 'Cheese Pasta',
